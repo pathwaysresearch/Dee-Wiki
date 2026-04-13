@@ -1,0 +1,55 @@
+# Environment variables / API keys — NEVER commit
+.env
+.env.local
+.env.production
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Data — intermediate build artifacts (regenerate via scripts/ingest.py)
+# Use /data/ to match only root-level data/, not webapp/data/
+/data/
+
+# webapp/data/ is DEPLOYED to Vercel — do NOT ignore it
+# (chunks.json ~19MB text-only, chunks_embeddings.npy ~70MB, wiki_pages.json ~700KB)
+
+# Extracted markdown from PDFs (regenerate via ingest)
+Vault/raw/**/extracted_md/
+
+# Raw source materials (copyrighted books, large PDFs — not for public repos)
+Vault/raw/
+
+# Issue analysis and internal notes
+ISSUE_ANALYSIS.md
+
+# Claude Code internal state
+.claude/
+
+# Obsidian workspace (user-specific, changes on every session)
+Vault/.obsidian/workspace.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Node (if any)
+node_modules/
+
+# Virtual environments
+venv/
+.venv/
+env/
