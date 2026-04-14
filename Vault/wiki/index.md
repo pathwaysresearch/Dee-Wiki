@@ -221,3 +221,5 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/low-level-design-as-digital-transformation-substrate|Low-Level System Design as the Hidden Substrate of Digital Transformation]] — synthesized from query
 
 - [[synthesized/history-as-defamiliarization-engine|History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy]] — synthesized from query
+
+- [[synthesized/ecosystem-competition-and-antitrust-misalignment|Ecosystem Competition and the Structural Misalignment of Antitrust Policy]] — synthesized from query
