@@ -213,3 +213,11 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[concepts/implicit-association-test|Implicit Association Test]] — Revealing unconscious biases linking women with specific stereotypes.
 - [[concepts/inclusion|Inclusion]] — Fostering a culture that values different others for meaningful diversity.
 - [[concepts/incumbent-companies|Incumbent Companies]]
+
+- [[synthesized/cookie-deprecation-as-ecosystem-inflection-point|Cookie Deprecation as Ecosystem-Level Strategic Inflection Point]] — synthesized from query
+
+- [[synthesized/authentication-as-ecosystem-trust-infrastructure|Authentication as Ecosystem Trust Infrastructure]] — synthesized from query
+
+- [[synthesized/low-level-design-as-digital-transformation-substrate|Low-Level System Design as the Hidden Substrate of Digital Transformation]] — synthesized from query
+
+- [[synthesized/history-as-defamiliarization-engine|History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy]] — synthesized from query
