@@ -124,9 +124,11 @@ def build_graph():
     if not WIKI_DIR.exists():
         return {"nodes": nodes, "edges": edges}
 
+    _SKIP_STEMS = {"index", "log"}
+
     for md_file in sorted(WIKI_DIR.rglob("*.md")):
-        # Skip special files
-        if md_file.name.startswith("_"):
+        # Skip special files and catalog/log pages
+        if md_file.name.startswith("_") or md_file.stem in _SKIP_STEMS:
             continue
 
         stem = md_file.stem.lower()

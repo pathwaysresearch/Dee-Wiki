@@ -8913,6 +8913,97 @@
         "rag-stub"
       ],
       "path": "wiki\\stubs\\stub-the-digital-matrix-new-rules-for-business-transformation-1.md"
+    },
+    "cookie-deprecation-as-ecosystem-inflection-point": {
+      "type": "synthesized",
+      "title": "Cookie Deprecation as Ecosystem-Level Strategic Inflection Point",
+      "aliases": [
+        "third-party-cookie-deprecation",
+        "cookie-as-ecosystem-artifact"
+      ],
+      "tags": [
+        "digital-transformation",
+        "ecosystems",
+        "data-strategy",
+        "digital-matrix",
+        "advertising-technology",
+        "first-party-data"
+      ],
+      "path": "wiki\\synthesized\\cookie-deprecation-as-ecosystem-inflection-point.md"
+    },
+    "authentication-as-ecosystem-trust-infrastructure": {
+      "type": "synthesized",
+      "title": "Authentication as Ecosystem Trust Infrastructure",
+      "aliases": [
+        "authentication-strategy",
+        "trust-infrastructure-digital"
+      ],
+      "tags": [
+        "digital-transformation",
+        "authentication",
+        "ecosystems",
+        "trust",
+        "strategy",
+        "inflection-point",
+        "orchestration"
+      ],
+      "path": "wiki\\synthesized\\authentication-as-ecosystem-trust-infrastructure.md"
+    },
+    "low-level-design-as-digital-transformation-substrate": {
+      "type": "synthesized",
+      "title": "Low-Level System Design as the Hidden Substrate of Digital Transformation",
+      "aliases": [
+        "system-design-transformation-ceiling",
+        "architecture-ecosystem-mapping"
+      ],
+      "tags": [
+        "digital-transformation",
+        "system-design",
+        "ecosystem-architecture",
+        "api-design",
+        "event-driven-architecture",
+        "ddd",
+        "coopetition",
+        "synthesis"
+      ],
+      "path": "wiki\\synthesized\\low-level-design-as-digital-transformation-substrate.md"
+    },
+    "history-as-defamiliarization-engine": {
+      "type": "synthesized",
+      "title": "History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy",
+      "aliases": [
+        "defamiliarization-engine",
+        "temporal-analogy-strategy"
+      ],
+      "tags": [
+        "pedagogy",
+        "digital-transformation",
+        "historical-analogy",
+        "rhetorical-strategy",
+        "ecosystem",
+        "electricity-analogy",
+        "epistemology"
+      ],
+      "path": "wiki\\synthesized\\history-as-defamiliarization-engine.md"
+    },
+    "ecosystem-competition-and-antitrust-misalignment": {
+      "type": "synthesized",
+      "title": "Ecosystem Competition and the Structural Misalignment of Antitrust Policy",
+      "aliases": [
+        "ecosystem-antitrust",
+        "platform-regulation-misalignment"
+      ],
+      "tags": [
+        "digital strategy",
+        "regulation",
+        "antitrust",
+        "platforms",
+        "ecosystems",
+        "policy",
+        "network effects",
+        "digital transformation"
+      ],
+      "path": "wiki\\synthesized\\ecosystem-competition-and-antitrust-misalignment.md"
     }
   },
   "edges": [
@@ -15320,6 +15411,191 @@
       "from": "thinking-patterns",
       "to": "deepa-mani",
       "type": "part_of"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "digital-matrix",
+      "type": "extends"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "digital-ecosystems",
+      "type": "related"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "ecosystem-trap",
+      "type": "related"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "digital-inflection-point",
+      "type": "related"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "data-and-customers-as-assets",
+      "type": "related"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "business-ecosystems",
+      "type": "related"
+    },
+    {
+      "from": "cookie-deprecation-as-ecosystem-inflection-point",
+      "to": "coopetition",
+      "type": "related"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "digital-business-ecosystems",
+      "type": "extends"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "ecosystem-orchestration",
+      "type": "extends"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "digital-inflection-point",
+      "type": "extends"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "technology-organization-policy-nexus",
+      "type": "related"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "coopetition",
+      "type": "related"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "governance-in-ecosystems",
+      "type": "related"
+    },
+    {
+      "from": "authentication-as-ecosystem-trust-infrastructure",
+      "to": "cookie-deprecation-as-ecosystem-inflection-point",
+      "type": "related"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "digital-business-ecosystem",
+      "type": "extends"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "digital-business-ecosystems",
+      "type": "extends"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "coopetition",
+      "type": "relates-to"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "coopetitive-relationships",
+      "type": "relates-to"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "ecosystem-orchestration",
+      "type": "relates-to"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "application-programming-interfaces",
+      "type": "relates-to"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "digital-transformation",
+      "type": "extends"
+    },
+    {
+      "from": "low-level-design-as-digital-transformation-substrate",
+      "to": "technology-organization-policy-nexus",
+      "type": "relates-to"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "rhetorical-style-and-pedagogy",
+      "type": "extends"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "digital-business-ecosystem",
+      "type": "extends"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "general-purpose-technology",
+      "type": "relates-to"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "factory-reorganization-with-electricity",
+      "type": "relates-to"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "digital-inflection-point",
+      "type": "relates-to"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "digital-transformation",
+      "type": "relates-to"
+    },
+    {
+      "from": "history-as-defamiliarization-engine",
+      "to": "five-levels-of-it-enabled-transformation",
+      "type": "relates-to"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "digital-business-ecosystem",
+      "type": "extends"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "digital-ecosystems",
+      "type": "extends"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "ecosystem-orchestration",
+      "type": "related"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "data-network-effects",
+      "type": "related"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "technology-organization-policy-nexus",
+      "type": "related"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "digital-matrix",
+      "type": "related"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "coopetition",
+      "type": "related"
+    },
+    {
+      "from": "ecosystem-competition-and-antitrust-misalignment",
+      "to": "blurring-industry-boundaries",
+      "type": "related"
     }
   ]
 }

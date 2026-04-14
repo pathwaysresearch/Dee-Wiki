@@ -5,14 +5,14 @@ Reads wiki/*.md and data/chunks.json, generates embeddings for wiki pages,
 writes:
   - webapp/data/wiki_pages.json  (wiki text + embeddings, ~700KB)
   - webapp/data/chunks.json      (RAG text only, NO embeddings, ~19MB)
-  - webapp/data/chunks_embeddings.npy  (embeddings as numpy binary, ~70MB)
+  - webapp/data/chunks.faiss     (FAISS inner-product index of chunk embeddings)
 
 The split keeps the deployment under Vercel's 250MB function size limit.
 
 APPEND BEHAVIOUR: If the output files already exist, only NEW records are
 added. Existing records are identified by:
-  - wiki_pages.json        → "path" field
-  - chunks.json / .npy     → SHA-256 hash of "content" field
+  - wiki_pages.json  → "path" field
+  - chunks.json      → SHA-256 hash of "content" field
 
 If output files do not exist they are created from scratch.
 
@@ -40,7 +40,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from chunker import get_embeddings_batch
 
 PROJECT_ROOT = Path(__file__).parent.parent
-VAULT = PROJECT_ROOT / "prof-bhagwan-hybrid-demo"
+_vault_name = os.environ.get("WIKI_VAULT_NAME", "Vault")
+VAULT = PROJECT_ROOT / _vault_name
 WIKI_DIR = VAULT / "wiki"
 CHUNKS_FILE = PROJECT_ROOT / "data" / "chunks.json"
 WEBAPP_DATA = PROJECT_ROOT / "webapp" / "data"
@@ -120,36 +121,23 @@ def load_existing_wiki_pages(path: Path) -> tuple[list[dict], set[str]]:
 
 
 def load_existing_chunks(
-    chunks_path: Path, emb_path: Path
-) -> tuple[list[dict], np.ndarray | None, set[str]]:
+    chunks_path: Path,
+) -> tuple[list[dict], set[str]]:
     """
-    Returns (existing_text_chunks, existing_embeddings_array, existing_hashes).
+    Returns (existing_text_chunks, existing_hashes).
 
-    existing_text_chunks  — list of chunk dicts WITHOUT embeddings (as stored on disk)
-    existing_embeddings   — float32 numpy array shape (N, D), or None if missing/empty
-    existing_hashes       — set of content hashes already stored
+    existing_text_chunks — list of chunk dicts WITHOUT embeddings (as stored on disk)
+    existing_hashes      — set of content hashes already stored
     """
     if not chunks_path.exists():
-        return [], None, set()
+        return [], set()
 
     text_chunks = json.loads(chunks_path.read_text(encoding="utf-8"))
     for c in text_chunks:
         c.setdefault("type", "rag")
 
     existing_hashes = {content_hash(c["content"]) for c in text_chunks}
-
-    embeddings = None
-    if emb_path.exists() and len(text_chunks) > 0:
-        embeddings = np.load(emb_path)
-        if embeddings.shape[0] != len(text_chunks):
-            print(
-                f"  WARN: chunks.json has {len(text_chunks)} records but "
-                f"chunks_embeddings.npy has {embeddings.shape[0]} rows — "
-                "treating embeddings as missing to avoid misalignment."
-            )
-            embeddings = None
-
-    return text_chunks, embeddings, existing_hashes
+    return text_chunks, existing_hashes
 
 
 # ---------------------------------------------------------------------------
@@ -165,7 +153,7 @@ def main():
 
     wiki_out = WEBAPP_DATA / "wiki_pages.json"
     chunks_out = WEBAPP_DATA / "chunks.json"
-    emb_out = WEBAPP_DATA / "chunks_embeddings.npy"
+    faiss_out = WEBAPP_DATA / "chunks.faiss"
 
     print("NOTE: This exports local wiki/*.md files only.")
     print("      Run 'python scripts/sync_wiki.py --pull' first to include Redis-only pages.\n")
@@ -209,9 +197,7 @@ def main():
     source_chunks = load_chunks()
     print(f"  {len(source_chunks)} chunk(s) found in source")
 
-    existing_text_chunks, existing_embeddings, existing_hashes = load_existing_chunks(
-        chunks_out, emb_out
-    )
+    existing_text_chunks, existing_hashes = load_existing_chunks(chunks_out)
     if existing_text_chunks:
         print(
             f"  {len(existing_text_chunks)} chunk(s) already in output — will skip duplicates"
@@ -236,44 +222,32 @@ def main():
         print("  Chunk embeddings done.")
 
     # -----------------------------------------------------------------------
-    # Build merged embeddings numpy array
+    # Build merged embeddings → FAISS index
     # -----------------------------------------------------------------------
-    # Collect embeddings for new chunks
-    new_embeddings_list = [c.get("embedding") for c in new_chunks]
-    has_all_new_embs = all(e is not None for e in new_embeddings_list)
+    all_chunks = existing_text_chunks + new_chunks
+    all_embs = [c.get("embedding") for c in all_chunks]
+    has_all_embs = all(e is not None for e in all_embs) and all_embs
 
-    if has_all_new_embs and new_chunks:
-        new_emb_array = np.array(new_embeddings_list, dtype=np.float32)
-
-        if existing_embeddings is not None:
-            merged_emb_array = np.concatenate([existing_embeddings, new_emb_array], axis=0)
-        else:
-            # Existing file missing/misaligned — rebuild from scratch using
-            # whatever embeddings we have for old chunks too.
-            old_embs = [c.get("embedding") for c in existing_text_chunks]
-            if all(e is not None for e in old_embs) and old_embs:
-                old_emb_array = np.array(old_embs, dtype=np.float32)
-                merged_emb_array = np.concatenate([old_emb_array, new_emb_array], axis=0)
-            else:
-                # Old chunks have no in-memory embeddings — only save new ones
-                # and warn that the file will be misaligned until a full rebuild.
-                print(
-                    "  WARN: Existing chunks have no embeddings in memory. "
-                    "The .npy file will only contain embeddings for new chunks. "
-                    "Run a full rebuild to fix alignment."
-                )
-                merged_emb_array = new_emb_array
-
-        np.save(emb_out, merged_emb_array)
-        print(
-            f"  Embeddings → {emb_out} "
-            f"({merged_emb_array.shape}, "
-            f"{emb_out.stat().st_size / 1024 / 1024:.1f} MB)"
-        )
+    if has_all_embs:
+        try:
+            import faiss  # noqa: PLC0415
+            merged_emb_array = np.array(all_embs, dtype=np.float32)
+            norms = np.linalg.norm(merged_emb_array, axis=1, keepdims=True)
+            normed = (merged_emb_array / (norms + 1e-8)).astype(np.float32)
+            index = faiss.IndexFlatIP(normed.shape[1])
+            index.add(normed)
+            faiss.write_index(index, str(faiss_out))
+            print(
+                f"  FAISS index → {faiss_out} "
+                f"({index.ntotal} vectors, "
+                f"{faiss_out.stat().st_size / 1024 / 1024:.1f} MB)"
+            )
+        except ImportError:
+            print("  [Skip] faiss not installed — run: pip install faiss-cpu")
     elif not new_chunks:
-        print("  No new chunks — embeddings file unchanged.")
+        print("  No new chunks — FAISS index unchanged.")
     else:
-        print("  WARN: Not all new chunks have embeddings — skipping numpy export")
+        print("  WARN: Not all chunks have embeddings — skipping FAISS export")
 
     # -----------------------------------------------------------------------
     # Save merged text-only chunks JSON (no embeddings)

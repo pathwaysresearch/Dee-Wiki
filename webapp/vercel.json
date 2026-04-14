@@ -1,11 +1,11 @@
 {
   "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" }
+    { "src": "api/index2.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.py",
+      "dest": "/api/index2.py",
       "headers": {
         "Cache-Control": "no-cache, no-store",
         "X-Accel-Buffering": "no"
@@ -13,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.py"
+      "dest": "/api/index2.py"
     }
   ]
 }
