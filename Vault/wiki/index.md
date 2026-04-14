@@ -223,3 +223,5 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/history-as-defamiliarization-engine|History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy]] — synthesized from query
 
 - [[synthesized/ecosystem-competition-and-antitrust-misalignment|Ecosystem Competition and the Structural Misalignment of Antitrust Policy]] — synthesized from query
+
+- [[synthesized/homophily-trap-in-network-driven-digital-scaling|The Homophily Trap in Network-Driven Digital Scaling]] — synthesized from query
