@@ -9004,6 +9004,25 @@
         "digital transformation"
       ],
       "path": "wiki\\synthesized\\ecosystem-competition-and-antitrust-misalignment.md"
+    },
+    "homophily-trap-in-network-driven-digital-scaling": {
+      "type": "synthesized",
+      "title": "The Homophily Trap in Network-Driven Digital Scaling",
+      "aliases": [
+        "homophily-measurement-trap",
+        "network-contagion-bias"
+      ],
+      "tags": [
+        "homophily",
+        "network-effects",
+        "social-contagion",
+        "grassroots-entrepreneurship",
+        "india",
+        "measurement-bias",
+        "digital-transformation",
+        "policy-evaluation"
+      ],
+      "path": "wiki\\synthesized\\homophily-trap-in-network-driven-digital-scaling.md"
     }
   },
   "edges": [
@@ -15596,6 +15615,36 @@
       "from": "ecosystem-competition-and-antitrust-misalignment",
       "to": "blurring-industry-boundaries",
       "type": "related"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "homophily",
+      "type": "extends"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "grassroots-technology-entrepreneurship-india",
+      "type": "applies-to"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "direct-network-effect",
+      "type": "qualifies"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "data-network-effects",
+      "type": "qualifies"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "digital-empowerment",
+      "type": "challenges"
+    },
+    {
+      "from": "homophily-trap-in-network-driven-digital-scaling",
+      "to": "evidence-based-policy-making",
+      "type": "supports"
     }
   ]
 }

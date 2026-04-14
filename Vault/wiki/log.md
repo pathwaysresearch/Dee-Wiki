@@ -79,3 +79,7 @@ Append-only chronological record of ingests, queries, and wiki updates.
 ## [2026-04-15] synthesize | ecosystem-competition-and-antitrust-misalignment
 - Pages created: ecosystem-competition-and-antitrust-misalignment.md
 - From query: How does digital transformation—through mechanisms such as platformization, data-driven network effects, and AI-enabled automation—reshape market structure, labor share of income, and productivity growth, and to what extent should governments intervene to correct emerging inefficiencies (e.g., monopoly power, data asymmetry, and job polarization) without stifling innovation?
+
+## [2026-04-15] synthesize | homophily-trap-in-network-driven-digital-scaling
+- Pages created: homophily-trap-in-network-driven-digital-scaling.md
+- From query: make a new synthesis about this, so that ti can be retreived faster later
