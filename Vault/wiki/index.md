@@ -227,3 +227,5 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/homophily-trap-in-network-driven-digital-scaling|The Homophily Trap in Network-Driven Digital Scaling]] — synthesized from query
 
 - [[synthesized/financial-architecture-as-digital-transformation-barrier|Financial Architecture as a Barrier to Digital Transformation]] — synthesized from query
+
+- [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — synthesized from query
