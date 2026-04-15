@@ -9023,6 +9023,57 @@
         "policy-evaluation"
       ],
       "path": "wiki\\synthesized\\homophily-trap-in-network-driven-digital-scaling.md"
+    },
+    "financial-architecture-as-digital-transformation-barrier": {
+      "type": "synthesized",
+      "title": "Financial Architecture as a Barrier to Digital Transformation",
+      "aliases": [
+        "finance-transformation-barrier",
+        "investor-expectations-transformation"
+      ],
+      "tags": [
+        "digital-transformation",
+        "investor-constraints",
+        "theory-of-the-firm",
+        "capital-allocation",
+        "coopetition",
+        "strategic-finance"
+      ],
+      "path": "wiki\\synthesized\\financial-architecture-as-digital-transformation-barrier.md"
+    },
+    "code-as-both-enabler-and-constraint-in-digital-transformation": {
+      "type": "synthesized",
+      "title": "Code as Both Enabler and Constraint in Digital Transformation",
+      "aliases": [
+        "coding-and-finance",
+        "algorithmic-investor-pressure"
+      ],
+      "tags": [
+        "digital-transformation",
+        "financial-architecture",
+        "algorithms",
+        "investor-constraints",
+        "coding",
+        "quantitative-finance"
+      ],
+      "path": "wiki\\synthesized\\code-as-both-enabler-and-constraint-in-digital-transformation.md"
+    },
+    "digital-disruption-as-political-disruption": {
+      "type": "synthesized",
+      "title": "Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks",
+      "aliases": [
+        "tech-entrepreneurs-as-political-actors",
+        "platform-regulation-collision"
+      ],
+      "tags": [
+        "digital-strategy",
+        "politics",
+        "regulation",
+        "platform-economics",
+        "tech-entrepreneurs",
+        "policy"
+      ],
+      "path": "wiki\\synthesized\\digital-disruption-as-political-disruption.md"
     }
   },
   "edges": [
@@ -15645,6 +15696,91 @@
       "from": "homophily-trap-in-network-driven-digital-scaling",
       "to": "evidence-based-policy-making",
       "type": "supports"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "digital-innovation-under-investor-constraints",
+      "type": "extends"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "digital-transformation",
+      "type": "relates-to"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "technology-organization-policy-nexus",
+      "type": "relates-to"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "business-model-innovation",
+      "type": "relates-to"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "creative-destruction",
+      "type": "relates-to"
+    },
+    {
+      "from": "financial-architecture-as-digital-transformation-barrier",
+      "to": "digital-inflection-point",
+      "type": "relates-to"
+    },
+    {
+      "from": "code-as-both-enabler-and-constraint-in-digital-transformation",
+      "to": "financial-architecture-as-digital-transformation-barrier",
+      "type": "extends"
+    },
+    {
+      "from": "code-as-both-enabler-and-constraint-in-digital-transformation",
+      "to": "digital-innovation-under-investor-constraints",
+      "type": "extends"
+    },
+    {
+      "from": "code-as-both-enabler-and-constraint-in-digital-transformation",
+      "to": "digital-transformation",
+      "type": "related"
+    },
+    {
+      "from": "code-as-both-enabler-and-constraint-in-digital-transformation",
+      "to": "artificial-intelligence",
+      "type": "related"
+    },
+    {
+      "from": "code-as-both-enabler-and-constraint-in-digital-transformation",
+      "to": "big-data",
+      "type": "related"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "technology-organization-policy-nexus",
+      "type": "extends"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "digital-business-ecosystem",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "ecosystem-competition-and-antitrust-misalignment",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "blurring-industry-boundaries",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "digital-giant",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-disruption-as-political-disruption",
+      "to": "disruption",
+      "type": "relates-to"
     }
   ]
 }

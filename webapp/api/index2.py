@@ -12,9 +12,11 @@ Model assignment:
   MAIN_LLM (answer agent) = claude-opus-4-6    — expensive synthesis for the user
 
 Frontend contract:
-  POST /api/chat-v3  {"message": "...", "history": [...]}
-  Returns SSE stream. Only result["answer"] is sent to the user;
-  should_wiki_update / new_synthesis / sources are internal.
+  POST /api/chat  {"message": "...", "history": [...]}
+  Returns SSE stream of {"text": "..."} chunks — true streaming, no JSON wrapping.
+  MAIN_LLM streams conversational text live; [METADATA] block is stripped
+  server-side before forwarding. should_wiki_update / new_synthesis / sources
+  are extracted from the metadata block and handled internally.
 
 CLI usage (from project root):
     python webapp/api/index2.py                        # interactive REPL
@@ -491,7 +493,14 @@ After reading the returned pages, select the best ones and set:
 ```
 
 `note` is required only when `sufficient: false` or graph_traverse was called — one sentence max.
-Output ONLY slugs. Never copy page content into your response.\
+
+## SLUG FORMAT — CRITICAL
+A slug is the **bare filename without extension and without any directory prefix**.
+- ✅ CORRECT: `"thinking-patterns"`, `"microequity"`, `"prof-bhagwan-chowdhry"`
+- ❌ WRONG: `"persona/thinking-patterns"`, `"concepts/microequity"`, `"wiki/stub-foo.md"`
+
+Index.md uses wikilink syntax like `[[persona/thinking-patterns|Title]]` — extract only the
+part after the last `/` and before any `|` or `.md`. Never include path separators in slugs.\
 """
 
 # Maintenance prompt: WIKI LLM's job when writing a new wiki page from synthesis
@@ -626,7 +635,6 @@ def run_wiki_llm(
 # ---------------------------------------------------------------------------
 # MAIN_LLM — Answer Agent
 # ---------------------------------------------------------------------------
-
 _MAIN_LLM_TOOLS = [
     {
         "name": "rag_search",
@@ -634,6 +642,9 @@ _MAIN_LLM_TOOLS = [
             "Search the source library using embedding similarity. "
             "Call this when wiki context is insufficient — e.g., for chapter-level "
             "detail from a book, specific passages, or topics not in the wiki. "
+            "Before calling this tool, output a brief conversational line telling "
+            "the user you're fetching from your library (e.g. 'Let me dig into my "
+            "library for this one.' or 'My memory's a little thin here — give me a moment.'). "
             "Returns raw text chunks from the original source documents."
         ),
         "input_schema": {
@@ -652,17 +663,22 @@ _MAIN_LLM_TOOLS = [
         },
     }
 ]
-_ANSWER_SCHEMA = """\
+
+
+_METADATA_SCHEMA = """\
 {
-  "answer": "Your full conversational response. End with a Sources block:\\n\\nMy Memory: [wiki page titles, or 'Found Nothing in My Memory']\\nMy Library: [RAG source titles, or 'Found Nothing in My Library']\\nGeneral Knowledge: [note any inferences beyond the provided sources]",
   "sources": {
     "wiki": ["Page Title 1", "Page Title 2"],
-    "rag": ["Source Title 1"]
+    "rag":  ["Source Title 1"]
   },
   "new_synthesis": "Novel insight, connection, or resolved contradiction worth preserving. Empty string if none.",
   "should_wiki_update": true
 }\
 """
+
+# Delimiter that separates the streamed answer from the trailing metadata JSON.
+# Chosen to be unambiguous and unlikely to appear in natural prose.
+_METADATA_MARKER = "\n[METADATA]\n"
 
 _MAIN_LLM_SYSTEM_BASE = """\
 You are Dee — a Digital Transformation professor with three decades of teaching experience.
@@ -676,36 +692,43 @@ You are Dee — a Digital Transformation professor with three decades of teachin
 - Draw on specific names, numbers, and places from the knowledge base
 - ❌ "*laughs* That's a great question" → ✅ "That's genuinely fascinating"
 
+## Source attribution
+End your answer with this block (before [METADATA]):
+
+My Memory: [wiki page titles you drew on, or 'Found Nothing in My Memory']
+My Library: [RAG source titles from rag_search results, or 'Found Nothing in My Library']
+General Knowledge: [note any inferences beyond the provided sources]
+
 ## RAG instruction
 {rag_instruction}
 
 ## Formatting
-Math: use (...) for inline, [...) for display. Never $...$, Use Latex syntax.
+Math: use (...) for inline, [...] for display. Never $...$. Use LaTeX syntax.
 
-## Output
-Always respond with a raw JSON object — no markdown, no extra text:
-{answer_schema}
+## Output format — CRITICAL
+Write your full answer as plain conversational text (markdown is fine).
+After your complete answer, output EXACTLY this on its own line, then the metadata JSON:
 
+[METADATA]
+{metadata_schema}
 
-`should_wiki_update: true` when:
-- You synthesise two or more wiki pages in a non-obvious or interesting way.
-- A contradiction is found and resolved
-- RAG reveals something that extends a wiki page
-- The query produces a novel framing worth preserving
-
-`should_wiki_update: false` for simple lookups or general-knowledge answers.\
-
+Rules:
+- [METADATA] must be the very last thing you output — never mid-response
+- sources.wiki: titles of wiki pages you actually used
+- sources.rag: source titles from rag_search results (empty list if not called)
+- should_wiki_update: true when you synthesise non-obvious connections, resolve a contradiction, or produce a novel framing
+- new_synthesis: one sentence capturing the insight, or "" if none\
 """
 
 _RAG_INSTRUCTION_SUFFICIENT = (
     "The wiki context is **complete** for this query. "
-    "Answer from wiki only If it seems sufficient — do NOT call `rag_search`."
-    "If not then — call `rag_search`"
-
+    "Answer from wiki only — do NOT call `rag_search`."
 )
 _RAG_INSTRUCTION_INSUFFICIENT = (
     "The wiki context is **incomplete**. "
-    "Call `rag_search` ONCE for source-level detail, then produce your final answer."
+    "Before calling `rag_search`, write one natural sentence telling the user you are checking your source library "
+    "(e.g. 'Let me dig into my library for this.' or 'Give me a moment — I want to pull from the source on this.'). "
+    "Then call `rag_search` ONCE, incorporate the results, and continue your answer."
 )
 
 
@@ -715,29 +738,12 @@ def _build_main_llm_system(sufficient: bool) -> str:
     )
     return _MAIN_LLM_SYSTEM_BASE.format(
         rag_instruction=rag_instruction,
-        answer_schema=_ANSWER_SCHEMA,
+        metadata_schema=_METADATA_SCHEMA,
     )
 
 
-def run_main_llm(
-    user_query: str,
-    wiki_context: list,
-    wiki_note: str,
-    sufficient: bool,
-    chunks: list,
-    faiss_index,
-    client: Anthropic,
-) -> dict:
-    """
-    Run MAIN LLM (answer agent).
-
-    sufficient=True  → system prompt forbids rag_search; tools not offered.
-    sufficient=False → system prompt instructs one rag_search call; tools offered.
-    Returns parsed JSON dict. Caller sends only result["answer"] to the frontend.
-    """
-    system = _build_main_llm_system(sufficient)
-
-    # Format wiki pages for the prompt
+def _build_wiki_messages(wiki_context: list, wiki_note: str, user_query: str) -> list:
+    """Format wiki pages + query into the messages list for MAIN_LLM."""
     wiki_text = ""
     for p in wiki_context:
         wiki_text += f"\n{'='*60}\n{p.get('title', p.get('slug', ''))}\n{'='*60}\n"
@@ -745,32 +751,80 @@ def run_main_llm(
         wiki_text += "\n"
     if wiki_note:
         wiki_text += f"\n[Note: {wiki_note}]\n"
+    return [{"role": "user", "content": f"Wiki context:\n{wiki_text}\n\nQuestion: {user_query}"}]
 
-    messages = [
-        {
-            "role": "user",
-            "content": f"Wiki context:\n{wiki_text}\n\nQuestion: {user_query}",
-        }
-    ]
 
-    # When sufficient=True: no tools offered → MAIN LLM cannot call rag_search.
-    # When sufficient=False: tools offered; loop handles the one rag_search call.
+def run_main_llm_streaming(
+    user_query: str,
+    wiki_context: list,
+    wiki_note: str,
+    sufficient: bool,
+    chunks: list,
+    faiss_index,
+    client: Anthropic,
+):
+    """
+    Streaming generator for MAIN_LLM (answer agent).
+
+    Yields:
+        ("text", str)      — conversational answer chunks to stream to the user
+        ("metadata", dict) — parsed metadata JSON (internal; triggers wiki update)
+
+    The answer and metadata are separated by _METADATA_MARKER in the LLM output.
+    Text chunks are yielded in real-time as they arrive. The metadata dict is
+    yielded once, after the stream ends.
+    """
+    system = _build_main_llm_system(sufficient)
+    messages = _build_wiki_messages(wiki_context, wiki_note, user_query)
     tools_arg = {} if sufficient else {"tools": _MAIN_LLM_TOOLS}
 
-    for _ in range(2):
-        response = client.messages.create(
+    # Sliding tail buffer: we hold back up to len(_METADATA_MARKER) chars so we
+    # can detect the marker even if it straddles two chunks.
+    tail_buffer = ""
+    metadata_mode = False
+    metadata_buf = ""
+    final_msg = None
+
+    for _ in range(2):  # at most one tool call (rag_search)
+        with client.messages.stream(
             model=MAIN_LLM_MODEL,
             max_tokens=4096,
             system=system,
             messages=messages,
             **tools_arg,
-        )
+        ) as stream:
+            for text_chunk in stream.text_stream:
+                if metadata_mode:
+                    metadata_buf += text_chunk
+                    continue
 
-        if response.stop_reason != "tool_use":
+                tail_buffer += text_chunk
+
+                if _METADATA_MARKER in tail_buffer:
+                    before, _, after = tail_buffer.partition(_METADATA_MARKER)
+                    if before:
+                        yield ("text", before)
+                    metadata_mode = True
+                    metadata_buf = after
+                    tail_buffer = ""
+                else:
+                    safe_len = max(0, len(tail_buffer) - len(_METADATA_MARKER))
+                    if safe_len > 0:
+                        yield ("text", tail_buffer[:safe_len])
+                        tail_buffer = tail_buffer[safe_len:]
+
+            final_msg = stream.get_final_message()
+
+        if final_msg.stop_reason != "tool_use":
+            # Flush any remaining tail (marker never appeared)
+            if not metadata_mode and tail_buffer:
+                yield ("text", tail_buffer)
+                tail_buffer = ""
             break
 
+        # Tool call: execute rag_search, then resume streaming
         tool_results = []
-        for block in response.content:
+        for block in final_msg.content:
             if block.type == "tool_use" and block.name == "rag_search":
                 print(f"[MainLLM] rag_search({block.input.get('query')!r})")
                 rag_results = do_rag_search(
@@ -785,21 +839,53 @@ def run_main_llm(
                     "content": json.dumps(rag_results, ensure_ascii=False),
                 })
 
-        messages.append({"role": "assistant", "content": response.content})
+        # Flush safe portion of tail before continuing with tool results
+        safe_len = max(0, len(tail_buffer) - len(_METADATA_MARKER))
+        if safe_len > 0:
+            yield ("text", tail_buffer[:safe_len])
+            tail_buffer = tail_buffer[safe_len:]
+
+        messages.append({"role": "assistant", "content": final_msg.content})
         messages.append({"role": "user", "content": tool_results})
 
-    final_text = "".join(
-        block.text for block in response.content if hasattr(block, "text")
-    )
-    result = _extract_json(final_text)
-    if not result:
-        result = {
-            "answer": final_text,
-            "sources": {"wiki": [], "rag": []},
-            "new_synthesis": "",
-            "should_wiki_update": False,
-        }
-    return result
+    # Parse and yield metadata
+    try:
+        metadata = json.loads(metadata_buf.strip())
+    except (json.JSONDecodeError, ValueError):
+        print(f"[MainLLM] Metadata parse failed. Raw: {metadata_buf[:200]!r}")
+        metadata = {"sources": {"wiki": [], "rag": []}, "new_synthesis": "", "should_wiki_update": False}
+
+    yield ("metadata", metadata)
+
+
+def run_main_llm(
+    user_query: str,
+    wiki_context: list,
+    wiki_note: str,
+    sufficient: bool,
+    chunks: list,
+    faiss_index,
+    client: Anthropic,
+) -> dict:
+    """
+    Blocking wrapper around run_main_llm_streaming — used by the CLI REPL.
+    Collects all streamed text and returns a dict with an 'answer' key.
+    """
+    answer_parts = []
+    metadata = {}
+    for event_type, data in run_main_llm_streaming(
+        user_query, wiki_context, wiki_note, sufficient, chunks, faiss_index, client
+    ):
+        if event_type == "text":
+            answer_parts.append(data)
+        elif event_type == "metadata":
+            metadata = data
+    return {
+        "answer": "".join(answer_parts),
+        "sources": metadata.get("sources", {"wiki": [], "rag": []}),
+        "new_synthesis": metadata.get("new_synthesis", ""),
+        "should_wiki_update": metadata.get("should_wiki_update", False),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -985,41 +1071,29 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
 # ---------------------------------------------------------------------------
 
 
-def query(user_query: str, kb: KnowledgeBase, client: Anthropic) -> dict:
+def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
     """
-    Full dual-LLM query pipeline.
-
-    Returns:
-        {
-            "answer": str,              ← send ONLY this to the frontend
-            "sources": {...},           ← internal
-            "new_synthesis": str,       ← internal
-            "should_wiki_update": bool  ← internal
-        }
-
-    The wiki update is triggered asynchronously and never blocks this return.
+    Shared setup for both query() and query_streaming():
+    snapshot KB state, run BM25 + WIKI_LLM, return selected_pages + metadata.
+    Returns (selected_pages, wiki_result, chunks, faiss_index).
     """
     print(f"\n{'─'*60}")
     print(f"[Pipeline] {user_query!r}")
     print(f"{'─'*60}")
 
-    # Snapshot all state under lock — concurrent wiki updates cannot corrupt this query
     with kb._lock:
-        wiki_pages   = list(kb.wiki_pages)
-        bm25         = kb.bm25
-        chunks       = list(kb.chunks)
-        faiss_index  = kb.faiss_index
-        graph        = kb.graph
-        index_md     = kb.index_md
+        wiki_pages  = list(kb.wiki_pages)
+        bm25        = kb.bm25
+        chunks      = list(kb.chunks)
+        faiss_index = kb.faiss_index
+        graph       = kb.graph
+        index_md    = kb.index_md
 
-    # Slug → page lookup (built from the snapshot, not from live KB)
     page_by_slug = {p["slug"]: p for p in wiki_pages}
 
-    # Step 1 — BM25 over wiki pages (full content: title + aliases + tags + body)
     bm25_results = bm25_wiki_search(user_query, wiki_pages, bm25, top_k=2)
     print(f"[BM25]   top pages: {[r['page']['title'] for r in bm25_results]}")
 
-    # Step 2 — Wiki LLM navigation: returns selected_slugs, not page content
     wiki_result = run_wiki_llm(
         user_query=user_query,
         bm25_pages=bm25_results,
@@ -1029,22 +1103,49 @@ def query(user_query: str, kb: KnowledgeBase, client: Anthropic) -> dict:
     )
     print(f"[WikiLLM] selected slugs: {wiki_result.get('selected_slugs')} | sufficient={wiki_result.get('sufficient')}")
 
-    # Backend fetches full content for the selected slugs (Wiki LLM never copies content)
     selected_pages = []
-    for slug in wiki_result.get("selected_slugs", []):
+    for raw_slug in wiki_result.get("selected_slugs", []):
+        # Normalise: WIKI_LLM sometimes returns "persona/slug" or "wiki/slug.md"
+        # (copied from wikilink syntax in index.md). Strip any directory prefix
+        # and extension so we always look up the bare stem.
+        slug = raw_slug.split("/")[-1]          # drop "persona/", "concepts/", etc.
+        slug = slug.removesuffix(".md")          # drop ".md" if present
+        slug = slug.split("|")[0].strip()        # drop "|Title" if wikilink leaked
+
         page = page_by_slug.get(slug)
         if page:
+            if slug != raw_slug:
+                print(f"[Pipeline] Slug normalised: '{raw_slug}' → '{slug}'")
             selected_pages.append(page)
         else:
-            print(f"[Pipeline] Warning: slug '{slug}' not found in wiki_pages snapshot")
+            print(f"[Pipeline] Warning: slug '{raw_slug}' (normalised: '{slug}') not found — skipping")
 
-    # Fallback: if no pages resolved, use BM25 pages directly
     if not selected_pages:
+        print("[Pipeline] No slugs resolved — falling back to BM25 pages")
         selected_pages = [r["page"] for r in bm25_results]
 
-    # Step 3 — Main LLM synthesis: sufficient flag gates RAG tool access
+    return selected_pages, wiki_result, chunks, faiss_index
+
+
+def query_streaming(user_query: str, kb: KnowledgeBase, client: Anthropic):
+    """
+    Full dual-LLM query pipeline — streaming generator.
+
+    Yields:
+        ("text", str)      — answer chunks to stream to the frontend
+        ("done", dict)     — final metadata after stream ends (internal)
+
+    WIKI_LLM runs synchronously (internal, user never sees it).
+    MAIN_LLM streams conversational text in real-time, then emits [METADATA].
+    Wiki update is triggered asynchronously after streaming completes.
+    """
+    selected_pages, wiki_result, chunks, faiss_index = _pipeline_setup(
+        user_query, kb, client
+    )
     sufficient = wiki_result.get("sufficient", True)
-    main_result = run_main_llm(
+    metadata = {}
+
+    for event_type, data in run_main_llm_streaming(
         user_query=user_query,
         wiki_context=selected_pages,
         wiki_note=wiki_result.get("note", ""),
@@ -1052,21 +1153,44 @@ def query(user_query: str, kb: KnowledgeBase, client: Anthropic) -> dict:
         chunks=chunks,
         faiss_index=faiss_index,
         client=client,
-    )
-    print(f"[MainLLM] should_wiki_update={main_result.get('should_wiki_update')}")
+    ):
+        if event_type == "text":
+            yield ("text", data)
+        elif event_type == "metadata":
+            metadata = data
 
-    # Step 4 — Async wiki update (fire-and-forget, user already has the answer)
-    if main_result.get("should_wiki_update") and main_result.get("new_synthesis", "").strip():
+    print(f"[MainLLM] should_wiki_update={metadata.get('should_wiki_update')}")
+
+    if metadata.get("should_wiki_update") and metadata.get("new_synthesis", "").strip():
         update_wiki_async(
-            synthesis=main_result["new_synthesis"],
-            sources=main_result.get("sources", {}),
+            synthesis=metadata["new_synthesis"],
+            sources=metadata.get("sources", {}),
             original_query=user_query,
             client=client,
             kb=kb,
         )
 
-    # Callers: send ONLY main_result["answer"] to the frontend
-    return main_result
+    yield ("done", metadata)
+
+
+def query(user_query: str, kb: KnowledgeBase, client: Anthropic) -> dict:
+    """
+    Blocking wrapper for the CLI REPL — collects all streamed chunks.
+    Returns dict with 'answer', 'sources', 'new_synthesis', 'should_wiki_update'.
+    """
+    answer_parts = []
+    metadata = {}
+    for event_type, data in query_streaming(user_query, kb, client):
+        if event_type == "text":
+            answer_parts.append(data)
+        elif event_type == "done":
+            metadata = data
+    return {
+        "answer": "".join(answer_parts),
+        "sources": metadata.get("sources", {"wiki": [], "rag": []}),
+        "new_synthesis": metadata.get("new_synthesis", ""),
+        "should_wiki_update": metadata.get("should_wiki_update", False),
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -1128,12 +1252,10 @@ def chat():
 
     def generate():
         try:
-            result = query(user_message, kb, client)
-            answer = result.get("answer", "")
-            # Stream in ~100-char chunks so the frontend renders progressively
-            chunk_size = 100
-            for i in range(0, max(len(answer), 1), chunk_size):
-                yield f"data: {json.dumps({'text': answer[i:i + chunk_size]})}\n\n"
+            for event_type, data in query_streaming(user_message, kb, client):
+                if event_type == "text":
+                    yield f"data: {json.dumps({'text': data})}\n\n"
+                # "done" event is internal — not forwarded to the frontend
         except Exception as exc:
             print(f"[chat] Error: {exc}")
             yield f"data: {json.dumps({'error': str(exc)})}\n\n"

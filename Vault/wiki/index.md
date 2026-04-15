@@ -225,3 +225,9 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/ecosystem-competition-and-antitrust-misalignment|Ecosystem Competition and the Structural Misalignment of Antitrust Policy]] — synthesized from query
 
 - [[synthesized/homophily-trap-in-network-driven-digital-scaling|The Homophily Trap in Network-Driven Digital Scaling]] — synthesized from query
+
+- [[synthesized/financial-architecture-as-digital-transformation-barrier|Financial Architecture as a Barrier to Digital Transformation]] — synthesized from query
+
+- [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — synthesized from query
+
+- [[synthesized/digital-disruption-as-political-disruption|Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks]] — synthesized from query

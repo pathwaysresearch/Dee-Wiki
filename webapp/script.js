@@ -291,14 +291,16 @@ async function streamResponse(userMessage) {
     const decoder = new TextDecoder();
     let sseBuffer = "";
     let streamDone = false;
-    let fullJsonResponse = "";  // Collect raw JSON chunks
 
     removeThinking();
     setStatus("Responding...", true);
     const bubble = appendMessage("bot", "");
     bubble.classList.add("streaming");
+    renderer = createStreamRenderer(bubble);
 
-    // ========== STAGE 1: Collect all JSON chunks (don't render yet!) ==========
+    // Stream chunks directly to the renderer as they arrive — true streaming.
+    // The backend sends only the conversational answer text; the [METADATA]
+    // block is stripped server-side before anything is forwarded here.
     while (!streamDone) {
       const { value, done } = await reader.read();
       if (done) break;
@@ -319,41 +321,23 @@ async function streamResponse(userMessage) {
         try {
           const parsed = JSON.parse(data);
           if (parsed.text) {
-            fullJsonResponse += parsed.text;  // Accumulate chunks
+            renderer.push(parsed.text);
           } else if (parsed.error) {
-            fullJsonResponse += `\n\n**Error:** ${parsed.error}`;
+            renderer.push(`\n\n**Error:** ${parsed.error}`);
           }
         } catch {
-          // skip malformed
+          // skip malformed SSE lines
         }
       }
     }
 
     try { reader.cancel(); } catch { }
 
-    // ========== STAGE 2: Parse JSON and extract answer ==========
-    let finalAnswer = "";
-    try {
-      // Strip markdown code fences in case the model wrapped its JSON
-      const cleaned = fullJsonResponse
-        .replace(/^```(?:json)?\s*/i, "")
-        .replace(/\s*```$/, "")
-        .trim();
-      const responseObj = JSON.parse(cleaned);
-      finalAnswer = responseObj?.answer ?? fullJsonResponse;
-    } catch {
-      // Not valid JSON — show raw response as fallback
-      finalAnswer = fullJsonResponse;
-    }
-    // ========== STAGE 3: NOW render to UI (clean, no flashing) ==========
-    bubble.innerHTML = "";  // Clear the bubble
-    renderer = createStreamRenderer(bubble);
-    renderer.push(finalAnswer);
     renderer.finish();
 
-    const cleanText = finalAnswer;
-    if (cleanText.trim()) {
-      conversationHistory.push({ role: "assistant", content: cleanText });
+    const fullText = renderer.getCleanText();
+    if (fullText.trim()) {
+      conversationHistory.push({ role: "assistant", content: fullText });
     }
   } catch (err) {
     removeThinking();
