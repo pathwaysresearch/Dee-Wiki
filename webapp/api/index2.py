@@ -160,6 +160,36 @@ def _load_chunks() -> list:
         return []
 
 
+def _load_graph() -> dict:
+    """
+    Load the knowledge graph with Vercel-aware path fallback.
+
+    Priority:
+      1. DATA_DIR/_graph.json  — copied here by export_for_web.py; present on Vercel
+      2. GRAPH_PATH (WIKI_DIR/_graph.json) — local dev path from graph.py
+      3. Build from wiki pages   — local dev only (requires writable filesystem)
+      4. Empty graph             — silent fallback; graph_traverse returns no results
+    """
+    # 1. Vercel-deployed copy
+    vercel_path = DATA_DIR / "_graph.json"
+    if vercel_path.exists():
+        try:
+            g = json.loads(vercel_path.read_text(encoding="utf-8"))
+            print(f"[Graph] Loaded from data/_graph.json ({len(g.get('nodes', {}))} nodes)")
+            return g
+        except Exception as e:
+            print(f"[Graph] data/_graph.json unreadable ({e}), trying wiki path")
+
+    # 2 & 3. Local dev path (load_graph builds from wiki if missing, writes to WIKI_DIR)
+    try:
+        g = load_graph()
+        print(f"[Graph] Loaded from wiki ({len(g.get('nodes', {}))} nodes)")
+        return g
+    except Exception as e:
+        print(f"[Graph] Unavailable ({e}) — graph_traverse will return no results")
+        return {"nodes": {}, "edges": []}
+
+
 def _load_faiss_index():
     """Load FAISS index from data/chunks.faiss. Returns index or None."""
     p = DATA_DIR / "chunks.faiss"
@@ -270,7 +300,7 @@ def tool_graph_traverse(slug: str, hops: int = 1, max_nodes: int = 5, graph: dic
     copy this content into its output JSON.
     """
     if graph is None:
-        graph = load_graph()
+        graph = _load_graph()
 
     results = traverse(graph, slug, hops=hops)[:max_nodes]
     output = []
@@ -379,7 +409,7 @@ class KnowledgeBase:
         new_bm25 = _build_wiki_bm25(new_pages) if _HAS_BM25 else None
         new_chunks = _load_chunks()
         new_faiss = _load_faiss_index()
-        new_graph = load_graph()
+        new_graph = _load_graph()
         new_index = (
             INDEX_MD_PATH.read_text(encoding="utf-8")
             if INDEX_MD_PATH.exists() else ""

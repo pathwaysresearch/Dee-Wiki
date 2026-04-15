@@ -263,6 +263,18 @@ def main():
     )
 
     # -----------------------------------------------------------------------
+    # Knowledge graph — copy _graph.json into webapp/data/ for Vercel
+    # -----------------------------------------------------------------------
+    src_graph = WIKI_DIR / "_graph.json"
+    dst_graph = WEBAPP_DATA / "_graph.json"
+    if src_graph.exists():
+        import shutil
+        shutil.copy2(src_graph, dst_graph)
+        print(f"  Graph → {dst_graph} ({dst_graph.stat().st_size / 1024:.0f} KB)")
+    else:
+        print("  [Skip] _graph.json not found — run: python scripts/graph.py --build")
+
+    # -----------------------------------------------------------------------
     # Summary
     # -----------------------------------------------------------------------
     total_docs = len(merged_wiki) + len(merged_chunks)
