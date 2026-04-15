@@ -229,3 +229,5 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/financial-architecture-as-digital-transformation-barrier|Financial Architecture as a Barrier to Digital Transformation]] — synthesized from query
 
 - [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — synthesized from query
+
+- [[synthesized/digital-disruption-as-political-disruption|Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks]] — synthesized from query
