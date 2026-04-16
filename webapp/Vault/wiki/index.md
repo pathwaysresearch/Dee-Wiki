@@ -231,3 +231,5 @@ A personal knowledge base cataloging the research, frameworks, and intellectual 
 - [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — synthesized from query
 
 - [[synthesized/digital-disruption-as-political-disruption|Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks]] — synthesized from query
+
+- [[synthesized/web3-decentralization-paradox|Web3's Decentralization Paradox: Challenging and Depending on Platform Control]] — synthesized from query

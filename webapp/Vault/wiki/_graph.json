@@ -9060,6 +9060,24 @@
         "synthesis"
       ],
       "path": "wiki\\synthesized\\low-level-design-as-digital-transformation-substrate.md"
+    },
+    "web3-decentralization-paradox": {
+      "type": "synthesized",
+      "title": "Web3's Decentralization Paradox: Challenging and Depending on Platform Control",
+      "aliases": [
+        "web3-infrastructure-paradox",
+        "decentralization-centralization-tension"
+      ],
+      "tags": [
+        "web3",
+        "decentralization",
+        "platform-control",
+        "ecosystem",
+        "blockchain",
+        "infrastructure",
+        "digital-strategy"
+      ],
+      "path": "wiki/synthesized/web3-decentralization-paradox.md"
     }
   },
   "edges": [
@@ -14922,6 +14940,41 @@
       "from": "low-level-design-as-digital-transformation-substrate",
       "to": "concepts/five-levels-of-it-enabled-transformation",
       "type": "references"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "blockchain-technology",
+      "type": "extends"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "blockchain",
+      "type": "extends"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "digital-business-ecosystem",
+      "type": "relates-to"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "ecosystem-orchestration",
+      "type": "contrasts-with"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "closed-system-platform",
+      "type": "contrasts-with"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "technology-organization-policy-nexus",
+      "type": "relates-to"
+    },
+    {
+      "from": "web3-decentralization-paradox",
+      "to": "digital-disruption-as-political-disruption",
+      "type": "relates-to"
     }
   ]
 }

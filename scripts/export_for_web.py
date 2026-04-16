@@ -40,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from chunker import get_embeddings_batch
 
 PROJECT_ROOT = Path(__file__).parent.parent
-_vault_name = os.environ.get("WIKI_VAULT_NAME", "Vault")
+_vault_name = os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 VAULT = PROJECT_ROOT / _vault_name
 WIKI_DIR = VAULT / "wiki"
 CHUNKS_FILE = PROJECT_ROOT / "data" / "chunks.json"

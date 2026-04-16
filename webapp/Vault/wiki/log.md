@@ -95,3 +95,7 @@ Append-only chronological record of ingests, queries, and wiki updates.
 ## [2026-04-15] synthesize | digital-disruption-as-political-disruption
 - Pages created: digital-disruption-as-political-disruption.md
 - From query: what does digital world have to do with politics? do check your library
+
+## [2026-04-16] synthesize | web3-decentralization-paradox
+- Pages created: web3-decentralization-paradox.md
+- From query: what can you tell me about web 3?
