@@ -222,11 +222,14 @@ def main():
         print("  Chunk embeddings done.")
 
     # -----------------------------------------------------------------------
-    # Build merged embeddings → FAISS index
+    # Build FAISS index from source_chunks (offline data/chunks.json).
+    # source_chunks has embeddings for ALL chunks — old ones stored from ingest,
+    # new ones just generated above. existing_text_chunks (webapp/data/chunks.json)
+    # has NO embeddings so it must NOT be used here.
     # -----------------------------------------------------------------------
-    all_chunks = existing_text_chunks + new_chunks
-    all_embs = [c.get("embedding") for c in all_chunks]
-    has_all_embs = all(e is not None for e in all_embs) and all_embs
+    all_embs = [c.get("embedding") for c in source_chunks]
+    has_all_embs = bool(all_embs) and all(e is not None for e in all_embs)
+    missing_count = sum(1 for e in all_embs if e is None)
 
     if has_all_embs:
         try:
@@ -244,17 +247,17 @@ def main():
             )
         except ImportError:
             print("  [Skip] faiss not installed — run: pip install faiss-cpu")
-    elif not new_chunks:
-        print("  No new chunks — FAISS index unchanged.")
+    elif not source_chunks:
+        print("  No chunks — FAISS index unchanged.")
     else:
-        print("  WARN: Not all chunks have embeddings — skipping FAISS export")
+        print(f"  WARN: {missing_count}/{len(source_chunks)} chunks missing embeddings — skipping FAISS export")
 
     # -----------------------------------------------------------------------
-    # Save merged text-only chunks JSON (no embeddings)
+    # Save text-only chunks JSON (no embeddings) — order matches source_chunks
+    # so chunk[i] always aligns with FAISS vector[i].
     # -----------------------------------------------------------------------
-    merged_chunks = existing_text_chunks + new_chunks
     chunks_text = [
-        {k: v for k, v in c.items() if k != "embedding"} for c in merged_chunks
+        {k: v for k, v in c.items() if k != "embedding"} for c in source_chunks
     ]
     chunks_out.write_text(json.dumps(chunks_text, indent=2), encoding="utf-8")
     print(
@@ -277,12 +280,12 @@ def main():
     # -----------------------------------------------------------------------
     # Summary
     # -----------------------------------------------------------------------
-    total_docs = len(merged_wiki) + len(merged_chunks)
-    has_embeddings = sum(1 for d in merged_wiki + merged_chunks if "embedding" in d)
+    total_docs = len(merged_wiki) + len(source_chunks)
+    has_embeddings = sum(1 for d in merged_wiki if "embedding" in d) + sum(1 for d in source_chunks if "embedding" in d)
     print(f"\n{'='*50}")
     print(f"  Export complete: {total_docs} total documents ({has_embeddings} with embeddings)")
     print(f"  Wiki pages : {len(merged_wiki)} total ({len(new_wiki)} new)")
-    print(f"  RAG chunks : {len(merged_chunks)} total ({len(new_chunks)} new)")
+    print(f"  RAG chunks : {len(source_chunks)} total ({len(new_chunks)} new)")
     print(f"  Output     : {WEBAPP_DATA}/")
     print(f"{'='*50}\n")
 
