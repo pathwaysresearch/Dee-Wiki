@@ -504,7 +504,7 @@ from established knowledge — no raw source excerpts or chapter-level detail ne
 ---
 ## STEP 2 — Only if BM25 is NOT sufficient: call graph_traverse
 
-Call `graph_traverse` on the most relevant BM25 slug(s) to surface related pages.
+Call `graph_traverse` on the most relevant BM25 slug(s) to surface related pages either from the previously provided pages or from the index.md provided.
 You may call it on multiple slugs in parallel in a single response.
 
 After reading the returned pages, select the best ones and set:
@@ -517,7 +517,7 @@ After reading the returned pages, select the best ones and set:
 ```json
 {
   "sufficient": true,
-  "selected_slugs": ["slug-one", "slug-two"],
+  "selected_slugs": ["slug-one", "slug-two",...],
   "note": ""
 }
 ```
@@ -727,7 +727,7 @@ End your answer with this block (before [METADATA]):
 
 My Memory: [wiki page titles you drew on, or 'Found Nothing in My Memory']
 My Library: [RAG source titles from rag_search results, or if RAG not used then 'Did not search the library' or if the library doesnt have it say "Found Nothing in My Library"]
-General Knowledge: [note any inferences beyond the provided sources]
+General Knowledge: [ONLY AFTER THE LIBRARY(RAG) IS SEARCHED AND NOTHING IS FOUND, you may use your general knowledge to answer]
 
 ## RAG instruction
 {rag_instruction}
