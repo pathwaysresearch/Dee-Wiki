@@ -25,10 +25,10 @@ try:
 except ImportError:
     yaml = None
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent
-VAULT = PROJECT_ROOT / "Vault"
-WIKI_DIR = VAULT / "wiki"
-GRAPH_PATH = WIKI_DIR / "_graph.json"
+PROJECT_ROOT = Path(__file__).parent.parent   # webapp/api/ → webapp/
+VAULT = PROJECT_ROOT / "Vault"               # webapp/Vault/
+WIKI_DIR = VAULT / "wiki"                    # webapp/Vault/wiki/
+GRAPH_PATH = WIKI_DIR / "_graph.json"        # webapp/Vault/wiki/_graph.json
 
 # ---------------------------------------------------------------------------
 # YAML frontmatter parsing
