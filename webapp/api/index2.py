@@ -2,8 +2,7 @@
 webapp/api/index2.py — Dual-LLM agentic query pipeline (Flask deployment)
 
 Architecture (see CLAUDE.md):
-  BM25 (wiki only, full content: title + aliases + tags + body) → top 2 pages
-  → WIKI_LLM / Sonnet (wiki agent): navigation, optional graph_traverse tool call
+  WIKI_LLM / Sonnet (wiki agent): reads index.md, calls graph_traverse to fetch pages
   → MAIN_LLM / Opus (answer agent): synthesis, optional rag_search tool call
   → structured JSON response → answer string to frontend + async wiki update
 
@@ -71,15 +70,6 @@ try:
     load_dotenv(PROJECT_ROOT / ".env")
 except ImportError:
     pass
-
-# Optional: BM25
-try:
-    from rank_bm25 import BM25Okapi
-    _HAS_BM25 = True
-except ImportError:
-    BM25Okapi = None
-    _HAS_BM25 = False
-    print("[Warning] rank-bm25 not installed. BM25 disabled — install with: pip install rank-bm25")
 
 # ---------------------------------------------------------------------------
 # Paths and constants
@@ -209,38 +199,7 @@ def _load_faiss_index():
 
 
 # ---------------------------------------------------------------------------
-# BM25 index — wiki pages only, full content (title + aliases + tags + body)
-# ---------------------------------------------------------------------------
-
-
-def _build_wiki_bm25(pages: list):
-    """Build BM25Okapi over wiki pages using full content: title + aliases + tags + body text."""
-    if not _HAS_BM25 or not pages:
-        return None
-    tokenized = []
-    for p in pages:
-        body = strip_frontmatter(p.get("content", ""))
-        full_text = " ".join([
-            p.get("title", ""),
-            " ".join(p.get("aliases", [])),
-            " ".join(p.get("tags", [])),
-            body,
-        ])
-        tokenized.append(full_text.lower().split())
-    return BM25Okapi(tokenized)
-
-
-def bm25_wiki_search(query: str, pages: list, bm25, top_k: int = 2) -> list:
-    """Return top_k wiki pages scored by BM25 over full content (title + aliases + tags + body)."""
-    if bm25 is None or not pages:
-        return [{"page": p, "score": 0.0} for p in pages[:top_k]]
-    scores = bm25.get_scores(query.lower().split())
-    top_idx = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
-    return [{"page": pages[i], "score": float(scores[i])} for i in top_idx]
-
-
-# ---------------------------------------------------------------------------
-# RAG search — embedding similarity only, no BM25 on chunks
+# RAG search — embedding similarity only
 # ---------------------------------------------------------------------------
 
 
@@ -293,30 +252,86 @@ def do_rag_search(
 # ---------------------------------------------------------------------------
 
 
-def tool_graph_traverse(slug: str, hops: int = 1, max_nodes: int = 5, graph: dict = None) -> list:
+def tool_graph_traverse(slug: str, hops: int = 1, max_nodes: int = 8, graph: dict = None) -> list:
     """
-    BFS from slug, return neighbor pages with full markdown content.
-    WIKI LLM reads this content to decide which slugs to select — it does NOT
-    copy this content into its output JSON.
+    Return the seed page itself + BFS neighbor pages, each with full markdown content.
+    WIKI LLM calls this to fetch a page it identified from index.md, then reads the
+    content to decide relevance. It does NOT copy content into its output JSON.
+    If the slug is not found exactly, falls back to a partial-match on graph node keys.
     """
     if graph is None:
         graph = _load_graph()
 
-    results = traverse(graph, slug, hops=hops)[:max_nodes]
     output = []
 
+    # Resolve slug — exact match first, then word-overlap fuzzy match as fallback
+    resolved_slug = slug
+    seed_data = graph["nodes"].get(slug, {})
+    if not seed_data:
+        slug_lower = slug.lower()
+        # Significant words: split on '-' or '_', keep words longer than 3 chars
+        sig_words = [w for w in re.split(r"[-_]", slug_lower) if len(w) > 3]
+
+        candidates = []
+        for k in graph["nodes"]:
+            k_lower = k.lower()
+            # Accept if: the slug is a long-enough direct substring of the key (or vice-versa),
+            # OR at least 2 significant words from the slug appear in the key.
+            if (len(slug_lower) > 5 and slug_lower in k_lower) or \
+               (len(k_lower) > 5 and k_lower in slug_lower):
+                candidates.append(k)
+            elif sig_words:
+                n_match = sum(1 for w in sig_words if w in k_lower)
+                if n_match >= min(2, len(sig_words)):
+                    candidates.append(k)
+
+        if candidates:
+            # Prefer shortest key (most specific match)
+            resolved_slug = min(candidates, key=len)
+            seed_data = graph["nodes"][resolved_slug]
+            print(f"[GraphTraverse] Slug '{slug}' not found → fuzzy match '{resolved_slug}' (from {len(candidates)} candidates)")
+        else:
+            print(f"[GraphTraverse] Slug '{slug}' not found in graph — no fuzzy match")
+            return [{"slug": slug, "title": slug, "type": "unknown", "edge": "seed",
+                     "content": f"[Page '{slug}' not found in wiki]"}]
+
+    def _read_node(node_data: dict, label: str) -> str:
+        """Read a wiki page from disk, normalising path separators for cross-platform use."""
+        rel_path = node_data.get("path", "").replace("\\", "/")
+        if not rel_path:
+            print(f"[GraphTraverse] Node '{label}' has no path in graph")
+            return ""
+        full_path = VAULT / rel_path
+        if not full_path.exists():
+            print(f"[GraphTraverse] File not found on disk: {full_path}")
+            return ""
+        try:
+            return full_path.read_text(encoding="utf-8")
+        except Exception as e:
+            print(f"[GraphTraverse] Read error for {full_path}: {e}")
+            return ""
+
+    # Always include the seed node's own content first
+    seed_content = _read_node(seed_data, resolved_slug)
+    print(f"[GraphTraverse] Seed '{resolved_slug}' — content {'found' if seed_content else 'EMPTY'}")
+    output.append({
+        "slug": resolved_slug,
+        "title": seed_data.get("title", resolved_slug),
+        "type": seed_data.get("type", "unknown"),
+        "edge": "seed",
+        "content": seed_content,
+    })
+
+    # BFS neighbors
+    results = traverse(graph, resolved_slug, hops=hops)[:max_nodes]
+    seen = {resolved_slug}
     for r in results:
         node = r["node"]
+        if node in seen:
+            continue
+        seen.add(node)
         node_data = graph["nodes"].get(node, {})
-        rel_path = node_data.get("path", "")
-        content = ""
-        if rel_path:
-            full_path = VAULT / rel_path
-            if full_path.exists():
-                try:
-                    content = full_path.read_text(encoding="utf-8")
-                except Exception:
-                    content = ""
+        content = _read_node(node_data, node)
 
         edge_str = " → ".join(
             f"{p['from']} --[{p['type']}]--> {p['to']}"
@@ -331,6 +346,8 @@ def tool_graph_traverse(slug: str, hops: int = 1, max_nodes: int = 5, graph: dic
             "content": content,
         })
 
+    titles = [p["title"] for p in output]
+    print(f"[GraphTraverse] Returning {len(output)} pages: {titles}")
     return output
 
 
@@ -387,14 +404,13 @@ class KnowledgeBase:
     """
     Holds all in-memory state for the dual-LLM pipeline.
 
-    Thread safety: all mutation of shared state (wiki_pages, bm25, graph,
+    Thread safety: all mutation of shared state (wiki_pages, graph,
     index_md) must hold _lock. query() takes a snapshot under the lock so
     a concurrent wiki update cannot corrupt an in-flight query.
     """
 
     def __init__(self):
         self.wiki_pages: list = []
-        self.bm25 = None
         self.chunks: list = []
         self.faiss_index = None
         self.graph: dict = {}
@@ -406,7 +422,6 @@ class KnowledgeBase:
         """Full reload from disk. Holds lock while swapping state."""
         print("[KB] Loading knowledge base...")
         new_pages = _load_wiki_pages()
-        new_bm25 = _build_wiki_bm25(new_pages) if _HAS_BM25 else None
         new_chunks = _load_chunks()
         new_faiss = _load_faiss_index()
         new_graph = _load_graph()
@@ -414,10 +429,8 @@ class KnowledgeBase:
             INDEX_MD_PATH.read_text(encoding="utf-8")
             if INDEX_MD_PATH.exists() else ""
         )
-        # Single lock acquisition for the full state swap
         with self._lock:
             self.wiki_pages = new_pages
-            self.bm25 = new_bm25
             self.chunks = new_chunks
             self.faiss_index = new_faiss
             self.graph = new_graph
@@ -458,10 +471,9 @@ _WIKI_LLM_TOOLS = [
     {
         "name": "graph_traverse",
         "description": (
-            "BFS traversal from a wiki page slug to find related pages. "
-            "Use when the BM25 results are insufficient and index.md reveals "
-            "a more relevant page that BM25 missed. "
-            "Returns neighbor pages with their full markdown content for you to read."
+            "Fetch a wiki page and its neighbors. "
+            "Call this on slugs you identify from index.md to read their full content. "
+            "Returns the seed page itself plus related neighbor pages with full markdown content."
         ),
         "input_schema": {
             "type": "object",
@@ -483,55 +495,102 @@ _WIKI_LLM_TOOLS = [
         },
     }
 ]
-
 # Navigation prompt: WIKI LLM's job during a query
 _WIKI_LLM_NAVIGATION_SYSTEM = """\
-You are the wiki navigation agent. You never talk to the user directly.
-You have the complete wiki catalog in <index_md> above.
+You are the wiki navigation agent. Output JSON only. Never speak to the user.
+
+You have the wiki catalog in <index_md> above, but **no page content yet**.
+You must call `graph_traverse` to fetch content before you can judge relevance.
 
 ---
-## STEP 1 — Evaluate BM25 pages
 
-Read the BM25 page content carefully.
-**Sufficient** means: the pages directly and completely answer the user's query
-from established knowledge — no raw source excerpts or chapter-level detail needed.
+## STEP 1 — Identify candidates from index.md and fetch content
 
-**If BM25 pages are sufficient → respond immediately, do NOT call graph_traverse:**
-```json
-{"sufficient": true, "selected_slugs": ["<bm25-slug-1>", "<bm25-slug-2>"], "note": ""}
-```
+Scan index.md for entries whose title or description relates to the query.
 
----
-## STEP 2 — Only if BM25 is NOT sufficient: call graph_traverse
+**Extract the slug EXACTLY as it appears in index.md** — do NOT invent or guess slugs.
+index.md uses wikilink syntax: `[[path/to/slug|Title]]`
+The slug = the part after the last `/` and before `|` or `.md`.
+Example: `[[concepts/microequity|Microequity]]` → slug is `microequity`
 
-Call `graph_traverse` on the most relevant BM25 slug(s) to surface related pages either from the previously provided pages or from the index.md provided.
-You may call it on multiple slugs in parallel in a single response.
+Call `graph_traverse` on the slugs you found (parallel calls allowed).
+Each call returns that page + its neighbors with full content.
 
-After reading the returned pages, select the best ones and set:
-- `"sufficient": true`  — wiki now covers the query
-- `"sufficient": false` — wiki is still incomplete; MAIN_LLM should use RAG
+**If the query topic does not appear anywhere in index.md** → skip fetching,
+output `{"sufficient": false, "selected_slugs": [], "note": "Topic not in wiki"}`.
 
 ---
-## Output schema (JSON only, no other text)
+
+## STEP 2 — Judge the fetched content (STRICT — this is where you must not cheat)
+
+Your job is **not** to decide whether the fetched pages are "about the right topic."
+Your job is to decide whether they **contain the answer** to the user's specific question.
+
+### The sufficiency test
+
+Before declaring `sufficient: true`, you must be able to do this:
+
+> Point to a specific passage (a sentence or paragraph) on one of the fetched pages
+> and say: "This passage directly answers the user's question because it states X."
+
+If you cannot identify that passage — if the best you can do is "this page discusses
+the general area" or "this page mentions the keyword" — then `sufficient: false`.
+
+### Not sufficient (common failure modes — watch for these)
+
+- **Keyword overlap only.** The page uses the same terms as the query but does not
+  answer what was asked. ("The query asks *why* X happens; the page defines X.")
+- **Topical adjacency.** The page is about a neighboring concept. ("Query asks about
+  Random Forests; the page covers Decision Trees and mentions ensembles in passing.")
+- **Tangential mention.** The topic appears in one sentence as an example, with no
+  substantive treatment.
+- **Wrong level of specificity.** Query asks for a concrete mechanism, number, or
+  example; page gives only high-level framing — or vice versa.
+- **Asserts without explaining.** Query asks *why* or *how*; page only states *that*.
+- **Partial answer.** Page addresses one part of a multi-part question; the rest is
+  absent.
+
+In all of these → `sufficient: false`, even though the pages are worth passing along.
+
+### When in doubt → false
+
+Default to `sufficient: false`. MAIN_LLM has a RAG fallback and can recover gracefully
+from a false negative. A false positive, on the other hand, makes MAIN_LLM answer from
+thin wiki context and skip the library — which is the failure you are trying to avoid.
+
+### Even when `sufficient: false`
+
+Include the closest slugs found in `selected_slugs` so MAIN_LLM has partial wiki
+context to work with alongside its RAG results.
+
+---
+
+## Output (JSON only — no other text)
 
 ```json
 {
-  "sufficient": true,
-  "selected_slugs": ["slug-one", "slug-two",...],
-  "note": ""
+  "sufficient": <true|false>,
+  "selected_slugs": ["slug-one", "slug-two"],
+  "evidence": "<required when sufficient is true: the specific passage (≤2 sentences, quoted or closely paraphrased) from one of the fetched pages that directly answers the query, prefixed with the slug it came from — e.g. 'microequity: Microequity contracts are self-enforcing without costly state verification because...'>",
+  "note": "<required when sufficient is false: one sentence on what is missing — e.g. 'Pages cover decision trees generally but do not explain bagging or variance reduction.'>"
 }
 ```
 
-`note` is required only when `sufficient: false` or graph_traverse was called — one sentence max.
+Rules:
+- If `sufficient: true`, `evidence` is mandatory and must quote or closely paraphrase
+  an actual passage from a fetched page. If you cannot fill this field honestly,
+  flip `sufficient` to false.
+- If `sufficient: false`, `note` is mandatory.
+- Include `selected_slugs` in both cases.
 
 ## SLUG FORMAT — CRITICAL
-A slug is the **bare filename without extension and without any directory prefix**.
-- ✅ CORRECT: `"thinking-patterns"`, `"microequity"`, `"prof-bhagwan-chowdhry"`
-- ❌ WRONG: `"persona/thinking-patterns"`, `"concepts/microequity"`, `"wiki/stub-foo.md"`
 
-Index.md uses wikilink syntax like `[[persona/thinking-patterns|Title]]` — extract only the
-part after the last `/` and before any `|` or `.md`. Never include path separators in slugs.\
+- Only use slugs you found in index.md. **Never invent a slug.**
+- Bare filename only — no path prefix, no extension.
+- ✅ `"thinking-patterns"`, `"microequity"`, `"prof-bhagwan-chowdhry"`
+- ❌ `"persona/thinking-patterns"`, `"random-forest"` (unless that exact string appears in index.md)
 """
+
 
 # Maintenance prompt: WIKI LLM's job when writing a new wiki page from synthesis
 _WIKI_LLM_MAINTENANCE_SYSTEM = """\
@@ -564,7 +623,6 @@ If an existing page should be updated instead, set "action": "update" and use it
 
 def run_wiki_llm(
     user_query: str,
-    bm25_pages: list,
     index_md: str,
     graph: dict,
     client: Anthropic,
@@ -577,66 +635,54 @@ def run_wiki_llm(
         "note": str
     }
 
-    WIKI_LLM reads full page content to make its decision but outputs only slugs.
-    The backend fetches full content for those slugs to pass to MAIN_LLM.
-    One API call — WIKI_LLM may issue multiple parallel graph_traverse calls in that
-    single response. All results are returned in one follow-up, then WIKI_LLM produces
-    its final JSON. Max 2 API calls total.
+    WIKI_LLM reads index.md to identify candidate slugs, calls graph_traverse to
+    fetch their content, then judges relevance. No BM25 pre-filter.
+    Up to 2 API calls total (first call fetches pages via tool; second produces JSON).
     """
-    # Show WIKI_LLM the full BM25 page content so it can make a good decision
-    bm25_block = ""
-    for i, r in enumerate(bm25_pages, 1):
-        p = r["page"]
-        bm25_block += (
-            f"\n--- BM25 Result {i} (score: {r['score']:.3f}) ---\n"
-            f"Slug: {p['slug']} | Title: {p['title']} | Type: {p['type']}\n\n"
-            f"{p['content']}\n"
-        )
-
     # Full index.md — never truncated (200K context window)
     system = f"<index_md>\n{index_md}\n</index_md>\n\n{_WIKI_LLM_NAVIGATION_SYSTEM}"
 
-    messages = [
-        {
-            "role": "user",
-            "content": (
-                f"User query: {user_query}\n\n"
-                f"BM25 search results:{bm25_block}"
-            ),
-        }
-    ]
+    messages = [{"role": "user", "content": f"User query: {user_query}"}]
 
-    # Single API call — WIKI_LLM may return multiple parallel graph_traverse tool_use blocks
+    # First call — force at least one graph_traverse call so the LLM always
+    # fetches page content before judging relevance (tool_choice "any").
     response = client.messages.create(
         model=WIKI_LLM_MODEL,
-        max_tokens=1024,   # output is just a small JSON slug list
+        max_tokens=1024,
         system=system,
         messages=messages,
         tools=_WIKI_LLM_TOOLS,
+        tool_choice={"type": "any"},
     )
 
-    # If WIKI LLM used tools, execute all of them and do one follow-up call
+    # Execute all graph_traverse tool calls, then do one follow-up call
+    # Also collect every slug that came back so we can use them as a fallback.
+    traversed_slugs: list = []
     if response.stop_reason == "tool_use":
         tool_results = []
         for block in response.content:
             if block.type == "tool_use" and block.name == "graph_traverse":
                 print(f"[WikiLLM] graph_traverse({block.input.get('slug')})")
-                result = tool_graph_traverse(
+                pages = tool_graph_traverse(
                     slug=block.input.get("slug", ""),
                     hops=block.input.get("hops", 1),
-                    max_nodes=block.input.get("max_nodes", 5),
+                    max_nodes=block.input.get("max_nodes", 8),
                     graph=graph,
                 )
+                        # Track all returned slugs — even content-empty ones are valid
+                # wiki pages that _pipeline_setup can look up from kb.wiki_pages.
+                for p in pages:
+                    if p["slug"] not in traversed_slugs:
+                        traversed_slugs.append(p["slug"])
                 tool_results.append({
                     "type": "tool_result",
                     "tool_use_id": block.id,
-                    "content": json.dumps(result, ensure_ascii=False),
+                    "content": json.dumps(pages, ensure_ascii=False),
                 })
 
         messages.append({"role": "assistant", "content": response.content})
         messages.append({"role": "user", "content": tool_results})
 
-        # One follow-up call with all tool results
         response = client.messages.create(
             model=WIKI_LLM_MODEL,
             max_tokens=1024,
@@ -651,12 +697,18 @@ def run_wiki_llm(
     )
 
     result = _extract_json(final_text)
+
+    # If LLM returned empty selected_slugs but we fetched pages with content,
+    # fall back to those slugs so MAIN_LLM isn't left without wiki context.
+    if result and result.get("selected_slugs") == [] and traversed_slugs:
+        print(f"[WikiLLM] selected_slugs was empty — using traversed slugs as fallback: {traversed_slugs}")
+        result["selected_slugs"] = traversed_slugs
+
     if not result or "selected_slugs" not in result:
-        # Fallback: use BM25 page slugs directly
         result = {
-            "sufficient": True,
-            "selected_slugs": [r["page"]["slug"] for r in bm25_pages],
-            "note": "WIKI LLM parse failed — using BM25 slugs directly",
+            "sufficient": False,
+            "selected_slugs": traversed_slugs,
+            "note": "Wiki LLM parse failed — using traversed slugs",
         }
 
     return result
@@ -693,8 +745,6 @@ _MAIN_LLM_TOOLS = [
         },
     }
 ]
-
-
 _METADATA_SCHEMA = """\
 {
   "sources": {
@@ -703,15 +753,14 @@ _METADATA_SCHEMA = """\
   },
   "new_synthesis": "Novel insight, connection, or resolved contradiction worth preserving. Empty string if none.",
   "should_wiki_update": true
-}\
-"""
+}"""
 
 # Delimiter that separates the streamed answer from the trailing metadata JSON.
 # Chosen to be unambiguous and unlikely to appear in natural prose.
 _METADATA_MARKER = "\n[METADATA]\n"
 
 _MAIN_LLM_SYSTEM_BASE = """\
-You are Dee — a Digital Transformation professor with three decades of teaching experience.
+You are Danny — a Data Analysis professor with three decades of teaching experience.
 
 ## Voice & Style
 - Blend personal narrative with domain principles — open with an anecdote when it adds warmth
@@ -719,46 +768,92 @@ You are Dee — a Digital Transformation professor with three decades of teachin
 - Use em-dashes for asides—and rhetorical questions to engage
 - Explain jargon naturally; favor active voice and confident phrasing
 - Tone: measured optimism with a touch of wit
-- Draw on specific names, numbers, and places from the knowledge base
-- ❌ "*laughs* That's a great question" → ✅ "That's genuinely fascinating"
+- Draw on specific names, numbers, and places from the knowledge base — never fabricate them
+- Prefer "That's genuinely fascinating" over "*laughs* That's a great question"
 
-## Source attribution
-End your answer with this block (before [METADATA]):
+## Knowledge-Source Policy (strict ladder — stop as soon as you have a solid answer)
 
-**My Memory:** [wiki page titles you drew on, or 'Found Nothing in My Memory']
-**My Library:** [RAG source titles from rag_search results, IF the library(RAG) wasn't used, Then say "Didn't use the library" or  only if the library doesnt have anything relevant say "Found Nothing in My Library"]
-**General Knowledge:** [ONLY AFTER THE LIBRARY(RAG) IS SEARCHED AND NOTHING IS FOUND, you may use your general knowledge to answer, IF NOT used say "Didn't use general knowledge"]
+You have three sources, ranked by trust. Escalate to the next rung only when the current one leaves a real gap for the user's question.
+
+1. **Memory (wiki)** — the wiki context already provided in this prompt. Read it first.
+   - If it answers the question well, write the answer from memory alone.
+   - Do NOT call `rag_search`. Do NOT reach for general knowledge.
+
+2. **Library (RAG)** — call `rag_search` only when memory is insufficient (missing facts, shallow coverage, off-topic, or contradicted by the user's framing).
+   - Before calling, write one natural sentence telling the user you're checking — e.g. "Let me dig into my library for this." or "Give me a moment — I want to pull from the source on this."
+   - Incorporate the returned passages and continue the answer.
+   - If the library supplies what's needed, STOP. Do not fall back to general knowledge.
+
+3. **General knowledge** — use only if memory AND the library both fell short for some part of the question.
+   - Call out in the source-attribution block exactly which part you filled from general knowledge.
+   - Never use general knowledge to polish or expand a memory/library answer that already stood on its own.
+
+Escalation is a response to a gap, not a habit. A good memory-only answer should not grow a library call; a good library answer should not grow a general-knowledge coda.
 
 ## RAG instruction
 {rag_instruction}
 
 ## Formatting
-Math: use (...) for inline, [...] for display. Never $...$. Use LaTeX syntax.
+Math: use LaTeX syntax inside proper delimiters.
+- Inline math: wrap in \( ... \) — e.g. \(A \cdot v = \lambda v\)
+- Display math: wrap in \[ ... \] on its own line — e.g. \[A \cdot v = \lambda v\]
+- Do NOT use bare parentheses or bare square brackets around math — they render as literal text.
+- Do NOT use $...$ or $$...$$.
 
-## Output format — CRITICAL
-Write your full answer as plain conversational text (markdown is fine).
-After your complete answer, output EXACTLY this on its own line, then the metadata JSON:
+## Output format — EVERY RESPONSE MUST END WITH A METADATA BLOCK
 
-[METADATA]
+Your response has THREE parts, in this exact order. All three are mandatory. A response that omits any part is malformed and will be rejected by the pipeline.
+
+### Part 1 — Your answer
+Plain conversational text (markdown is fine). This is the substantive reply to the user.
+
+### Part 2 — Source-attribution block
+Exactly these three lines, in this order:
+
+**My Memory:** <comma-separated wiki page titles you actually used> — or "Found nothing in my memory" if memory was inspected but unhelpful.
+
+**My Library:** <comma-separated RAG source titles from `rag_search` results> — or "Didn't use the library" if you didn't call it — or "Found nothing in my library" if you called it and nothing was relevant.
+
+**General Knowledge:** <one short phrase on what you filled in from general knowledge> — or "Didn't use general knowledge" if you didn't.
+
+### Part 3 — Metadata block (DO NOT SKIP)
+A blank line, then the literal marker `[METADATA]` on its own line, then a JSON object filling in this schema:
+
 {metadata_schema}
 
-Rules:
-- [METADATA] must be the very last thing you output — never mid-response
-- sources.wiki: titles of wiki pages you actually used
-- sources.rag: source titles from rag_search results (empty list if not called)
-- should_wiki_update: true when you synthesise non-obvious connections, resolve a contradiction, or produce a novel framing
-- new_synthesis: one sentence capturing the insight, or "" if none\
+The schema above is a **template showing structure** — not the metadata itself. You must emit your own filled-in JSON object after the `[METADATA]` line every time.
+
+Field rules:
+- `sources.wiki`: titles of wiki pages you actually drew on (empty list `[]` if none).
+- `sources.rag`: source titles returned by `rag_search` that you actually used (empty list `[]` if not called or not used).
+- `should_wiki_update`: `true` when you synthesised a non-obvious connection, resolved a contradiction, or produced a novel framing worth preserving; `false` otherwise.
+- `new_synthesis`: one sentence capturing that insight, or `""` if none.
+
+### Worked example of a complete, correctly-shaped response
+
+(Answer text here — one or more paragraphs of conversational prose responding to the user's question.)
+
+**My Memory:** Microequity, Costly State Verification
+**My Library:** Didn't use the library
+**General Knowledge:** Didn't use general knowledge
+
+[METADATA]
+{{"sources": {{"wiki": ["Microequity", "Costly State Verification"], "rag": []}}, "new_synthesis": "", "should_wiki_update": false}}
+
+Every one of your responses must end in this exact shape: answer → three attribution lines → `[METADATA]` → filled JSON. If you find yourself about to stop after the attribution lines, you are not done — emit the metadata block and then stop.
 """
 
 _RAG_INSTRUCTION_SUFFICIENT = (
-    "The wiki context is **complete** for this query. "
-    "Answer from wiki only — DO NOT call `rag_search` or use your general knowledge to answer."
+    "The wiki context looks **complete** for this query. "
+    "Answer from memory only — do NOT call `rag_search`, and do NOT reach for general knowledge."
 )
+
 _RAG_INSTRUCTION_INSUFFICIENT = (
-    "The wiki context is **incomplete**. "
-    "Before calling `rag_search`, write one natural sentence telling the user you are checking your source library "
-    "(e.g. 'Let me dig into my library for this.' or 'Give me a moment — I want to pull from the source on this.'). "
-    "Then call `rag_search` ONCE, incorporate the results, and continue your answer."
+    "The wiki context looks **incomplete** for this query. "
+    "Follow the escalation ladder: announce the library check in one natural sentence, call `rag_search`, "
+    "incorporate the results, and continue the answer. Only if the library also falls short should you use "
+    "general knowledge — and when you do, name exactly which part of the answer it covers in the "
+    "source-attribution block."
 )
 
 
@@ -806,32 +901,45 @@ def run_main_llm_streaming(
     """
     system = _build_main_llm_system(sufficient)
     messages = _build_wiki_messages(wiki_context, wiki_note, user_query)
-    tools_arg = {} if sufficient else {"tools": _MAIN_LLM_TOOLS}
+    _tools_available = {} if sufficient else {"tools": _MAIN_LLM_TOOLS}
+    _MAX_RAG_CALLS = 2
+    _rag_calls_made = 0
 
-    # Sliding tail buffer: we hold back up to len(_METADATA_MARKER) chars so we
-    # can detect the marker even if it straddles two chunks.
+    _BARE_MARKER = "[METADATA]"
     tail_buffer = ""
     metadata_mode = False
     metadata_buf = ""
+    full_response = ""
     final_msg = None
+    rag_sources_used: list = []   # track sources from every rag_search call
 
-    for _ in range(2):  # at most one tool call (rag_search)
+    for _ in range(_MAX_RAG_CALLS + 1):  # up to MAX_RAG_CALLS tool calls + 1 final answer
+        # Once rag budget is used up, strip tools so LLM MUST write the final answer
+        current_tools = _tools_available if _rag_calls_made < _MAX_RAG_CALLS else {}
         with client.messages.stream(
             model=MAIN_LLM_MODEL,
             max_tokens=4096,
             system=system,
             messages=messages,
-            **tools_arg,
+            **current_tools,
         ) as stream:
             for text_chunk in stream.text_stream:
+                full_response += text_chunk
+
                 if metadata_mode:
                     metadata_buf += text_chunk
                     continue
 
                 tail_buffer += text_chunk
 
-                if _METADATA_MARKER in tail_buffer:
-                    before, _, after = tail_buffer.partition(_METADATA_MARKER)
+                marker_hit = None
+                for marker in (_METADATA_MARKER, _BARE_MARKER):
+                    if marker in tail_buffer:
+                        marker_hit = marker
+                        break
+
+                if marker_hit:
+                    before, _, after = tail_buffer.partition(marker_hit)
                     if before:
                         yield ("text", before)
                     metadata_mode = True
@@ -846,7 +954,6 @@ def run_main_llm_streaming(
             final_msg = stream.get_final_message()
 
         if final_msg.stop_reason != "tool_use":
-            # Flush any remaining tail (marker never appeared)
             if not metadata_mode and tail_buffer:
                 yield ("text", tail_buffer)
                 tail_buffer = ""
@@ -863,13 +970,18 @@ def run_main_llm_streaming(
                     faiss_index=faiss_index,
                     top_k=block.input.get("top_k", 7),
                 )
+                _rag_calls_made += 1
+                # Track unique source titles for synthetic metadata fallback
+                for r in rag_results:
+                    src = r.get("source", "")
+                    if src and src not in rag_sources_used:
+                        rag_sources_used.append(src)
                 tool_results.append({
                     "type": "tool_result",
                     "tool_use_id": block.id,
                     "content": json.dumps(rag_results, ensure_ascii=False),
                 })
 
-        # Flush safe portion of tail before continuing with tool results
         safe_len = max(0, len(tail_buffer) - len(_METADATA_MARKER))
         if safe_len > 0:
             yield ("text", tail_buffer[:safe_len])
@@ -878,12 +990,31 @@ def run_main_llm_streaming(
         messages.append({"role": "assistant", "content": final_msg.content})
         messages.append({"role": "user", "content": tool_results})
 
-    # Parse and yield metadata
-    try:
-        metadata = json.loads(metadata_buf.strip())
-    except (json.JSONDecodeError, ValueError):
-        print(f"[MainLLM] Metadata parse failed. Raw: {metadata_buf[:200]!r}")
-        metadata = {"sources": {"wiki": [], "rag": []}, "new_synthesis": "", "should_wiki_update": False}
+    # --- Metadata parsing (3-tier fallback) ---
+    # Tier 1: clean metadata_buf captured after [METADATA] marker
+    # Tier 2: scan full_response for any JSON with a "sources" key
+    # Tier 3: synthetic metadata built from what we know was used
+    metadata = None
+    for candidate in (metadata_buf.strip(), full_response):
+        if not candidate:
+            continue
+        try:
+            metadata = json.loads(candidate.strip())
+            break
+        except (json.JSONDecodeError, ValueError):
+            extracted = _extract_json(candidate)
+            if extracted and "sources" in extracted:
+                metadata = extracted
+                break
+
+    if metadata is None:
+        print(f"[MainLLM] Metadata parse failed — using synthetic metadata. Raw: {metadata_buf[:100]!r}")
+        wiki_titles = [p.get("title", p.get("slug", "")) for p in wiki_context]
+        metadata = {
+            "sources": {"wiki": wiki_titles, "rag": rag_sources_used},
+            "new_synthesis": "",
+            "should_wiki_update": False,
+        }
 
     yield ("metadata", metadata)
 
@@ -989,7 +1120,7 @@ def _do_wiki_update(
 
 def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = ""):
     """
-    Write a wiki page to disk, patch _graph.json, rebuild BM25 (under lock),
+    Write a wiki page to disk, patch _graph.json, update in-memory KB (under lock),
     append to index.md and log.md, then push both files to GitHub.
     """
     slug      = page_data.get("slug", "synthesized-page")
@@ -1057,7 +1188,7 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
         except OSError:
             pass
 
-    # Update in-memory KB under lock — BM25 rebuild included.
+    # Update in-memory KB under lock.
     # This works on both local and Vercel (memory is always writable).
     new_page_entry = {
         "slug": slug, "title": title, "aliases": aliases,
@@ -1070,7 +1201,6 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
         else:
             kb.wiki_pages.append(new_page_entry)
         kb.graph = graph
-        kb.bm25 = _build_wiki_bm25(kb.wiki_pages) if _HAS_BM25 else None
 
     # Append to index.md and refresh KB cache
     new_index_content = None
@@ -1121,7 +1251,7 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
 def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
     """
     Shared setup for both query() and query_streaming():
-    snapshot KB state, run BM25 + WIKI_LLM, return selected_pages + metadata.
+    snapshot KB state, run WIKI_LLM (index.md + graph_traverse), return selected_pages + metadata.
     Returns (selected_pages, wiki_result, chunks, faiss_index).
     """
     print(f"\n{'─'*60}")
@@ -1130,7 +1260,6 @@ def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
 
     with kb._lock:
         wiki_pages  = list(kb.wiki_pages)
-        bm25        = kb.bm25
         chunks      = list(kb.chunks)
         faiss_index = kb.faiss_index
         graph       = kb.graph
@@ -1138,12 +1267,8 @@ def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
 
     page_by_slug = {p["slug"]: p for p in wiki_pages}
 
-    bm25_results = bm25_wiki_search(user_query, wiki_pages, bm25, top_k=5)
-    print(f"[BM25]   top pages: {[r['page']['title'] for r in bm25_results]}")
-
     wiki_result = run_wiki_llm(
         user_query=user_query,
-        bm25_pages=bm25_results,
         index_md=index_md,
         graph=graph,
         client=client,
@@ -1168,8 +1293,8 @@ def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
             print(f"[Pipeline] Warning: slug '{raw_slug}' (normalised: '{slug}') not found — skipping")
 
     if not selected_pages:
-        print("[Pipeline] No slugs resolved — falling back to BM25 pages")
-        selected_pages = [r["page"] for r in bm25_results]
+        print("[Pipeline] No slugs resolved — no wiki context for MAIN_LLM")
+
 
     return selected_pages, wiki_result, chunks, faiss_index
 
@@ -1334,7 +1459,6 @@ def health():
         "wiki_pages": n_pages,
         "rag_chunks": n_chunks,
         "graph_nodes": n_nodes,
-        "bm25": _HAS_BM25,
     })
 
 
