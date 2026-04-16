@@ -752,7 +752,7 @@ Rules:
 
 _RAG_INSTRUCTION_SUFFICIENT = (
     "The wiki context is **complete** for this query. "
-    "Answer from wiki only — do NOT call `rag_search`."
+    "Answer from wiki only — DO NOT call `rag_search` or use your general knowledge to answer."
 )
 _RAG_INSTRUCTION_INSUFFICIENT = (
     "The wiki context is **incomplete**. "
