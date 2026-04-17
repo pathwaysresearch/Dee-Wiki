@@ -25,6 +25,32 @@
       ],
       "path": "wiki\\concepts\\3d-printing.md"
     },
+    "3d-solution-framework": {
+      "type": "concept",
+      "title": "3D Solution Framework",
+      "aliases": [
+        "3D Solution Framework"
+      ],
+      "tags": [
+        "product-management",
+        "framework",
+        "solution-design"
+      ],
+      "path": "wiki\\concepts\\3d-solution-framework.md"
+    },
+    "4u-need-framework": {
+      "type": "concept",
+      "title": "4U Need Framework",
+      "aliases": [
+        "4U Need Framework"
+      ],
+      "tags": [
+        "product-management",
+        "framework",
+        "user-needs"
+      ],
+      "path": "wiki\\concepts\\4u-need-framework.md"
+    },
     "a-b-testing": {
       "type": "concept",
       "title": "A/B Testing",
@@ -263,6 +289,18 @@
       ],
       "path": "wiki\\concepts\\automation.md"
     },
+    "average-revenue-per-user": {
+      "type": "concept",
+      "title": "Average Revenue Per User (ARPU)",
+      "aliases": [
+        "Average Revenue Per User (ARPU)"
+      ],
+      "tags": [
+        "business-metric",
+        "saas"
+      ],
+      "path": "wiki\\concepts\\average-revenue-per-user.md"
+    },
     "big-data": {
       "type": "concept",
       "title": "Big Data",
@@ -378,6 +416,18 @@
         "growth"
       ],
       "path": "wiki\\concepts\\building-critical-mass.md"
+    },
+    "building-tech-led-products-process": {
+      "type": "concept",
+      "title": "Building Tech Led Products Process",
+      "aliases": [
+        "Building Tech Led Products Process"
+      ],
+      "tags": [
+        "product-management",
+        "framework"
+      ],
+      "path": "wiki\\concepts\\building-tech-led-products-process.md"
     },
     "business-ecosystem": {
       "type": "concept",
@@ -819,6 +869,18 @@
       ],
       "path": "wiki\\concepts\\confirmation-bias.md"
     },
+    "consensus": {
+      "type": "concept",
+      "title": "Consensus",
+      "aliases": [
+        "Consensus"
+      ],
+      "tags": [
+        "blockchain-mechanism",
+        "distributed-systems"
+      ],
+      "path": "wiki\\concepts\\consensus.md"
+    },
     "consumer-journey-mapping": {
       "type": "concept",
       "title": "Consumer Journey Mapping",
@@ -987,6 +1049,18 @@
         "roi"
       ],
       "path": "wiki\\concepts\\cross-channel-effects.md"
+    },
+    "cross-side-network-effect": {
+      "type": "concept",
+      "title": "Cross-Side Network Effect",
+      "aliases": [
+        "Cross-Side Network Effect"
+      ],
+      "tags": [
+        "economics",
+        "platform-dynamics"
+      ],
+      "path": "wiki\\concepts\\cross-side-network-effect.md"
     },
     "crowdsourcing": {
       "type": "concept",
@@ -1842,6 +1916,35 @@
       ],
       "path": "wiki\\concepts\\entrepreneurial-clusters.md"
     },
+    "envelopment": {
+      "type": "concept",
+      "title": "Envelopment",
+      "aliases": [
+        "Envelopment"
+      ],
+      "tags": [
+        "platform-strategy",
+        "competition",
+        "market-dynamics",
+        "strategy",
+        "offense"
+      ],
+      "path": "wiki\\concepts\\envelopment.md"
+    },
+    "ethical-ai": {
+      "type": "concept",
+      "title": "Ethical AI",
+      "aliases": [
+        "Ethical AI"
+      ],
+      "tags": [
+        "ai",
+        "ethics",
+        "bias",
+        "safety"
+      ],
+      "path": "wiki\\concepts\\ethical-ai.md"
+    },
     "evaluating-acquisition-advantage": {
       "type": "concept",
       "title": "Evaluating Acquisition Advantage",
@@ -2014,6 +2117,18 @@
         "business-model"
       ],
       "path": "wiki\\concepts\\fashion-e-commerce.md"
+    },
+    "file-sync-and-share": {
+      "type": "concept",
+      "title": "File Sync and Share (FSS)",
+      "aliases": [
+        "File Sync and Share (FSS)"
+      ],
+      "tags": [
+        "technology",
+        "cloud-storage"
+      ],
+      "path": "wiki\\concepts\\file-sync-and-share.md"
     },
     "first-moment-of-truth": {
       "type": "concept",
@@ -2243,6 +2358,32 @@
         "research"
       ],
       "path": "wiki\\concepts\\generalized-ai.md"
+    },
+    "generative-ai": {
+      "type": "concept",
+      "title": "Generative AI",
+      "aliases": [
+        "Generative AI"
+      ],
+      "tags": [
+        "ai",
+        "genai",
+        "content-generation"
+      ],
+      "path": "wiki\\concepts\\generative-ai.md"
+    },
+    "generative-questions": {
+      "type": "concept",
+      "title": "Generative Questions",
+      "aliases": [
+        "Generative Questions"
+      ],
+      "tags": [
+        "ai",
+        "content-generation",
+        "genai"
+      ],
+      "path": "wiki\\concepts\\generative-questions.md"
     },
     "generic-retargeting": {
       "type": "concept",
@@ -2696,6 +2837,18 @@
       ],
       "path": "wiki\\concepts\\it-led-business-transformation.md"
     },
+    "knowledge-representation": {
+      "type": "concept",
+      "title": "Knowledge Representation",
+      "aliases": [
+        "Knowledge Representation"
+      ],
+      "tags": [
+        "ai",
+        "ai-sub-problem"
+      ],
+      "path": "wiki\\concepts\\knowledge-representation.md"
+    },
     "landing-docks": {
       "type": "concept",
       "title": "Landing Docks",
@@ -2719,6 +2872,19 @@
         "relationship-management"
       ],
       "path": "wiki\\concepts\\leader-zone.md"
+    },
+    "learning-in-ai": {
+      "type": "concept",
+      "title": "Learning (in AI)",
+      "aliases": [
+        "Learning (in AI)"
+      ],
+      "tags": [
+        "ai",
+        "ai-sub-problem",
+        "algorithms"
+      ],
+      "path": "wiki\\concepts\\learning-in-ai.md"
     },
     "learning-intervention-for-entrepreneurs": {
       "type": "concept",
@@ -2859,6 +3025,19 @@
       ],
       "path": "wiki\\concepts\\merchant-models.md"
     },
+    "metaverse": {
+      "type": "concept",
+      "title": "Metaverse",
+      "aliases": [
+        "Metaverse"
+      ],
+      "tags": [
+        "frontier-technology",
+        "virtual-reality",
+        "3d-worlds"
+      ],
+      "path": "wiki\\concepts\\metaverse.md"
+    },
     "metcalfes-law": {
       "type": "concept",
       "title": "Metcalfe's Law",
@@ -2973,6 +3152,18 @@
       ],
       "path": "wiki\\concepts\\moment-based-marketing.md"
     },
+    "mono-homing": {
+      "type": "concept",
+      "title": "Mono-homing",
+      "aliases": [
+        "Mono-homing"
+      ],
+      "tags": [
+        "platform-strategy",
+        "market-dynamics"
+      ],
+      "path": "wiki\\concepts\\mono-homing.md"
+    },
     "moores-law": {
       "type": "concept",
       "title": "Moore's Law",
@@ -2998,6 +3189,18 @@
       ],
       "path": "wiki\\concepts\\morphing-the-core.md"
     },
+    "multi-homing": {
+      "type": "concept",
+      "title": "Multi-homing",
+      "aliases": [
+        "Multi-homing"
+      ],
+      "tags": [
+        "platform-strategy",
+        "market-dynamics"
+      ],
+      "path": "wiki\\concepts\\multi-homing.md"
+    },
     "mutual-dependency": {
       "type": "concept",
       "title": "Mutual Dependency",
@@ -3010,6 +3213,43 @@
         "negotiation"
       ],
       "path": "wiki\\concepts\\mutual-dependency.md"
+    },
+    "native-apps": {
+      "type": "concept",
+      "title": "Native Apps",
+      "aliases": [
+        "Native Apps"
+      ],
+      "tags": [
+        "business-strategy",
+        "technology-adoption"
+      ],
+      "path": "wiki\\concepts\\native-apps.md"
+    },
+    "native-systems": {
+      "type": "concept",
+      "title": "Native Systems",
+      "aliases": [
+        "Native Systems"
+      ],
+      "tags": [
+        "business-strategy",
+        "technology-infrastructure"
+      ],
+      "path": "wiki\\concepts\\native-systems.md"
+    },
+    "natural-language-processing": {
+      "type": "concept",
+      "title": "Natural Language Processing",
+      "aliases": [
+        "Natural Language Processing"
+      ],
+      "tags": [
+        "ai",
+        "ai-sub-problem",
+        "nlp"
+      ],
+      "path": "wiki\\concepts\\natural-language-processing.md"
     },
     "need-for-human-proximity": {
       "type": "concept",
@@ -3352,6 +3592,19 @@
       ],
       "path": "wiki\\concepts\\people-analytics.md"
     },
+    "perception-in-ai": {
+      "type": "concept",
+      "title": "Perception (in AI)",
+      "aliases": [
+        "Perception (in AI)"
+      ],
+      "tags": [
+        "ai",
+        "ai-sub-problem",
+        "sensors"
+      ],
+      "path": "wiki\\concepts\\perception-in-ai.md"
+    },
     "performance-spread": {
       "type": "concept",
       "title": "Performance Spread",
@@ -3378,6 +3631,18 @@
         "business-strategy"
       ],
       "path": "wiki\\concepts\\performance-trajectory.md"
+    },
+    "permanent-subsidization": {
+      "type": "concept",
+      "title": "Permanent Subsidization",
+      "aliases": [
+        "Permanent Subsidization"
+      ],
+      "tags": [
+        "strategy",
+        "platform-strategy"
+      ],
+      "path": "wiki\\concepts\\permanent-subsidization.md"
     },
     "phase-1-experimentation-at-the-edge": {
       "type": "concept",
@@ -3427,6 +3692,18 @@
         "customer-experience"
       ],
       "path": "wiki\\concepts\\physical-and-digital-fusion.md"
+    },
+    "pipeline-business-model": {
+      "type": "concept",
+      "title": "Pipeline Business Model",
+      "aliases": [
+        "Pipeline Business Model"
+      ],
+      "tags": [
+        "business-model",
+        "industrial-economy"
+      ],
+      "path": "wiki\\concepts\\pipeline-business-model.md"
     },
     "platform-based-business-models": {
       "type": "concept",
@@ -3504,6 +3781,18 @@
         "risk-management"
       ],
       "path": "wiki\\concepts\\platform-governance.md"
+    },
+    "platform-mediated-business-networks": {
+      "type": "concept",
+      "title": "Platform Mediated Business Networks",
+      "aliases": [
+        "Platform Mediated Business Networks"
+      ],
+      "tags": [
+        "business-model",
+        "platform-economy"
+      ],
+      "path": "wiki\\concepts\\platform-mediated-business-networks.md"
     },
     "platform-model": {
       "type": "concept",
@@ -3590,6 +3879,19 @@
         "digital-transformation"
       ],
       "path": "wiki\\concepts\\preferential-partnerships.md"
+    },
+    "prescriptive-questions": {
+      "type": "concept",
+      "title": "Prescriptive Questions",
+      "aliases": [
+        "Prescriptive Questions"
+      ],
+      "tags": [
+        "ai",
+        "decision-making",
+        "optimization"
+      ],
+      "path": "wiki\\concepts\\prescriptive-questions.md"
     },
     "price-competition-in-ecommerce": {
       "type": "concept",
@@ -3695,6 +3997,18 @@
       ],
       "path": "wiki\\concepts\\product-definition-shift.md"
     },
+    "product-phases": {
+      "type": "concept",
+      "title": "Product Phases",
+      "aliases": [
+        "Product Phases"
+      ],
+      "tags": [
+        "product-management",
+        "product-lifecycle"
+      ],
+      "path": "wiki\\concepts\\product-phases.md"
+    },
     "product-to-solution-transformation": {
       "type": "concept",
       "title": "Product-to-Solution Transformation",
@@ -3718,6 +4032,18 @@
         "business-strategy"
       ],
       "path": "wiki\\concepts\\products-to-platforms-shift.md"
+    },
+    "proof-of-work": {
+      "type": "concept",
+      "title": "Proof of Work",
+      "aliases": [
+        "Proof of Work"
+      ],
+      "tags": [
+        "blockchain-mechanism",
+        "cryptography"
+      ],
+      "path": "wiki\\concepts\\proof-of-work.md"
     },
     "psychological-safety": {
       "type": "concept",
@@ -3967,6 +4293,18 @@
       ],
       "path": "wiki\\concepts\\sales-per-square-foot.md"
     },
+    "same-side-network-effect": {
+      "type": "concept",
+      "title": "Same-Side Network Effect",
+      "aliases": [
+        "Same-Side Network Effect"
+      ],
+      "tags": [
+        "economics",
+        "platform-dynamics"
+      ],
+      "path": "wiki\\concepts\\same-side-network-effect.md"
+    },
     "scale-scope-speed-nexus": {
       "type": "concept",
       "title": "Scale-Scope-Speed Nexus",
@@ -4090,6 +4428,19 @@
         "finance"
       ],
       "path": "wiki\\concepts\\single-dealer-model.md"
+    },
+    "slip-framework": {
+      "type": "concept",
+      "title": "SLIP Framework",
+      "aliases": [
+        "SLIP Framework"
+      ],
+      "tags": [
+        "product-management",
+        "framework",
+        "product-design"
+      ],
+      "path": "wiki\\concepts\\slip-framework.md"
     },
     "smart-factory": {
       "type": "concept",
@@ -4368,6 +4719,18 @@
       ],
       "path": "wiki\\concepts\\susceptibility-to-machine-learning.md"
     },
+    "sustaining-innovation": {
+      "type": "concept",
+      "title": "Sustaining Innovation",
+      "aliases": [
+        "Sustaining Innovation"
+      ],
+      "tags": [
+        "innovation",
+        "business-strategy"
+      ],
+      "path": "wiki\\concepts\\sustaining-innovation.md"
+    },
     "switching-costs": {
       "type": "concept",
       "title": "Switching Costs",
@@ -4458,6 +4821,18 @@
       ],
       "path": "wiki\\concepts\\tech-entrepreneurs.md"
     },
+    "tech-led-products": {
+      "type": "concept",
+      "title": "Tech Led Products",
+      "aliases": [
+        "Tech Led Products"
+      ],
+      "tags": [
+        "product-management",
+        "technology"
+      ],
+      "path": "wiki\\concepts\\tech-led-products.md"
+    },
     "technological-disruption": {
       "type": "concept",
       "title": "Technological Disruption",
@@ -4544,6 +4919,19 @@
         "business-model"
       ],
       "path": "wiki\\entities\\the-digital-matrix.md"
+    },
+    "the-innovators-dilemma": {
+      "type": "concept",
+      "title": "The Innovator's Dilemma",
+      "aliases": [
+        "The Innovator's Dilemma"
+      ],
+      "tags": [
+        "theory",
+        "business-strategy",
+        "management"
+      ],
+      "path": "wiki\\concepts\\the-innovators-dilemma.md"
     },
     "the-long-tail": {
       "type": "concept",
@@ -4700,6 +5088,42 @@
       ],
       "path": "wiki\\concepts\\transformer-model.md"
     },
+    "transitional-apps": {
+      "type": "concept",
+      "title": "Transitional Apps",
+      "aliases": [
+        "Transitional Apps"
+      ],
+      "tags": [
+        "business-strategy",
+        "technology-adoption"
+      ],
+      "path": "wiki\\concepts\\transitional-apps.md"
+    },
+    "transitional-systems": {
+      "type": "concept",
+      "title": "Transitional Systems",
+      "aliases": [
+        "Transitional Systems"
+      ],
+      "tags": [
+        "business-strategy",
+        "technology-infrastructure"
+      ],
+      "path": "wiki\\concepts\\transitional-systems.md"
+    },
+    "two-sided-network": {
+      "type": "concept",
+      "title": "Two-Sided Network",
+      "aliases": [
+        "Two-Sided Network"
+      ],
+      "tags": [
+        "business-model",
+        "platform-structure"
+      ],
+      "path": "wiki\\concepts\\two-sided-network.md"
+    },
     "unsupervised-learning": {
       "type": "concept",
       "title": "Unsupervised Learning",
@@ -4762,6 +5186,18 @@
         "corporate-finance"
       ],
       "path": "wiki\\concepts\\valuation-for-profit.md"
+    },
+    "value-networks": {
+      "type": "concept",
+      "title": "Value Networks",
+      "aliases": [
+        "Value Networks"
+      ],
+      "tags": [
+        "model",
+        "business-strategy"
+      ],
+      "path": "wiki\\concepts\\value-networks.md"
     },
     "vertical-expertise": {
       "type": "concept",
@@ -4826,6 +5262,42 @@
       ],
       "path": "wiki\\concepts\\weak-signals.md"
     },
+    "web-1-0": {
+      "type": "concept",
+      "title": "Web 1.0",
+      "aliases": [
+        "Web 1.0"
+      ],
+      "tags": [
+        "web-paradigm",
+        "internet-history"
+      ],
+      "path": "wiki\\concepts\\web-1-0.md"
+    },
+    "web-2-0": {
+      "type": "concept",
+      "title": "Web 2.0",
+      "aliases": [
+        "Web 2.0"
+      ],
+      "tags": [
+        "web-paradigm",
+        "social-media"
+      ],
+      "path": "wiki\\concepts\\web-2-0.md"
+    },
+    "web-3-0": {
+      "type": "concept",
+      "title": "Web 3.0",
+      "aliases": [
+        "Web 3.0"
+      ],
+      "tags": [
+        "web-paradigm",
+        "decentralization"
+      ],
+      "path": "wiki\\concepts\\web-3-0.md"
+    },
     "wicked-problems": {
       "type": "concept",
       "title": "Wicked Problems",
@@ -4838,6 +5310,19 @@
         "complexity-theory"
       ],
       "path": "wiki\\concepts\\wicked-problems.md"
+    },
+    "winner-take-all-dynamic": {
+      "type": "concept",
+      "title": "Winner Take All Dynamic",
+      "aliases": [
+        "Winner Take All Dynamic"
+      ],
+      "tags": [
+        "market-dynamics",
+        "competition",
+        "platform-strategy"
+      ],
+      "path": "wiki\\concepts\\winner-take-all-dynamic.md"
     },
     "winner-take-all-environment": {
       "type": "concept",
@@ -4875,6 +5360,18 @@
         "innovation"
       ],
       "path": "wiki\\concepts\\working-backward-strategy.md"
+    },
+    "wta-dynamics": {
+      "type": "concept",
+      "title": "WTA Dynamics",
+      "aliases": [
+        "WTA Dynamics"
+      ],
+      "tags": [
+        "strategy",
+        "market-dynamics"
+      ],
+      "path": "wiki\\concepts\\wta-dynamics.md"
     },
     "zero-moment-of-truth": {
       "type": "concept",
@@ -4995,6 +5492,18 @@
         "holding-company"
       ],
       "path": "wiki\\entities\\alphabet.md"
+    },
+    "alphago": {
+      "type": "entity",
+      "title": "AlphaGo",
+      "aliases": [
+        "AlphaGo"
+      ],
+      "tags": [
+        "ai-program",
+        "game-ai"
+      ],
+      "path": "wiki\\entities\\alphago.md"
     },
     "amazon-alexa": {
       "type": "entity",
@@ -5272,6 +5781,18 @@
         "rental-services"
       ],
       "path": "wiki\\entities\\avis.md"
+    },
+    "aws": {
+      "type": "entity",
+      "title": "AWS",
+      "aliases": [
+        "AWS"
+      ],
+      "tags": [
+        "company",
+        "cloud-computing"
+      ],
+      "path": "wiki\\entities\\aws.md"
     },
     "barnes-and-noble": {
       "type": "entity",
@@ -5573,6 +6094,18 @@
       ],
       "path": "wiki\\entities\\chitrangda-singh.md"
     },
+    "citigroup": {
+      "type": "entity",
+      "title": "Citigroup",
+      "aliases": [
+        "Citigroup"
+      ],
+      "tags": [
+        "company",
+        "advertiser"
+      ],
+      "path": "wiki\\entities\\citigroup.md"
+    },
     "clayton-christensen": {
       "type": "entity",
       "title": "Clayton Christensen",
@@ -5797,6 +6330,19 @@
         "digital-strategy"
       ],
       "path": "wiki\\entities\\driving-digital-strategy-executive-program.md"
+    },
+    "dropbox": {
+      "type": "entity",
+      "title": "Dropbox",
+      "aliases": [
+        "Dropbox"
+      ],
+      "tags": [
+        "company",
+        "saas",
+        "fss"
+      ],
+      "path": "wiki\\entities\\dropbox.md"
     },
     "duncan-watts": {
       "type": "entity",
@@ -6320,6 +6866,32 @@
       ],
       "path": "wiki\\entities\\goldman-sachs.md"
     },
+    "google-adsense": {
+      "type": "entity",
+      "title": "Google AdSense",
+      "aliases": [
+        "Google AdSense"
+      ],
+      "tags": [
+        "advertising",
+        "digital-marketing",
+        "google-product"
+      ],
+      "path": "wiki\\entities\\google-adsense.md"
+    },
+    "google-adwords": {
+      "type": "entity",
+      "title": "Google AdWords",
+      "aliases": [
+        "Google AdWords"
+      ],
+      "tags": [
+        "advertising",
+        "digital-marketing",
+        "google-product"
+      ],
+      "path": "wiki\\entities\\google-adwords.md"
+    },
     "google-assistant": {
       "type": "entity",
       "title": "Google Assistant",
@@ -6520,6 +7092,18 @@
         "celebrity"
       ],
       "path": "wiki\\entities\\hrithik-roshan.md"
+    },
+    "iad": {
+      "type": "entity",
+      "title": "iAd",
+      "aliases": [
+        "iAd"
+      ],
+      "tags": [
+        "advertising-platform",
+        "apple"
+      ],
+      "path": "wiki\\entities\\iad.md"
     },
     "ibm-deep-blue": {
       "type": "entity",
@@ -6768,6 +7352,18 @@
         "case-study"
       ],
       "path": "wiki\\entities\\iss-longeron-challenge.md"
+    },
+    "itunes-app-store": {
+      "type": "entity",
+      "title": "iTunes / App Store",
+      "aliases": [
+        "iTunes / App Store"
+      ],
+      "tags": [
+        "software-platform",
+        "app-marketplace"
+      ],
+      "path": "wiki\\entities\\itunes-app-store.md"
     },
     "itunes": {
       "type": "entity",
@@ -7101,6 +7697,19 @@
       ],
       "path": "wiki\\entities\\lenovo.md"
     },
+    "lisa-caputo": {
+      "type": "entity",
+      "title": "Lisa Caputo",
+      "aliases": [
+        "Lisa Caputo"
+      ],
+      "tags": [
+        "person",
+        "executive",
+        "cmo"
+      ],
+      "path": "wiki\\entities\\lisa-caputo.md"
+    },
     "lockheed-martin": {
       "type": "entity",
       "title": "Lockheed Martin",
@@ -7263,6 +7872,32 @@
       ],
       "path": "wiki\\entities\\merrill-lynch.md"
     },
+    "meta-horizon-worlds": {
+      "type": "entity",
+      "title": "Meta – Horizon Worlds",
+      "aliases": [
+        "Meta – Horizon Worlds"
+      ],
+      "tags": [
+        "software",
+        "virtual-reality",
+        "metaverse-platform"
+      ],
+      "path": "wiki\\entities\\meta-horizon-worlds.md"
+    },
+    "meta": {
+      "type": "entity",
+      "title": "Meta",
+      "aliases": [
+        "Meta"
+      ],
+      "tags": [
+        "company",
+        "big-tech",
+        "metaverse"
+      ],
+      "path": "wiki\\entities\\meta.md"
+    },
     "michael-e-porter": {
       "type": "entity",
       "title": "Michael E. Porter",
@@ -7378,6 +8013,18 @@
       ],
       "path": "wiki\\entities\\morris-technologies.md"
     },
+    "ms-office": {
+      "type": "entity",
+      "title": "MS Office",
+      "aliases": [
+        "MS Office"
+      ],
+      "tags": [
+        "software",
+        "productivity-suite"
+      ],
+      "path": "wiki\\entities\\ms-office.md"
+    },
     "myntra": {
       "type": "entity",
       "title": "Myntra",
@@ -7417,6 +8064,18 @@
         "case-study"
       ],
       "path": "wiki\\entities\\nasa.md"
+    },
+    "naukri-com": {
+      "type": "entity",
+      "title": "Naukri.com",
+      "aliases": [
+        "Naukri.com"
+      ],
+      "tags": [
+        "online-platform",
+        "case-study"
+      ],
+      "path": "wiki\\entities\\naukri-com.md"
     },
     "naval-ravikant": {
       "type": "entity",
@@ -7534,6 +8193,19 @@
       ],
       "path": "wiki\\entities\\note-7.md"
     },
+    "nvidia": {
+      "type": "entity",
+      "title": "Nvidia",
+      "aliases": [
+        "Nvidia"
+      ],
+      "tags": [
+        "company",
+        "hardware",
+        "gpu-manufacturer"
+      ],
+      "path": "wiki\\entities\\nvidia.md"
+    },
     "office-suite": {
       "type": "entity",
       "title": "Office Suite",
@@ -7583,6 +8255,18 @@
         "medical-diagnostics"
       ],
       "path": "wiki\\entities\\oncology-expert-advisor.md"
+    },
+    "openai": {
+      "type": "entity",
+      "title": "OpenAI",
+      "aliases": [
+        "OpenAI"
+      ],
+      "tags": [
+        "company",
+        "ai-research"
+      ],
+      "path": "wiki\\entities\\openai.md"
     },
     "orion": {
       "type": "entity",
@@ -8479,6 +9163,19 @@
       ],
       "path": "wiki\\entities\\unilever.md"
     },
+    "unreal-engine": {
+      "type": "entity",
+      "title": "Unreal Engine",
+      "aliases": [
+        "Unreal Engine"
+      ],
+      "tags": [
+        "software",
+        "game-engine",
+        "3d-creation-tool"
+      ],
+      "path": "wiki\\entities\\unreal-engine.md"
+    },
     "ups": {
       "type": "entity",
       "title": "UPS",
@@ -8731,6 +9428,18 @@
       ],
       "path": "wiki\\entities\\xiaoice.md"
     },
+    "youtube": {
+      "type": "entity",
+      "title": "YouTube",
+      "aliases": [
+        "YouTube"
+      ],
+      "tags": [
+        "company",
+        "media"
+      ],
+      "path": "wiki\\entities\\youtube.md"
+    },
     "zara": {
       "type": "entity",
       "title": "Zara",
@@ -8767,6 +9476,20 @@
         "video-conferencing"
       ],
       "path": "wiki\\entities\\zoom.md"
+    },
+    "index": {
+      "type": "unknown",
+      "title": "Wiki Index",
+      "aliases": [],
+      "tags": [],
+      "path": "wiki\\index.md"
+    },
+    "log": {
+      "type": "unknown",
+      "title": "Wiki Log",
+      "aliases": [],
+      "tags": [],
+      "path": "wiki\\log.md"
     },
     "digital-innovation-under-investor-constraints": {
       "type": "persona",
@@ -8854,6 +9577,26 @@
       ],
       "path": "wiki\\persona\\thinking-patterns.md"
     },
+    "stub-ai": {
+      "type": "stub",
+      "title": "Ai",
+      "aliases": [
+        "Ai",
+        "Frontier Tech Session 2",
+        "AI Session"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-ai.md"
+    },
+    "stub-building-tech-led-products": {
+      "type": "unknown",
+      "title": "Stub Building Tech Led Products",
+      "aliases": [],
+      "tags": [],
+      "path": "wiki\\stubs\\stub-building-tech-led-products.md"
+    },
     "stub-driving-digital-strategy-a-guide-to-reimagining-your-1": {
       "type": "stub",
       "title": "Driving Digital Strategy: A Guide to Reimagining Your Business",
@@ -8887,6 +9630,28 @@
       ],
       "path": "wiki\\stubs\\stub-merchant-models.md"
     },
+    "stub-outline-introduction": {
+      "type": "stub",
+      "title": "Outline & Introduction",
+      "aliases": [
+        "Outline & Introduction"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-outline-introduction.md"
+    },
+    "stub-platform-structures": {
+      "type": "stub",
+      "title": "Platform Structures",
+      "aliases": [
+        "Platform Structures"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-platform-structures.md"
+    },
     "stub-the-digital-matrix-new-rules-for-business-transformation-1": {
       "type": "stub",
       "title": "The Digital Matrix: New Rules for Business Transformation Through Technology",
@@ -8899,6 +9664,18 @@
         "rag-stub"
       ],
       "path": "wiki\\stubs\\stub-the-digital-matrix-new-rules-for-business-transformation-1.md"
+    },
+    "stub-web-30-metaverse": {
+      "type": "stub",
+      "title": "Web 3.0 Metaverse",
+      "aliases": [
+        "Web 3.0 Metaverse",
+        "Frontier Tech Session 3"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-web-30-metaverse.md"
     },
     "authentication-as-ecosystem-trust-infrastructure": {
       "type": "synthesized",
@@ -9078,729 +9855,6 @@
         "digital-strategy"
       ],
       "path": "wiki\\synthesized\\web3-decentralization-paradox.md"
-    },
-    "ethical-ai": {
-      "type": "concept",
-      "title": "Ethical AI",
-      "aliases": [
-        "Ethical AI"
-      ],
-      "tags": [
-        "ai",
-        "ethics",
-        "bias",
-        "safety"
-      ],
-      "path": "wiki\\concepts\\ethical-ai.md"
-    },
-    "generative-ai": {
-      "type": "concept",
-      "title": "Generative AI",
-      "aliases": [
-        "Generative AI"
-      ],
-      "tags": [
-        "ai",
-        "genai",
-        "content-generation"
-      ],
-      "path": "wiki\\concepts\\generative-ai.md"
-    },
-    "generative-questions": {
-      "type": "concept",
-      "title": "Generative Questions",
-      "aliases": [
-        "Generative Questions"
-      ],
-      "tags": [
-        "ai",
-        "content-generation",
-        "genai"
-      ],
-      "path": "wiki\\concepts\\generative-questions.md"
-    },
-    "knowledge-representation": {
-      "type": "concept",
-      "title": "Knowledge Representation",
-      "aliases": [
-        "Knowledge Representation"
-      ],
-      "tags": [
-        "ai",
-        "ai-sub-problem"
-      ],
-      "path": "wiki\\concepts\\knowledge-representation.md"
-    },
-    "learning-in-ai": {
-      "type": "concept",
-      "title": "Learning (in AI)",
-      "aliases": [
-        "Learning (in AI)"
-      ],
-      "tags": [
-        "ai",
-        "ai-sub-problem",
-        "algorithms"
-      ],
-      "path": "wiki\\concepts\\learning-in-ai.md"
-    },
-    "natural-language-processing": {
-      "type": "concept",
-      "title": "Natural Language Processing",
-      "aliases": [
-        "Natural Language Processing"
-      ],
-      "tags": [
-        "ai",
-        "ai-sub-problem",
-        "nlp"
-      ],
-      "path": "wiki\\concepts\\natural-language-processing.md"
-    },
-    "perception-in-ai": {
-      "type": "concept",
-      "title": "Perception (in AI)",
-      "aliases": [
-        "Perception (in AI)"
-      ],
-      "tags": [
-        "ai",
-        "ai-sub-problem",
-        "sensors"
-      ],
-      "path": "wiki\\concepts\\perception-in-ai.md"
-    },
-    "prescriptive-questions": {
-      "type": "concept",
-      "title": "Prescriptive Questions",
-      "aliases": [
-        "Prescriptive Questions"
-      ],
-      "tags": [
-        "ai",
-        "decision-making",
-        "optimization"
-      ],
-      "path": "wiki\\concepts\\prescriptive-questions.md"
-    },
-    "alphago": {
-      "type": "entity",
-      "title": "AlphaGo",
-      "aliases": [
-        "AlphaGo"
-      ],
-      "tags": [
-        "ai-program",
-        "game-ai"
-      ],
-      "path": "wiki\\entities\\alphago.md"
-    },
-    "index": {
-      "type": "unknown",
-      "title": "Wiki Index",
-      "aliases": [],
-      "tags": [],
-      "path": "wiki\\index.md"
-    },
-    "log": {
-      "type": "unknown",
-      "title": "Wiki Log",
-      "aliases": [],
-      "tags": [],
-      "path": "wiki\\log.md"
-    },
-    "3d-solution-framework": {
-      "type": "concept",
-      "title": "3D Solution Framework",
-      "aliases": [
-        "3D Solution Framework"
-      ],
-      "tags": [
-        "product-management",
-        "framework",
-        "solution-design"
-      ],
-      "path": "wiki\\concepts\\3d-solution-framework.md"
-    },
-    "4u-need-framework": {
-      "type": "concept",
-      "title": "4U Need Framework",
-      "aliases": [
-        "4U Need Framework"
-      ],
-      "tags": [
-        "product-management",
-        "framework",
-        "user-needs"
-      ],
-      "path": "wiki\\concepts\\4u-need-framework.md"
-    },
-    "average-revenue-per-user": {
-      "type": "concept",
-      "title": "Average Revenue Per User (ARPU)",
-      "aliases": [
-        "Average Revenue Per User (ARPU)"
-      ],
-      "tags": [
-        "business-metric",
-        "saas"
-      ],
-      "path": "wiki\\concepts\\average-revenue-per-user.md"
-    },
-    "building-tech-led-products-process": {
-      "type": "concept",
-      "title": "Building Tech Led Products Process",
-      "aliases": [
-        "Building Tech Led Products Process"
-      ],
-      "tags": [
-        "product-management",
-        "framework"
-      ],
-      "path": "wiki\\concepts\\building-tech-led-products-process.md"
-    },
-    "file-sync-and-share": {
-      "type": "concept",
-      "title": "File Sync and Share (FSS)",
-      "aliases": [
-        "File Sync and Share (FSS)"
-      ],
-      "tags": [
-        "technology",
-        "cloud-storage"
-      ],
-      "path": "wiki\\concepts\\file-sync-and-share.md"
-    },
-    "product-phases": {
-      "type": "concept",
-      "title": "Product Phases",
-      "aliases": [
-        "Product Phases"
-      ],
-      "tags": [
-        "product-management",
-        "product-lifecycle"
-      ],
-      "path": "wiki\\concepts\\product-phases.md"
-    },
-    "slip-framework": {
-      "type": "concept",
-      "title": "SLIP Framework",
-      "aliases": [
-        "SLIP Framework"
-      ],
-      "tags": [
-        "product-management",
-        "framework",
-        "product-design"
-      ],
-      "path": "wiki\\concepts\\slip-framework.md"
-    },
-    "tech-led-products": {
-      "type": "concept",
-      "title": "Tech Led Products",
-      "aliases": [
-        "Tech Led Products"
-      ],
-      "tags": [
-        "product-management",
-        "technology"
-      ],
-      "path": "wiki\\concepts\\tech-led-products.md"
-    },
-    "dropbox": {
-      "type": "entity",
-      "title": "Dropbox",
-      "aliases": [
-        "Dropbox"
-      ],
-      "tags": [
-        "company",
-        "saas",
-        "fss"
-      ],
-      "path": "wiki\\entities\\dropbox.md"
-    },
-    "youtube": {
-      "type": "entity",
-      "title": "YouTube",
-      "aliases": [
-        "YouTube"
-      ],
-      "tags": [
-        "company",
-        "media"
-      ],
-      "path": "wiki\\entities\\youtube.md"
-    },
-    "sustaining-innovation": {
-      "type": "concept",
-      "title": "Sustaining Innovation",
-      "aliases": [
-        "Sustaining Innovation"
-      ],
-      "tags": [
-        "innovation",
-        "business-strategy"
-      ],
-      "path": "wiki\\concepts\\sustaining-innovation.md"
-    },
-    "the-innovators-dilemma": {
-      "type": "concept",
-      "title": "The Innovator's Dilemma",
-      "aliases": [
-        "The Innovator's Dilemma"
-      ],
-      "tags": [
-        "theory",
-        "business-strategy",
-        "management"
-      ],
-      "path": "wiki\\concepts\\the-innovators-dilemma.md"
-    },
-    "value-networks": {
-      "type": "concept",
-      "title": "Value Networks",
-      "aliases": [
-        "Value Networks"
-      ],
-      "tags": [
-        "model",
-        "business-strategy"
-      ],
-      "path": "wiki\\concepts\\value-networks.md"
-    },
-    "cross-side-network-effect": {
-      "type": "concept",
-      "title": "Cross-Side Network Effect",
-      "aliases": [
-        "Cross-Side Network Effect"
-      ],
-      "tags": [
-        "economics",
-        "platform-dynamics"
-      ],
-      "path": "wiki\\concepts\\cross-side-network-effect.md"
-    },
-    "envelopment": {
-      "type": "concept",
-      "title": "Envelopment",
-      "aliases": [
-        "Envelopment"
-      ],
-      "tags": [
-        "platform-strategy",
-        "competition",
-        "market-dynamics",
-        "strategy",
-        "offense"
-      ],
-      "path": "wiki\\concepts\\envelopment.md"
-    },
-    "mono-homing": {
-      "type": "concept",
-      "title": "Mono-homing",
-      "aliases": [
-        "Mono-homing"
-      ],
-      "tags": [
-        "platform-strategy",
-        "market-dynamics"
-      ],
-      "path": "wiki\\concepts\\mono-homing.md"
-    },
-    "multi-homing": {
-      "type": "concept",
-      "title": "Multi-homing",
-      "aliases": [
-        "Multi-homing"
-      ],
-      "tags": [
-        "platform-strategy",
-        "market-dynamics"
-      ],
-      "path": "wiki\\concepts\\multi-homing.md"
-    },
-    "permanent-subsidization": {
-      "type": "concept",
-      "title": "Permanent Subsidization",
-      "aliases": [
-        "Permanent Subsidization"
-      ],
-      "tags": [
-        "strategy",
-        "platform-strategy"
-      ],
-      "path": "wiki\\concepts\\permanent-subsidization.md"
-    },
-    "pipeline-business-model": {
-      "type": "concept",
-      "title": "Pipeline Business Model",
-      "aliases": [
-        "Pipeline Business Model"
-      ],
-      "tags": [
-        "business-model",
-        "industrial-economy"
-      ],
-      "path": "wiki\\concepts\\pipeline-business-model.md"
-    },
-    "platform-mediated-business-networks": {
-      "type": "concept",
-      "title": "Platform Mediated Business Networks",
-      "aliases": [
-        "Platform Mediated Business Networks"
-      ],
-      "tags": [
-        "business-model",
-        "platform-economy"
-      ],
-      "path": "wiki\\concepts\\platform-mediated-business-networks.md"
-    },
-    "same-side-network-effect": {
-      "type": "concept",
-      "title": "Same-Side Network Effect",
-      "aliases": [
-        "Same-Side Network Effect"
-      ],
-      "tags": [
-        "economics",
-        "platform-dynamics"
-      ],
-      "path": "wiki\\concepts\\same-side-network-effect.md"
-    },
-    "two-sided-network": {
-      "type": "concept",
-      "title": "Two-Sided Network",
-      "aliases": [
-        "Two-Sided Network"
-      ],
-      "tags": [
-        "business-model",
-        "platform-structure"
-      ],
-      "path": "wiki\\concepts\\two-sided-network.md"
-    },
-    "winner-take-all-dynamic": {
-      "type": "concept",
-      "title": "Winner Take All Dynamic",
-      "aliases": [
-        "Winner Take All Dynamic"
-      ],
-      "tags": [
-        "market-dynamics",
-        "competition",
-        "platform-strategy"
-      ],
-      "path": "wiki\\concepts\\winner-take-all-dynamic.md"
-    },
-    "wta-dynamics": {
-      "type": "concept",
-      "title": "WTA Dynamics",
-      "aliases": [
-        "WTA Dynamics"
-      ],
-      "tags": [
-        "strategy",
-        "market-dynamics"
-      ],
-      "path": "wiki\\concepts\\wta-dynamics.md"
-    },
-    "citigroup": {
-      "type": "entity",
-      "title": "Citigroup",
-      "aliases": [
-        "Citigroup"
-      ],
-      "tags": [
-        "company",
-        "advertiser"
-      ],
-      "path": "wiki\\entities\\citigroup.md"
-    },
-    "google-adsense": {
-      "type": "entity",
-      "title": "Google AdSense",
-      "aliases": [
-        "Google AdSense"
-      ],
-      "tags": [
-        "advertising",
-        "digital-marketing",
-        "google-product"
-      ],
-      "path": "wiki\\entities\\google-adsense.md"
-    },
-    "google-adwords": {
-      "type": "entity",
-      "title": "Google AdWords",
-      "aliases": [
-        "Google AdWords"
-      ],
-      "tags": [
-        "advertising",
-        "digital-marketing",
-        "google-product"
-      ],
-      "path": "wiki\\entities\\google-adwords.md"
-    },
-    "iad": {
-      "type": "entity",
-      "title": "iAd",
-      "aliases": [
-        "iAd"
-      ],
-      "tags": [
-        "advertising-platform",
-        "apple"
-      ],
-      "path": "wiki\\entities\\iad.md"
-    },
-    "lisa-caputo": {
-      "type": "entity",
-      "title": "Lisa Caputo",
-      "aliases": [
-        "Lisa Caputo"
-      ],
-      "tags": [
-        "person",
-        "executive",
-        "cmo"
-      ],
-      "path": "wiki\\entities\\lisa-caputo.md"
-    },
-    "naukri-com": {
-      "type": "entity",
-      "title": "Naukri.com",
-      "aliases": [
-        "Naukri.com"
-      ],
-      "tags": [
-        "online-platform",
-        "case-study"
-      ],
-      "path": "wiki\\entities\\naukri-com.md"
-    },
-    "consensus": {
-      "type": "concept",
-      "title": "Consensus",
-      "aliases": [
-        "Consensus"
-      ],
-      "tags": [
-        "blockchain-mechanism",
-        "distributed-systems"
-      ],
-      "path": "wiki\\concepts\\consensus.md"
-    },
-    "metaverse": {
-      "type": "concept",
-      "title": "Metaverse",
-      "aliases": [
-        "Metaverse"
-      ],
-      "tags": [
-        "frontier-technology",
-        "virtual-reality",
-        "3d-worlds"
-      ],
-      "path": "wiki\\concepts\\metaverse.md"
-    },
-    "native-apps": {
-      "type": "concept",
-      "title": "Native Apps",
-      "aliases": [
-        "Native Apps"
-      ],
-      "tags": [
-        "business-strategy",
-        "technology-adoption"
-      ],
-      "path": "wiki\\concepts\\native-apps.md"
-    },
-    "native-systems": {
-      "type": "concept",
-      "title": "Native Systems",
-      "aliases": [
-        "Native Systems"
-      ],
-      "tags": [
-        "business-strategy",
-        "technology-infrastructure"
-      ],
-      "path": "wiki\\concepts\\native-systems.md"
-    },
-    "proof-of-work": {
-      "type": "concept",
-      "title": "Proof of Work",
-      "aliases": [
-        "Proof of Work"
-      ],
-      "tags": [
-        "blockchain-mechanism",
-        "cryptography"
-      ],
-      "path": "wiki\\concepts\\proof-of-work.md"
-    },
-    "transitional-apps": {
-      "type": "concept",
-      "title": "Transitional Apps",
-      "aliases": [
-        "Transitional Apps"
-      ],
-      "tags": [
-        "business-strategy",
-        "technology-adoption"
-      ],
-      "path": "wiki\\concepts\\transitional-apps.md"
-    },
-    "transitional-systems": {
-      "type": "concept",
-      "title": "Transitional Systems",
-      "aliases": [
-        "Transitional Systems"
-      ],
-      "tags": [
-        "business-strategy",
-        "technology-infrastructure"
-      ],
-      "path": "wiki\\concepts\\transitional-systems.md"
-    },
-    "web-1-0": {
-      "type": "concept",
-      "title": "Web 1.0",
-      "aliases": [
-        "Web 1.0"
-      ],
-      "tags": [
-        "web-paradigm",
-        "internet-history"
-      ],
-      "path": "wiki\\concepts\\web-1-0.md"
-    },
-    "web-2-0": {
-      "type": "concept",
-      "title": "Web 2.0",
-      "aliases": [
-        "Web 2.0"
-      ],
-      "tags": [
-        "web-paradigm",
-        "social-media"
-      ],
-      "path": "wiki\\concepts\\web-2-0.md"
-    },
-    "web-3-0": {
-      "type": "concept",
-      "title": "Web 3.0",
-      "aliases": [
-        "Web 3.0"
-      ],
-      "tags": [
-        "web-paradigm",
-        "decentralization"
-      ],
-      "path": "wiki\\concepts\\web-3-0.md"
-    },
-    "aws": {
-      "type": "entity",
-      "title": "AWS",
-      "aliases": [
-        "AWS"
-      ],
-      "tags": [
-        "company",
-        "cloud-computing"
-      ],
-      "path": "wiki\\entities\\aws.md"
-    },
-    "itunes-app-store": {
-      "type": "entity",
-      "title": "iTunes / App Store",
-      "aliases": [
-        "iTunes / App Store"
-      ],
-      "tags": [
-        "software-platform",
-        "app-marketplace"
-      ],
-      "path": "wiki\\entities\\itunes-app-store.md"
-    },
-    "meta-horizon-worlds": {
-      "type": "entity",
-      "title": "Meta – Horizon Worlds",
-      "aliases": [
-        "Meta – Horizon Worlds"
-      ],
-      "tags": [
-        "software",
-        "virtual-reality",
-        "metaverse-platform"
-      ],
-      "path": "wiki\\entities\\meta-horizon-worlds.md"
-    },
-    "meta": {
-      "type": "entity",
-      "title": "Meta",
-      "aliases": [
-        "Meta"
-      ],
-      "tags": [
-        "company",
-        "big-tech",
-        "metaverse"
-      ],
-      "path": "wiki\\entities\\meta.md"
-    },
-    "ms-office": {
-      "type": "entity",
-      "title": "MS Office",
-      "aliases": [
-        "MS Office"
-      ],
-      "tags": [
-        "software",
-        "productivity-suite"
-      ],
-      "path": "wiki\\entities\\ms-office.md"
-    },
-    "nvidia": {
-      "type": "entity",
-      "title": "Nvidia",
-      "aliases": [
-        "Nvidia"
-      ],
-      "tags": [
-        "company",
-        "hardware",
-        "gpu-manufacturer"
-      ],
-      "path": "wiki\\entities\\nvidia.md"
-    },
-    "openai": {
-      "type": "entity",
-      "title": "OpenAI",
-      "aliases": [
-        "OpenAI"
-      ],
-      "tags": [
-        "company",
-        "ai-research"
-      ],
-      "path": "wiki\\entities\\openai.md"
-    },
-    "unreal-engine": {
-      "type": "entity",
-      "title": "Unreal Engine",
-      "aliases": [
-        "Unreal Engine"
-      ],
-      "tags": [
-        "software",
-        "game-engine",
-        "3d-creation-tool"
-      ],
-      "path": "wiki\\entities\\unreal-engine.md"
     }
   },
   "edges": [
@@ -9823,6 +9877,16 @@
       "from": "3d-printing",
       "to": "decentralized-manufacturing",
       "type": "enables"
+    },
+    {
+      "from": "3d-solution-framework",
+      "to": "building-tech-led-products-process",
+      "type": "is_component_of"
+    },
+    {
+      "from": "4u-need-framework",
+      "to": "building-tech-led-products-process",
+      "type": "is_component_of"
     },
     {
       "from": "a-b-testing",
@@ -9853,6 +9917,36 @@
       "from": "application-programming-interfaces",
       "to": "coopetition",
       "type": "enables"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "machine-learning",
+      "type": "includes"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "generative-ai",
+      "type": "includes"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "knowledge-representation",
+      "type": "has_sub-problem"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "learning-in-ai",
+      "type": "has_sub-problem"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "natural-language-processing",
+      "type": "has_sub-problem"
+    },
+    {
+      "from": "artificial-intelligence",
+      "to": "perception-in-ai",
+      "type": "has_sub-problem"
     },
     {
       "from": "artificial-intelligence",
@@ -9930,6 +10024,11 @@
       "type": "enables"
     },
     {
+      "from": "average-revenue-per-user",
+      "to": "dropbox",
+      "type": "is_metric_for"
+    },
+    {
       "from": "big-data",
       "to": "google-flu-parable",
       "type": "exemplified_by"
@@ -9953,6 +10052,16 @@
       "from": "blockchain-technology",
       "to": "internet-of-things",
       "type": "is_a_framework_for"
+    },
+    {
+      "from": "blockchain",
+      "to": "proof-of-work",
+      "type": "uses"
+    },
+    {
+      "from": "blockchain",
+      "to": "consensus",
+      "type": "uses"
     },
     {
       "from": "blockchain",
@@ -9988,6 +10097,21 @@
       "from": "building-critical-mass",
       "to": "focused-market-entry-strategy",
       "type": "is_a_strategy_for"
+    },
+    {
+      "from": "building-tech-led-products-process",
+      "to": "4u-need-framework",
+      "type": "uses"
+    },
+    {
+      "from": "building-tech-led-products-process",
+      "to": "3d-solution-framework",
+      "type": "uses"
+    },
+    {
+      "from": "building-tech-led-products-process",
+      "to": "slip-framework",
+      "type": "is_guided_by"
     },
     {
       "from": "business-ecosystem",
@@ -10260,6 +10384,11 @@
       "type": "is_an_outcome_of"
     },
     {
+      "from": "consensus",
+      "to": "blockchain",
+      "type": "is_a_component_of"
+    },
+    {
       "from": "consumer-journey-mapping",
       "to": "moment-based-marketing",
       "type": "enables"
@@ -10358,6 +10487,11 @@
       "from": "cross-channel-effects",
       "to": "attribution-marketing",
       "type": "is_a_challenge_for"
+    },
+    {
+      "from": "cross-side-network-effect",
+      "to": "network-effects",
+      "type": "is_type_of"
     },
     {
       "from": "customer-acquisition-funnel",
@@ -10731,6 +10865,11 @@
     },
     {
       "from": "disruption",
+      "to": "the-innovators-dilemma",
+      "type": "explained_by"
+    },
+    {
+      "from": "disruption",
       "to": "incumbents",
       "type": "challenges"
     },
@@ -10753,6 +10892,21 @@
       "from": "disruptive-innovation-framework",
       "to": "non-adjacent-competition",
       "type": "is_characteristic_of"
+    },
+    {
+      "from": "disruptive-innovation",
+      "to": "disruption",
+      "type": "is_a_type_of"
+    },
+    {
+      "from": "disruptive-innovation",
+      "to": "sustaining-innovation",
+      "type": "contrasted_with"
+    },
+    {
+      "from": "disruptive-innovation",
+      "to": "value-networks",
+      "type": "influenced_by"
     },
     {
       "from": "disruptive-innovation",
@@ -10905,6 +11059,16 @@
       "type": "is_based_on"
     },
     {
+      "from": "envelopment",
+      "to": "platform-models",
+      "type": "strategy-used-by"
+    },
+    {
+      "from": "ethical-ai",
+      "to": "artificial-intelligence",
+      "type": "is_challenge_for"
+    },
+    {
       "from": "evaluating-acquisition-advantage",
       "to": "coexistence-strategy",
       "type": "is_principle_of"
@@ -11002,6 +11166,11 @@
     {
       "from": "factory-reorganization-with-electricity",
       "to": "technology-adoption-lag",
+      "type": "is_example_of"
+    },
+    {
+      "from": "file-sync-and-share",
+      "to": "dropbox",
       "type": "is_example_of"
     },
     {
@@ -11118,6 +11287,21 @@
       "from": "gender-diversity",
       "to": "inclusion",
       "type": "requires"
+    },
+    {
+      "from": "generative-ai",
+      "to": "artificial-intelligence",
+      "type": "is_type_of"
+    },
+    {
+      "from": "generative-ai",
+      "to": "generative-questions",
+      "type": "solves"
+    },
+    {
+      "from": "generative-questions",
+      "to": "generative-ai",
+      "type": "is_solved_by"
     },
     {
       "from": "generic-retargeting",
@@ -11330,6 +11514,11 @@
       "type": "exemplified_by"
     },
     {
+      "from": "knowledge-representation",
+      "to": "artificial-intelligence",
+      "type": "is_sub-problem_of"
+    },
+    {
       "from": "landing-docks",
       "to": "open-innovation",
       "type": "supports"
@@ -11338,6 +11527,11 @@
       "from": "leader-zone",
       "to": "four-interaction-zones",
       "type": "is_a_part_of"
+    },
+    {
+      "from": "learning-in-ai",
+      "to": "artificial-intelligence",
+      "type": "is_sub-problem_of"
     },
     {
       "from": "learning-intervention-for-entrepreneurs",
@@ -11368,6 +11562,16 @@
       "from": "low-cost-producer-strategy",
       "to": "michael-e-porter",
       "type": "associated_with"
+    },
+    {
+      "from": "machine-learning",
+      "to": "artificial-intelligence",
+      "type": "is_subset_of"
+    },
+    {
+      "from": "machine-learning",
+      "to": "deep-learning",
+      "type": "includes"
     },
     {
       "from": "market-myopia",
@@ -11403,6 +11607,21 @@
       "from": "merchant-models",
       "to": "retail-stool-framework",
       "type": "includes"
+    },
+    {
+      "from": "metaverse",
+      "to": "blockchain",
+      "type": "is_enabled_by"
+    },
+    {
+      "from": "metaverse",
+      "to": "unreal-engine",
+      "type": "is_enabled_by"
+    },
+    {
+      "from": "metaverse",
+      "to": "nvidia",
+      "type": "is_enabled_by"
     },
     {
       "from": "micromoments",
@@ -11450,6 +11669,11 @@
       "type": "uses"
     },
     {
+      "from": "mono-homing",
+      "to": "multi-homing",
+      "type": "is_contrasted_with"
+    },
+    {
       "from": "morphing-the-core",
       "to": "coexistence-strategy",
       "type": "follows"
@@ -11470,14 +11694,39 @@
       "type": "includes_principle"
     },
     {
+      "from": "multi-homing",
+      "to": "mono-homing",
+      "type": "is_contrasted_with"
+    },
+    {
       "from": "mutual-dependency",
       "to": "co-creating-value",
       "type": "is_a_prerequisite_for"
     },
     {
+      "from": "natural-language-processing",
+      "to": "artificial-intelligence",
+      "type": "is_sub-problem_of"
+    },
+    {
       "from": "need-for-human-proximity",
       "to": "remote-work-productivity",
       "type": "is_a_factor_in"
+    },
+    {
+      "from": "network-effects",
+      "to": "platform-mediated-business-networks",
+      "type": "is_characteristic_of"
+    },
+    {
+      "from": "network-effects",
+      "to": "cross-side-network-effect",
+      "type": "has_type"
+    },
+    {
+      "from": "network-effects",
+      "to": "same-side-network-effect",
+      "type": "has_type"
     },
     {
       "from": "network-effects",
@@ -11665,6 +11914,11 @@
       "type": "uses"
     },
     {
+      "from": "perception-in-ai",
+      "to": "artificial-intelligence",
+      "type": "is_sub-problem_of"
+    },
+    {
       "from": "performance-spread",
       "to": "technology-as-a-source-of-competitive-advantage",
       "type": "is_a_result_of"
@@ -11688,6 +11942,11 @@
       "from": "performance-trajectory",
       "to": "over-serving-the-market",
       "type": "can_lead_to"
+    },
+    {
+      "from": "permanent-subsidization",
+      "to": "platform-models",
+      "type": "strategy-used-in"
     },
     {
       "from": "phase-1-experimentation-at-the-edge",
@@ -11740,6 +11999,11 @@
       "type": "is_exemplified_by"
     },
     {
+      "from": "pipeline-business-model",
+      "to": "platform-mediated-business-networks",
+      "type": "is_contrasted_with"
+    },
+    {
       "from": "platform-based-model",
       "to": "network-effects",
       "type": "creates"
@@ -11788,6 +12052,21 @@
       "from": "platform-governance",
       "to": "facebook",
       "type": "failure_exemplified_by"
+    },
+    {
+      "from": "platform-mediated-business-networks",
+      "to": "pipeline-business-model",
+      "type": "is_contrasted_with"
+    },
+    {
+      "from": "platform-mediated-business-networks",
+      "to": "network-effects",
+      "type": "is_characterized_by"
+    },
+    {
+      "from": "platform-mediated-business-networks",
+      "to": "two-sided-network",
+      "type": "has_structure"
     },
     {
       "from": "platform-model",
@@ -11863,6 +12142,11 @@
       "from": "preferential-partnerships",
       "to": "capability-co-creation",
       "type": "enables"
+    },
+    {
+      "from": "prescriptive-questions",
+      "to": "artificial-intelligence",
+      "type": "is_solved_by"
     },
     {
       "from": "price-competition-in-ecommerce",
@@ -11955,6 +12239,11 @@
       "type": "is_caused_by"
     },
     {
+      "from": "product-phases",
+      "to": "tech-led-products",
+      "type": "describes_lifecycle_of"
+    },
+    {
       "from": "product-to-solution-transformation",
       "to": "digital-transformation",
       "type": "is_a_component_of"
@@ -11973,6 +12262,11 @@
       "from": "products-to-platforms-shift",
       "to": "indirect-network-effect",
       "type": "leverages"
+    },
+    {
+      "from": "proof-of-work",
+      "to": "blockchain",
+      "type": "is_a_component_of"
     },
     {
       "from": "psychological-safety",
@@ -12110,6 +12404,11 @@
       "type": "is_rejected_by"
     },
     {
+      "from": "same-side-network-effect",
+      "to": "network-effects",
+      "type": "is_type_of"
+    },
+    {
       "from": "scale-scope-speed-nexus",
       "to": "automation",
       "type": "requires"
@@ -12153,6 +12452,11 @@
       "from": "single-dealer-model",
       "to": "platform-business-model",
       "type": "contrasted_with"
+    },
+    {
+      "from": "slip-framework",
+      "to": "building-tech-led-products-process",
+      "type": "guides"
     },
     {
       "from": "smart-factory",
@@ -12260,6 +12564,11 @@
       "type": "is_contrasted_with"
     },
     {
+      "from": "sustaining-innovation",
+      "to": "disruptive-innovation",
+      "type": "contrasted_with"
+    },
+    {
       "from": "switching-costs",
       "to": "platform-based-model",
       "type": "is_increased_by"
@@ -12308,6 +12617,16 @@
       "from": "tech-entrepreneurs",
       "to": "vertical-expertise",
       "type": "characterized_by"
+    },
+    {
+      "from": "tech-led-products",
+      "to": "building-tech-led-products-process",
+      "type": "is_created_by"
+    },
+    {
+      "from": "tech-led-products",
+      "to": "dropbox",
+      "type": "is_example_of"
     },
     {
       "from": "technological-disruption",
@@ -12395,6 +12714,11 @@
       "type": "comprises"
     },
     {
+      "from": "the-innovators-dilemma",
+      "to": "disruption",
+      "type": "explains"
+    },
+    {
       "from": "the-long-tail",
       "to": "amazon-com",
       "type": "demonstrated_by"
@@ -12475,6 +12799,21 @@
       "type": "is_an_application_of"
     },
     {
+      "from": "two-sided-network",
+      "to": "platform-mediated-business-networks",
+      "type": "is_a_model_for"
+    },
+    {
+      "from": "two-sided-network",
+      "to": "cross-side-network-effect",
+      "type": "exhibits"
+    },
+    {
+      "from": "two-sided-network",
+      "to": "same-side-network-effect",
+      "type": "exhibits"
+    },
+    {
       "from": "unsupervised-learning",
       "to": "machine-learning",
       "type": "is_a_type_of"
@@ -12510,6 +12849,11 @@
       "type": "is_a_form_of"
     },
     {
+      "from": "value-networks",
+      "to": "disruptive-innovation",
+      "type": "influences"
+    },
+    {
       "from": "vertical-expertise",
       "to": "tech-entrepreneurs",
       "type": "characterizes"
@@ -12540,9 +12884,34 @@
       "type": "defined_by"
     },
     {
+      "from": "web-2-0",
+      "to": "web-1-0",
+      "type": "is_successor_to"
+    },
+    {
+      "from": "web-3-0",
+      "to": "web-2-0",
+      "type": "is_successor_to"
+    },
+    {
+      "from": "web-3-0",
+      "to": "blockchain",
+      "type": "is_based_on"
+    },
+    {
       "from": "wicked-problems",
       "to": "wicked-strategies",
       "type": "is_subject_of"
+    },
+    {
+      "from": "winner-take-all-dynamic",
+      "to": "network-effects",
+      "type": "is_driven_by"
+    },
+    {
+      "from": "winner-take-all-dynamic",
+      "to": "multi-homing",
+      "type": "is_related_to"
     },
     {
       "from": "winner-take-all-environment",
@@ -12563,6 +12932,11 @@
       "from": "working-backward-strategy",
       "to": "jeff-bezos",
       "type": "advocated_by"
+    },
+    {
+      "from": "wta-dynamics",
+      "to": "permanent-subsidization",
+      "type": "assesses-sustainability-of"
     },
     {
       "from": "zero-moment-of-truth",
@@ -12688,6 +13062,11 @@
       "from": "alphabet",
       "to": "deepmind",
       "type": "owns"
+    },
+    {
+      "from": "alphago",
+      "to": "artificial-intelligence",
+      "type": "is_example_of"
     },
     {
       "from": "amazon-alexa",
@@ -12920,6 +13299,11 @@
       "type": "acquired"
     },
     {
+      "from": "aws",
+      "to": "transitional-systems",
+      "type": "is_an_example_of"
+    },
+    {
       "from": "barnes-and-noble",
       "to": "amazon-com",
       "type": "competitor_of"
@@ -13078,6 +13462,11 @@
       "from": "chitrangda-singh",
       "to": "myntra",
       "type": "collaborated-with"
+    },
+    {
+      "from": "citigroup",
+      "to": "iad",
+      "type": "uses"
     },
     {
       "from": "clayton-christensen",
@@ -13283,6 +13672,16 @@
       "from": "driving-digital-strategy-executive-program",
       "to": "harvard-business-school",
       "type": "is_hosted_by"
+    },
+    {
+      "from": "dropbox",
+      "to": "tech-led-products",
+      "type": "is_example_of"
+    },
+    {
+      "from": "dropbox",
+      "to": "average-revenue-per-user",
+      "type": "is_measured_by"
     },
     {
       "from": "duncan-watts",
@@ -13625,6 +14024,16 @@
       "type": "uses"
     },
     {
+      "from": "google-adsense",
+      "to": "google",
+      "type": "is_product_of"
+    },
+    {
+      "from": "google-adwords",
+      "to": "google",
+      "type": "is_product_of"
+    },
+    {
       "from": "google-assistant",
       "to": "ibm-watson",
       "type": "is_competitor_of"
@@ -13638,6 +14047,36 @@
       "from": "google-flu-trends",
       "to": "spurious-correlation",
       "type": "is_an_example_of"
+    },
+    {
+      "from": "google",
+      "to": "platform-mediated-business-networks",
+      "type": "is_example_of"
+    },
+    {
+      "from": "google",
+      "to": "google-adwords",
+      "type": "offers"
+    },
+    {
+      "from": "google",
+      "to": "google-adsense",
+      "type": "offers"
+    },
+    {
+      "from": "google",
+      "to": "winner-take-all-dynamic",
+      "type": "is_analyzed_for"
+    },
+    {
+      "from": "google",
+      "to": "envelopment",
+      "type": "is_threatened_by"
+    },
+    {
+      "from": "google",
+      "to": "youtube",
+      "type": "acquired"
     },
     {
       "from": "google",
@@ -13733,6 +14172,21 @@
       "from": "hrithik-roshan",
       "to": "celebrity-engagements",
       "type": "is-example-of"
+    },
+    {
+      "from": "iad",
+      "to": "envelopment",
+      "type": "example-of"
+    },
+    {
+      "from": "iad",
+      "to": "steve-jobs",
+      "type": "described-by"
+    },
+    {
+      "from": "iad",
+      "to": "citigroup",
+      "type": "used-by"
     },
     {
       "from": "ibm-deep-blue",
@@ -13878,6 +14332,11 @@
       "from": "iss-longeron-challenge",
       "to": "international-space-station-iss",
       "type": "related_to"
+    },
+    {
+      "from": "itunes-app-store",
+      "to": "native-systems",
+      "type": "is_an_example_of"
     },
     {
       "from": "itunes",
@@ -14050,6 +14509,11 @@
       "type": "develops_hardware_for"
     },
     {
+      "from": "lisa-caputo",
+      "to": "citigroup",
+      "type": "executive-at"
+    },
+    {
       "from": "lockheed-martin",
       "to": "virtual-reality",
       "type": "uses"
@@ -14140,6 +14604,31 @@
       "type": "is_competitor_of"
     },
     {
+      "from": "meta-horizon-worlds",
+      "to": "meta",
+      "type": "is_developed_by"
+    },
+    {
+      "from": "meta-horizon-worlds",
+      "to": "native-apps",
+      "type": "is_an_example_of"
+    },
+    {
+      "from": "meta-horizon-worlds",
+      "to": "metaverse",
+      "type": "is_part_of"
+    },
+    {
+      "from": "meta",
+      "to": "metaverse",
+      "type": "competes_in"
+    },
+    {
+      "from": "meta",
+      "to": "meta-horizon-worlds",
+      "type": "develops"
+    },
+    {
       "from": "michael-e-porter",
       "to": "low-cost-producer-strategy",
       "type": "created"
@@ -14225,6 +14714,11 @@
       "type": "used"
     },
     {
+      "from": "ms-office",
+      "to": "transitional-apps",
+      "type": "is_an_example_of"
+    },
+    {
       "from": "myntra",
       "to": "fashion-e-commerce",
       "type": "operates-in"
@@ -14270,6 +14764,11 @@
       "type": "collaborated_with"
     },
     {
+      "from": "naukri-com",
+      "to": "two-sided-network",
+      "type": "is_example_of"
+    },
+    {
       "from": "naval-ravikant",
       "to": "atrium-talks",
       "type": "discussed_in"
@@ -14302,6 +14801,11 @@
     {
       "from": "netflix-competition",
       "to": "open-innovation",
+      "type": "is_an_example_of"
+    },
+    {
+      "from": "netflix",
+      "to": "transitional-apps",
       "type": "is_an_example_of"
     },
     {
@@ -14340,6 +14844,11 @@
       "type": "divested"
     },
     {
+      "from": "nvidia",
+      "to": "transitional-systems",
+      "type": "is_an_example_of"
+    },
+    {
       "from": "office-suite",
       "to": "microsoft",
       "type": "owned_by"
@@ -14363,6 +14872,11 @@
       "from": "oncology-expert-advisor",
       "to": "ibm-watson",
       "type": "is_powered_by"
+    },
+    {
+      "from": "openai",
+      "to": "native-systems",
+      "type": "creates"
     },
     {
       "from": "orion",
@@ -14676,6 +15190,11 @@
     },
     {
       "from": "steve-jobs",
+      "to": "iad",
+      "type": "described"
+    },
+    {
+      "from": "steve-jobs",
       "to": "apple",
       "type": "ceo_of"
     },
@@ -14856,6 +15375,16 @@
     },
     {
       "from": "uber",
+      "to": "native-apps",
+      "type": "is_an_example_of"
+    },
+    {
+      "from": "uber",
+      "to": "platform-mediated-business-networks",
+      "type": "is_example_of"
+    },
+    {
+      "from": "uber",
       "to": "focused-market-entry-strategy",
       "type": "exemplifies"
     },
@@ -14878,6 +15407,11 @@
       "from": "unilever",
       "to": "reverse-mentoring",
       "type": "uses"
+    },
+    {
+      "from": "unreal-engine",
+      "to": "metaverse",
+      "type": "enables"
     },
     {
       "from": "ups",
@@ -15010,6 +15544,11 @@
       "type": "is_an_example_of"
     },
     {
+      "from": "youtube",
+      "to": "google",
+      "type": "was_acquired_by"
+    },
+    {
       "from": "zara",
       "to": "rfid",
       "type": "uses"
@@ -15028,6 +15567,3876 @@
       "from": "zoom",
       "to": "freemium-model",
       "type": "uses"
+    },
+    {
+      "from": "index",
+      "to": "persona/deepa-mani",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/digital-innovation-under-investor-constraints",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/grassroots-technology-entrepreneurship-india",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/intellectual-evolution",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/mentor-network-and-influences",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/rhetorical-style-and-pedagogy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/technology-organization-policy-nexus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "persona/thinking-patterns",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/1-click-ordering",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/3d-printing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/3d-solution-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/4u-need-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/a-b-testing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/activity-based-costing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/additive-manufacturing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/alumni-philanthropy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/amplification-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/amplification",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/application-programming-interfaces",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/artificial-general-intelligence",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/artificial-intelligence",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/artificial-neural-networks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/asset-light-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/asset-light-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/asset-performance-management",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/attribution-marketing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/augmentation-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/augmentation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/augmented-reality",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/automation-and-pandemic-resilience",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/automation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/average-revenue-per-user",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/big-data",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/big-seed-marketing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/blockchain-technology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/blockchain",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/blue-ocean-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/blurring-industry-boundaries",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/bricks-and-clicks-integration",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/build-measure-learn-feedback-loop",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/building-critical-mass",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/building-tech-led-products-process",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-ecosystem",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-model-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-model-typology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-scope",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/business-value-of-technology-investments",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/capability-co-creation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/capability-development",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cart-abandonment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/celebrity-engagements",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/channel-complementarity",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/channel-conflict",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/chatbots",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/closed-system-platform",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cloud-computing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cloud-robotics",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/co-creating-value",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/co-creation-with-partners",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/co-creation-zone",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/coexistence-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cognitive-biases",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cognitive-computing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/collective-intelligence",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/collision-at-the-core",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/combinatorial-advantages-of-scale-scope-speed",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/competency-trap",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/competition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/complementarity-in-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/complementary-products-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/complementary-services",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/complementor",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/confirmation-bias",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/consensus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/consumer-journey-mapping",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/conversations-per-session-cps",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/conversion-optimization",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cooperation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/coopetition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/coopetitive-relationships",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/core-competencies",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/core-vs-co-created-capabilities",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/corporate-governance",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cost-per-click-cpc",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/creative-destruction",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/creativity-cultivation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cross-channel-effects",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cross-side-network-effect",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/crowdsourcing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-acquisition-cost",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-acquisition-funnel",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-churn-modeling",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-experience",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-focused-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-lifetime-value",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-profitability-analysis",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-pull",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/customer-retention-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/danger-zone",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/data-and-customers-as-assets",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/data-driven-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/data-network-effects",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/decentralized-manufacturing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/deep-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/demand-centric-pull",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/demand-driven-supply-chains",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/design-thinking",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/differentiated-shopping-experience",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/differentiation-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-business-ecosystem",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-business-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-business-rulebook",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-economy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-empowerment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-engine-mastercard",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-era-scale",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-era-scope",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-era-speed",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-giant",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-giants",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-industrial-company",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-inflection-point",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-leadership-corps",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-matrix-command-center",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-matrix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-performance-assessment-tools",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-transition-management",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-transition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digital-twin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/digitization",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/direct-network-effect",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/disruption",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/disruptive-innovation-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/disruptive-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/divesting-from-traditional-businesses",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/dynamic-pricing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/dynamic-retargeting",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/earned-media",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ebitda-margin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/economic-contraction-mortality-tradeoff",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystem-advantage",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystem-orchestration",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystem-participation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystem-trap",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystem-value-creation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ecosystems-digital-business",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/efficient-inventory-management",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/emotional-computing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/employee-churn-prediction",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/engagement-that-drives-business",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/entrepreneurial-clusters",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/envelopment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ethical-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/evaluating-acquisition-advantage",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/evidence-based-policy-making",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/excess-mortality",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experiential-retail",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experiment-based-attribution",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experimental-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experimentation-at-the-edge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experimentation-in-business",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/experiments-at-the-edge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/expert-systems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/extreme-values-in-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/factory-reorganization-with-electricity",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/fashion-e-commerce",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/file-sync-and-share",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/first-moment-of-truth",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/five-adaptation-principles",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/five-levels-of-it-enabled-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/focused-market-entry-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/forged-laborers",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/four-digital-business-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/four-interaction-zones",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/frame-storming",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/framework-for-reinvention",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/freemium-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/freemium-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/freemium",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/fulfillment-cost",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/fulfillment-efficiency",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/future-of-work",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/gender-diversity",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/general-purpose-technology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generalized-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generative-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generative-questions",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generic-retargeting",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/gilders-law",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/governance-in-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/gross-margin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/hedging-currency-risk",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/hierarchy-of-powers",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/high-it-intensive-industries",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/homophily",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/horizontal-expertise",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/human-machine-augmentation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/human-machine-collaboration",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ict-closeness",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/implicit-association-test",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/inclusion",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/incumbent-companies",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/incumbent-inertia",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/incumbents",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/independent-digital-unit",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/indian-ict-industry-evolution",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/indirect-network-effect",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industrial-age-scale",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industrial-age-scope",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industrial-age-speed",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industrial-internet",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industry-4-0",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industry-incumbent",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/industry-incumbents",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/influencer-marketing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/initial-public-offering",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/innovation-in-indian-firms",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/innovation-outposts",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/instilling-digital-business-thinking",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/internet-of-things",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/inventory-holding-cost",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/investor-expectations-constraint-on-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/it-led-business-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/knowledge-representation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/landing-docks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/leader-zone",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/learning-in-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/learning-intervention-for-entrepreneurs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/learning-thermostat",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/learning-through-experimentation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/legal-technology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/low-cost-producer-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/machine-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/market-myopia",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/marketplace-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/markets-for-technology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/merchant-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/merchant-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/metaverse",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/metcalfes-law",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/micromoments",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mind-to-machine",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mini-ecosystems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mobile-advertising",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mobility-and-transportation-ecosystem",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/modular-solutions",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/modularity-of-innovations",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/moment-based-marketing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mono-homing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/moores-law",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/morphing-the-core",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/multi-homing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/mutual-dependency",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/native-apps",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/native-systems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/natural-language-processing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/need-for-human-proximity",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/network-centric-digital-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/network-effects",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/networked-society",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/new-business-infrastructure",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/non-adjacent-competition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/non-traditional-collaborations",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/omnichannel-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/on-demand-production",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/online-travel-agencies",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/open-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/open-system-platform",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/organizational-collision",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/organized-vs-unorganized-retail",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/outcome-based-contracts",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/outcome-based-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/outcome-based-services",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/outsourcing-service-provider-transition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/over-serving-the-market",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/owned-media",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/paid-media",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/patent-citation-network",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/pay-per-lux",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/pay-per-use-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/payroll-processing-automation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/paywall-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/people-analytics",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/perception-in-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/performance-spread",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/performance-trajectory",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/permanent-subsidization",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/phase-1-experimentation-at-the-edge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/phase-2-collision-at-the-core",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/phase-3-reinvention-at-the-root",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/physical-and-digital-fusion",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/pipeline-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-based-business-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-based-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-envelopment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-focused-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-governance",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-mediated-business-networks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platform-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/platforms",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/players-in-digital-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/powerful-machines",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/preferential-partnerships",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/prescriptive-questions",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/price-competition-in-ecommerce",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/price-dispersion",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/private-labels",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/problem-framing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/problem-solving-focus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/problem-solving",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/product-as-a-service",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/product-definition-shift",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/product-phases",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/product-to-solution-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/products-to-platforms-shift",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/proof-of-work",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/psychological-safety",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/razor-and-blade-model-in-reverse",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/razor-and-blades-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/real-options",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/recursive-self-improvement",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/redefining-business-around-customers",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/referral-programs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/reinforcement-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/reinvention-at-the-root",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/remote-work-productivity",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/remote-work",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/retail-stool-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/retargeting",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/reverse-mentoring",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/rfid",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/robotics-in-warehousing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/route-optimization-software",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/rules-matrix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/sales-per-square-foot",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/same-side-network-effect",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/scale-scope-speed-nexus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/search-advertising",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/search-friction",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/second-machine-age",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/second-moment-of-truth",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/self-selection-in-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/shift-from-storytelling-to-story-making",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/shopping-cart-abandonment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/shrinkage",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/single-dealer-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/slip-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/smart-factory",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/snackable-content",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/social-capital-in-it-outsourcing",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/social-contagion",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/social-impact-of-it",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/social-media-virality",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/soft-power",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/software-as-a-service-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/software-is-eating-the-world",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/solution-business-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/sor-marketplace-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/spurious-correlation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/strategic-view-of-technology",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/strategy-collision",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/strengthening-the-core-and-building-for-the-future",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/subsidize-one-side-of-the-platform",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/subsistence-entrepreneurship",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/success-traps",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/superior-customer-experience",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/supervised-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/supply-side-economies-of-scale",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/susceptibility-to-machine-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/sustaining-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/switching-costs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/synthetic-intellects",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/system-1-and-system-2-thinking",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/systems-integrator",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/talent-trap",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/tech-entrepreneur",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/tech-entrepreneurs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/tech-led-products",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/technological-disruption",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/technology-adoption-lag",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/technology-as-a-source-of-competitive-advantage",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/technology-as-a-support-function",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/technology-enabled-business-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/the-digital-matrix-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/the-digital-matrix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/the-innovators-dilemma",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/the-long-tail",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/the-sharing-economy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/theory-of-digital-adaptation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/theory-of-the-firm",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/three-phases-of-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/three-stages-of-digital-transition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/three-winning-moves",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/traditional-performance-evaluation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/trajectory-contingent-matching",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/transaction-zone",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/transfer-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/transformer-model",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/transitional-apps",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/transitional-systems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/two-sided-network",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/unsupervised-learning",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/upstream-downstream-location",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/user-led-innovation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/valuation-for-growth",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/valuation-for-profit",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/value-networks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/vertical-expertise",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/vertical-integration",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/virtual-integration",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/virtual-reality",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/weak-signals",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/web-1-0",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/web-2-0",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/web-3-0",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/wicked-problems",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/winner-take-all-dynamic",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/winner-take-all-environment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/winner-take-all-market",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/working-backward-strategy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/wta-dynamics",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/zero-moment-of-truth",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/accel-partners",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/accor",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/adam-brandenburger",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/adobe",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/airbnb",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ajay-banga",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/alibaba",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/alphabet",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/alphago",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon-alexa",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon-basics",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon-com",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon-go",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon-web-services-aws",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/amazon",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/anand-nandkumar",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/andrew-mcafee",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/android-pay",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/android",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/andy-grove",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/apple-ii",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/apple-pay",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/apple-siri",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/apple",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/aquila-internet-drone",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/arun-sundararajan",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/at-walmart-labs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/atrium-talks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/audi-city",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/avis",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/aws",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/barnes-and-noble",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/barry-nalebuff",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bbva-compass-bank",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bbva-compass",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bbva",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bcg",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bhagwan-chowdhry",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bill-ford",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bill-ruh",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bitcoin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/blackberry",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/blendtec",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bob-mcdonald",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/brin-johson-paper",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/builde",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/bureau-of-economic-analysis",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/business-week",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/buzzfeed",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/cambridge-analytica",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/carekit",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/changecoin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/charles-schwab",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/chase-sapphire-reserve-card",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/chitrangda-singh",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/citigroup",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/clayton-christensen",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/co-opetition-book",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/coin-contract-intelligence",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/companies-act-2013",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/connect-develop-program",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/creative-suite",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/csc-scheme",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/currentc",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/david-kenny",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/dbs-bank",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/deep-blue",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/deepa-mani",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/deepmind",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/deloitte",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/digital-equipment-corporation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/disney",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/disneys-magicband",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/driving-digital-strategy-executive-program",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/dropbox",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/duncan-watts",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eataly",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ebay",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eckard-eberle",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/economic-survey-chapter-on-dwarfs-and-giants",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/edwards-deming",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/elon-musk",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/enpara",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eric-ries",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eric-schmidt",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eric-von-hippel",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ericsson",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/erik-brynjolfsson",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/eytan-bakshy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/facebook-lift",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/facebook-m",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/facebook",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/fastpass-plus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/fastpass",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/finansbank",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/flipkart",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ford-motor-co",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ford-motor-company",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ford-motors",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ford",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/gary-kasparov",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ge-digital",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ge-general-electric",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ge-oil-and-gas",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ge-predix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/gelato",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/general-electric",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/general-management-program",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/general-motors",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/geoff-hinton",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/geoffrey-a-moore",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/george-gilder",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/gerdau",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/gilders-law",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/gm",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/goldman-sachs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google-adsense",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google-adwords",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google-assistant",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google-flu-parable",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google-flu-trends",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/google",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/hans-vestberg",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/harvard-business-review",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/harvard-business-school",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/harvard-nasa-tournament-lab",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/healthkit",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/healthvault",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/henkel",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/here",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/hilti",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/hointer",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/honeywell",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/hrithik-roshan",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/iad",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ibm-deep-blue",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ibm-watson",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ibm",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ideo",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/igor-ansoff",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/imagenet",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/indian-patent-office",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/indian-school-of-business",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/information-systems-research",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/informs-iss-practical-impacts-award",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/informs-iss",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/innocentive",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/insurance-industry-in-india",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/intel",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/international-space-station-iss",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ios",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ipod-and-itunes",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/isb-executive-education",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/iss-longeron-challenge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/itunes-app-store",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/itunes",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jack-ma",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jack-welch",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/james-kuffner",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jamie-dimon",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jeff-bezos",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jeff-immelt",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jeffrey-immelt",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jerry-kaplan",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jim-ciriello",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/john-c-henderson",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/john-camillus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/john-deere",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/john-wanamaker",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jonah-peretti",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/joseph-henrich",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/jp-morgan-chase",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/kahneman-and-tversky",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/kanthal",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/karim-lakhani",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/kiehls",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/knack",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/kunal-shah",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/le-club-accorhotels",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/leap",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/lenovo",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/lisa-caputo",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/lockheed-martin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/lyft",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/lyric",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/m-v-rajamannar",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/marc-andreessen",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mark-fields",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/marketing-myopia",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/marquee",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mary-barra",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mastercard",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mckinsey-global-institute",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mckinsey",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/merrill-lynch",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/meta-horizon-worlds",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/meta",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/michael-e-porter",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/michelin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/microsoft-azure",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/microsoft-cortana",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/microsoft-teams",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/microsoft",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mit-sloan-management-review",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/mohammad-ehteshami",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/morris-technologies",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ms-office",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/myntra",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/narrative-sciences-quill",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/nasa",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/naukri-com",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/naval-ravikant",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/nest-labs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/nest",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/netflix-competition",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/netflix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/new-york-times",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/next47",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/nokia",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/note-7",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/nvidia",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/office-suite",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/omer-aras",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/omniture",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/oncology-expert-advisor",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/openai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/orion",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/oscar-farinetti",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/oyo",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/p-and-g",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/paytm",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/pd-at-ge",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/peter-drucker",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/philips",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/porsche-passport",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/predix-platform",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/predix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/priceless-campaign",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/priceless-cities-program",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/procter-and-gamble-connect-and-develop-program",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/procter-and-gamble",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/radhika-piramal",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/raja-rajamannar",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/red-roof-inn",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/reliance-energy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/researchkit",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/rick-chavez",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ritesh-agarwal",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/robert-kuttner",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/rock-health",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ronald-coase",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/room-key",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/salman-khan",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/samsung",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/satya-nadella",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/schiphol-airport",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sebastien-bazin",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sebi-lodr-2015",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sephora",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/shantanu-narayen",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/siemens",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/simon-property-group",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/simon",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sinan-aral",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/slack",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sony-music-india",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/srini-raju-center-for-it-and-the-networked-economy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/srini-raju-centre-for-it-and-the-networked-economy",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sritne",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/stanford-university-design-school",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/starbucks",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/steve-ballmer",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/steve-blank",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/steve-jobs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/sunil-gupta",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/surface-product-line",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/swisscom",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tag-heuer",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ted-levitt",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/telefonica",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tensorflow",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tesco-homeplus-virtual-store",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tesco",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tesla-motors",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tesla",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/the-digital-matrix-book",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/the-digital-matrix",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/the-weather-company",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/theodore-levitt",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/thoughtmachine",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/threadless",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tiger-global",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tongal",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/topcoder",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/tower-records",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/uber",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/unilever-kan-khajura-station",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/unilever",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/unreal-engine",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/ups",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/us-foods",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/us-trust",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/vault-os",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/venkat-venkatraman",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/verb-surgical",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/viant",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/village-level-entrepreneurs",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/vip-industries",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/walmart-pay",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/walmart",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/watson-ibm",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/whirlpool",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/wicked-strategies",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/windows-10",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/windows-operating-system",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/wipro-holmes",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/works-with-nest-platform",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/wpp",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/xiaoice",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/youtube",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/zara",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/zipcar",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "entities/zoom",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/authentication-as-ecosystem-trust-infrastructure",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/code-as-both-enabler-and-constraint-in-digital-transformation",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/cookie-deprecation-as-ecosystem-inflection-point",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/digital-disruption-as-political-disruption",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/ecosystem-competition-and-antitrust-misalignment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/financial-architecture-as-digital-transformation-barrier",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/history-as-defamiliarization-engine",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/homophily-trap-in-network-driven-digital-scaling",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/low-level-design-as-digital-transformation-substrate",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "synthesized/web3-decentralization-paradox",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-building-tech-led-products",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-driving-digital-strategy-a-guide-to-reimagining-your-1",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-incumbents-response",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-merchant-models",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-outline-introduction",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-platform-structures",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-the-digital-matrix-new-rules-for-business-transformation-1",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "stubs/stub-web-30-metaverse",
+      "type": "references"
     },
     {
       "from": "deepa-mani",
@@ -15698,1526 +20107,6 @@
       "from": "web3-decentralization-paradox",
       "to": "digital-disruption-as-political-disruption",
       "type": "relates-to"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "machine-learning",
-      "type": "includes"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "generative-ai",
-      "type": "includes"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "knowledge-representation",
-      "type": "has_sub-problem"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "learning-in-ai",
-      "type": "has_sub-problem"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "natural-language-processing",
-      "type": "has_sub-problem"
-    },
-    {
-      "from": "artificial-intelligence",
-      "to": "perception-in-ai",
-      "type": "has_sub-problem"
-    },
-    {
-      "from": "ethical-ai",
-      "to": "artificial-intelligence",
-      "type": "is_challenge_for"
-    },
-    {
-      "from": "generative-ai",
-      "to": "artificial-intelligence",
-      "type": "is_type_of"
-    },
-    {
-      "from": "generative-ai",
-      "to": "generative-questions",
-      "type": "solves"
-    },
-    {
-      "from": "generative-questions",
-      "to": "generative-ai",
-      "type": "is_solved_by"
-    },
-    {
-      "from": "knowledge-representation",
-      "to": "artificial-intelligence",
-      "type": "is_sub-problem_of"
-    },
-    {
-      "from": "learning-in-ai",
-      "to": "artificial-intelligence",
-      "type": "is_sub-problem_of"
-    },
-    {
-      "from": "machine-learning",
-      "to": "artificial-intelligence",
-      "type": "is_subset_of"
-    },
-    {
-      "from": "machine-learning",
-      "to": "deep-learning",
-      "type": "includes"
-    },
-    {
-      "from": "natural-language-processing",
-      "to": "artificial-intelligence",
-      "type": "is_sub-problem_of"
-    },
-    {
-      "from": "perception-in-ai",
-      "to": "artificial-intelligence",
-      "type": "is_sub-problem_of"
-    },
-    {
-      "from": "prescriptive-questions",
-      "to": "artificial-intelligence",
-      "type": "is_solved_by"
-    },
-    {
-      "from": "alphago",
-      "to": "artificial-intelligence",
-      "type": "is_example_of"
-    },
-    {
-      "from": "index",
-      "to": "persona/deepa-mani",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/thinking-patterns",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/intellectual-evolution",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/rhetorical-style-and-pedagogy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/digital-innovation-under-investor-constraints",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/grassroots-technology-entrepreneurship-india",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/technology-organization-policy-nexus",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "persona/mentor-network-and-influences",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/1-click-ordering",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/3d-printing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/a-b-testing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/activity-based-costing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/additive-manufacturing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/alumni-philanthropy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/amplification-ai",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/amplification",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/application-programming-interfaces",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/artificial-general-intelligence",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/artificial-intelligence",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/artificial-neural-networks",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/asset-light-business-model",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/asset-light-model",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/asset-performance-management",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/attribution-marketing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/augmentation-ai",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/augmentation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/augmented-reality",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/automation-and-pandemic-resilience",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/automation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/big-data",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/big-seed-marketing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/blockchain-technology",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/blockchain",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/blue-ocean-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/blurring-industry-boundaries",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/bricks-and-clicks-integration",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/build-measure-learn-feedback-loop",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/building-critical-mass",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-ecosystem",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-ecosystems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-model-innovation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-model-typology",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-model",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-models",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-scope",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/business-value-of-technology-investments",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/capability-co-creation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/capability-development",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cart-abandonment",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/celebrity-engagements",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/channel-complementarity",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/channel-conflict",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/chatbots",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/closed-system-platform",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cloud-computing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cloud-robotics",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/co-creating-value",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/co-creation-with-partners",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/co-creation-zone",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/coexistence-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cognitive-biases",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cognitive-computing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/collective-intelligence",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/collision-at-the-core",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/combinatorial-advantages-of-scale-scope-speed",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/competency-trap",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/competition",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/complementarity-in-ecosystems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/complementary-products-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/complementary-services",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/complementor",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/confirmation-bias",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/consumer-journey-mapping",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/conversations-per-session-cps",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/conversion-optimization",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cooperation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/coopetition",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/coopetitive-relationships",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/core-competencies",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/core-vs-co-created-capabilities",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/corporate-governance",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cost-per-click-cpc",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/creative-destruction",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/creativity-cultivation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/cross-channel-effects",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/crowdsourcing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-acquisition-cost",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-acquisition-funnel",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-churn-modeling",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-experience",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-focused-innovation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-lifetime-value",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-profitability-analysis",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-pull",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/customer-retention-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/danger-zone",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/data-and-customers-as-assets",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/data-driven-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/data-network-effects",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/decentralized-manufacturing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/deep-learning",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/demand-centric-pull",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/demand-driven-supply-chains",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/design-thinking",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/differentiated-shopping-experience",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/differentiation-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-business-ecosystem",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-business-ecosystems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-business-rulebook",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-economy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-ecosystems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-empowerment",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-engine-mastercard",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-era-scale",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-era-scope",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-era-speed",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-giant",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-giants",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-industrial-company",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-inflection-point",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-leadership-corps",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-matrix-command-center",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-matrix",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-performance-assessment-tools",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-transformation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-transition-management",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-transition",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digital-twin",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/digitization",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/direct-network-effect",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/disruption",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/disruptive-innovation-framework",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/disruptive-innovation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/divesting-from-traditional-businesses",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/dynamic-pricing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/dynamic-retargeting",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/earned-media",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ebitda-margin",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/economic-contraction-mortality-tradeoff",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystem-advantage",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystem-orchestration",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystem-participation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystem-trap",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystem-value-creation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ecosystems-digital-business",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/efficient-inventory-management",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/emotional-computing",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/employee-churn-prediction",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/engagement-that-drives-business",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/entrepreneurial-clusters",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/evaluating-acquisition-advantage",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/evidence-based-policy-making",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/excess-mortality",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experiential-retail",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experiment-based-attribution",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experimental-learning",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experimentation-at-the-edge",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experimentation-in-business",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/experiments-at-the-edge",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/expert-systems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/extreme-values-in-innovation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/factory-reorganization-with-electricity",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/fashion-e-commerce",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/first-moment-of-truth",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/five-adaptation-principles",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/five-levels-of-it-enabled-transformation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/focused-market-entry-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/forged-laborers",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/four-digital-business-models",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/four-interaction-zones",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/frame-storming",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/framework-for-reinvention",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/freemium-model",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/freemium-strategy",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/freemium",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/fulfillment-cost",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/fulfillment-efficiency",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/future-of-work",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/gender-diversity",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/general-purpose-technology",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/generalized-ai",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/generic-retargeting",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/gilders-law",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/governance-in-ecosystems",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/gross-margin",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/hedging-currency-risk",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/hierarchy-of-powers",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/high-it-intensive-industries",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/homophily",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/horizontal-expertise",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/human-machine-augmentation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/human-machine-collaboration",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/ict-closeness",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/implicit-association-test",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/inclusion",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "concepts/incumbent-companies",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/cookie-deprecation-as-ecosystem-inflection-point",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/authentication-as-ecosystem-trust-infrastructure",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/low-level-design-as-digital-transformation-substrate",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/history-as-defamiliarization-engine",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/ecosystem-competition-and-antitrust-misalignment",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/homophily-trap-in-network-driven-digital-scaling",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/financial-architecture-as-digital-transformation-barrier",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/code-as-both-enabler-and-constraint-in-digital-transformation",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/digital-disruption-as-political-disruption",
-      "type": "references"
-    },
-    {
-      "from": "index",
-      "to": "synthesized/web3-decentralization-paradox",
-      "type": "references"
-    },
-    {
-      "from": "3d-solution-framework",
-      "to": "building-tech-led-products-process",
-      "type": "is_component_of"
-    },
-    {
-      "from": "4u-need-framework",
-      "to": "building-tech-led-products-process",
-      "type": "is_component_of"
-    },
-    {
-      "from": "average-revenue-per-user",
-      "to": "dropbox",
-      "type": "is_metric_for"
-    },
-    {
-      "from": "building-tech-led-products-process",
-      "to": "4u-need-framework",
-      "type": "uses"
-    },
-    {
-      "from": "building-tech-led-products-process",
-      "to": "3d-solution-framework",
-      "type": "uses"
-    },
-    {
-      "from": "building-tech-led-products-process",
-      "to": "slip-framework",
-      "type": "is_guided_by"
-    },
-    {
-      "from": "file-sync-and-share",
-      "to": "dropbox",
-      "type": "is_example_of"
-    },
-    {
-      "from": "product-phases",
-      "to": "tech-led-products",
-      "type": "describes_lifecycle_of"
-    },
-    {
-      "from": "slip-framework",
-      "to": "building-tech-led-products-process",
-      "type": "guides"
-    },
-    {
-      "from": "tech-led-products",
-      "to": "building-tech-led-products-process",
-      "type": "is_created_by"
-    },
-    {
-      "from": "tech-led-products",
-      "to": "dropbox",
-      "type": "is_example_of"
-    },
-    {
-      "from": "dropbox",
-      "to": "tech-led-products",
-      "type": "is_example_of"
-    },
-    {
-      "from": "dropbox",
-      "to": "average-revenue-per-user",
-      "type": "is_measured_by"
-    },
-    {
-      "from": "google",
-      "to": "youtube",
-      "type": "acquired"
-    },
-    {
-      "from": "youtube",
-      "to": "google",
-      "type": "was_acquired_by"
-    },
-    {
-      "from": "disruption",
-      "to": "the-innovators-dilemma",
-      "type": "explained_by"
-    },
-    {
-      "from": "disruptive-innovation",
-      "to": "disruption",
-      "type": "is_a_type_of"
-    },
-    {
-      "from": "disruptive-innovation",
-      "to": "sustaining-innovation",
-      "type": "contrasted_with"
-    },
-    {
-      "from": "disruptive-innovation",
-      "to": "value-networks",
-      "type": "influenced_by"
-    },
-    {
-      "from": "sustaining-innovation",
-      "to": "disruptive-innovation",
-      "type": "contrasted_with"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "disruption",
-      "type": "explains"
-    },
-    {
-      "from": "value-networks",
-      "to": "disruptive-innovation",
-      "type": "influences"
-    },
-    {
-      "from": "cross-side-network-effect",
-      "to": "network-effects",
-      "type": "is_type_of"
-    },
-    {
-      "from": "envelopment",
-      "to": "platform-models",
-      "type": "strategy-used-by"
-    },
-    {
-      "from": "mono-homing",
-      "to": "multi-homing",
-      "type": "is_contrasted_with"
-    },
-    {
-      "from": "multi-homing",
-      "to": "mono-homing",
-      "type": "is_contrasted_with"
-    },
-    {
-      "from": "network-effects",
-      "to": "platform-mediated-business-networks",
-      "type": "is_characteristic_of"
-    },
-    {
-      "from": "network-effects",
-      "to": "cross-side-network-effect",
-      "type": "has_type"
-    },
-    {
-      "from": "network-effects",
-      "to": "same-side-network-effect",
-      "type": "has_type"
-    },
-    {
-      "from": "permanent-subsidization",
-      "to": "platform-models",
-      "type": "strategy-used-in"
-    },
-    {
-      "from": "pipeline-business-model",
-      "to": "platform-mediated-business-networks",
-      "type": "is_contrasted_with"
-    },
-    {
-      "from": "platform-mediated-business-networks",
-      "to": "pipeline-business-model",
-      "type": "is_contrasted_with"
-    },
-    {
-      "from": "platform-mediated-business-networks",
-      "to": "network-effects",
-      "type": "is_characterized_by"
-    },
-    {
-      "from": "platform-mediated-business-networks",
-      "to": "two-sided-network",
-      "type": "has_structure"
-    },
-    {
-      "from": "same-side-network-effect",
-      "to": "network-effects",
-      "type": "is_type_of"
-    },
-    {
-      "from": "two-sided-network",
-      "to": "platform-mediated-business-networks",
-      "type": "is_a_model_for"
-    },
-    {
-      "from": "two-sided-network",
-      "to": "cross-side-network-effect",
-      "type": "exhibits"
-    },
-    {
-      "from": "two-sided-network",
-      "to": "same-side-network-effect",
-      "type": "exhibits"
-    },
-    {
-      "from": "winner-take-all-dynamic",
-      "to": "network-effects",
-      "type": "is_driven_by"
-    },
-    {
-      "from": "winner-take-all-dynamic",
-      "to": "multi-homing",
-      "type": "is_related_to"
-    },
-    {
-      "from": "wta-dynamics",
-      "to": "permanent-subsidization",
-      "type": "assesses-sustainability-of"
-    },
-    {
-      "from": "citigroup",
-      "to": "iad",
-      "type": "uses"
-    },
-    {
-      "from": "google-adsense",
-      "to": "google",
-      "type": "is_product_of"
-    },
-    {
-      "from": "google-adwords",
-      "to": "google",
-      "type": "is_product_of"
-    },
-    {
-      "from": "google",
-      "to": "platform-mediated-business-networks",
-      "type": "is_example_of"
-    },
-    {
-      "from": "google",
-      "to": "google-adwords",
-      "type": "offers"
-    },
-    {
-      "from": "google",
-      "to": "google-adsense",
-      "type": "offers"
-    },
-    {
-      "from": "google",
-      "to": "winner-take-all-dynamic",
-      "type": "is_analyzed_for"
-    },
-    {
-      "from": "google",
-      "to": "envelopment",
-      "type": "is_threatened_by"
-    },
-    {
-      "from": "iad",
-      "to": "envelopment",
-      "type": "example-of"
-    },
-    {
-      "from": "iad",
-      "to": "steve-jobs",
-      "type": "described-by"
-    },
-    {
-      "from": "iad",
-      "to": "citigroup",
-      "type": "used-by"
-    },
-    {
-      "from": "lisa-caputo",
-      "to": "citigroup",
-      "type": "executive-at"
-    },
-    {
-      "from": "naukri-com",
-      "to": "two-sided-network",
-      "type": "is_example_of"
-    },
-    {
-      "from": "steve-jobs",
-      "to": "iad",
-      "type": "described"
-    },
-    {
-      "from": "uber",
-      "to": "platform-mediated-business-networks",
-      "type": "is_example_of"
-    },
-    {
-      "from": "blockchain",
-      "to": "proof-of-work",
-      "type": "uses"
-    },
-    {
-      "from": "blockchain",
-      "to": "consensus",
-      "type": "uses"
-    },
-    {
-      "from": "consensus",
-      "to": "blockchain",
-      "type": "is_a_component_of"
-    },
-    {
-      "from": "metaverse",
-      "to": "blockchain",
-      "type": "is_enabled_by"
-    },
-    {
-      "from": "metaverse",
-      "to": "unreal-engine",
-      "type": "is_enabled_by"
-    },
-    {
-      "from": "metaverse",
-      "to": "nvidia",
-      "type": "is_enabled_by"
-    },
-    {
-      "from": "proof-of-work",
-      "to": "blockchain",
-      "type": "is_a_component_of"
-    },
-    {
-      "from": "web-2-0",
-      "to": "web-1-0",
-      "type": "is_successor_to"
-    },
-    {
-      "from": "web-3-0",
-      "to": "web-2-0",
-      "type": "is_successor_to"
-    },
-    {
-      "from": "web-3-0",
-      "to": "blockchain",
-      "type": "is_based_on"
-    },
-    {
-      "from": "aws",
-      "to": "transitional-systems",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "itunes-app-store",
-      "to": "native-systems",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "meta-horizon-worlds",
-      "to": "meta",
-      "type": "is_developed_by"
-    },
-    {
-      "from": "meta-horizon-worlds",
-      "to": "native-apps",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "meta-horizon-worlds",
-      "to": "metaverse",
-      "type": "is_part_of"
-    },
-    {
-      "from": "meta",
-      "to": "metaverse",
-      "type": "competes_in"
-    },
-    {
-      "from": "meta",
-      "to": "meta-horizon-worlds",
-      "type": "develops"
-    },
-    {
-      "from": "ms-office",
-      "to": "transitional-apps",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "netflix",
-      "to": "transitional-apps",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "nvidia",
-      "to": "transitional-systems",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "openai",
-      "to": "native-systems",
-      "type": "creates"
-    },
-    {
-      "from": "uber",
-      "to": "native-apps",
-      "type": "is_an_example_of"
-    },
-    {
-      "from": "unreal-engine",
-      "to": "metaverse",
-      "type": "enables"
     }
   ]
 }

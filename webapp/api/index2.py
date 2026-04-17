@@ -61,7 +61,6 @@ from graph import (
     strip_frontmatter,
     WIKI_DIR,
     VAULT,
-    GRAPH_PATH,
 )
 
 # Optional: load .env file if python-dotenv is available
@@ -151,33 +150,18 @@ def _load_chunks() -> list:
 
 
 def _load_graph() -> dict:
-    """
-    Load the knowledge graph with Vercel-aware path fallback.
-
-    Priority:
-      1. DATA_DIR/_graph.json  — copied here by export_for_web.py; present on Vercel
-      2. GRAPH_PATH (WIKI_DIR/_graph.json) — local dev path from graph.py
-      3. Build from wiki pages   — local dev only (requires writable filesystem)
-      4. Empty graph             — silent fallback; graph_traverse returns no results
-    """
-    # 1. Vercel-deployed copy
-    vercel_path = DATA_DIR / "_graph.json"
-    if vercel_path.exists():
+    """Load the knowledge graph from webapp/data/_graph.json (canonical location)."""
+    graph_path = DATA_DIR / "_graph.json"
+    if graph_path.exists():
         try:
-            g = json.loads(vercel_path.read_text(encoding="utf-8"))
+            g = json.loads(graph_path.read_text(encoding="utf-8"))
             print(f"[Graph] Loaded from data/_graph.json ({len(g.get('nodes', {}))} nodes)")
             return g
         except Exception as e:
-            print(f"[Graph] data/_graph.json unreadable ({e}), trying wiki path")
-
-    # 2 & 3. Local dev path (load_graph builds from wiki if missing, writes to WIKI_DIR)
-    try:
-        g = load_graph()
-        print(f"[Graph] Loaded from wiki ({len(g.get('nodes', {}))} nodes)")
-        return g
-    except Exception as e:
-        print(f"[Graph] Unavailable ({e}) — graph_traverse will return no results")
-        return {"nodes": {}, "edges": []}
+            print(f"[Graph] data/_graph.json unreadable ({e})")
+    else:
+        print("[Graph] data/_graph.json not found — run: python scripts/graph.py --build")
+    return {"nodes": {}, "edges": []}
 
 
 def _load_faiss_index():
@@ -1165,7 +1149,7 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
     except OSError as e:
         print(f"[WikiUpdate] Disk write skipped (read-only fs — will push to GitHub): {e}")
 
-    # Patch _graph.json on disk (skip if filesystem is read-only)
+    # Patch _graph.json in webapp/data/ (always — memory is always writable on Vercel).
     graph = _load_graph()
     graph["nodes"][slug] = {
         "type": page_type,
@@ -1174,19 +1158,19 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
         "tags": tags,
         "path": f"wiki/synthesized/{slug}.md",
     }
+    seen_edges = {(e["from"], e["to"], e["type"]) for e in graph["edges"]}
     for r in rels:
-        graph["edges"].append({
-            "from": slug,
-            "to": r.get("target", ""),
-            "type": r.get("type", "related_to"),
-        })
-    if disk_ok:
-        try:
-            GRAPH_PATH.write_text(
-                json.dumps(graph, indent=2, ensure_ascii=False), encoding="utf-8"
-            )
-        except OSError:
-            pass
+        edge = {"from": slug, "to": r.get("target", ""), "type": r.get("type", "related_to")}
+        key = (edge["from"], edge["to"], edge["type"])
+        if key not in seen_edges:
+            graph["edges"].append(edge)
+            seen_edges.add(key)
+    graph_json = json.dumps(graph, indent=2, ensure_ascii=False)
+    try:
+        (DATA_DIR / "_graph.json").write_text(graph_json, encoding="utf-8")
+        print("[WikiUpdate] Graph updated: webapp/data/_graph.json")
+    except OSError as e:
+        print(f"[WikiUpdate] Graph write failed: {e}")
 
     # Update in-memory KB under lock.
     # This works on both local and Vercel (memory is always writable).
@@ -1228,16 +1212,24 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
     except OSError:
         pass
 
-    # Push wiki page + index.md to GitHub (push on every write)
+    # Push wiki page + graph + index.md to GitHub
     today_str = date.today().isoformat()
+    page_github_path  = str(out_path.relative_to(PROJECT_ROOT)).replace("\\", "/")
+    graph_github_path = str((DATA_DIR / "_graph.json").relative_to(PROJECT_ROOT)).replace("\\", "/")
     _push_to_github(
-        repo_relative_path=f"Vault/wiki/synthesized/{slug}.md",
+        repo_relative_path=page_github_path,
         content=content,
         commit_msg=f"wiki: synthesize {slug} from query {today_str}",
     )
+    _push_to_github(
+        repo_relative_path=graph_github_path,
+        content=graph_json,
+        commit_msg=f"wiki: update _graph.json after synthesizing {slug}",
+    )
     if new_index_content:
+        index_github_path = str(INDEX_MD_PATH.relative_to(PROJECT_ROOT)).replace("\\", "/")
         _push_to_github(
-            repo_relative_path="Vault/wiki/index.md",
+            repo_relative_path=index_github_path,
             content=new_index_content,
             commit_msg=f"wiki: update index.md after synthesizing {slug}",
         )
@@ -1507,7 +1499,7 @@ def main():
     if args.rebuild_graph:
         graph = save_graph()
         print(f"Built graph: {len(graph['nodes'])} nodes, {len(graph['edges'])} edges")
-        print(f"Saved to: {GRAPH_PATH}")
+        print(f"Saved to: {DATA_DIR / '_graph.json'}")
         return
     if args.model1:
         WIKI_LLM_MODEL = args.model1

@@ -29,7 +29,8 @@ except ImportError:
 PROJECT_ROOT = Path(__file__).parent.parent.parent  # webapp/api/ → webapp/ → project root
 VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 WIKI_DIR = VAULT / "wiki"
-GRAPH_PATH = WIKI_DIR / "_graph.json"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+GRAPH_PATH = DATA_DIR / "_graph.json"
 
 # ---------------------------------------------------------------------------
 # YAML frontmatter parsing
