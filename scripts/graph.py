@@ -26,7 +26,7 @@ except ImportError:
     yaml = None
 
 PROJECT_ROOT = Path(__file__).parent.parent
-VAULT = PROJECT_ROOT / "Vault"
+VAULT = PROJECT_ROOT / "webapp" / "Vault"   # actual vault lives under webapp/
 WIKI_DIR = VAULT / "wiki"
 GRAPH_PATH = WIKI_DIR / "_graph.json"
 
@@ -124,11 +124,9 @@ def build_graph():
     if not WIKI_DIR.exists():
         return {"nodes": nodes, "edges": edges}
 
-    _SKIP_STEMS = {"index", "log"}
-
     for md_file in sorted(WIKI_DIR.rglob("*.md")):
-        # Skip special files and catalog/log pages
-        if md_file.name.startswith("_") or md_file.stem in _SKIP_STEMS:
+        # Skip special files
+        if md_file.name.startswith("_"):
             continue
 
         stem = md_file.stem.lower()
@@ -208,6 +206,41 @@ def load_graph():
     if GRAPH_PATH.exists():
         return json.loads(GRAPH_PATH.read_text(encoding="utf-8"))
     return save_graph()
+
+
+def update_graph() -> dict:
+    """Merge current wiki pages into the existing _graph.json.
+
+    Unlike save_graph() which rebuilds from scratch, this preserves nodes and
+    edges that exist only in the JSON (e.g., pages synthesized at runtime on
+    Vercel that were never written to disk). Wiki .md files are authoritative
+    for the nodes they define; everything else is left untouched.
+    """
+    existing: dict = {"nodes": {}, "edges": []}
+    if GRAPH_PATH.exists():
+        try:
+            existing = json.loads(GRAPH_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    fresh = build_graph()
+
+    # Wiki pages win — overwrite stale entries for any slug that has a .md file
+    existing["nodes"].update(fresh["nodes"])
+
+    # Merge edges without duplicates
+    seen = {(e["from"], e["to"], e["type"]) for e in existing["edges"]}
+    for edge in fresh["edges"]:
+        key = (edge["from"], edge["to"], edge["type"])
+        if key not in seen:
+            existing["edges"].append(edge)
+            seen.add(key)
+
+    GRAPH_PATH.write_text(
+        json.dumps(existing, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    return existing
 
 
 # ---------------------------------------------------------------------------

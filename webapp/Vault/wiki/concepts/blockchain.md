@@ -2,6 +2,10 @@
 type: concept
 aliases: [Blockchain]
 relationships:
+  - target: proof-of-work
+    type: uses
+  - target: consensus
+    type: uses
   - target: bitcoin
     type: is_the_technology_behind
 tags: [technology, digital-technology, fintech, distributed-ledger]
@@ -21,3 +25,6 @@ A digital public ledger technology that can be used to replace tokens or to keep
 
 ---
 *Also referenced in: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Web 3.0   Metaverse*

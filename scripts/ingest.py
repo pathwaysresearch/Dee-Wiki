@@ -79,17 +79,6 @@ def scan_raw_files():
     # Sort by path for deterministic ordering
     return sorted(files)
 
-
-def route_file(file_path):
-    """Determine routing: 'wiki' or 'rag'."""
-    words = count_words(str(file_path))
-    pages = get_page_count(str(file_path))
-
-    if pages > PAGE_THRESHOLD or words > WORD_THRESHOLD:
-        return "rag", words, pages
-    return "wiki", words, pages
-
-
 # ---------------------------------------------------------------------------
 # Commands
 # ---------------------------------------------------------------------------
@@ -112,20 +101,15 @@ def cmd_scan():
 
     for f in files:
         rel = str(f.relative_to(PROJECT_ROOT))
-        route, words, pages = route_file(f)
 
         # Check if already ingested via structured tracking
         already = rel in ingested
         status = " [DONE]" if already else " [NEW]"
 
-        page_info = f", {pages} pages" if pages else ""
-        print(f"  {'WIKI' if route == 'wiki' else 'RAG ':>4}  {rel}  ({words} words{page_info}){status}")
+        print(f" {rel} {status}")
 
         if not already:
-            if route == "wiki":
-                wiki_files.append((f, words, pages))
-            else:
-                rag_files.append((f, words, pages))
+            rag_files.append((f, words, pages))
 
     print(f"\n{'─'*70}")
     print(f"  New files: {len(wiki_files)} wiki + {len(rag_files)} RAG")
@@ -133,10 +117,6 @@ def cmd_scan():
     if rag_files:
         print(f"\n  Run this to chunk & embed RAG files:")
         print(f"    python scripts/ingest.py --process-all")
-
-    if wiki_files:
-        print(f"\n  After processing, tell Claude Code:")
-        print(f"    'Ingest these wiki files: {', '.join(f.name for f, _, _ in wiki_files)}'")
 
     print()
 
@@ -214,18 +194,6 @@ def cmd_process(file_path, gemini_key):
     save_ingested(ingested)
     print(f"  Tracked in ingested.json: {rel_key}")
 
-    # BUG 5 fix: Log to wiki log
-    from wiki_logger import log_to_wiki_log
-    log_to_wiki_log(
-        "ingest",
-        fp.stem.replace("-", " ").replace("_", " ").title(),
-        {
-            "source": str(rel_source),
-            "chunks": len(chunks),
-            "words": len(text.split()),
-        }
-    )
-
 
 def cmd_process_all(gemini_key):
     """Process all RAG-routed files."""
@@ -235,8 +203,7 @@ def cmd_process_all(gemini_key):
     rag_files = []
     for f in files:
         rel = str(f.relative_to(PROJECT_ROOT))
-        route, _, _ = route_file(f)
-        if route == "rag" and rel not in ingested:
+        if rel not in ingested:
             rag_files.append(f)
 
     if not rag_files:

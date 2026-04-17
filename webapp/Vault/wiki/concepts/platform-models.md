@@ -21,3 +21,6 @@ A business model used by new competitors that operates on principles of two-side
 
 ---
 *Extracted from: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Platform Structures*

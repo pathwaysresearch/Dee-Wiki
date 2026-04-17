@@ -2,6 +2,18 @@
 type: concept
 aliases: [Artificial Intelligence]
 relationships:
+  - target: machine-learning
+    type: includes
+  - target: generative-ai
+    type: includes
+  - target: knowledge-representation
+    type: has_sub-problem
+  - target: learning-in-ai
+    type: has_sub-problem
+  - target: natural-language-processing
+    type: has_sub-problem
+  - target: perception-in-ai
+    type: has_sub-problem
   - target: cognitive-computing
     type: related_to
 tags: [technology, computer-science, machine-learning]
@@ -21,3 +33,6 @@ A field of computer science, demonstrated by systems like IBM Deep Blue and Wats
 
 ---
 *Also referenced in: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Ai*

@@ -2,6 +2,8 @@
 type: entity
 aliases: [Netflix]
 relationships:
+  - target: transitional-apps
+    type: is_an_example_of
   - target: amazon
     type: competes_with
 tags: [company, media, streaming]
@@ -24,3 +26,6 @@ A streaming service that changed customers' expectations about on-demand content
 
 ---
 *Also referenced in: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Web 3.0   Metaverse*

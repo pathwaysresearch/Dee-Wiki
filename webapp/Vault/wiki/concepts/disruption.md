@@ -2,6 +2,8 @@
 type: concept
 aliases: [Disruption]
 relationships:
+  - target: the-innovators-dilemma
+    type: explained_by
   - target: incumbents
     type: challenges
   - target: disruptors
@@ -21,3 +23,6 @@ A form of innovation that is far more complex for incumbent companies to respond
 
 ---
 *Extracted from: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Outline & Introduction*

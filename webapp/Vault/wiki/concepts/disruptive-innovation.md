@@ -2,6 +2,12 @@
 type: concept
 aliases: [Disruptive Innovation]
 relationships:
+  - target: disruption
+    type: is_a_type_of
+  - target: sustaining-innovation
+    type: contrasted_with
+  - target: value-networks
+    type: influenced_by
   - target: deepa-mani
     type: researched_by
   - target: sony-music-india
@@ -21,3 +27,6 @@ A concept focusing on how information technologies disrupt industries, business 
 
 ---
 *Extracted from: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Outline & Introduction*

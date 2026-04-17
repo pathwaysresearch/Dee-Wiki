@@ -3,6 +3,11 @@ type: concept
 aliases: [Machine Learning]
 tags: [ai, data-science]
 sourced_from: Driving Digital Strategy   A Guide To Reimagining Your (1)
+relationships:
+  - target: artificial-intelligence
+    type: is_subset_of
+  - target: deep-learning
+    type: includes
 ---
 
 # Machine Learning
@@ -14,3 +19,6 @@ An approach for training machines to do tasks by automatically learning from dat
 
 ---
 *Also referenced in: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Ai*

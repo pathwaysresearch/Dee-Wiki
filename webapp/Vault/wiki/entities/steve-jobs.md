@@ -2,6 +2,8 @@
 type: entity
 aliases: [Steve Jobs]
 relationships:
+  - target: iad
+    type: described
   - target: apple
     type: ceo_of
 tags: [person, ceo]
@@ -18,3 +20,6 @@ The CEO of Apple who launched the iPhone in 2007 and initially presented Google 
 
 ---
 *Extracted from: The Digital Matrix New Rules For Business Transformation (1)*
+
+---
+*Also referenced in: Platform Structures*

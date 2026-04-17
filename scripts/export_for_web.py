@@ -3,7 +3,6 @@ Export wiki pages + RAG chunks → webapp/data/ for Vercel deployment.
 
 Reads wiki/*.md and data/chunks.json, generates embeddings for wiki pages,
 writes:
-  - webapp/data/wiki_pages.json  (wiki text + embeddings, ~700KB)
   - webapp/data/chunks.json      (RAG text only, NO embeddings, ~19MB)
   - webapp/data/chunks.faiss     (FAISS inner-product index of chunk embeddings)
 
@@ -11,7 +10,6 @@ The split keeps the deployment under Vercel's 250MB function size limit.
 
 APPEND BEHAVIOUR: If the output files already exist, only NEW records are
 added. Existing records are identified by:
-  - wiki_pages.json  → "path" field
   - chunks.json      → SHA-256 hash of "content" field
 
 If output files do not exist they are created from scratch.
@@ -107,16 +105,10 @@ def main():
 
     WEBAPP_DATA.mkdir(parents=True, exist_ok=True)
 
-    wiki_out = WEBAPP_DATA / "wiki_pages.json"
     chunks_out = WEBAPP_DATA / "chunks.json"
     faiss_out = WEBAPP_DATA / "chunks.faiss"
 
     print("NOTE: This exports local wiki/*.md files only.")
-    print("      Run 'python scripts/sync_wiki.py --pull' first to include Redis-only pages.\n")
-
-    # -----------------------------------------------------------------------
-    # WIKI PAGES
-    # -----------------------------------------------------------------------
 
     # -----------------------------------------------------------------------
     # RAG CHUNKS
@@ -152,8 +144,7 @@ def main():
     # -----------------------------------------------------------------------
     # Build FAISS index from source_chunks (offline data/chunks.json).
     # source_chunks has embeddings for ALL chunks — old ones stored from ingest,
-    # new ones just generated above. existing_text_chunks (webapp/data/chunks.json)
-    # has NO embeddings so it must NOT be used here.
+    # new ones just generated above.
     # -----------------------------------------------------------------------
     all_embs = [c.get("embedding") for c in source_chunks]
     has_all_embs = bool(all_embs) and all(e is not None for e in all_embs)
@@ -174,7 +165,7 @@ def main():
                 f"{faiss_out.stat().st_size / 1024 / 1024:.1f} MB)"
             )
         except ImportError:
-            print("  [Skip] faiss not installed — run: pip install faiss-cpu")
+            print(" faiss not installed — run: pip install faiss-cpu")
     elif not source_chunks:
         print("  No chunks — FAISS index unchanged.")
     else:
@@ -192,18 +183,6 @@ def main():
         f"  Chunks (text) → {chunks_out} "
         f"({chunks_out.stat().st_size / 1024 / 1024:.1f} MB)"
     )
-
-    # -----------------------------------------------------------------------
-    # Knowledge graph — copy _graph.json into webapp/data/ for Vercel
-    # -----------------------------------------------------------------------
-    src_graph = WIKI_DIR / "_graph.json"
-    dst_graph = WEBAPP_DATA / "_graph.json"
-    if src_graph.exists():
-        import shutil
-        shutil.copy2(src_graph, dst_graph)
-        print(f"  Graph → {dst_graph} ({dst_graph.stat().st_size / 1024:.0f} KB)")
-    else:
-        print("  [Skip] _graph.json not found — run: python scripts/graph.py --build")
 
     # -----------------------------------------------------------------------
     # Summary

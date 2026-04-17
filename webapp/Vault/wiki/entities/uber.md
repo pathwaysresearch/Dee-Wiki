@@ -2,6 +2,10 @@
 type: entity
 aliases: [Uber]
 relationships:
+  - target: native-apps
+    type: is_an_example_of
+  - target: platform-mediated-business-networks
+    type: is_example_of
   - target: focused-market-entry-strategy
     type: exemplifies
 tags: [platform, transportation]
@@ -24,3 +28,9 @@ A company whose early growth, driven by word-of-mouth and a focused city-by-city
 
 ---
 *Also referenced in: Deepa Mani Knowledge Base*
+
+---
+*Also referenced in: Platform Structures*
+
+---
+*Also referenced in: Web 3.0   Metaverse*

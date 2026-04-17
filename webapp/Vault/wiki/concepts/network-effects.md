@@ -2,6 +2,12 @@
 type: concept
 aliases: [Network Effects]
 relationships:
+  - target: platform-mediated-business-networks
+    type: is_characteristic_of
+  - target: cross-side-network-effect
+    type: has_type
+  - target: same-side-network-effect
+    type: has_type
   - target: platform-based-model
     type: is_a_feature_of
   - target: platform-business-model
@@ -30,3 +36,6 @@ A phenomenon where a platform becomes more valuable as more users join, which in
 
 ---
 *Also referenced in: The Digital Matrix New Rules For Business Transformation (1)*
+
+---
+*Also referenced in: Platform Structures*
