@@ -1,235 +1,792 @@
 # Wiki Index
 
-A personal knowledge base cataloging the research, frameworks, and intellectual landscape of Deepa Mani and related digital strategy domains.
+Master catalog — 774 pages · last rebuilt 2026-04-17
 
-## Persona Page
+## Persona Pages (8)
 
-- [[persona/deepa-mani|Deepa Mani]] — Professor of Information Systems at ISB; research at intersection of technology, organizations, and policy.
+- [[persona/deepa-mani|Deepa Mani]] — Deepa Mani is a Professor of Information Systems at the Indian School of Business whose research and teaching orbit a si
+- [[persona/digital-innovation-under-investor-constraints|Digital Innovation Under Investor Constraints]] — Deepa Mani's central insight in this domain is that the primary barrier to digital innovation for industry incumbents is
+- [[persona/grassroots-technology-entrepreneurship-india|Grassroots Technology Entrepreneurship in India]] — Deepa Mani's view of grassroots technology entrepreneurship departs from the typical "digital inclusion" narrative by tr
+- [[persona/intellectual-evolution|Intellectual Evolution]] — Deepa Mani's formative intellectual orientation was shaped by the Indian IT industry's own trajectory. During this perio
+- [[persona/mentor-network-and-influences|Mentor Network and Influences]] — Deepa Mani's most sustained intellectual partnership is with Anandhi Bharadwaj, with whom she co-authored "Efficacy of R
+- [[persona/rhetorical-style-and-pedagogy|Rhetorical Style and Pedagogy]] — Deepa Mani employs two primary opening gambits. The first is a **three-part macro-to-micro preview** that maps the entir
+- [[persona/technology-organization-policy-nexus|Technology, Organization, and Policy Nexus]] — Deepa Mani's research identity coalesces around a distinctive claim: technology, organization, and policy are not separa
+- [[persona/thinking-patterns|Thinking Patterns and Frameworks]] — Deepa Mani operates with a stable repertoire of named and nameable intellectual tools that recur across her research, te
 
-## Tacit Knowledge Pages (persona/) — 3 pages
+## Extracted Concepts (423)
 
-- [[persona/thinking-patterns|Thinking Patterns and Frameworks]] — Stable repertoire of named intellectual tools recurring across research and teaching.
-- [[persona/intellectual-evolution|Intellectual Evolution]] — Formative orientation shaped by Indian IT industry trajectory and subsequent pivots.
-- [[persona/rhetorical-style-and-pedagogy|Rhetorical Style and Pedagogy]] — Opening gambits, three-part macro-to-micro previews, and pedagogical techniques.
+- [[concepts/1-click-ordering|1-Click Ordering]] — A feature pioneered by Amazon in 1997 that simplifies the online checkout process to a single action to improve conversi
+- [[concepts/3d-printing|3D Printing]] — A technology that enables on-demand, decentralized manufacturing of items ranging from surgical implants to tools, poten
+- [[concepts/3d-solution-framework|3D Solution Framework]] — A framework for evaluating a solution to ensure it is Discontinuous, Defensible, and Disruptive.
+- [[concepts/4u-need-framework|4U Need Framework]] — A framework for finding a user need that is Unworkable, Unavoidable, Urgent, and Underserved.
+- [[concepts/a-b-testing|A/B Testing]] — An experimentation method that involves comparing two different versions of an offering to understand user preferences a
+- [[concepts/activity-based-costing|Activity-Based Costing]] — A cost accounting method needed to properly allocate costs to each customer or customer segment in order to measure cust
+- [[concepts/additive-manufacturing|Additive Manufacturing (3-D Printing)]] — A production technology that allows for the creation of more complex, better, lighter, and more durable products at a lo
+- [[concepts/alumni-philanthropy|Alumni Philanthropy]] — Giving by alumni that is critical for an educational institution's ability to fulfill its mission, break barriers to edu
+- [[concepts/amplification-ai|Amplification (AI)]] — A capability of powerful machines that enhances and expands the reach of human and machine abilities.
+- [[concepts/amplification|Amplification]] — The process of spreading a message to a large audience, which depends on the medium and message authenticity, and is dis
+- [[concepts/application-programming-interfaces|Application Programming Interfaces (APIs)]] — Tools and protocols for design and use across different systems that enable interoperability, data sharing, and coopetit
+- [[concepts/artificial-general-intelligence|Artificial General Intelligence (AGI)]] — An emerging field aimed at building flexible, adaptable machines with intelligence comparable to the human mind, associa
+- [[concepts/artificial-intelligence|Artificial Intelligence]] — A field of computer science, demonstrated by systems like IBM Deep Blue and Watson, that enables machines to perform tas
+- [[concepts/artificial-neural-networks|Artificial Neural Networks (ANNs)]] — The foundation for deep learning, these are systems rooted in how the human brain's interconnected neurons transmit info
+- [[concepts/asset-light-business-model|Asset-Light Business Model]] — A business strategy that reduces reliance on large, capital-intensive physical assets, such as replacing large car lots 
+- [[concepts/asset-light-model|Asset-Light Model]] — A business model that minimizes ownership of physical assets, utilized by platform companies such as Alibaba and Airbnb.
+- [[concepts/asset-performance-management|Asset Performance Management (APM)]] — A method that uses tools and analytics for predictive maintenance, minimizing downtime, and optimizing industrial assets
+- [[concepts/attribution-marketing|Attribution (Marketing)]] — The problem of figuring out which marketing channel or advertisement gets the credit for a click or sale, which is criti
+- [[concepts/augmentation-ai|Augmentation (AI)]] — A capability of powerful machines that supplements and improves human work and decision-making.
+- [[concepts/augmentation|Augmentation]] — One of three key zones of human-machine interaction, focused on using technology to free up expert talent from mundane t
+- [[concepts/augmented-reality|Augmented Reality (AR)]] — A technology that, along with VR, has the potential to become the next major computing platform with a market estimated 
+- [[concepts/automation-and-pandemic-resilience|Automation and Pandemic Resilience]] — The finding that jobs, sectors, and districts with higher levels of automation and digitization were less economically v
+- [[concepts/automation|Automation]] — One of three key zones of human-machine interaction, focused on using technologies like collaborative robots to change t
+- [[concepts/average-revenue-per-user|Average Revenue Per User (ARPU)]] — A business metric used to measure financial performance, such as Dropbox's $139.26 ARPU in Q1'25.
+- [[concepts/big-data|Big Data]] — A term representing the large amounts of complex data available today that allows for the detection of patterns not prev
+- [[concepts/big-seed-marketing|Big Seed Marketing]] — A strategy that involves seeding a message with a large number of people to achieve amplification, as opposed to relying
+- [[concepts/blockchain-technology|Blockchain Technology]] — A distributed ledger technology representing a network of every transaction that has ever occurred, used by innovative p
+- [[concepts/blockchain|Blockchain]] — A digital public ledger technology that can be used to replace tokens or to keep track of transactions, such as surplus 
+- [[concepts/blue-ocean-strategy|Blue Ocean Strategy]] — A business strategy focused on creating new, uncontested market space rather than competing in existing industries.
+- [[concepts/blurring-industry-boundaries|Blurring Industry Boundaries]] — A phenomenon where technology, data, and software cause competition to arise from outside traditional industry definitio
+- [[concepts/bricks-and-clicks-integration|Bricks and Clicks Integration]] — The challenge of harmoniously managing a company's physical retail stores (bricks) and its e-commerce business (clicks),
+- [[concepts/build-measure-learn-feedback-loop|Build-Measure-Learn Feedback Loop]] — A process to accelerate learning by running experiments to test each element of a vision and iterating quickly based on 
+- [[concepts/building-critical-mass|Building Critical Mass]] — The challenge for a new platform to attract a sufficient number of users on both the demand side (buyers) and the supply
+- [[concepts/building-tech-led-products-process|Building Tech Led Products Process]] — A process for creating products that involves defining the User and Problem, creating a Solution, making a Plan, managin
+- [[concepts/business-ecosystem|Business Ecosystem]] — A dynamic community of diverse actors, such as firms and customers, who create and capture new value through both collab
+- [[concepts/business-ecosystems|Business Ecosystems]] — A concept that construes a corporation as a portfolio of capabilities assembled through networks of relationships, where
+- [[concepts/business-model-innovation|Business Model Innovation]] — A fundamental shift in how a business creates and captures value, which can be more impactful than purely technological 
+- [[concepts/business-model-typology|Business Model Typology]] — A framework that classifies business models into four types (Product, Service, Solution, Platform) along two axes: focus
+- [[concepts/business-model|Business Model]] — A framework that defines the way a firm creates, delivers, and captures value, which can be altered by technological inn
+- [[concepts/business-models|Business Models]] — A framework for company operations, with variations including asset-light, inventory-based, marketplace, and product-as-
+- [[concepts/business-scope|Business Scope]] — The definition of what a company does, which can be focused on its products or, more effectively, on evolving customer n
+- [[concepts/business-value-of-technology-investments|Business Value of Technology Investments]] — A research area focused on the organization and business value of technology investments, including the analysis of slow
+- [[concepts/capability-co-creation|Capability Co-creation]] — The process of developing new business capabilities not in isolation, but jointly with external partners, especially dur
+- [[concepts/capability-development|Capability Development]] — The investment in new skills for the workforce, recommended as a crucial step for adapting to an economy with new techno
+- [[concepts/cart-abandonment|Cart Abandonment]] — A common problem in online commerce where almost 70 percent of shopping carts are abandoned at checkout, often due to sh
+- [[concepts/celebrity-engagements|Celebrity Engagements]] — A marketing strategy that involves partnering with well-known personalities to promote brands and increase visibility.
+- [[concepts/channel-complementarity|Channel Complementarity]] — A strategy that treats different sales channels as complements rather than substitutes, where each channel is best suite
+- [[concepts/channel-conflict|Channel Conflict]] — The problem arising from the assumption that different sales channels, such as online and physical, compete with each ot
+- [[concepts/chatbots|Chatbots]] — Conversational agents used for purposes like customer service, which can range from simple question-and-answer assistant
+- [[concepts/closed-system-platform|Closed System (Platform)]] — A proprietary platform strategy where the company has more control, enabling better integration and a superior customer 
+- [[concepts/cloud-computing|Cloud Computing]] — A technology that relies on a network of remote servers hosted on the Internet to store, manage, and process data, made 
+- [[concepts/cloud-robotics|Cloud Robotics]] — A concept where a robot relies on data or code from a network to support its operation, and is not limited by its own me
+- [[concepts/co-creating-value|Co-creating Value]] — A partnership model where two or more companies, often in a coopetitive relationship, work together to generate mutual b
+- [[concepts/co-creation-with-partners|Co-creation with Partners]] — A strategy for incumbents to build digital offerings by collaborating with other firms, such as competitors or digital g
+- [[concepts/co-creation-zone|Co-Creation Zone]] — An interaction zone defined by a high level of importance for both you to your partner and your partner to you.
+- [[concepts/coexistence-strategy|Coexistence Strategy]] — An initial response to digital challenges where a company establishes a digital business model to operate alongside its 
+- [[concepts/cognitive-biases|Cognitive Biases]] — Biases that stem from deep-rooted societal norms and may work against women in organisations.
+- [[concepts/cognitive-computing|Cognitive Computing]] — A technology theme, largely synonymous with artificial intelligence, focused on enabling computers to reason through com
+- [[concepts/collective-intelligence|Collective Intelligence]] — A thesis by Joseph Henrich suggesting that the collective intelligence of the human race, rather than individual brillia
+- [[concepts/collision-at-the-core|Collision at the Core]] — The second phase of digital transformation where proven experiments become business options, creating tension as new dig
+- [[concepts/combinatorial-advantages-of-scale-scope-speed|Combinatorial Advantages of Scale-Scope-Speed]] — The significant competitive advantage gained in the digital business world when scale, scope, and speed are leveraged to
+- [[concepts/competency-trap|Competency Trap]] — A concept where an organization's increasing competency in its existing operations over time leads to a decrease in its 
+- [[concepts/competition|Competition]] — A business dynamic focused on dividing up the existing value pie, where companies use their capabilities to win a greate
+- [[concepts/complementarity-in-ecosystems|Complementarity (in ecosystems)]] — A principle for successful orchestration where an orchestrator attracts diverse partners that enhance the value of the e
+- [[concepts/complementary-products-strategy|Complementary Products Strategy]] — A business strategy that leverages the synergy between complementary products, sometimes using one product as a 'razor' 
+- [[concepts/complementary-services|Complementary Services]] — Additional offerings that enhance the value of a core product or platform, redefining competitive advantage and making i
+- [[concepts/complementor|Complementor]] — A player whose product makes customers value your product more when they have both products than when they have your pro
+- [[concepts/confirmation-bias|Confirmation Bias]] — A cognitive bias where ambiguous information about a woman is interpreted in a way that aligns with and reconfirms a pre
+- [[concepts/consensus|Consensus]] — The process on a blockchain where a majority (greater than 51%) of participants must verify and agree that a new block i
+- [[concepts/consumer-journey-mapping|Consumer Journey Mapping]] — The process of mapping a consumer's entire journey at every touchpoint, often using ethnographic studies, to understand 
+- [[concepts/conversations-per-session-cps|Conversations Per Session (CPS)]] — A metric that counts the number of times speakers alternate in a conversation to measure the conversational capability o
+- [[concepts/conversion-optimization|Conversion Optimization]] — The practice of monitoring and improving each step of the online purchasing funnel to reduce the risk of losing potentia
+- [[concepts/cooperation|Cooperation]] — A business dynamic focused on enlarging and expanding the value pie by pooling the capabilities of several companies.
+- [[concepts/coopetition|Coopetition]] — A business strategy that combines competition and cooperation, focusing on both expanding the value pie and ensuring a c
+- [[concepts/coopetitive-relationships|Coopetitive Relationships]] — Partnerships between traditional competitors, which are considered a key aspect of navigating the complex interconnectio
+- [[concepts/core-competencies|Core Competencies]] — A company's key skills that provide a competitive advantage, which can move beyond traditional product-centric knowledge
+- [[concepts/core-vs-co-created-capabilities|Core vs. Co-created Capabilities]] — A strategic framework for deciding which differentiated advantages should be developed internally versus which should be
+- [[concepts/corporate-governance|Corporate Governance]] — A mandate in India requiring companies to audit their operations to provide shareholders with a more trustable outlook, 
+- [[concepts/cost-per-click-cpc|Cost Per Click (CPC)]] — An online advertising model where an advertiser pays based on the number of clicks an ad receives, though its effectiven
+- [[concepts/creative-destruction|Creative Destruction]] — A force that fuels economic growth and is responsible for the high turnover of Fortune 500 firms over time.
+- [[concepts/creativity-cultivation|Creativity Cultivation]] — The idea that creativity is not an innate trait but a skill that can be cultivated and developed by both individuals and
+- [[concepts/cross-channel-effects|Cross-Channel Effects]] — The influence that advertising in one channel (e.g., online display ads) has on sales in another channel (e.g., offline 
+- [[concepts/cross-side-network-effect|Cross-Side Network Effect]] — A user's preference regarding the number of users on the other side of a two-sided network, which can be either positive
+- [[concepts/crowdsourcing|Crowdsourcing]] — A method of using a large group of people to perform tasks, such as selecting winning product designs, which can functio
+- [[concepts/customer-acquisition-cost|Customer Acquisition Cost (CAC)]] — A common short-term marketing metric that measures the expense of acquiring a new customer but ignores their long-term v
+- [[concepts/customer-acquisition-funnel|Customer Acquisition Funnel]] — A model representing the stages a consumer goes through from ad exposure to becoming an active customer, which often rev
+- [[concepts/customer-churn-modeling|Customer Churn Modeling]] — A technique that uses historical data of customers' past usage to predict customer departures, which serves as a model f
+- [[concepts/customer-experience|Customer Experience]] — A strategic focus for e-commerce that encompasses the entire user journey, including product discovery, detailed informa
+- [[concepts/customer-focused-innovation|Customer-Focused Innovation]] — An innovation process, driven by an outcome-based model, that focuses on achieving the customer's ultimate goal rather t
+- [[concepts/customer-lifetime-value|Customer Lifetime Value (CLV)]] — A metric representing the long-term profitability of customers, determined by their spending and retention rate, which i
+- [[concepts/customer-profitability-analysis|Customer Profitability Analysis]] — A method of ranking customers based on their individual profitability to identify which customers are valuable and which
+- [[concepts/customer-pull|Customer Pull]] — A business orientation that embeds digital technology in customer interactions to better understand their needs, contras
+- [[concepts/customer-retention-strategy|Customer Retention Strategy]] — An approach to maintain customer loyalty through engagement with fashion content, expert advice, look books, and trend r
+- [[concepts/danger-zone|Danger Zone]] — An interaction zone defined by a low level of importance for you to your partner but a high level of importance for your
+- [[concepts/data-and-customers-as-assets|Data and Customers as Assets]] — The principle that a company's data and customer base are its two most valuable assets in the digital age, creating netw
+- [[concepts/data-driven-strategy|Data-Driven Strategy]] — An approach for the digital economy that shifts from Industrial Age ideas to craft strategies based on data and experime
+- [[concepts/data-network-effects|Data Network Effects]] — A phenomenon where a product becomes more refined and gains a powerful competitive advantage as it collects more data fr
+- [[concepts/decentralized-manufacturing|Decentralized Manufacturing]] — A production model enabled by 3D printing that is likely to bring manufacturing back from emerging markets to developed 
+- [[concepts/deep-learning|Deep Learning]] — A novel machine learning approach based on artificial neural networks that dramatically improved the accuracy of tasks l
+- [[concepts/demand-centric-pull|Demand-Centric Pull]] — A driver of digital business based on strong points of view developed by Rick Chavez.
+- [[concepts/demand-driven-supply-chains|Demand-Driven Supply Chains]] — A supply chain model that uses real-time information and data analytics to predict demand, which can reduce inventory by
+- [[concepts/design-thinking|Design Thinking]] — A methodology that makes framing and solving problems part of the same process by observing and collecting data from a u
+- [[concepts/differentiated-shopping-experience|Differentiated Shopping Experience]] — A business strategy to create a unique e-commerce offering through features like advanced navigation filters, detailed p
+- [[concepts/differentiation-strategy|Differentiation Strategy]] — A traditional competitive strategy that focuses on being different from competitors by creating innovative products and 
+- [[concepts/digital-business-ecosystem|Digital Business Ecosystem]] — A system of incumbents, tech entrepreneurs, and digital giants where a company must strategically decide whether to part
+- [[concepts/digital-business-ecosystems|Digital Business Ecosystems]] — A system where participants like incumbents, tech entrepreneurs, and digital giants are inextricably linked and must wor
+- [[concepts/digital-business-rulebook|Digital Business Rulebook]] — A method to create a transformation road map by assessing the importance and proficiency of nine strategic rules to iden
+- [[concepts/digital-economy|Digital Economy]] — The current economic reality where industrial-age ideas are obsolete and a company's past performance is no indicator of
+- [[concepts/digital-ecosystems|Digital Ecosystems]] — Complex dynamic interconnections between companies where products and services are linked to platforms, which can be use
+- [[concepts/digital-empowerment|Digital Empowerment]] — The process of empowering rural citizens through literacy programs or by enhancing local demand for new products and ser
+- [[concepts/digital-engine-mastercard|Digital Engine (Mastercard)]] — A seven-step marketing process used by Mastercard that uses data and real-time optimization to create an emotional spark
+- [[concepts/digital-era-scale|Digital-Era Scale]] — A business advantage derived from amassing and utilizing detailed data on operations and individual customer interaction
+- [[concepts/digital-era-scope|Digital-Era Scope]] — A business strategy that uses data, analytics, and AI to expand into new products and markets, including unrelated indus
+- [[concepts/digital-era-speed|Digital-Era Speed]] — A competitive pace focused on being the fastest to capitalize on opportunities, with delivery speed calibrated to the be
+- [[concepts/digital-giant|Digital Giant]] — A player type in the Digital Matrix that uses powerful technology to challenge and disrupt traditional business, exempli
+- [[concepts/digital-giants|Digital Giants]] — Large technology companies that have extended their influence beyond their traditional industries and may partner with o
+- [[concepts/digital-industrial-company|Digital Industrial Company]] — A business model that couples historical competency with materials science with modern data sciences, as exemplified by 
+- [[concepts/digital-inflection-point|Digital Inflection Point]] — A critical point in time for a company where past business models show ineffectiveness and choices made regarding digita
+- [[concepts/digital-leadership-corps|Digital Leadership Corps]] — A group of like-minded professionals, composed of dreamers, designers, doubters, and doers, assembled to drive a company
+- [[concepts/digital-matrix-command-center|Digital Matrix Command Center]] — A conceptual tool for tracking and analyzing a company's moves and competitors' actions through the three phases of tran
+- [[concepts/digital-matrix|Digital Matrix]] — A framework that explains the three types of players in new ecosystems and the different phases of digital transformatio
+- [[concepts/digital-performance-assessment-tools|Digital Performance Assessment Tools]] — New and faster methods, often involving applications and technology, that firms are testing to assess employee performan
+- [[concepts/digital-strategy|Digital Strategy]] — An approach where digital initiatives are not treated as separate from the overall business strategy but are integrated 
+- [[concepts/digital-transformation|Digital Transformation]] — The process of reinventing a business for the digital era, which requires strengthening the core business and building f
+- [[concepts/digital-transition-management|Digital Transition Management]] — The leadership challenge of guiding a large organization through a digital transformation, which often involves a tempor
+- [[concepts/digital-transition|Digital Transition]] — The process for incumbent companies to adapt to technological disruption by simultaneously strengthening their core busi
+- [[concepts/digital-twin|Digital Twin]] — A concept combining a physical model of an asset with its real-time operational data from sensors to forecast failure pr
+- [[concepts/digitization|Digitization]] — A fundamental business transformation that impacts efficiency, top-line growth, and bottom-line profitability, for which
+- [[concepts/direct-network-effect|Direct Network Effect]] — A phenomenon where the value of a product increases as more consumers use it, without any change in the product's featur
+- [[concepts/disruption|Disruption]] — A form of innovation that is far more complex for incumbent companies to respond to than sustaining innovation, often or
+- [[concepts/disruptive-innovation-framework|Disruptive Innovation Framework]] — A model suggesting that good management practices can lead companies into trouble by causing them to ignore initially in
+- [[concepts/disruptive-innovation|Disruptive Innovation]] — A concept focusing on how information technologies disrupt industries, business models, products, services, and competit
+- [[concepts/divesting-from-traditional-businesses|Divesting from Traditional Businesses]] — A strategy to rebalance a business's scope by shedding non-strategic assets to focus on managing future digital possibil
+- [[concepts/dynamic-pricing|Dynamic Pricing]] — A strategy where prices for products are varied over time, which is becoming a norm in the digital era and is used by co
+- [[concepts/dynamic-retargeting|Dynamic Retargeting]] — A specific form of retargeting that shows consumers an ad for the exact product they previously searched for, which can 
+- [[concepts/earned-media|Earned Media]] — A method of influence where consumers learn about a product from the reviews and opinions of other consumers in social m
+- [[concepts/ebitda-margin|EBITDA Margin]] — A key performance indicator for overall profitability, with a target to improve from a negative (21%) to a positive 10% 
+- [[concepts/economic-contraction-mortality-tradeoff|Economic Contraction-Mortality Tradeoff]] — A framework for evaluating lockdown policies by translating economic loss into a measure of lives to allow for an equiva
+- [[concepts/ecosystem-advantage|Ecosystem Advantage]] — A competitive advantage where scale, scope, and speed are derived from being part of a network of key partners that play
+- [[concepts/ecosystem-orchestration|Ecosystem Orchestration]] — A digital-age business strategy where a company controls a market by assembling and managing a network of product and se
+- [[concepts/ecosystem-participation|Ecosystem Participation]] — A business strategy where a company operates within an ecosystem controlled by another firm, offering complementary prod
+- [[concepts/ecosystem-trap|Ecosystem Trap]] — A strategic pitfall related to digital ecosystems, which the text notes that Microsoft has experienced.
+- [[concepts/ecosystem-value-creation|Ecosystem Value Creation]] — The principle that in the new economy, a company cannot succeed alone and must collaborate with a network of partners to
+- [[concepts/ecosystems-digital-business|Ecosystems (Digital Business)]] — Cross-industry boundary structures that companies must learn to nurture and operate within, as exemplified by the mobile
+- [[concepts/efficient-inventory-management|Efficient Inventory Management]] — An operational strategy focused on minimizing inventory levels relative to revenue, which can generate significant cost 
+- [[concepts/emotional-computing|Emotional Computing]] — An experimental field of computing involving conversations that require a balance of analytical and emotional intelligen
+- [[concepts/employee-churn-prediction|Employee Churn Prediction]] — A data-driven approach using machine-learning algorithms to predict, well in advance, the likelihood of an employee leav
+- [[concepts/engagement-that-drives-business|Engagement that Drives Business]] — The principle that advertising must both engage consumers with content and persuade them, with the ultimate goal of incr
+- [[concepts/entrepreneurial-clusters|Entrepreneurial Clusters]] — A concept concerning the formation and sustenance of these groups in India and how they impact entrepreneurial preferenc
+- [[concepts/envelopment|Envelopment]] — A competitive threat where a platform in one market enters another platform's market by offering an appealing multi-plat
+- [[concepts/ethical-ai|Ethical AI]] — A concept concerning the ethical questions of AI, including ensuring safety, managing inevitable bias, and protecting ag
+- [[concepts/evaluating-acquisition-advantage|Evaluating Acquisition Advantage]] — A strategy where incumbents acquire tech entrepreneurs who challenge their traditional model, often because the startups
+- [[concepts/evidence-based-policy-making|Evidence-Based Policy Making]] — The practice of using rigorous evidence from the ground to make important policy decisions, avoiding reliance on the opi
+- [[concepts/excess-mortality|Excess Mortality]] — A measure of a pandemic's impact that considers the abnormal or excess mortality beyond the norm for a country-season, r
+- [[concepts/experiential-retail|Experiential Retail]] — A retail strategy that creates an engaging in-store experience, such as the 'theater' of fresh food preparation, to sell
+- [[concepts/experiment-based-attribution|Experiment-Based Attribution]] — A method for measuring marketing effectiveness by using A/B testing to compare a group exposed to ads with a control gro
+- [[concepts/experimental-learning|Experimental Learning]] — A principle of approaching business experiments as opportunities to learn from data and customer responses, rather than 
+- [[concepts/experimentation-at-the-edge|Experimentation at the Edge]] — The first phase of digital transformation, where embryonic digital ideas evolve from concepts to prototypes, pilots, and
+- [[concepts/experimentation-in-business|Experimentation in Business]] — A method used by companies to gain insights, compete, and reinvent their organizations for a digital future, as market s
+- [[concepts/experiments-at-the-edge|Experiments at the Edge]] — Business experiments conducted to test new business models and market strategies in areas where traditional industry bou
+- [[concepts/expert-systems|Expert Systems]] — An early AI approach where a machine learns rules from a human expert and uses computational power to sift through milli
+- [[concepts/extreme-values-in-innovation|Extreme Values (in innovation)]] — The principle that successful innovation relies on finding one or two winning ideas (extreme values), not averages, whic
+- [[concepts/factory-reorganization-with-electricity|Factory Reorganization with Electricity]] — An historical example used to illustrate technology adoption lag, where productivity only improved after factories were 
+- [[concepts/fashion-e-commerce|Fashion E-Commerce]] — The business of selling fashion online, which faces challenges in the Indian market such as low gross margins and expens
+- [[concepts/file-sync-and-share|File Sync and Share (FSS)]] — A category of service, exemplified by Dropbox, that offers storage plans for both business teams and individuals.
+- [[concepts/first-moment-of-truth|First Moment of Truth (FMOT)]] — The point at which a consumer chooses to buy a product, which firms can track through sales data from e-commerce and in-
+- [[concepts/five-adaptation-principles|Five Adaptation Principles]] — A set of principles for leaders that include being curious, accepting experimentation, connecting experiments to actions
+- [[concepts/five-levels-of-it-enabled-transformation|Five Levels of IT-Enabled Transformation]] — A framework developed by Venkat Venkatraman in 1994 which posits that realizing benefits from IT applications requires c
+- [[concepts/focused-market-entry-strategy|Focused Market Entry Strategy]] — A growth strategy where a company initially focuses on a very narrow market segment before gradually expanding to a broa
+- [[concepts/forged-laborers|Forged Laborers]] — A class of general-purpose robots that collaborate with and are programmed or 'taught' by humans to automate, augment, a
+- [[concepts/four-digital-business-models|Four Digital Business Models]] — A framework of four archetypical business models defined by two dimensions: location of expertise (upstream vs. downstre
+- [[concepts/four-interaction-zones|Four Interaction Zones]] — A strategic framework for analyzing partner relationships based on a 2x2 grid of your importance to a partner versus the
+- [[concepts/frame-storming|Frame-storming]] — A workshop technique focused on generating fundamental questions about a problem to challenge assumptions, rather than j
+- [[concepts/framework-for-reinvention|Framework for Reinvention]] — A strategic framework for digital strategy comprising three parts: reconnecting with customers, reevaluating the value c
+- [[concepts/freemium-model|Freemium Model]] — A business model that helps with user adoption and brand building by offering a basic version of a service for free.
+- [[concepts/freemium-strategy|Freemium Strategy]] — A business model that offers a basic product for free to quickly scale a user base for network effects, user feedback, o
+- [[concepts/freemium|Freemium]] — A strategy suitable for digital products that have almost zero marginal cost of production and distribution, contrasting
+- [[concepts/fulfillment-cost|Fulfillment Cost]] — A significant operational expense in fashion e-commerce, targeted for reduction from 18% of revenue to 10% in the long t
+- [[concepts/fulfillment-efficiency|Fulfillment Efficiency]] — A key operational goal aimed at reducing the percentage of revenue spent on fulfillment to improve overall profitability
+- [[concepts/future-of-work|Future of Work]] — A concept defined by the intersection of the nature of work, the workspace, and the workforce, which will be characteriz
+- [[concepts/gender-diversity|Gender Diversity]] — The concept that diverse boards create more radical innovations and have more unique competencies, and that diversity be
+- [[concepts/general-purpose-technology|General Purpose Technology]] — A technology, such as electricity or information technology, that has the potential to transform entire industries and b
+- [[concepts/generalized-ai|Generalized AI]] — The next frontier of AI research focused on developing systems capable of synthesizing and finding patterns from multipl
+- [[concepts/generative-ai|Generative AI]] — A type of AI that can generate new data, such as text, images, and code, by learning from and mimicking existing data so
+- [[concepts/generative-questions|Generative Questions]] — A class of problems where AI produces original content such as text, images, or code, expanding possibilities by 'imagin
+- [[concepts/generic-retargeting|Generic Retargeting]] — A form of retargeting that shows a general ad for a product category rather than a specific item, which a field experime
+- [[concepts/gilders-law|Gilder's Law]] — The principle that more data is transmitted with greater reliability and at reduced cost using cloud computing technolog
+- [[concepts/governance-in-ecosystems|Governance (in ecosystems)]] — A principle for successful orchestration that involves managing role conflicts fairly and transparently to enhance trust
+- [[concepts/gross-margin|Gross Margin]] — A key profitability metric for fashion e-commerce, identified as a challenge due to being low (20-25%) but also a target
+- [[concepts/hedging-currency-risk|Hedging Currency Risk]] — A financial management topic highlighted in a case study concerning the impact of currency rate fluctuations.
+- [[concepts/hierarchy-of-powers|Hierarchy of Powers]] — A framework by Geoffrey A. Moore involving five mutually reinforcing powers—category, company, market, offer, and execut
+- [[concepts/high-it-intensive-industries|High IT-Intensive Industries]] — Industry sectors, such as retail, healthcare, and financial services, that have made significant investments in informat
+- [[concepts/homophily|Homophily]] — The principle that people with similar characteristics tend to group together, which can be a confounding factor that le
+- [[concepts/horizontal-expertise|Horizontal Expertise]] — A characteristic of digital giants, representing core distinctive expertise that is extended across different scope doma
+- [[concepts/human-machine-augmentation|Human-Machine Augmentation]] — A principle of using powerful machines and smart technologies to bring out the best of a company's human talent, rather 
+- [[concepts/human-machine-collaboration|Human-Machine Collaboration]] — A powerful combination where human strategic guidance is paired with the tactical activity of a computer, described as p
+- [[concepts/ict-closeness|ICT-Closeness]] — A concept that explains how being closer to the Information and Communication Technologies (ICT) industry transforms sec
+- [[concepts/implicit-association-test|Implicit Association Test]] — A test used by diversity consultants to reveal unconscious biases, such as the difficulty people have in linking women w
+- [[concepts/inclusion|Inclusion]] — The practice of fostering a culture that values different others, which is considered essential for diversity to be mean
+- [[concepts/incumbent-companies|Incumbent Companies]] — A term for traditional, long-standing companies that are often being challenged by newer, digital counterparts.
+- [[concepts/incumbent-inertia|Incumbent Inertia]] — The persistent, documented inability of established companies to recognize and respond when technologies and markets cha
+- [[concepts/incumbents|Incumbents]] — Established companies in a traditional industry that are looking to either complement their strengths or reinvent their 
+- [[concepts/independent-digital-unit|Independent Digital Unit]] — A common but often unsuccessful approach to digital transformation where a separate unit is created to launch new initia
+- [[concepts/indian-ict-industry-evolution|Indian ICT Industry Evolution]] — The transition of the Indian Information and Communication Technologies industry from being a low-cost provider of trans
+- [[concepts/indirect-network-effect|Indirect Network Effect]] — A phenomenon where a platform connecting different user groups, such as buyers and sellers, becomes more valuable to one
+- [[concepts/industrial-age-scale|Industrial-Age Scale]] — A business advantage based on the assumption that selling more units relative to competitors leads to lower per-unit cos
+- [[concepts/industrial-age-scope|Industrial-Age Scope]] — A business strategy of expanding reach incrementally within a company's own or adjacent industries, based on its histori
+- [[concepts/industrial-age-speed|Industrial-Age Speed]] — A competitive pace defined by being the first to move into a new market, where speed is limited by the slowest internal 
+- [[concepts/industrial-internet|Industrial Internet]] — A network concept for industrial applications that differs from the consumer internet because mistakes can be extremely 
+- [[concepts/industry-4-0|Industry 4.0]] — A new era in manufacturing and operations driven by digital technologies such as digital manufacturing, 3-D printing, an
+- [[concepts/industry-incumbent|Industry Incumbent]] — A player type in the Digital Matrix representing the traditional, established companies within an industry that are bein
+- [[concepts/industry-incumbents|Industry Incumbents]] — The historical, traditional competitors within a given industry, representing one of the three key player types in digit
+- [[concepts/influencer-marketing|Influencer Marketing]] — A marketing approach using individuals with large social media followings, though research suggests that 'ordinary influ
+- [[concepts/initial-public-offering|Initial Public Offering (IPO)]] — A process that allows investors to get a return on their investment, with a larger combined entity potentially moving cl
+- [[concepts/innovation-in-indian-firms|Innovation in Indian Firms]] — A research area questioning whether patent output reflects the limited innovative ability of Indian firms or if their in
+- [[concepts/innovation-outposts|Innovation Outposts]] — A corporate presence in a technology hub used by incumbent firms to observe technological signals, interact with entrepr
+- [[concepts/instilling-digital-business-thinking|Instilling Digital Business Thinking]] — A principle that involves shedding traditional, product-centric thinking to adopt a broader perspective on creating valu
+- [[concepts/internet-of-things|Internet of Things]] — A technology enabling applications like remote monitoring and automated predictive maintenance, with the potential to ad
+- [[concepts/inventory-holding-cost|Inventory Holding Cost]] — The cost associated with storing unsold inventory, used as a key variable in calculating the financial benefits of inven
+- [[concepts/investor-expectations-constraint-on-innovation|Investor Expectations Constraint on Innovation]] — A phenomenon where financial markets, particularly investors focused on current-period profits, penalize incumbent firms
+- [[concepts/it-led-business-transformation|IT-Led Business Transformation]] — The strategic use of technology to improve a company's competitiveness, which requires complementary changes in organiza
+- [[concepts/knowledge-representation|Knowledge Representation]] — A sub-problem of AI concerned with the representation of what exists, including objects, relationships, and properties.
+- [[concepts/landing-docks|Landing Docks]] — An organizational design concept for integrating external innovations, such as those from open innovation initiatives, i
+- [[concepts/leader-zone|Leader Zone]] — An interaction zone where your importance to a partner is high but their importance to you is low, allowing you to lead 
+- [[concepts/learning-in-ai|Learning (in AI)]] — A sub-problem of AI that is the study of algorithms that improve automatically through experience.
+- [[concepts/learning-intervention-for-entrepreneurs|Learning Intervention for Entrepreneurs]] — A training program for village-level entrepreneurs involving literacy in basic finance and marketing, as well as behavio
+- [[concepts/learning-thermostat|Learning Thermostat]] — A type of thermostat that learns from user behavior to automatically program itself for energy optimization.
+- [[concepts/learning-through-experimentation|Learning through Experimentation]] — The ultimate advantage gained at the nexus of scale-scope-speed, which involves using data and analytics to scientifical
+- [[concepts/legal-technology|Legal Technology (LegalTech)]] — The application of technology to the legal industry, including AI that can answer legal questions, databases that calcul
+- [[concepts/low-cost-producer-strategy|Low-Cost Producer Strategy]] — A traditional competitive strategy that focuses on being cheaper than competitors, typically requiring scale and operati
+- [[concepts/machine-learning|Machine Learning]] — An approach for training machines to do tasks by automatically learning from data to recognize patterns, rather than bei
+- [[concepts/market-myopia|Market Myopia]] — A phenomenon where investors undervalue a company undergoing a long-term transformation because its profits may temporar
+- [[concepts/marketplace-model|Marketplace Model]] — A business model where a company facilitates sales by third-party sellers on its platform, representing a significant op
+- [[concepts/markets-for-technology|Markets for Technology (MFT)]] — A field of study concerning the functioning of markets where technology and intellectual property are traded, influenced
+- [[concepts/merchant-model|Merchant Model]] — A business model characterized by the need for ongoing investments by the intermediary, unfavorable expectations by sell
+- [[concepts/merchant-models|Merchant Models]] — A framework for understanding the business operations, competitive advantages, and strategies of retail and e-commerce c
+- [[concepts/metaverse|Metaverse]] — A massively scaled, interoperable, and persistent 3D virtual world that is synchronous and immersive, allowing for indiv
+- [[concepts/metcalfes-law|Metcalfe's Law]] — The principle that the value of networks grows as they increase in size.
+- [[concepts/micromoments|Micromoments]] — A concept where consumer intent and immediacy are more important than identity, describing points in time when people tu
+- [[concepts/mind-to-machine|Mind to Machine]] — A fundamental shift in the locus of decision-making from humans to machines, characterized by increased automation and t
+- [[concepts/mini-ecosystems|Mini-Ecosystems]] — Smaller ecosystems created by participants within a larger one, often to gain a slightly higher share of revenue and pro
+- [[concepts/mobile-advertising|Mobile Advertising]] — A form of advertising that companies struggle to make relevant because consumers spend over 90 percent of their time on 
+- [[concepts/mobility-and-transportation-ecosystem|Mobility and Transportation Ecosystem]] — A concept viewing the auto sector as an intersection of software, entertainment, and telecommunications that interconnec
+- [[concepts/modular-solutions|Modular Solutions]] — A potentially disruptive force in the consulting industry involving the sale of unbundled analytics and database product
+- [[concepts/modularity-of-innovations|Modularity of Innovations]] — A characteristic of ICT innovations where a technology is a modular piece that can be instantiated in multiple machines 
+- [[concepts/moment-based-marketing|Moment-Based Marketing]] — A strategy of delivering marketing messages at the proper time and in the proper context, focusing less on demographics 
+- [[concepts/mono-homing|Mono-homing]] — A market condition where most users on a given side of a platform choose to affiliate with only a single platform.
+- [[concepts/moores-law|Moore's Law]] — The principle that computing power has grown exponentially at lower and lower cost.
+- [[concepts/morphing-the-core|Morphing the Core]] — A phase of business transformation focused on shifting a company's center of gravity from its industrial-age model to a 
+- [[concepts/multi-homing|Multi-homing]] — A market condition where most users on a given side of a platform choose to affiliate with multiple platforms simultaneo
+- [[concepts/mutual-dependency|Mutual Dependency]] — The underlying logic of co-creation partnerships, where each party brings something to the relationship that the other c
+- [[concepts/native-apps|Native Apps]] — Applications designed specifically for a new technological need or paradigm, such as Uber for the mobile era, which are 
+- [[concepts/native-systems|Native Systems]] — Foundational systems that enable a new technological paradigm, such as the App Store for the mobile era, which are chara
+- [[concepts/natural-language-processing|Natural Language Processing]] — A sub-problem of AI focused on the ability to read and understand human language.
+- [[concepts/need-for-human-proximity|Need for Human Proximity (NHP)]] — A classification of jobs based on their requirement for interpersonal contact, used to analyze how remote work dispropor
+- [[concepts/network-centric-digital-strategy|Network-Centric Digital Strategy]] — A strategic approach for the digital era where value is co-created from the beginning by working with a dynamic network 
+- [[concepts/network-effects|Network Effects]] — A phenomenon where a platform becomes more valuable as more users join, which in turn increases consumers' switching cos
+- [[concepts/networked-society|Networked Society]] — A concept where any product, process, service, or business infrastructure that could benefit from being connected will h
+- [[concepts/new-business-infrastructure|New Business Infrastructure]] — The new reality for firms, created by the intersection of powerful computing, pervasive connectivity, and the potent clo
+- [[concepts/non-adjacent-competition|Non-adjacent Competition]] — A form of disruption that comes from outside a company's own industry, which incumbents often fail to scan for and there
+- [[concepts/non-traditional-collaborations|Non-traditional Collaborations]] — A strategy for incumbents involving partnerships with disruptors, such as Toyota with Uber, which must be approached wit
+- [[concepts/omnichannel-strategy|Omnichannel Strategy]] — An approach to serving customers across multiple channels, exemplified by Finansbank creating a new, purely digital bran
+- [[concepts/on-demand-production|On-Demand Production]] — A manufacturing approach, often using 3D printing, where production is done as needed and closer to the consumer, reduci
+- [[concepts/online-travel-agencies|Online Travel Agencies (OTAs)]] — Platforms that aggregate demand for multiple hotel properties, achieving significant market penetration and creating cha
+- [[concepts/open-innovation|Open Innovation]] — A model for R&D where companies leverage external collaboration and ideas to redefine their innovation process, rather t
+- [[concepts/open-system-platform|Open System (Platform)]] — A platform strategy that attracts a large number of independent players, fostering greater innovation and a larger marke
+- [[concepts/organizational-collision|Organizational Collision]] — A conflict where a company's traditional organizational model, including its structure and processes, is challenged by a
+- [[concepts/organized-vs-unorganized-retail|Organized vs Unorganized Retail]] — A classification of a retail market structure that distinguishes between formal, large-scale retailers (Organized) and s
+- [[concepts/outcome-based-contracts|Outcome-based Contracts]] — A business model where a company's revenue is tied to the successful outcomes and value delivered to its clients, rather
+- [[concepts/outcome-based-model|Outcome-Based Model]] — A core principle of Product-as-a-Service where the focus is on the outputs or outcomes for customers, not the input or p
+- [[concepts/outcome-based-services|Outcome-Based Services]] — A business model where a company sells a guaranteed outcome or level of performance to a customer, rather than just a ph
+- [[concepts/outsourcing-service-provider-transition|Outsourcing Service Provider Transition]] — The evolution of outsourcing service providers from low-cost service providers to innovators and key drivers of value in
+- [[concepts/over-serving-the-market|Over-serving the Market]] — A condition where a company's product improvements and features exceed the mainstream market's ability to absorb them, m
+- [[concepts/owned-media|Owned Media]] — A method to influence consumers through a company's own channels, such as its website, which can be leveraged with searc
+- [[concepts/paid-media|Paid Media]] — A method to influence consumers through paid channels such as search engine marketing (SEM) and traditional ads on TV, r
+- [[concepts/patent-citation-network|Patent Citation Network]] — A method of constructing a network that links patents based on their citations to map the core of innovation and identif
+- [[concepts/pay-per-lux|Pay-per-lux]] — An arrangement where a customer pays only for the light they use, rather than owning the light fixtures, serving as a sp
+- [[concepts/pay-per-use-model|Pay-per-use Model]] — A business model where customers are charged based on usage, contrasting with traditional one-time license fees and peri
+- [[concepts/payroll-processing-automation|Payroll Processing Automation]] — An early example of the Second Machine Age where a transaction-intensive business process was codified for machines, lea
+- [[concepts/paywall-business-model|Paywall Business Model]] — A business model where a content provider restricts website access, requiring users to pay for a subscription after view
+- [[concepts/people-analytics|People Analytics]] — A data-driven, "Moneyball" approach to talent management that uses analytics and AI to improve the power and accuracy of
+- [[concepts/perception-in-ai|Perception (in AI)]] — A sub-problem of AI that uses input from sensors like cameras, radar, and microphones to deduce aspects of the world.
+- [[concepts/performance-spread|Performance Spread]] — The increasing difference between the top-performing firms (winners) and bottom-performing firms (losers) in industries 
+- [[concepts/performance-trajectory|Performance Trajectory]] — The path a company follows over time as it continuously improves its product's features and services, which speaks to cu
+- [[concepts/permanent-subsidization|Permanent Subsidization]] — A key strategic decision in platform models, often used to mobilize networks by subsidizing one side of the platform.
+- [[concepts/phase-1-experimentation-at-the-edge|Phase 1: Experimentation at the Edge]] — The initial phase of digital transformation where new activities occur at the periphery with little influence on core op
+- [[concepts/phase-2-collision-at-the-core|Phase 2: Collision at the Core]] — The second phase of digital transformation where disruptions are recognized, leading to internal tension and tough decis
+- [[concepts/phase-3-reinvention-at-the-root|Phase 3: Reinvention at the Root]] — The final phase of digital transformation focused on redesigning the business model for the future, which involves probl
+- [[concepts/physical-and-digital-fusion|Physical and Digital Fusion]] — The concept of embedding technology, such as beacons or robotics, into physical stores to capture data, enhance the cust
+- [[concepts/pipeline-business-model|Pipeline Business Model]] — A traditional business model characteristic of the industrial economy, based on supply-side economies of scale and high 
+- [[concepts/platform-based-business-models|Platform-Based Business Models]] — A type of business model that has received significant attention over the last decade.
+- [[concepts/platform-based-model|Platform-Based Model]] — A business model where the value of a core product increases with the development of complementary apps and services, cr
+- [[concepts/platform-business-model|Platform Business Model]] — A business strategy that involves shifting from only selling one's own products to creating a platform where other compa
+- [[concepts/platform-envelopment|Platform Envelopment]] — A business strategy where one company enters another's market by offering a multi-platform bundle, making the standalone
+- [[concepts/platform-focused-business-model|Platform-focused business model]] — One of several types of business models, alongside product-focused, service-focused, and solution-focused, used for busi
+- [[concepts/platform-governance|Platform Governance]] — A system of rules created by a platform owner to manage how various players operate within its ecosystem, such as to lim
+- [[concepts/platform-mediated-business-networks|Platform Mediated Business Networks]] — A dominant business model structure that facilitates interactions and value exchange between two or more distinct user g
+- [[concepts/platform-model|Platform Model]] — A business model characterized by asymmetry between sellers and the intermediary, the need for ongoing investments by se
+- [[concepts/platform-models|Platform Models]] — A business model used by new competitors that operates on principles of two-sided markets, customer-centricity, and data
+- [[concepts/platform-strategy|Platform Strategy]] — A business strategy, often the third stage of digital transition, where a company opens up its system to third-party pla
+- [[concepts/platforms|Platforms]] — A business model defined by its ability to create value and dominance through an ecosystem of users and developers.
+- [[concepts/players-in-digital-transformation|Players in Digital Transformation]] — The three sets of actors—industry incumbents, tech entrepreneurs, and digital giants—that drive and contest business tra
+- [[concepts/powerful-machines|Powerful Machines]] — A concept for advanced technologies that add value through amplification, augmentation, and automation, requiring organi
+- [[concepts/preferential-partnerships|Preferential Partnerships]] — A portfolio of key relationships that a company must periodically rebalance to maximize current business models, acceler
+- [[concepts/prescriptive-questions|Prescriptive Questions]] — A class of problems where AI recommends the best course of action to optimize decisions and outcomes, such as in invento
+- [[concepts/price-competition-in-ecommerce|Price Competition in eCommerce]] — The concept that the internet, as a nearly perfect market with instantaneous information, would foster intense price com
+- [[concepts/price-dispersion|Price Dispersion]] — The variation in prices for the same item across different sellers, which data shows is greater for books sold on the in
+- [[concepts/private-labels|Private Labels]] — A strategy where a platform or retailer creates its own branded products to sell, leveraging its access to demand data t
+- [[concepts/problem-framing|Problem Framing]] — The process of defining a business problem from an 'outside-in' perspective by understanding customer pain points, needs
+- [[concepts/problem-solving-focus|Problem-Solving Focus]] — A business strategy for the digital era where a company defines itself by the problems it solves for customers, rather t
+- [[concepts/problem-solving|Problem Solving]] — The process of determining a solution to a framed problem by transcending traditional disciplines and industry boundarie
+- [[concepts/product-as-a-service|Product-as-a-Service]] — A business model where a company is paid for the outcome or usage of a product rather than selling the product itself, r
+- [[concepts/product-definition-shift|Product Definition Shift]] — The phenomenon where technology-enabled business models change the fundamental definition of a product in an industry, s
+- [[concepts/product-phases|Product Phases]] — The lifecycle a product goes through, which includes the Discovery Phase, Launch Phase, Growth Phase, Service Phase, and
+- [[concepts/product-to-solution-transformation|Product-to-Solution Transformation]] — A fundamental business model shift where a company moves from selling a physical product to providing a comprehensive so
+- [[concepts/products-to-platforms-shift|Products to Platforms Shift]] — A strategic transformation where traditional companies move from selling standalone products to building platforms to ta
+- [[concepts/proof-of-work|Proof of Work]] — A mechanism for adding a block to a blockchain where participants compete to solve a computational puzzle, with the winn
+- [[concepts/psychological-safety|Psychological Safety]] — A state of trust that is important to build for diverse groups, allowing their individual identities to flourish rather 
+- [[concepts/razor-and-blade-model-in-reverse|Razor and Blade Model in Reverse]] — A business model where a profitable primary product (the 'razor') drives the adoption of a complementary product (the 'b
+- [[concepts/razor-and-blades-model|Razor and Blades Model]] — A business strategy of selling a primary product (the "razor") at a low or break-even price to profit from the ongoing s
+- [[concepts/real-options|Real Options]] — A method for managing strategic investments in an uncertain world.
+- [[concepts/recursive-self-improvement|Recursive Self-Improvement]] — A capability of intelligent computers or robots to progressively redesign themselves or autonomously build ever smarter 
+- [[concepts/redefining-business-around-customers|Redefining Business Around Customers]] — A strategy of expanding a company's scope based on customer needs rather than traditional product categories or industry
+- [[concepts/referral-programs|Referral Programs]] — A customer acquisition method where existing customers refer new ones, found to generate more loyal and profitable custo
+- [[concepts/reinforcement-learning|Reinforcement Learning]] — A machine learning approach where a machine starts with unsupervised learning and a researcher provides positive reinfor
+- [[concepts/reinvention-at-the-root|Reinvention at the Root]] — A phase of digital transformation focused on strengthening business intuition with tangible support from data and analys
+- [[concepts/remote-work-productivity|Remote Work Productivity]] — The study of the consequences of remote work practices, such as working from home, on employee productivity and well-bei
+- [[concepts/remote-work|Remote Work]] — A work arrangement that can increase productivity but also creates challenges for employee well-being, such as feelings 
+- [[concepts/retail-stool-framework|Retail Stool Framework]] — A model illustrating that retail competition is based on the three interconnected elements of Low Prices, Customer Exper
+- [[concepts/retargeting|Retargeting]] — An advertising approach where ads are shown to consumers who have previously visited a firm's site but did not make a pu
+- [[concepts/reverse-mentoring|Reverse Mentoring]] — A program where junior employees mentor senior executives on new technologies and how target customers use and engage wi
+- [[concepts/rfid|RFID (Radio-Frequency Identification)]] — A technology using chips to tag merchandise, which enables real-time inventory management and provides an accurate pictu
+- [[concepts/robotics-in-warehousing|Robotics in Warehousing]] — The use of robots in warehouses to manage inventory, which can increase productivity by as much as eight times and allow
+- [[concepts/route-optimization-software|Route-Optimization Software]] — Software that uses real-time traffic and location data to direct drivers to the optimal route, resulting in significant 
+- [[concepts/rules-matrix|Rules Matrix]] — A framework for industry incumbents that maps the three phases of digital transformation against three winning moves to 
+- [[concepts/sales-per-square-foot|Sales Per Square Foot]] — A typical retail performance metric based on revenue per unit of store area, which some experience-focused businesses li
+- [[concepts/same-side-network-effect|Same-Side Network Effect]] — A user's preference regarding the number of other users on their own side of a two-sided network, which can be either po
+- [[concepts/scale-scope-speed-nexus|Scale-Scope-Speed Nexus]] — A concept describing the competitive advantage derived from the interplay of scale, scope, and speed, which is amplified
+- [[concepts/search-advertising|Search Advertising]] — A form of advertising, effectively used by Google on desktops, that provides value by showing ads highly relevant to con
+- [[concepts/search-friction|Search Friction]] — A practice of making it more difficult to find certain items, such as discounts, in order to separate price-sensitive cu
+- [[concepts/second-machine-age|Second Machine Age]] — A concept describing the current era where the rate of acceleration of machines has outstripped the development of human
+- [[concepts/second-moment-of-truth|Second Moment of Truth (SMOT)]] — The consumer's experience of actually using a product after purchase, which new technologies are increasingly enabling f
+- [[concepts/self-selection-in-innovation|Self-selection (in innovation)]] — A key benefit of open innovation where participants choose problems they are passionate about, leading to a better match
+- [[concepts/shift-from-storytelling-to-story-making|Shift from Storytelling to Story Making]] — A marketing approach that moves from one-way brand messaging to creating a two-way, emotionally engaging conversation to
+- [[concepts/shopping-cart-abandonment|Shopping Cart Abandonment]] — An event in e-commerce where a potential customer adds items to their online cart but leaves the website without complet
+- [[concepts/shrinkage|Shrinkage]] — The wastage or loss of fresh food or food with expiration dates in a retail setting, which can be as high as 6-7% for pe
+- [[concepts/single-dealer-model|Single-Dealer Model]] — A business model where a single dealer provides products, which was seen as having reached its growth capacity in the co
+- [[concepts/slip-framework|SLIP Framework]] — A framework stating that products should be Simple to install and use, have a Low to no initial cost, provide Instant an
+- [[concepts/smart-factory|Smart Factory]] — A highly digitized and automated factory where components have markers that communicate with machines to determine the p
+- [[concepts/snackable-content|Snackable Content]] — A content strategy focused on creating short, easily digestible content, acknowledging that engagement on many mobile ap
+- [[concepts/social-capital-in-it-outsourcing|Social Capital (in IT Outsourcing)]] — A factor studied for its effect on contract duration in buyer-supplier networks within the context of Information Techno
+- [[concepts/social-contagion|Social Contagion]] — A theory suggesting that behaviors and characteristics, such as obesity, can spread through social networks like an epid
+- [[concepts/social-impact-of-it|Social Impact of IT]] — A relatively under-researched area concerning the effects of information technology on various aspects of society and th
+- [[concepts/social-media-virality|Social Media Virality]] — A marketing goal where a message is amplified through social sharing at no additional cost, though research shows that m
+- [[concepts/soft-power|Soft Power]] — The power to co-opt rather than coerce, which allows an orchestrator to gain respect from ecosystem participants during 
+- [[concepts/software-as-a-service-model|Software-as-a-Service Model]] — A business model that shifts from a one-time sale of software to a recurring, subscription-based revenue source, intende
+- [[concepts/software-is-eating-the-world|Software is Eating the World]] — A concept reflecting that software is fundamentally changing industries and businesses across the world, with technology
+- [[concepts/solution-business-model|Solution Business Model]] — A business model centered on providing customizable products, services, or a mix of both to address customer needs. A bu
+- [[concepts/sor-marketplace-model|SOR / Marketplace Model]] — A sourcing strategy for working with mid-to-small and niche brands, based on either a Sale-or-Return (SOR) or a marketpl
+- [[concepts/spurious-correlation|Spurious Correlation]] — A misleading pattern found in large data where two variables have a high correlation but no causal relationship, which c
+- [[concepts/strategic-view-of-technology|Strategic View of Technology]] — The modern perspective that technology is a strategic partner integrated with business strategy, driving innovation and 
+- [[concepts/strategy-collision|Strategy Collision]] — A conflict where a company's traditional strategic logic is challenged by newer logics that rely more heavily on digital
+- [[concepts/strengthening-the-core-and-building-for-the-future|Strengthening the Core and Building for the Future]] — A core principle for digital transformation that requires companies to simultaneously manage their existing business whi
+- [[concepts/subsidize-one-side-of-the-platform|Subsidize One Side of the Platform]] — A platform growth strategy where one side of the market is subsidized to stimulate demand, while profits are made on the
+- [[concepts/subsistence-entrepreneurship|Subsistence Entrepreneurship]] — A form of entrepreneurship that can be driven at scale with a supportive government ecosystem, as aimed for by the CSC s
+- [[concepts/success-traps|Success Traps]] — A set of behaviors, including the talent trap and a focus on near-term metrics, that reinforce the status quo and preven
+- [[concepts/superior-customer-experience|Superior Customer Experience]] — A competitive advantage in e-commerce built through continuous innovation across the customer journey, including the sel
+- [[concepts/supervised-learning|Supervised Learning]] — A machine learning approach that uses large amounts of human-labeled "training" data to teach a machine to automatically
+- [[concepts/supply-side-economies-of-scale|Supply-Side Economies of Scale]] — A traditional business principle where a company's average cost per unit decreases as production scale increases, allowi
+- [[concepts/susceptibility-to-machine-learning|Susceptibility to Machine Learning]] — The concept that all occupations, including high-wage ones like radiologists and lawyers, have tasks that are vulnerable
+- [[concepts/sustaining-innovation|Sustaining Innovation]] — A form of innovation where incumbents focus on improving their products for their most demanding and profitable customer
+- [[concepts/switching-costs|Switching Costs]] — The costs a consumer incurs as a result of changing brands or products, which are increased by platforms with strong net
+- [[concepts/synthetic-intellects|Synthetic Intellects]] — A class of machines that are not conventionally programmed but are assembled from tools, given a goal and examples, and 
+- [[concepts/system-1-and-system-2-thinking|System 1 and System 2 Thinking]] — A model where decisions are an outcome of two types of thinking, with System 1 using mental shortcuts and stereotypes an
+- [[concepts/systems-integrator|Systems Integrator]] — A business model focused on tying together disparate pieces of systems, such as computing hardware, software, and servic
+- [[concepts/talent-trap|Talent Trap]] — A situation where companies hire staff for existing roles instead of identifying and nurturing the talent profile needed
+- [[concepts/tech-entrepreneur|Tech Entrepreneur]] — A player type in the Digital Matrix representing upstart companies that use technology to challenge and disrupt the way 
+- [[concepts/tech-entrepreneurs|Tech Entrepreneurs]] — New companies, often with deep and focused expertise in specific vertical areas, that can become formidable future compe
+- [[concepts/tech-led-products|Tech Led Products]] — Products that have technology as their core, focus on a simplified user experience, are designed for rapid scaling, can 
+- [[concepts/technological-disruption|Technological Disruption]] — Widespread technological changes that redefine an industry, causing incumbents to find it difficult to sustain operation
+- [[concepts/technology-adoption-lag|Technology Adoption Lag]] — The principle that significant productivity improvements from new technologies only occur after businesses escape old wa
+- [[concepts/technology-as-a-source-of-competitive-advantage|Technology as a Source of Competitive Advantage]] — The principle that information technology, unlike a utility like electricity, is a distinctive source of competitive adv
+- [[concepts/technology-as-a-support-function|Technology as a Support Function]] — An outdated view of technology as a separate function, a cost center, and a driver of automation rather than a strategic
+- [[concepts/technology-enabled-business-models|Technology-Enabled Business Models]] — Business models that leverage technology to emerge as key competitors and change the face of competition in diverse indu
+- [[concepts/the-digital-matrix-framework|The Digital Matrix (Framework)]] — A framework for analysis and action designed to guide executives in transforming a legacy company into a digital enterpr
+- [[concepts/the-digital-matrix|The Digital Matrix]] — A conceptual lens for understanding the new business game of the digital future, which involves unknown rules, dynamic c
+- [[concepts/the-innovators-dilemma|The Innovator's Dilemma]] — A phenomenon where incumbent companies fail to respond to disruptive threats because they are chasing higher profits and
+- [[concepts/the-long-tail|The Long Tail]] — A business strategy where retailers can profit from selling a large number of unique, low-volume items, which is more fe
+- [[concepts/the-sharing-economy|The Sharing Economy]] — An economic model described as "The End of Employment and the Rise of Crowd-Based Capitalism" in a book by Arun Sundarar
+- [[concepts/theory-of-digital-adaptation|Theory of Digital Adaptation]] — A new theory of business required for the digital age that helps a company create its future business in an uncertain wo
+- [[concepts/theory-of-the-firm|Theory of the Firm]] — An economic theory developed by Ronald Coase which posits that firms exist to reduce the transaction costs associated wi
+- [[concepts/three-phases-of-transformation|Three Phases of Transformation]] — A core part of The Digital Matrix framework outlining a step-by-step transformation journey: Experimentation at the Edge
+- [[concepts/three-stages-of-digital-transition|Three Stages of Digital Transition]] — A model describing how companies often progress through digital transformation, starting with using technology for inter
+- [[concepts/three-winning-moves|Three Winning Moves]] — A core part of The Digital Matrix framework outlining key strategies, which include orchestrating ecosystems, collaborat
+- [[concepts/traditional-performance-evaluation|Traditional Performance Evaluation]] — An approach to assessing employees that includes 360-degree feedback and periodic reviews, but is criticized for being t
+- [[concepts/trajectory-contingent-matching|Trajectory-Contingent Matching]] — An empirical model or method used to explore the causal relationship between digital innovation, investor expectations, 
+- [[concepts/transaction-zone|Transaction Zone]] — An interaction zone defined by a low level of importance for both you to your partner and your partner to you.
+- [[concepts/transfer-learning|Transfer Learning]] — A machine learning approach where experts transfer their knowledge to a machine instead of letting it start learning fro
+- [[concepts/transformer-model|Transformer Model]] — A technology model that transformed the AI/ML space by enabling the understanding of customer queries in natural languag
+- [[concepts/transitional-apps|Transitional Apps]] — Applications serving familiar needs that are adapting to new technological shifts, a position described as a 'Tough Spot
+- [[concepts/transitional-systems|Transitional Systems]] — Foundational infrastructure systems that adapt to new technological paradigms and are considered likely winners, such as
+- [[concepts/two-sided-network|Two-Sided Network]] — A platform structure with two distinct user groups (sides), where network effects can occur between the groups (cross-si
+- [[concepts/unsupervised-learning|Unsupervised Learning]] — An approach considered the frontier of machine learning where a machine finds patterns in data without using pre-classif
+- [[concepts/upstream-downstream-location|Upstream vs. Downstream Location]] — A dimension defining a company's expertise, where 'upstream' is away from the customer (e.g., in a lab or factory) and '
+- [[concepts/user-led-innovation|User-Led Innovation]] — An innovation model, pioneered by Eric von Hippel, that emphasizes the important role played by product users in develop
+- [[concepts/valuation-for-growth|Valuation for Growth]] — The principle that investors value startups and tech giants based on their growth potential rather than their current pr
+- [[concepts/valuation-for-profit|Valuation for Profit]] — The principle that investors value incumbent firms primarily based on their current period profits rather than future gr
+- [[concepts/value-networks|Value Networks]] — The context of customers, suppliers, and competitors in which a firm operates, which influences how it identifies custom
+- [[concepts/vertical-expertise|Vertical Expertise]] — A characteristic of tech entrepreneurs, representing deep, focused expertise and specialized skills in specific industry
+- [[concepts/vertical-integration|Vertical Integration]] — An industrial-age business model where a company owns the key assets from end to end for a product or service, creating 
+- [[concepts/virtual-integration|Virtual Integration]] — A digital-age business model where a company controls the market by assembling and managing the best network of external
+- [[concepts/virtual-reality|Virtual Reality (VR)]] — A technology that creates immersive, simulated environments for applications such as product design, industrial training
+- [[concepts/weak-signals|Weak Signals]] — Ambiguous and controversial bits of information about the future that are early warning signs of major change and are of
+- [[concepts/web-1-0|Web 1.0]] — The first paradigm of the web (1990s-2000s), known as 'The Read Only Web', which was characterized by static content, li
+- [[concepts/web-2-0|Web 2.0]] — The second paradigm of the web (2000s-present), known as 'The Participatory Web', which is defined by user-generated con
+- [[concepts/web-3-0|Web 3.0]] — The emerging third paradigm of the web, known as 'The Decentralized Web', which is founded on blockchain technology and 
+- [[concepts/wicked-problems|Wicked Problems]] — Highly complex and uncertain problems that are hard to solve because they are incomplete, contradictory, or changing, fo
+- [[concepts/winner-take-all-dynamic|Winner Take All Dynamic]] — A market situation where a single platform is likely to dominate, influenced by factors such as significant positive net
+- [[concepts/winner-take-all-environment|Winner-Take-All Environment]] — A market condition, often resulting from a virtuous circle created by network effects, where one dominant player emerges
+- [[concepts/winner-take-all-market|Winner-Take-All Market]] — A market situation where one company or platform becomes dominant, which is often a result of strong network effects.
+- [[concepts/working-backward-strategy|Working Backward Strategy]] — A customer-centric approach where a firm first determines what its customers need and then works backward to develop the
+- [[concepts/wta-dynamics|WTA Dynamics]] — A dynamic whose assessment is important to determine the sustainability of subsidization strategies in platform models.
+- [[concepts/zero-moment-of-truth|Zero Moment of Truth (ZMOT)]] — A term coined by Google for the critical period of online searching and research a consumer undertakes before making a p
 
-## Domain Pages (persona/) — 3 pages
+## Extracted Entities (324)
 
-- [[persona/digital-innovation-under-investor-constraints|Digital Innovation Under Investor Constraints]] — Primary barrier to digital innovation for incumbents is investor pressure, not capability gaps.
-- [[persona/grassroots-technology-entrepreneurship-india|Grassroots Technology Entrepreneurship in India]] — Reframes grassroots tech entrepreneurship beyond "digital inclusion" into scalable subsistence models.
-- [[persona/technology-organization-policy-nexus|Technology, Organization, and Policy Nexus]] — Technology, organization, and policy as inseparable co-evolving forces, not independent variables.
+- [[entities/accel-partners|Accel Partners]] — A common investor in both Flipkart and Myntra, believed to have nudged the companies to merge to focus their energies an
+- [[entities/accor|Accor]] — A hotel group that saw growing channel conflict from the rising power of Online Travel Agencies (OTAs) and had a loyalty
+- [[entities/adam-brandenburger|Adam Brandenburger]] — Co-author of the influential 1996 book on coopetition that used game theory to introduce the role of the complementor.
+- [[entities/adobe|Adobe]] — A company highlighted as an example of having successfully navigated the difficult passage of a digital transition. A so
+- [[entities/airbnb|Airbnb]] — An online accommodation booking service that started in 2008 and grew to over 2 million listings by 2016, exemplifying r
+- [[entities/ajay-banga|Ajay Banga]] — The leader of Mastercard who is driving the company's digital transformation by creating a platform for digital innovati
+- [[entities/alibaba|Alibaba]] — A company whose Yu'e Bao fund became the world's largest money-market fund, demonstrating how digital initiatives can di
+- [[entities/alphabet|Alphabet]] — A digital giant that has extended its influence into various industries, including automotive through projects like self
+- [[entities/alphago|AlphaGo]] — An AI whose success in 2016 demonstrated that AI could achieve superhuman performance in a complex, strategic game.
+- [[entities/amazon-alexa|Amazon Alexa]] — An intelligent personal agent from Amazon that competes with cognitive computing machines like IBM's Watson.
+- [[entities/amazon-basics|Amazon Basics]] — A private label brand from Amazon that, by leveraging platform data, captured 30% of the online battery market within on
+- [[entities/amazon-com|Amazon.com (AMZN)]] — An e-commerce company used as a primary example of a hybrid retailer that successfully leverages a long tail strategy, e
+- [[entities/amazon-go|Amazon Go]] — A store concept from Amazon where prime members can take items and leave without a traditional checkout process, as thei
+- [[entities/amazon-web-services-aws|Amazon Web Services (AWS)]] — A cloud computing division of Amazon that allows the company to scale its technology, learn from other e-commerce player
+- [[entities/amazon|Amazon]] — An online retailer that successfully expanded its business scope around customer needs into disparate areas like cloud c
+- [[entities/anand-nandkumar|Anand Nandkumar]] — A professor whose research examines the influence of intellectual property rights on innovation, the functioning of Mark
+- [[entities/andrew-mcafee|Andrew McAfee]] — A professor at MIT Sloan School who, with Erik Brynjolfsson, defined the concept of the "Second Machine Age".
+- [[entities/android-pay|Android Pay]] — A payment app that creates an ecosystem with merchants and banks, allowing Google's parent company to extend its scope i
+- [[entities/android|Android]] — Google's mobile operating system, which is cited as a prime example of an open system that has achieved a large market s
+- [[entities/andy-grove|Andy Grove]] — The late CEO of Intel and author of 'Only the Paranoid Survive', cited as an example of a leader who embraces change and
+- [[entities/apple-ii|Apple II]] — The first personal computer, initially considered an inferior product sold as a toy with low margins, which incumbents l
+- [[entities/apple-pay|Apple Pay]] — A payment app that creates an ecosystem with merchants and banks, allowing Apple to extend its scope into retail finance
+- [[entities/apple-siri|Apple Siri]] — An intelligent personal agent from Apple that competes with cognitive computing machines like IBM's Watson.
+- [[entities/apple|Apple]] — A technology company whose platform-based model for the iPhone creates high switching costs and whose strategy of hiring
+- [[entities/aquila-internet-drone|Aquila Internet Drone]] — A solar-powered drone developed by Facebook to test methods for connecting billions of people to the digital frontier.
+- [[entities/arun-sundararajan|Arun Sundararajan]] — The author of the book "The Sharing Economy: The End of Employment and the Rise of Crowd-Based Capitalism".
+- [[entities/at-walmart-labs|@Walmart-Labs]] — Walmart's e-commerce initiative that knits together dozens of acquisitions and coexists with the company's core big-stor
+- [[entities/atrium-talks|Atrium Talks]] — A podcast from the Indian School of Business (ISB) where Professors Deepa Mani and Bhagwan Chowdhry discuss and debate a
+- [[entities/audi-city|Audi City]] — A digital showroom concept that functions as an asset-light business model by using small, city-center locations and mul
+- [[entities/avis|Avis]] — A vehicle rental company that acquired the car-sharing company Zipcar for $500 million in 2013.
+- [[entities/aws|AWS]] — Amazon Web Services, cited as an example of a transitional system that is a likely winner in a paradigm shift.
+- [[entities/barnes-and-noble|Barnes & Noble (BKS)]] — A book retailer used as a point of comparison to illustrate the financial benefits of Amazon's highly efficient inventor
+- [[entities/barry-nalebuff|Barry Nalebuff]] — Co-author of the influential 1996 book on coopetition that used game theory to introduce the role of the complementor.
+- [[entities/bbva-compass-bank|BBVA Compass Bank]] — A bank whose online customer-acquisition campaign is used as a case study to illustrate the consumer journey funnel and 
+- [[entities/bbva-compass|BBVA Compass]] — A bank that used an experiment to measure the attribution effect of display ads, finding they significantly increased th
+- [[entities/bbva|BBVA]] — A Spanish bank that made its application programming interface (API) commercially available for third parties to build n
+- [[entities/bcg|BCG]] — A consulting firm that used Knack's mobile game to analyze thousands of applicants and identify the top 5 percent of can
+- [[entities/bhagwan-chowdhry|Bhagwan Chowdhry]] — A Professor at the Indian School of Business who co-hosts the Atrium Talks podcast with Deepa Mani, discussing topics su
+- [[entities/bill-ford|Bill Ford]] — The chairman of Ford Motor Company who believes experiments, even failures, provide necessary insights for the company t
+- [[entities/bill-ruh|Bill Ruh]] — The CEO of GE Digital who articulated the strategy that future value comes from making assets more productive through so
+- [[entities/bitcoin|Bitcoin]] — An innovative payment network utilizing blockchain technology that financial services firms began experimenting with aro
+- [[entities/blackberry|BlackBerry]] — A company whose smartphone for corporate executives was rendered obsolete by the iPhone, exemplifying a business trapped
+- [[entities/blendtec|Blendtec]] — A blender company that created the engaging "Will It Blend" YouTube series, which demonstrated product power by blending
+- [[entities/bob-mcdonald|Bob McDonald]] — The chief executive officer of Procter & Gamble who led the company's digital experiments on social media.
+- [[entities/brin-johson-paper|Brin Johson paper]] — A research paper (cited as 2005/2013) that analyzed the impact of IT investment on industry productivity, performance sp
+- [[entities/builde|Boston University Institute for Leading in a Dynamic Economy (BUILDE)]] — An institute funded to help researchers focus on the power of mobile technologies for new business models.
+- [[entities/bureau-of-economic-analysis|Bureau of Economic Analysis]] — The government agency cited as the source for data on IT investment and productivity used in industry analysis.
+- [[entities/business-week|Business Week]] — The publication that featured Robert Kuttner's 1998 prediction about the Internet fostering a nearly perfect market for 
+- [[entities/buzzfeed|BuzzFeed]] — A media company founded by Jonah Peretti that aims to amplify messages by understanding how content is shared on differe
+- [[entities/cambridge-analytica|Cambridge Analytica]] — A UK-based company that used consumers' Facebook data to target political ads, serving as a key example of platform gove
+- [[entities/carekit|CareKit]] — An app framework from Apple that helps individuals take a more proactive role in their personal fitness and well-being.
+- [[entities/changecoin|ChangeCoin]] — A company whose team of bitcoin and blockchain experts was acquired by Airbnb.
+- [[entities/charles-schwab|Charles Schwab]] — A financial services company that entered the industry with a new tech-enabled business model, illustrating increased vo
+- [[entities/chase-sapphire-reserve-card|Chase Sapphire Reserve Card]] — A premium credit card whose successful but expensive launch illustrated the importance of evaluating customer acquisitio
+- [[entities/chitrangda-singh|Chitrangda Singh]] — A celebrity featured by Myntra as 'Star of the Month' as part of its customer engagement and content strategy.
+- [[entities/citigroup|Citigroup]] — A company that intended to use the iAd platform to reach millions of people on their iPhone and iPod touch.
+- [[entities/clayton-christensen|Clayton Christensen]] — An expert on disruption who discussed with the McKinsey CEO how forces like modular solutions could disrupt the traditio
+- [[entities/co-opetition-book|Co-opetition: A Revolutionary Mindset that Combines Competition and Cooperation]] — An influential 1996 book that developed a framework for coopetition using game theory and introduced the concept of a co
+- [[entities/coin-contract-intelligence|COIN (Contract Intelligence)]] — A system that uses machines for document review in the legal field, which was found to surpass human lawyers in both eff
+- [[entities/companies-act-2013|Companies Act 2013]] — An Indian regulation that outlines provisions for corporate governance, including the functioning of boards and the duti
+- [[entities/connect-develop-program|Connect + Develop Program]] — An open innovation program used by P&G since 2000.
+- [[entities/creative-suite|Creative Suite]] — Adobe's software package which was transitioned from a perpetual license model costing $2,500 to a subscription-based se
+- [[entities/csc-scheme|CSC Scheme (Common Service Centres)]] — A scheme in India that provides a channel for grassroots economy development and bottom-of-pyramid markets by fostering 
+- [[entities/currentc|CurrentC]] — A collaborative digital payment initiative supported by Walmart that was perceived as inferior to Apple Pay and was even
+- [[entities/david-kenny|David Kenny]] — An executive who led the digital transformation of The Weather Company and subsequently took on leadership of the Watson
+- [[entities/dbs-bank|DBS Bank]] — A Singapore-based bank that developed the Home Connect mobile app to help consumers in their home-buying process by prov
+- [[entities/deep-blue|Deep Blue]] — An IBM chess supercomputer that used a rule-based expert system to process two hundred million positions per second in a
+- [[entities/deepa-mani|Deepa Mani]] — A Professor of Information Systems at the Indian School of Business whose research is at the intersection of technology,
+- [[entities/deepmind|DeepMind]] — An Alphabet-owned team that developed a machine to win at the game of Go as part of a broader ambition to understand hum
+- [[entities/deloitte|Deloitte]] — A firm cited as an example where traditional performance evaluations for its 65,000 employees consume over two million h
+- [[entities/digital-equipment-corporation|Digital Equipment Corporation (DEC)]] — An incumbent company, referred to as 'digital', that sold high-margin computers to large corporations and ignored the pe
+- [[entities/disney|Disney]] — A company that operates theme parks and implemented technology like FastPass and the MagicBand to improve the customer e
+- [[entities/disneys-magicband|Disney's MagicBand]] — A rubber wristband with an RFID chip that provides Disney theme park guests with a personalized itinerary based on their
+- [[entities/driving-digital-strategy-executive-program|Driving Digital Strategy (executive program)]] — An executive program at Harvard Business School that is co-chaired by Sunil Gupta.
+- [[entities/dropbox|Dropbox]] — A company with over 700M registered users and 18.16M paying users that provides File Sync and Share (FSS) plans for indi
+- [[entities/duncan-watts|Duncan Watts]] — A social scientist who, along with Jonah Peretti, proposed the idea of 'big seed' marketing as an alternative to traditi
+- [[entities/eataly|Eataly]] — A business that combines restaurants and a marketplace, using in-store food preparation as 'theater' to enhance user exp
+- [[entities/ebay|eBay]] — An e-commerce company that conducted a study challenging the effectiveness of search ads, finding that ads for its own b
+- [[entities/eckard-eberle|Eckard Eberle]] — The CEO of process automation at Siemens who distinguished digitization from automation.
+- [[entities/economic-survey-chapter-on-dwarfs-and-giants|Economic Survey Chapter on Dwarfs and Giants]] — A chapter prepared for the Chief Economic Advisor's office that profiled businesses and highlighted that most small and 
+- [[entities/edwards-deming|Edwards Deming]] — One of the foremost management scientists of the twentieth century who cautioned against the myth that if you can't meas
+- [[entities/elon-musk|Elon Musk]] — The CEO and visionary architect of Tesla, also known for his role at PayPal. A tech entrepreneur who defines Tesla's mis
+- [[entities/enpara|Enpara]] — A purely digital bank with no branches created by Finansbank, offering high interest rates and a strong customer experie
+- [[entities/eric-ries|Eric Ries]] — An expert on lean startups who preaches validating learning scientifically by running experiments and using the 'build-m
+- [[entities/eric-schmidt|Eric Schmidt]] — The CEO of Google and an Apple board member who appeared onstage at the 2007 iPhone launch to demonstrate the partnershi
+- [[entities/eric-von-hippel|Eric von Hippel]] — A researcher identified as one of the pioneers of user-led innovation, who provided evidence for the important role of u
+- [[entities/ericsson|Ericsson]] — A global telecom company formerly led by Hans Vestberg.
+- [[entities/erik-brynjolfsson|Erik Brynjolfsson]] — A professor at MIT Sloan School who, with Andrew McAfee, defined the concept of the "Second Machine Age".
+- [[entities/eytan-bakshy|Eytan Bakshy]] — A senior scientist at Facebook whose research on Twitter users found that 'ordinary influencers' can be more cost-effect
+- [[entities/facebook-lift|Facebook Lift]] — A platform introduced by Facebook that uses randomized controlled trials to measure the effect of its online ads on busi
+- [[entities/facebook-m|Facebook M]] — An intelligent personal agent from Facebook that competes with cognitive computing machines like IBM's Watson.
+- [[entities/facebook|Facebook]] — A social media platform used as an example of a focused market entry strategy and whose struggles with fake news and dat
+- [[entities/fastpass-plus|FastPass+]] — An online system that evolved from FastPass, allowing Disney customers to reserve up to three rides in advance of their 
+- [[entities/fastpass|FastPass]] — A Disney program designed to reduce wait times by issuing passes for popular attractions with a designated return time.
+- [[entities/finansbank|Finansbank]] — A Turkish bank that created Enpara, a completely new, purely digital brand, to serve the tech-savvy middle-income segmen
+- [[entities/flipkart|Flipkart]] — An Indian e-commerce company that illustrates the challenges of moving from an inventory-based model to an asset-light m
+- [[entities/ford-motor-co|Ford Motor Co.]] — A traditional automotive company that signaled a major strategic shift to become an 'auto and mobility company,' expandi
+- [[entities/ford-motor-company|Ford Motor Company]] — An incumbent automotive company using experiments to transform its business from a hardware focus to one centered on sof
+- [[entities/ford-motors|Ford Motors]] — An automotive company whose leadership advocates for looking beyond the physical car to a broader mobility ecosystem to 
+- [[entities/ford|Ford]] — An automotive company that exemplifies the Leader Zone by initially working with Microsoft for its SYNC system before sw
+- [[entities/gary-kasparov|Gary Kasparov]] — A chess Grand Master who competed against powerful machines and commented on the power of combining human strategic guid
+- [[entities/ge-digital|GE Digital]] — The Silicon Valley-based division of GE where the company's Industrial Internet of Things strategy was developed and imp
+- [[entities/ge-general-electric|GE (General Electric)]] — An incumbent industrial company used as a case study for attempting a large-scale digital transformation to become a sof
+- [[entities/ge-oil-and-gas|GE Oil and Gas]] — A company that partners with customers by owning and maintaining equipment, with the customer paying only for the days t
+- [[entities/ge-predix|GE Predix]] — An industrial internet platform developed by GE for applications such as predictive maintenance and managing digital twi
+- [[entities/ge|General Electric (GE)]] — A company that developed the Predix operating system for the industrial internet and invested over $1 billion to use add
+- [[entities/gelato|Gelato]] — A Norway-based startup that operates a platform connecting customers needing print materials with suppliers who have unu
+- [[entities/general-electric|General Electric (GE)]] — An industrial company that transformed its business by developing digital capabilities, such as the Predix platform and 
+- [[entities/general-management-program|General Management Program]] — An executive program at Harvard Business School that is chaired by Sunil Gupta.
+- [[entities/general-motors|General Motors]] — An automobile company that invested $500 million in the ride-sharing company Lyft to shape the future of mobility.
+- [[entities/geoff-hinton|Geoff Hinton]] — A University of Toronto researcher who led a team in 2012 that used a novel approach called "deep learning" to significa
+- [[entities/geoffrey-a-moore|Geoffrey A. Moore]] — An author who introduced a hierarchy of powers framework involving five areas that mutually reinforce each other to crea
+- [[entities/george-gilder|George Gilder]] — The originator of Gilder's Law, which observes that communication bandwidth grows significantly faster than computing po
+- [[entities/gerdau|Gerdau]] — A major steel manufacturer that successfully trialed GE's predictive maintenance technology and subsequently expanded it
+- [[entities/gilders-law|Gilder's Law]] — A law attributed to George Gilder which states that bandwidth grows at least three times faster than computing power.
+- [[entities/gm|General Motors (GM)]] — An automotive company facing disruption to its traditional ownership model, which must reinvent itself to solve broader 
+- [[entities/goldman-sachs|Goldman Sachs]] — An investment bank that shocked the world by launching its SIMON platform and inviting competitors to sell their product
+- [[entities/google-adsense|Google AdSense]] — A display advertising service offered by Google that allows websites to monetize their content by hosting ads, connectin
+- [[entities/google-adwords|Google AdWords]] — A keyword advertising service offered by Google to attract the 'money side' of its platform, providing advertisers with 
+- [[entities/google-assistant|Google Assistant]] — An intelligent personal agent from Google that competes with cognitive computing machines like IBM's Watson.
+- [[entities/google-flu-parable|Parable of Google Flu]] — A specific case used to illustrate the potential traps and analytical errors that can occur in big data analysis.
+- [[entities/google-flu-trends|Google Flu Trends]] — A Google project cited as an example of spurious correlation, as it overestimated the flu rate for 100 of 108 weeks in a
+- [[entities/google|Google]] — A technology company whose Android platform is an example of an open system and which is a key player in the emerging au
+- [[entities/hans-vestberg|Hans Vestberg]] — The chief executive officer of the global telecom company Ericsson until 2016.
+- [[entities/harvard-business-review|Harvard Business Review]] — A publication in which influential articles by Theodore Levitt (in 1960) and Michael E. Porter (in 2014) on business str
+- [[entities/harvard-business-school|Harvard Business School]] — An academic institution where Sunil Gupta is the Edward W. Carter Professor of Business and chairs or co-chairs several 
+- [[entities/harvard-nasa-tournament-lab|Harvard–NASA Tournament Lab]] — A lab at Harvard University, led by Karim Lakhani, that oversaw NASA's ISS Longeron Challenge and was instrumental in de
+- [[entities/healthkit|HealthKit]] — Smartphone software from Apple that allows developers to create a wide range of health and wellness apps.
+- [[entities/healthvault|HealthVault]] — A Microsoft experiment that provides individuals a centralized location to gather, store, use, and share health informat
+- [[entities/henkel|Henkel]] — A company that serves as an example of the pitfall of scattered digital experiments, after its CEO discovered over 150 s
+- [[entities/here|HERE]] — A division of Nokia that was sold to an automotive industry consortium at an enterprise value of EUR 2.8 billion.
+- [[entities/hilti|Hilti]] — A company whose fleet-management system, an example of Product-as-a-Service, was instrumental in increasing its sales an
+- [[entities/hointer|Hointer]] — A Seattle-based consulting firm that prototyped a new retail store concept using micro-robots to deliver items to dressi
+- [[entities/honeywell|Honeywell]] — A leading industrial-era company in the thermostat market that faced a "collision at the core" from digital startup Nest
+- [[entities/hrithik-roshan|Hrithik Roshan]] — A celebrity featured as an example of celebrity engagement for promoting the 'Roadster' brand.
+- [[entities/iad|iAd]] — An advertising platform that allows advertisers to reach iPhone and iPod touch users within apps and provides developers
+- [[entities/ibm-deep-blue|IBM Deep Blue]] — An IBM computer that defeated chess Grand Master Garry Kasparov, representing an early milestone in artificial intellige
+- [[entities/ibm-watson|IBM Watson]] — An AI application platform that has developed ROSS, a tool that allows lawyers to ask questions in plain English. An art
+- [[entities/ibm|IBM]] — A technology company that developed the chess supercomputer Deep Blue in 1996 using an expert system approach.
+- [[entities/ideo|IDEO]] — A consulting company that has popularized the design thinking methodology for framing and solving problems.
+- [[entities/igor-ansoff|Igor Ansoff]] — A professor and one of the intellectual leaders of strategy thinking who introduced and described the concept of "weak s
+- [[entities/imagenet|ImageNet]] — A database of millions of images used for a challenge to build models that could correctly classify images, where deep l
+- [[entities/indian-patent-office|Indian Patent Office]] — The government body where the fact that over 86% of patents are filed by multinational firms prompts research into the i
+- [[entities/indian-school-of-business|Indian School of Business (ISB)]] — An academic institution where Deepa Mani is a Professor and Deputy Dean, and which offers executive education programmes
+- [[entities/information-systems-research|Information Systems Research]] — A leading academic journal in the field of information systems for which Deepa Mani serves as a Senior Editor.
+- [[entities/informs-iss-practical-impacts-award|INFORMS Information Systems Society (ISS) Practical Impacts Award]] — An award presented to Deepa Mani in 2022 in recognition of the widespread impact of her research on business practice an
+- [[entities/informs-iss|INFORMS Information Systems Society (ISS)]] — A professional society that awarded Deepa Mani its Practical Impacts Award in 2022 in recognition of her research's impa
+- [[entities/innocentive|InnoCentive]] — A firm that helps companies execute open-innovation projects, with a key challenge being to help clients clearly define 
+- [[entities/insurance-industry-in-india|Insurance Industry in India]] — An industry in India whose evolution and status are traced in a financial management note.
+- [[entities/intel|Intel]] — A technology company that partnered with TAG Heuer and Google to develop the Connected Watch.
+- [[entities/international-space-station-iss|International Space Station (ISS)]] — A space station that was the subject of a NASA open innovation contest to solve a complex problem related to its solar p
+- [[entities/ios|iOS]] — Apple's mobile operating system, which is presented as a tightly controlled, closed system that provides a superior cust
+- [[entities/ipod-and-itunes|iPod and iTunes]] — Apple's iconic product ecosystem that reinvented the music industry by creating a new business model where the company m
+- [[entities/isb-executive-education|ISB Executive Education]] — A division of the Indian School of Business that provides programmes for senior executives and produces the "Inside Indi
+- [[entities/iss-longeron-challenge|ISS Longeron Challenge]] — A public contest created by NASA to find an optimal solution for positioning the International Space Station to generate
+- [[entities/itunes-app-store|iTunes / App Store]] — Apple's platform, cited as an example of a native system that was highly successful in the mobile era.
+- [[entities/itunes|iTunes]] — A digital goods retailer cited as an example of a pure online model that can offer a vast selection at virtually no marg
+- [[entities/jack-ma|Jack Ma]] — The founder of Alibaba who created the platform to serve the millions of small businesses operating in China's fragmente
+- [[entities/jack-welch|Jack Welch]] — The former leader of GE under whom the company succeeded wildly as a conglomerate.
+- [[entities/james-kuffner|James Kuffner]] — A former Google employee who coined the term 'cloud robotics' in 2010.
+- [[entities/jamie-dimon|Jamie Dimon]] — The CEO of JP Morgan Chase who stated that the new Sapphire Reserve Card would reduce the bank's fourth-quarter profits 
+- [[entities/jeff-bezos|Jeff Bezos]] — The leader of Amazon, who explained that original content helps sell other products and defended the initially misunders
+- [[entities/jeff-immelt|Jeff Immelt]] — The CEO of General Electric who led the company's digital transformation to improve industrial productivity through soft
+- [[entities/jeffrey-immelt|Jeffrey Immelt]] — The CEO of GE leading its transformation into a 'digital industrial company' and who believes market experimentation is 
+- [[entities/jerry-kaplan|Jerry Kaplan]] — A Stanford University scholar on legal informatics who offered the distinction between 'synthetic intellects' and 'forge
+- [[entities/jim-ciriello|Jim Ciriello]] — An executive, previously at Lucent Technologies and at Merck IT, who funded the Boston University Institute for Leading 
+- [[entities/john-c-henderson|John C. Henderson]] — A long-time collaborator of the author at MIT and Boston University who helped develop ideas on alliances and partnershi
+- [[entities/john-camillus|John Camillus]] — A professor who documented why conventional strategic thinking fails for wicked problems in his book 'Wicked Strategies'
+- [[entities/john-deere|John Deere]] — A heavy-machinery company founded in 1837 that transitioned from a farm-equipment manufacturer to a farm-management comp
+- [[entities/john-wanamaker|John Wanamaker]] — A nineteenth-century department-store magnate credited with the quote highlighting the challenge of measuring advertisin
+- [[entities/jonah-peretti|Jonah Peretti]] — The founder of BuzzFeed who co-proposed 'big seed' marketing and built his company around the concept of amplification t
+- [[entities/joseph-henrich|Joseph Henrich]] — An individual whose thesis on the role of collective intelligence in human evolution and prosperity was discussed on the
+- [[entities/jp-morgan-chase|JP Morgan Chase]] — The bank that issued the Sapphire Reserve Card and analyzed the long-term profitability and high value of the customers 
+- [[entities/kahneman-and-tversky|Kahneman and Tversky]] — Researchers who described how decisions are an outcome of two types of thinking, System 1 and System 2.
+- [[entities/kanthal|Kanthal]] — A Swedish industrial heating technology manufacturer used as a case study to demonstrate that only a small fraction of a
+- [[entities/karim-lakhani|Karim Lakhani]] — An open innovation researcher at Harvard University who leads the Harvard–NASA Tournament Lab and emphasizes the importa
+- [[entities/kiehls|Kiehl's]] — A beauty brand that faced the challenge of managing its 'bricks and clicks' presence across its own stores, department s
+- [[entities/knack|Knack]] — A company that uses immersive mobile games and machine learning to analyze microbehaviors and build predictive models of
+- [[entities/kunal-shah|Kunal Shah]] — A successful entrepreneur whose insights on playing the entrepreneurship game and creating wealth were shared in an epis
+- [[entities/le-club-accorhotels|Le Club Accorhotels]] — The loyalty program of Accor, which in 2014 had eighteen million members but only 24 percent of them booked directly wit
+- [[entities/leap|LEAP]] — GE's best-selling jet engine, for which the company began to mass-produce 3-D-printed fuel nozzles.
+- [[entities/lenovo|Lenovo]] — A hardware company that partners closely with Microsoft to create devices for the Windows 10 platform, while also compet
+- [[entities/lisa-caputo|Lisa Caputo]] — The executive vice president and CMO of Citigroup who commented on iAd's ability to create ads with a remarkable level o
+- [[entities/lockheed-martin|Lockheed Martin]] — An aerospace company that uses a collaborative human immersive laboratory with VR to allow engineers to virtually be ins
+- [[entities/lyft|Lyft]] — A ride-sharing company that received a $500 million investment from General Motors.
+- [[entities/lyric|Lyric]] — A digital thermostat product developed by Honeywell in response to the competitive threat from Nest Labs.
+- [[entities/m-v-rajamannar|M. V. Rajamannar]] — The Chief Marketing Officer (CMO) of Mastercard who joined in 2013 and led the evolution of the "Priceless" campaign by 
+- [[entities/marc-andreessen|Marc Andreessen]] — An individual credited with the quote "software is eating the world," which describes how technology companies are trans
+- [[entities/mark-fields|Mark Fields]] — A senior leader at Ford spearheading experiments to reinvent the organization for the digital future. A leader at Ford M
+- [[entities/marketing-myopia|Marketing Myopia]] — A famous 1960 Harvard Business Review article by Professor Ted Levitt that prompted managers to question the fundamental
+- [[entities/marquee|Marquee]] — An internal software platform at Goldman Sachs for creating risk management and analytical tools that uses data from use
+- [[entities/mary-barra|Mary Barra]] — The chief executive officer of GM who is leading the company's reinvention in response to changes in the transportation 
+- [[entities/mastercard|Mastercard]] — A financial services company that evolved its iconic "Priceless" campaign under CMO M. V. Rajamannar by creating a data-
+- [[entities/mckinsey-global-institute|McKinsey Global Institute]] — An organization that estimates the internet of things has the potential to add $1.2 to $3.7 trillion in annual value to 
+- [[entities/mckinsey|McKinsey]] — A leading consulting firm identified as an incumbent facing potential disruption from new business models like modular d
+- [[entities/merrill-lynch|Merrill Lynch]] — An established financial services firm that responded to competitive pressure from Charles Schwab by leveraging technolo
+- [[entities/meta-horizon-worlds|Meta – Horizon Worlds]] — Meta's flagship VR social platform, which aims to create a new metaverse experience and is an example of a native app fo
+- [[entities/meta|Meta]] — A major tech company involved in the 'Metaverse Wars' and the developer of the Horizon Worlds virtual reality platform.
+- [[entities/michael-e-porter|Michael E. Porter]] — A business theorist whose work is cited for defining traditional competitive strategies (low-cost vs. differentiation) a
+- [[entities/michelin|Michelin]] — A tire company that launched a pay-per-mile program which led to customer-focused innovations like tire-pressure-monitor
+- [[entities/microsoft-azure|Microsoft Azure]] — Microsoft's cloud computing product that provides software and infrastructure as a service based on a pay-per-use model.
+- [[entities/microsoft-cortana|Microsoft Cortana]] — An intelligent personal agent from Microsoft that competes with cognitive computing machines like IBM's Watson.
+- [[entities/microsoft-teams|Microsoft Teams]] — A business-centric collaboration application with deep integration into the Office suite, which successfully used a plat
+- [[entities/microsoft|Microsoft]] — A technology company that uses platform envelopment as a 'tried and tested method', for example by bundling Microsoft Te
+- [[entities/mit-sloan-management-review|MIT Sloan Management Review]] — An academic journal that published one of Venkat Venkatraman's bestselling papers on IT-enabled transformation in 1994.
+- [[entities/mohammad-ehteshami|Mohammad Ehteshami]] — The former head of engineering at GE Aviation and current head of GE Additive who called additive manufacturing an "engi
+- [[entities/morris-technologies|Morris Technologies]] — A company that successfully created a fuel nozzle for GE that was 25 percent lighter and five times more durable than tr
+- [[entities/ms-office|MS Office]] — A suite of productivity tools for a familiar need, cited as an example of a transitional app that has had to adapt from 
+- [[entities/myntra|Myntra]] — An Indian fashion e-commerce company that focuses on providing a differentiated customer experience through features lik
+- [[entities/narrative-sciences-quill|Narrative Science's Quill]] — A proprietary artificial intelligence platform that transforms data into stories and insights, used to automatically wri
+- [[entities/nasa|National Aeronautics and Space Administration (NASA)]] — A U.S. government agency that successfully used a public contest to solve a complex power generation problem for the Int
+- [[entities/naukri-com|Naukri.com]] — An online job portal used as an example to illustrate the structure of a two-sided platform with distinct needs for each
+- [[entities/naval-ravikant|Naval Ravikant]] — A successful entrepreneur whose insights on how to create wealth for oneself and society were discussed in an episode of
+- [[entities/nest-labs|Nest Labs]] — A startup company that introduced a "learning thermostat" in 2011 and was later acquired by Google for $3.2 billion. A c
+- [[entities/nest|Nest]] — A smart thermostat company acquired by Google that evolved from a product manufacturer into a platform for the connected
+- [[entities/netflix-competition|Netflix competition]] — A $1 million prize contest held by Netflix to improve its movie recommendation algorithm, which demonstrated that combin
+- [[entities/netflix|Netflix]] — A streaming service that changed customers' expectations about on-demand content and competes with new entrants in the s
+- [[entities/new-york-times|New York Times (NYT)]] — A media company that implemented a paywall in 2011, successfully converting its free online content into a paid subscrip
+- [[entities/next47|next47]] — A unit established by Siemens with a billion-euro budget to accelerate the application of disruptive technologies by wor
+- [[entities/nokia|Nokia]] — A former leader in feature phones that was rendered obsolete by the iPhone, serving as an example of a company trapped i
+- [[entities/note-7|Note 7]] — A Samsung phone model that was recalled and ultimately discontinued after numerous reports of its battery catching fire,
+- [[entities/nvidia|Nvidia]] — A company whose GPUs are critical for AI, gaming, and metaverse applications, making it a key enabler and a likely winne
+- [[entities/office-suite|Office Suite]] — A multi-platform bundle of Microsoft products into which applications like Microsoft Teams are integrated as part of an 
+- [[entities/omer-aras|Ömer Aras]] — The chairman and a founding member of Finansbank who identified a gap in the bank's customer base in the fast-growing mi
+- [[entities/omniture|Omniture]] — A digital-marketing company acquired by Adobe for $1.8 billion as part of a strategic move to broaden its business beyon
+- [[entities/oncology-expert-advisor|Oncology Expert Advisor (OEA)]] — A software tool used at MD Anderson Cancer Center that serves as a live, updated reference manual and virtual expert adv
+- [[entities/openai|OpenAI]] — A company mentioned as a creator of native systems for the current AI era.
+- [[entities/orion|ORION (on-road integrated optimization and navigation)]] — A route-optimization software developed by UPS that directs drivers to take the optimal route based on real-time informa
+- [[entities/oscar-farinetti|Oscar Farinetti]] — The individual associated with Eataly who realized from a past mistake that standalone restaurants are not very profitab
+- [[entities/oyo|OYO]] — India's largest hotel network, founded by Ritesh Agarwal, which is noted for taking the idea of dynamic pricing to a new
+- [[entities/p-and-g|P&G]] — A company that has been working with the connect + develop open innovation program since 2000.
+- [[entities/paytm|Paytm]] — An Indian startup, backed by Alibaba, that illustrates the strategy of adding complementary services to its core mobile-
+- [[entities/pd-at-ge|PD@GE]] — An application developed by GE to replace its decades-old annual performance reviews for its 300,000 employees.
+- [[entities/peter-drucker|Peter Drucker]] — A noted management guru of the twentieth century who wrote about the importance of an organization's "theory of the busi
+- [[entities/philips|Philips]] — A global lighting company that offers a 'lighting as a service' or 'pay-per-lux' model where customers pay for the light
+- [[entities/porsche-passport|Porsche Passport]] — A $2,000 per month subscription service that allows customers to use various Porsche models, exemplifying the Product-as
+- [[entities/predix-platform|Predix Platform]] — A GE platform founded on analytics that is used to predict and solve major inefficiencies across diverse industries such
+- [[entities/predix|Predix]] — A cloud-based platform created by GE for the industrial world, allowing customers and developers to build applications f
+- [[entities/priceless-campaign|Priceless Campaign]] — An iconic Mastercard ad campaign launched in 1997, known for the tagline "There are some things in life money can't buy.
+- [[entities/priceless-cities-program|Priceless Cities Program]] — A Mastercard program in the United States that demonstrated a significant positive business impact, with engaged custome
+- [[entities/procter-and-gamble-connect-and-develop-program|Procter & Gamble's Connect + Develop program]] — An open innovation program started by Procter & Gamble in 2000 to tap into intellectual capital and expertise outside th
+- [[entities/procter-and-gamble|Procter & Gamble (P&G)]] — A company that, under CEO Bob McDonald, carried out hundreds of digital experiments with Facebook to gain deep insights 
+- [[entities/radhika-piramal|Radhika Piramal]] — The managing director of VIP Industries and an alumnus of Harvard Business School who was concerned about building the c
+- [[entities/raja-rajamannar|Raja Rajamannar]] — An executive at Mastercard who explained the marketing transformation that occurred at the firm as part of its digital j
+- [[entities/red-roof-inn|Red Roof Inn]] — A hotel chain that successfully used moment-based marketing by targeting ads to travelers whose flights were canceled, r
+- [[entities/reliance-energy|Reliance Energy]] — An Indian electric power distribution company that was the subject of a case study on IT-led business transformation.
+- [[entities/researchkit|ResearchKit]] — An app framework from Apple that allows researchers to collect robust, medical-grade data for research purposes.
+- [[entities/rick-chavez|Rick Chavez]] — A partner of the author and associated with Viant who develops points of view on demand-centric pull as a driver of digi
+- [[entities/ritesh-agarwal|Ritesh Agarwal]] — The founder of OYO, who launched the hotel network company when he was nineteen years old.
+- [[entities/robert-kuttner|Robert Kuttner]] — A writer who, in a 1998 Business Week article, predicted the Internet would become a nearly perfect market with intense 
+- [[entities/rock-health|Rock Health]] — A Silicon Valley venture fund focused on digital health whose data can be analyzed to discern early trends.
+- [[entities/ronald-coase|Ronald Coase]] — A Nobel Prize-winning economist who developed the "theory of the firm" to explain the existence of firms based on transa
+- [[entities/room-key|Room Key]] — An initiative started by a consortium of six major hotels (including Hilton and Marriott) to offer consumers an alternat
+- [[entities/salman-khan|Salman Khan]] — A celebrity featured as an example of celebrity engagement for promoting the 'Being human' brand.
+- [[entities/samsung|Samsung]] — A company that recalled 2.5 million Note 7 phones and saw its market value drop by almost $17 billion after the devices 
+- [[entities/satya-nadella|Satya Nadella]] — The CEO of Microsoft who revived the company by orchestrating new ecosystems around the Windows 10 operating system.
+- [[entities/schiphol-airport|Schiphol Airport]] — An airport in Amsterdam that adopted a 'lighting as a service' model from Philips, paying only for the light it uses in 
+- [[entities/sebastien-bazin|Sébastien Bazin]] — The chairman and CEO of Accor hotels who was concerned about the channel conflict created by the rising power of Online 
+- [[entities/sebi-lodr-2015|SEBI's Listing Obligations and Disclosure Regulations, 2015]] — A set of regulations from SEBI that outlines duties for directors and boards related to corporate governance for listed 
+- [[entities/sephora|Sephora]] — A retailer that effectively uses moment-based marketing by providing product ratings and consumer reviews on shoppers' s
+- [[entities/shantanu-narayen|Shantanu Narayen]] — The leader of Adobe who guided the company's digital transition by acquiring Omniture and shifting to a subscription mod
+- [[entities/siemens|Siemens]] — A German conglomerate that built a smart factory in Amberg, Germany, which serves as a model for the potential of Indust
+- [[entities/simon-property-group|Simon Property Group]] — A company that is replacing department stores in its malls with restaurants and movie theaters to position them as place
+- [[entities/simon|SIMON]] — A structured-notes business platform launched by Goldman Sachs that allowed its competitors to sell their products on it
+- [[entities/sinan-aral|Sinan Aral]] — A social network expert at MIT whose research, cited in the Harvard Business Review, questions the actual effectiveness 
+- [[entities/slack|Slack]] — A team collaboration application that was a primary competitor for Microsoft Teams before Teams' rapid growth surpassed 
+- [[entities/sony-music-india|Sony Music (India)]] — A large music recording company in India that was the subject of a case study on exploring growth and profitability opti
+- [[entities/srini-raju-center-for-it-and-the-networked-economy|Srini Raju Center for Information Technology and the Networked Economy (SRITNE)]] — A center at the Indian School of Business where Deepa Mani previously served as Director.
+- [[entities/srini-raju-centre-for-it-and-the-networked-economy|Srini Raju Centre for Information Technology and the Networked Economy (SRITNE)]] — A research centre at the Indian School of Business (ISB) for which Deepa Mani serves as the Academic Director.
+- [[entities/sritne|Srini Raju Centre for IT and the Networked Economy (SRITNE)]] — A research center at ISB, also referred to as the Centre for Information Technology and the Networked Economy (CITNE), f
+- [[entities/stanford-university-design-school|Stanford University's design school]] — An academic institution that has popularized the methodology of design thinking.
+- [[entities/starbucks|Starbucks]] — A company that created a highly successful closed system for mobile payments that is designed to work only at its own st
+- [[entities/steve-ballmer|Steve Ballmer]] — The successor to Bill Gates at Microsoft who did not recognize the value of a mobile operating system ecosystem.
+- [[entities/steve-blank|Steve Blank]] — An entrepreneurship expert who popularized the concept of the 'pivot' as a core part of the lean startup methodology.
+- [[entities/steve-jobs|Steve Jobs]] — The CEO of Apple who launched the iPhone in 2007 and initially presented Google as a key partner in the innovation.
+- [[entities/sunil-gupta|Sunil Gupta]] — The author of "Driving Digital Strategy" and a Harvard Business School professor who has studied digital strategy and wo
+- [[entities/surface-product-line|Surface (product line)]] — Microsoft's own brand of hardware products that competes directly with those of its hardware partners, such as Lenovo.
+- [[entities/swisscom|Swisscom]] — A Swiss telecom operator that uses its Silicon Valley innovation outpost to interact with entrepreneurs and understand n
+- [[entities/tag-heuer|TAG Heuer]] — A watchmaker that partnered with Google and Intel to develop its Connected Watch in response to the launch of the Apple 
+- [[entities/ted-levitt|Ted Levitt]] — A professor who authored the famous 1960 Harvard Business Review article "Marketing Myopia".
+- [[entities/telefonica|Telefónica]] — A telecom company used as an example of a failed digital transformation approach where its independent Digital unit in L
+- [[entities/tensorflow|TensorFlow]] — An open system for building complex machine learning applications whose usage increased exponentially during the recent 
+- [[entities/tesco-homeplus-virtual-store|Tesco Homeplus Virtual Store]] — An innovative mobile app in South Korea that allowed consumers to scan QR codes of virtual items in a subway station for
+- [[entities/tesco|Tesco]] — A company whose South Korean virtual store initiative is cited as a great example of innovative consumer engagement, des
+- [[entities/tesla-motors|Tesla Motors]] — A company born in the digital era that is pioneering electric vehicles and over-the-air software updates, growing at unp
+- [[entities/tesla|Tesla]] — An automotive company cited as an example of gaining a strong competitive advantage through data network effects derived
+- [[entities/the-digital-matrix-book|The Digital Matrix (Book)]] — A book by Venkat Venkatraman that provides a practical guide and framework for business leaders to transform their compa
+- [[entities/the-digital-matrix|The Digital Matrix]] — A framework that views digitization as an ongoing evolution influencing how problems are framed and solved in economies,
+- [[entities/the-weather-company|The Weather Company]] — A company whose digital transformation was led by David Kenny, an experience that now guides his leadership of the Watso
+- [[entities/theodore-levitt|Theodore Levitt]] — A Harvard Business School professor who, in a 1960 Harvard Business Review paper, argued that companies were too focused
+- [[entities/thoughtmachine|ThoughtMachine]] — A company founded by an ex-Google employee that created Vault OS for cloud-based banking.
+- [[entities/threadless|Threadless]] — A company that invites consumers to both submit and vote on T-shirt ideas, effectively using crowdsourcing as a form of 
+- [[entities/tiger-global|Tiger Global]] — An investor in both Flipkart and Myntra that is believed to have pushed for their merger to reduce funding needs and mov
+- [[entities/tongal|Tongal]] — An open innovation platform that uses a three-stage process to source creative content and videos for advertisers from a
+- [[entities/topcoder|Topcoder]] — A large online community of software coders who participate in open innovation contests and often share their winning en
+- [[entities/tower-records|Tower Records]] — A physical retailer used in the "Long Tail" model to illustrate how high overhead and physical space constraints limit t
+- [[entities/uber|Uber]] — A company whose early growth, driven by word-of-mouth and a focused city-by-city rollout, serves as an example of a focu
+- [[entities/unilever-kan-khajura-station|Unilever Kan Khajura Station]] — An entertainment channel created by Hindustan Unilever that provided fifteen minutes of free, on-demand entertainment vi
+- [[entities/unilever|Unilever]] — A consumer products company that, through its Indian subsidiary, created an entertainment channel to engage consumers in
+- [[entities/unreal-engine|Unreal Engine]] — A 3D creation tool and game engine considered essential for developing high-fidelity games, simulations, and metaverse e
+- [[entities/ups|UPS]] — A logistics company that uses its ORION software to optimize truck routes, saving 85 million miles in driving and 8.5 mi
+- [[entities/us-foods|US Foods]] — A company on whose board of directors Sunil Gupta sits.
+- [[entities/us-trust|US Trust]] — A company acquired by Charles Schwab as part of its strategy to build a wealth management platform and enter the investm
+- [[entities/vault-os|Vault OS]] — An operating system that creates banks that run in the Cloud using a centralized, permissioned cryptographic ledger.
+- [[entities/venkat-venkatraman|Venkat Venkatraman]] — A scholar in strategy and digital technology for over two decades and the author of 'The Digital Matrix'.
+- [[entities/verb-surgical|Verb Surgical]] — A company created by Alphabet and a Johnson & Johnson unit to develop the future of surgery using machine learning, robo
+- [[entities/viant|Viant]] — An Internet strategy firm during the dot-com boom where the author served on the advisory board.
+- [[entities/village-level-entrepreneurs|Village Level Entrepreneurs (VLEs)]] — Entrepreneurs within the CSC scheme in India who can be trained in finance and marketing to scale their entrepreneurial 
+- [[entities/vip-industries|VIP Industries]] — A large Indian luggage company that faced the challenge of building a digital channel without alienating its 8,000 indep
+- [[entities/walmart-pay|Walmart Pay]] — A proprietary payment system introduced by Walmart as a competitor to Apple Pay after concerns that the CurrentC initiat
+- [[entities/walmart|Walmart]] — A retail company that uses its thousands of physical stores as a strategic asset to offer pickup discounts and reduce sh
+- [[entities/watson-ibm|Watson (IBM)]] — An AI system from IBM, described as a 'synthetic intellect' with applications in health care, known for its win on the g
+- [[entities/whirlpool|Whirlpool]] — An appliance manufacturer whose business model is shifting from product distribution to guaranteeing service performance
+- [[entities/wicked-strategies|Wicked Strategies]] — A book by Professor John Camillus that documents why conventional approaches to strategic thinking fail when dealing wit
+- [[entities/windows-10|Windows 10]] — A Microsoft operating system that serves as the foundation for a business ecosystem involving numerous hardware partners
+- [[entities/windows-operating-system|Windows (Operating System)]] — A software platform created by Microsoft that served as a proprietary wedge between computer hardware and applications, 
+- [[entities/wipro-holmes|Wipro Holmes]] — A cognitive computing machine from the Indian company Wipro that is a competitor to IBM's Watson.
+- [[entities/works-with-nest-platform|Works with Nest platform]] — A platform created by Nest that links its home products via a smartphone app and establishes an ecosystem with partners 
+- [[entities/wpp|WPP]] — A company that has embraced coopetition, viewing digital giants like Google as a 'frienemy' that is both its largest med
+- [[entities/xiaoice|Xiaoice]] — An experimental Microsoft chatbot for the Chinese market that achieves a high average of 23 conversations per session (C
+- [[entities/youtube|YouTube]] — A fast-growing internet site in 2004-2005 that had 20 million users a month but initially lacked an economic model.
+- [[entities/zara|Zara]] — A fast-fashion leader that puts RFID chips into its merchandise to get an accurate, real-time picture of which fashion i
+- [[entities/zipcar|Zipcar]] — A car-sharing company that was acquired by the vehicle rental company Avis for $500 million.
+- [[entities/zoom|Zoom]] — A video communication platform that achieved success through user-centric design, simplicity, reliability, and a freemiu
 
-## Network and Philosophy Pages (persona/) — 1 page
+## Query-Synthesized Pages (10)
 
-- [[persona/mentor-network-and-influences|Mentor Network and Influences]] — Sustained intellectual partnerships, especially with Anandhi Bharadwaj and collaborators.
+- [[synthesized/authentication-as-ecosystem-trust-infrastructure|Authentication as Ecosystem Trust Infrastructure]] — Authentication is the implicit trust infrastructure underlying ecosystem orchestration — as foundational to digital busi
+- [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — Most discussions about coding and digital transformation treat code as a tool of change—the means by which firms build n
+- [[synthesized/cookie-deprecation-as-ecosystem-inflection-point|Cookie Deprecation as Ecosystem-Level Strategic Inflection Point]] — The HTTP cookie — a kilobyte-sized text file placed in a browser to track user identity across sessions — can be underst
+- [[synthesized/digital-disruption-as-political-disruption|Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks]] — Digital disruption and political disruption are often the **same event viewed from different institutional angles**. The
+- [[synthesized/ecosystem-competition-and-antitrust-misalignment|Ecosystem Competition and the Structural Misalignment of Antitrust Policy]] — Venkatraman's *Digital Matrix* establishes that the fundamental unit of competition in the digital economy is not the in
+- [[synthesized/financial-architecture-as-digital-transformation-barrier|Financial Architecture as a Barrier to Digital Transformation]] — Firms exist because of transaction costs (Coase), but their ability to transform digitally is constrained by how financi
+- [[synthesized/history-as-defamiliarization-engine|History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy]] — Deepa Mani's use of historical analogy in teaching digital strategy is not merely illustrative decoration — it functions
+- [[synthesized/homophily-trap-in-network-driven-digital-scaling|The Homophily Trap in Network-Driven Digital Scaling]] — Wherever digital transformation relies on network-driven scaling—whether in viral marketing, platform economics, or gras
+- [[synthesized/low-level-design-as-digital-transformation-substrate|Low-Level System Design as the Hidden Substrate of Digital Transformation]] — Most digital transformation literature operates at the strategic layer—ecosystem positioning, platform governance, coope
+- [[synthesized/web3-decentralization-paradox|Web3's Decentralization Paradox: Challenging and Depending on Platform Control]] — Web3 — the loosely defined movement toward blockchain-based, decentralized internet infrastructure — positions itself as
 
-## Extracted Concepts (383 pages)
+## RAG Stubs (9)
 
-- [[concepts/1-click-ordering|1-Click Ordering]] — Amazon's single-action checkout feature pioneered in 1997.
-- [[concepts/3d-printing|3D Printing]] — On-demand, decentralized manufacturing from surgical implants to tools.
-- [[concepts/a-b-testing|A/B Testing]] — Comparing two versions of an offering to understand user preferences.
-- [[concepts/activity-based-costing|Activity-Based Costing]] — Cost allocation method for measuring customer-level profitability.
-- [[concepts/additive-manufacturing|Additive Manufacturing (3-D Printing)]] — Production technology for complex, lighter, more durable products at lower cost.
-- [[concepts/alumni-philanthropy|Alumni Philanthropy]] — Alumni giving critical for institutional mission and breaking barriers.
-- [[concepts/amplification-ai|Amplification (AI)]] — Machine capability that enhances and expands human and machine abilities.
-- [[concepts/amplification|Amplification]] — Spreading a message to large audiences; depends on medium and authenticity.
-- [[concepts/application-programming-interfaces|Application Programming Interfaces (APIs)]] — Tools enabling interoperability, data sharing, and coopetition across systems.
-- [[concepts/artificial-general-intelligence|Artificial General Intelligence (AGI)]] — Building flexible, adaptable machines with human-comparable intelligence.
-- [[concepts/artificial-intelligence|Artificial Intelligence]] — Machines performing tasks requiring human-like reasoning and learning.
-- [[concepts/artificial-neural-networks|Artificial Neural Networks (ANNs)]] — Foundation for deep learning, modeled on brain neuron interconnections.
-- [[concepts/asset-light-business-model|Asset-Light Business Model]] — Reducing reliance on capital-intensive physical assets.
-- [[concepts/asset-light-model|Asset-Light Model]] — Minimizing ownership of physical assets; used by Alibaba, Airbnb.
-- [[concepts/asset-performance-management|Asset Performance Management (APM)]] — Analytics for predictive maintenance and optimizing industrial assets.
-- [[concepts/attribution-marketing|Attribution (Marketing)]] — Determining which channel or ad gets credit for a sale.
-- [[concepts/augmentation-ai|Augmentation (AI)]] — Machine capability that supplements and improves human decision-making.
-- [[concepts/augmentation|Augmentation]] — Using technology to free expert talent from mundane tasks.
-- [[concepts/augmented-reality|Augmented Reality (AR)]] — Next major computing platform alongside VR with vast market potential.
-- [[concepts/automation-and-pandemic-resilience|Automation and Pandemic Resilience]] — Higher automation correlates with less economic vulnerability during pandemics.
-- [[concepts/automation|Automation]] — Using collaborative robots and technologies to change task execution.
-- [[concepts/big-data|Big Data]] — Large complex datasets enabling detection of previously invisible patterns.
-- [[concepts/big-seed-marketing|Big Seed Marketing]] — Seeding a message broadly rather than relying on few influencers.
-- [[concepts/blockchain-technology|Blockchain Technology]] — Distributed ledger tracking every transaction; used by innovative firms.
-- [[concepts/blockchain|Blockchain]] — Digital public ledger for replacing tokens or tracking transactions.
-- [[concepts/blue-ocean-strategy|Blue Ocean Strategy]] — Creating new, uncontested market space rather than competing in existing ones.
-- [[concepts/blurring-industry-boundaries|Blurring Industry Boundaries]] — Technology and data cause competition from outside traditional industries.
-- [[concepts/bricks-and-clicks-integration|Bricks and Clicks Integration]] — Harmonizing physical retail stores with e-commerce operations.
-- [[concepts/build-measure-learn-feedback-loop|Build-Measure-Learn Feedback Loop]] — Accelerating learning by running experiments and iterating quickly.
-- [[concepts/building-critical-mass|Building Critical Mass]] — Attracting sufficient users on both sides of a new platform.
-- [[concepts/business-ecosystem|Business Ecosystem]] — Dynamic community of diverse actors creating and capturing value.
-- [[concepts/business-ecosystems|Business Ecosystems]] — Corporation as a portfolio of capabilities assembled through networks.
-- [[concepts/business-model-innovation|Business Model Innovation]] — Fundamental shift in value creation and capture, beyond pure technology.
-- [[concepts/business-model-typology|Business Model Typology]] — Product, Service, Solution, Platform classification along two axes.
-- [[concepts/business-model|Business Model]] — Framework defining how a firm creates, delivers, and captures value.
-- [[concepts/business-models|Business Models]] — Variations including asset-light, inventory-based, marketplace, product-as-a-service.
-- [[concepts/business-scope|Business Scope]] — Defining what a company does; best focused on evolving customer needs.
-- [[concepts/business-value-of-technology-investments|Business Value of Technology Investments]] — Analyzing organization and business value of technology investments.
-- [[concepts/capability-co-creation|Capability Co-creation]] — Developing new capabilities jointly with external partners.
-- [[concepts/capability-development|Capability Development]] — Investing in new workforce skills for adapting to new technologies.
-- [[concepts/cart-abandonment|Cart Abandonment]] — ~70% of online shopping carts abandoned at checkout.
-- [[concepts/celebrity-engagements|Celebrity Engagements]] — Partnering with well-known personalities for brand promotion.
-- [[concepts/channel-complementarity|Channel Complementarity]] — Treating different sales channels as complements, not substitutes.
-- [[concepts/channel-conflict|Channel Conflict]] — Tension when online and physical channels are seen as competing.
-- [[concepts/chatbots|Chatbots]] — Conversational agents for customer service ranging from simple to advanced.
-- [[concepts/closed-system-platform|Closed System (Platform)]] — Proprietary platform with more control and superior customer experience.
-- [[concepts/cloud-computing|Cloud Computing]] — Remote servers for storing, managing, and processing data over the Internet.
-- [[concepts/cloud-robotics|Cloud Robotics]] — Robots relying on networked data or code beyond their own hardware.
-- [[concepts/co-creating-value|Co-creating Value]] — Partners, often coopetitive, working together to generate mutual benefit.
-- [[concepts/co-creation-with-partners|Co-creation with Partners]] — Incumbents building digital offerings by collaborating with other firms.
-- [[concepts/co-creation-zone|Co-Creation Zone]] — High mutual importance between partners in an interaction.
-- [[concepts/coexistence-strategy|Coexistence Strategy]] — Establishing a digital model alongside a traditional one initially.
-- [[concepts/cognitive-biases|Cognitive Biases]] — Deep-rooted societal norms that may work against women in organizations.
-- [[concepts/cognitive-computing|Cognitive Computing]] — Enabling computers to reason through complex, ambiguous information.
-- [[concepts/collective-intelligence|Collective Intelligence]] — Human prosperity driven by collective rather than individual brilliance.
-- [[concepts/collision-at-the-core|Collision at the Core]] — Proven experiments create tension with existing business models.
-- [[concepts/combinatorial-advantages-of-scale-scope-speed|Combinatorial Advantages of Scale-Scope-Speed]] — Competitive advantage from leveraging scale, scope, and speed together digitally.
-- [[concepts/competency-trap|Competency Trap]] — Existing competency decreases willingness to explore new approaches.
-- [[concepts/competition|Competition]] — Dividing the existing value pie using capabilities.
-- [[concepts/complementarity-in-ecosystems|Complementarity (in ecosystems)]] — Attracting diverse partners that enhance ecosystem value.
-- [[concepts/complementary-products-strategy|Complementary Products Strategy]] — Leveraging synergy between complementary products (razor-and-blade logic).
-- [[concepts/complementary-services|Complementary Services]] — Additional offerings that enhance core product or platform value.
-- [[concepts/complementor|Complementor]] — Player whose product makes customers value yours more.
-- [[concepts/confirmation-bias|Confirmation Bias]] — Ambiguous information interpreted to reconfirm pre-existing stereotypes.
-- [[concepts/consumer-journey-mapping|Consumer Journey Mapping]] — Mapping every touchpoint using ethnographic studies.
-- [[concepts/conversations-per-session-cps|Conversations Per Session (CPS)]] — Metric for chatbot conversational capability based on speaker alternation.
-- [[concepts/conversion-optimization|Conversion Optimization]] — Improving each step of the online purchasing funnel.
-- [[concepts/cooperation|Cooperation]] — Enlarging the value pie by pooling capabilities of several companies.
-- [[concepts/coopetition|Coopetition]] — Combining competition and cooperation to expand and divide value.
-- [[concepts/coopetitive-relationships|Coopetitive Relationships]] — Partnerships between traditional competitors for navigating interconnections.
-- [[concepts/core-competencies|Core Competencies]] — Key skills providing competitive advantage beyond product-centric knowledge.
-- [[concepts/core-vs-co-created-capabilities|Core vs. Co-created Capabilities]] — Framework for deciding internal vs. partner-developed advantages.
-- [[concepts/corporate-governance|Corporate Governance]] — Mandated auditing for shareholder trust in India.
-- [[concepts/cost-per-click-cpc|Cost Per Click (CPC)]] — Advertiser pays per click; effectiveness often questioned.
-- [[concepts/creative-destruction|Creative Destruction]] — Force fueling economic growth and Fortune 500 turnover.
-- [[concepts/creativity-cultivation|Creativity Cultivation]] — Creativity as a skill that can be developed, not just innate.
-- [[concepts/cross-channel-effects|Cross-Channel Effects]] — Advertising in one channel influencing sales in another.
-- [[concepts/crowdsourcing|Crowdsourcing]] — Using large groups to perform tasks like selecting winning designs.
-- [[concepts/customer-acquisition-cost|Customer Acquisition Cost (CAC)]] — Short-term metric for expense of acquiring a new customer.
-- [[concepts/customer-acquisition-funnel|Customer Acquisition Funnel]] — Stages from ad exposure to active customer.
-- [[concepts/customer-churn-modeling|Customer Churn Modeling]] — Predicting customer departures using historical usage data.
-- [[concepts/customer-experience|Customer Experience]] — Entire user journey including discovery, information, and purchase.
-- [[concepts/customer-focused-innovation|Customer-Focused Innovation]] — Innovation focused on achieving the customer's ultimate goal.
-- [[concepts/customer-lifetime-value|Customer Lifetime Value (CLV)]] — Long-term profitability metric based on spending and retention.
-- [[concepts/customer-profitability-analysis|Customer Profitability Analysis]] — Ranking customers by individual profitability.
-- [[concepts/customer-pull|Customer Pull]] — Embedding digital technology in customer interactions for insight.
-- [[concepts/customer-retention-strategy|Customer Retention Strategy]] — Maintaining loyalty through content, expert advice, and trend reports.
-- [[concepts/danger-zone|Danger Zone]] — Low importance to partner, high partner importance to you.
-- [[concepts/data-and-customers-as-assets|Data and Customers as Assets]] — Data and customers as most valuable digital-age assets.
-- [[concepts/data-driven-strategy|Data-Driven Strategy]] — Strategy crafted from data and experiments, not Industrial Age ideas.
-- [[concepts/data-network-effects|Data Network Effects]] — Product improves as it collects more user data.
-- [[concepts/decentralized-manufacturing|Decentralized Manufacturing]] — 3D-printing-enabled production closer to developed markets.
-- [[concepts/deep-learning|Deep Learning]] — Neural-network-based ML dramatically improving classification accuracy.
-- [[concepts/demand-centric-pull|Demand-Centric Pull]] — Digital business driver based on strong demand-side viewpoints.
-- [[concepts/demand-driven-supply-chains|Demand-Driven Supply Chains]] — Real-time data analytics to predict demand and reduce inventory.
-- [[concepts/design-thinking|Design Thinking]] — Methodology combining problem framing and solving through user observation.
-- [[concepts/differentiated-shopping-experience|Differentiated Shopping Experience]] — Unique e-commerce offering through advanced filters and detailed content.
-- [[concepts/differentiation-strategy|Differentiation Strategy]] — Competing by creating innovative, distinct products and services.
-- [[concepts/digital-business-ecosystem|Digital Business Ecosystem]] — Incumbents, tech entrepreneurs, and digital giants linked strategically.
-- [[concepts/digital-business-ecosystems|Digital Business Ecosystems]] — Inextricably linked participants who must work together.
-- [[concepts/digital-business-rulebook|Digital Business Rulebook]] — Assessing importance and proficiency of nine strategic rules.
-- [[concepts/digital-economy|Digital Economy]] — Economic reality where past performance no longer predicts future.
-- [[concepts/digital-ecosystems|Digital Ecosystems]] — Products and services linked to platforms in complex dynamic ways.
-- [[concepts/digital-empowerment|Digital Empowerment]] — Empowering rural citizens through literacy and enhanced local demand.
-- [[concepts/digital-engine-mastercard|Digital Engine (Mastercard)]] — Seven-step data-driven marketing process for real-time optimization.
-- [[concepts/digital-era-scale|Digital-Era Scale]] — Advantage from detailed data on operations and individual customers.
-- [[concepts/digital-era-scope|Digital-Era Scope]] — Using data, analytics, and AI to expand into unrelated industries.
-- [[concepts/digital-era-speed|Digital-Era Speed]] — Fastest to capitalize on opportunities with calibrated delivery.
-- [[concepts/digital-giant|Digital Giant]] — Powerful technology player challenging traditional business.
-- [[concepts/digital-giants|Digital Giants]] — Large tech companies extending influence beyond traditional industries.
-- [[concepts/digital-industrial-company|Digital Industrial Company]] — Coupling materials science competency with modern data sciences.
-- [[concepts/digital-inflection-point|Digital Inflection Point]] — Critical point where past models fail and choices shape trajectory.
-- [[concepts/digital-leadership-corps|Digital Leadership Corps]] — Dreamers, designers, doubters, and doers driving digital transformation.
-- [[concepts/digital-matrix-command-center|Digital Matrix Command Center]] — Tool for tracking moves through transformation phases.
-- [[concepts/digital-matrix|Digital Matrix]] — Framework explaining three player types and transformation phases.
-- [[concepts/digital-performance-assessment-tools|Digital Performance Assessment Tools]] — Faster app-based methods for assessing employee performance.
-- [[concepts/digital-strategy|Digital Strategy]] — Digital initiatives integrated into overall business strategy.
-- [[concepts/digital-transformation|Digital Transformation]] — Reinventing business for the digital era; strengthening core while building future.
-- [[concepts/digital-transition-management|Digital Transition Management]] — Guiding large organizations through temporary dips in transformation.
-- [[concepts/digital-transition|Digital Transition]] — Adapting to disruption by strengthening core and building new.
-- [[concepts/digital-twin|Digital Twin]] — Physical model combined with real-time sensor data for failure prediction.
-- [[concepts/digitization|Digitization]] — Fundamental transformation impacting efficiency and profitability.
-- [[concepts/direct-network-effect|Direct Network Effect]] — Product value increases as more consumers use it.
-- [[concepts/disruption|Disruption]] — Innovation complex for incumbents, often originating from unexpected places.
-- [[concepts/disruptive-innovation-framework|Disruptive Innovation Framework]] — Good management can cause companies to ignore initially inferior innovations.
-- [[concepts/disruptive-innovation|Disruptive Innovation]] — How IT disrupts industries, business models, and competitive dynamics.
-- [[concepts/divesting-from-traditional-businesses|Divesting from Traditional Businesses]] — Shedding non-strategic assets to focus on digital possibilities.
-- [[concepts/dynamic-pricing|Dynamic Pricing]] — Varying product prices over time; a digital-era norm.
-- [[concepts/dynamic-retargeting|Dynamic Retargeting]] — Showing consumers ads for the exact product they previously searched.
-- [[concepts/earned-media|Earned Media]] — Consumers learning about products from peer reviews and opinions.
-- [[concepts/ebitda-margin|EBITDA Margin]] — Key profitability indicator; target improvement from negative to positive.
-- [[concepts/economic-contraction-mortality-tradeoff|Economic Contraction-Mortality Tradeoff]] — Evaluating lockdown policies by translating economic loss into lives.
-- [[concepts/ecosystem-advantage|Ecosystem Advantage]] — Scale, scope, and speed derived from key partner networks.
-- [[concepts/ecosystem-orchestration|Ecosystem Orchestration]] — Controlling a market by assembling and managing partner networks.
-- [[concepts/ecosystem-participation|Ecosystem Participation]] — Operating within another firm's ecosystem with complementary offerings.
-- [[concepts/ecosystem-trap|Ecosystem Trap]] — Strategic pitfall in digital ecosystem management.
-- [[concepts/ecosystem-value-creation|Ecosystem Value Creation]] — Succeeding through collaboration with partner networks, not alone.
-- [[concepts/ecosystems-digital-business|Ecosystems (Digital Business)]] — Cross-industry structures companies must nurture and operate within.
-- [[concepts/efficient-inventory-management|Efficient Inventory Management]] — Minimizing inventory levels relative to revenue for cost savings.
-- [[concepts/emotional-computing|Emotional Computing]] — Conversations requiring a balance of analytical and emotional intelligence.
-- [[concepts/employee-churn-prediction|Employee Churn Prediction]] — ML algorithms predicting employee departure likelihood in advance.
-- [[concepts/engagement-that-drives-business|Engagement that Drives Business]] — Advertising must engage consumers and drive incremental business.
-- [[concepts/entrepreneurial-clusters|Entrepreneurial Clusters]] — Formation and sustenance of entrepreneurial groups in India.
-- [[concepts/evaluating-acquisition-advantage|Evaluating Acquisition Advantage]] — Incumbents acquiring tech entrepreneurs that challenge their model.
-- [[concepts/evidence-based-policy-making|Evidence-Based Policy Making]] — Using rigorous ground evidence for important policy decisions.
-- [[concepts/excess-mortality|Excess Mortality]] — Measuring pandemic impact beyond normal country-season mortality.
-- [[concepts/experiential-retail|Experiential Retail]] — Engaging in-store experience (e.g., food theater) to drive sales.
-- [[concepts/experiment-based-attribution|Experiment-Based Attribution]] — A/B testing to measure marketing effectiveness with control groups.
-- [[concepts/experimental-learning|Experimental Learning]] — Business experiments as learning opportunities from data and customers.
-- [[concepts/experimentation-at-the-edge|Experimentation at the Edge]] — First transformation phase: digital ideas evolve from concept to prototype.
-- [[concepts/experimentation-in-business|Experimentation in Business]] — Companies using experiments to compete and reinvent for digital futures.
-- [[concepts/experiments-at-the-edge|Experiments at the Edge]] — Testing new models where traditional industry boundaries blur.
-- [[concepts/expert-systems|Expert Systems]] — Machine learns rules from human expert; sifts through millions of options.
-- [[concepts/extreme-values-in-innovation|Extreme Values (in innovation)]] — Successful innovation relies on finding one or two winners, not averages.
-- [[concepts/factory-reorganization-with-electricity|Factory Reorganization with Electricity]] — Historical example illustrating technology adoption lag and productivity.
-- [[concepts/fashion-e-commerce|Fashion E-Commerce]] — Selling fashion online; challenges in Indian market with low margins.
-- [[concepts/first-moment-of-truth|First Moment of Truth (FMOT)]] — Consumer's point of purchase decision, trackable through sales data.
-- [[concepts/five-adaptation-principles|Five Adaptation Principles]] — Curiosity, experimentation, connecting experiments to actions, and more.
-- [[concepts/five-levels-of-it-enabled-transformation|Five Levels of IT-Enabled Transformation]] — 1994 framework: IT benefits require corresponding organizational transformation.
-- [[concepts/focused-market-entry-strategy|Focused Market Entry Strategy]] — Starting with a narrow segment before gradually expanding.
-- [[concepts/forged-laborers|Forged Laborers]] — General-purpose robots taught by humans to automate and augment work.
-- [[concepts/four-digital-business-models|Four Digital Business Models]] — Four archetypes defined by expertise location and value-chain focus.
-- [[concepts/four-interaction-zones|Four Interaction Zones]] — 2×2 grid analyzing partner importance for strategic relationships.
-- [[concepts/frame-storming|Frame-storming]] — Generating fundamental questions to challenge assumptions, not just ideas.
-- [[concepts/framework-for-reinvention|Framework for Reinvention]] — Reconnecting with customers, reevaluating value chain, reimagining business.
-- [[concepts/freemium-model|Freemium Model]] — Free basic version for user adoption and brand building.
-- [[concepts/freemium-strategy|Freemium Strategy]] — Free basic product to scale user base for network effects.
-- [[concepts/freemium|Freemium]] — Strategy for digital products with near-zero marginal cost.
-- [[concepts/fulfillment-cost|Fulfillment Cost]] — Significant operational expense targeted for reduction in fashion e-commerce.
-- [[concepts/fulfillment-efficiency|Fulfillment Efficiency]] — Reducing fulfillment percentage of revenue for better profitability.
-- [[concepts/future-of-work|Future of Work]] — Intersection of nature of work, workspace, and workforce.
-- [[concepts/gender-diversity|Gender Diversity]] — Diverse boards create more radical innovations and unique competencies.
-- [[concepts/general-purpose-technology|General Purpose Technology]] — Technology like electricity or IT that transforms entire industries.
-- [[concepts/generalized-ai|Generalized AI]] — AI systems synthesizing patterns from multiple data sources.
-- [[concepts/generic-retargeting|Generic Retargeting]] — Showing general category ads rather than specific product ads.
-- [[concepts/gilders-law|Gilder's Law]] — Data transmitted more reliably and cheaply via cloud computing.
-- [[concepts/governance-in-ecosystems|Governance (in ecosystems)]] — Managing role conflicts fairly to enhance trust among partners.
-- [[concepts/gross-margin|Gross Margin]] — Key fashion e-commerce profitability metric; often low at 20-25%.
-- [[concepts/hedging-currency-risk|Hedging Currency Risk]] — Managing impact of currency rate fluctuations on business.
-- [[concepts/hierarchy-of-powers|Hierarchy of Powers]] — Five mutually reinforcing powers: category, company, market, offer, execution.
-- [[concepts/high-it-intensive-industries|High IT-Intensive Industries]] — Sectors like retail and healthcare with significant IT investments.
-- [[concepts/homophily|Homophily]] — Similar people grouping together; confounding factor in network studies.
-- [[concepts/horizontal-expertise|Horizontal Expertise]] — Digital giants' core expertise extended across different domains.
-- [[concepts/human-machine-augmentation|Human-Machine Augmentation]] — Using machines to bring out the best of human talent.
-- [[concepts/human-machine-collaboration|Human-Machine Collaboration]] — Human strategic guidance paired with computer tactical activity.
-- [[concepts/ict-closeness|ICT-Closeness]] — How proximity to ICT industry transforms sector behavior.
-- [[concepts/implicit-association-test|Implicit Association Test]] — Revealing unconscious biases linking women with specific stereotypes.
-- [[concepts/inclusion|Inclusion]] — Fostering a culture that values different others for meaningful diversity.
-- [[concepts/incumbent-companies|Incumbent Companies]]
-
-- [[synthesized/cookie-deprecation-as-ecosystem-inflection-point|Cookie Deprecation as Ecosystem-Level Strategic Inflection Point]] — synthesized from query
-
-- [[synthesized/authentication-as-ecosystem-trust-infrastructure|Authentication as Ecosystem Trust Infrastructure]] — synthesized from query
-
-- [[synthesized/low-level-design-as-digital-transformation-substrate|Low-Level System Design as the Hidden Substrate of Digital Transformation]] — synthesized from query
-
-- [[synthesized/history-as-defamiliarization-engine|History as Defamiliarization Engine: How Temporal Analogy Powers Digital Strategy Pedagogy]] — synthesized from query
-
-- [[synthesized/ecosystem-competition-and-antitrust-misalignment|Ecosystem Competition and the Structural Misalignment of Antitrust Policy]] — synthesized from query
-
-- [[synthesized/homophily-trap-in-network-driven-digital-scaling|The Homophily Trap in Network-Driven Digital Scaling]] — synthesized from query
-
-- [[synthesized/financial-architecture-as-digital-transformation-barrier|Financial Architecture as a Barrier to Digital Transformation]] — synthesized from query
-
-- [[synthesized/code-as-both-enabler-and-constraint-in-digital-transformation|Code as Both Enabler and Constraint in Digital Transformation]] — synthesized from query
-
-- [[synthesized/digital-disruption-as-political-disruption|Digital Disruption as Political Disruption: When Platform Business Models Collide with Regulatory Frameworks]] — synthesized from query
-
-- [[synthesized/web3-decentralization-paradox|Web3's Decentralization Paradox: Challenging and Depending on Platform Control]] — synthesized from query
+- [[stubs/stub-ai|Ai]] — This document is a lecture or workshop session ("Frontier Tech – Session 2") that provides a comprehensive introduction 
+- [[stubs/stub-building-tech-led-products|Stub Building Tech Led Products]]
+- [[stubs/stub-driving-digital-strategy-a-guide-to-reimagining-your-1|Driving Digital Strategy: A Guide to Reimagining Your Business]] — Written by Harvard Business School professor Sunil Gupta, this book provides a comprehensive framework for digital trans
+- [[stubs/stub-incumbents-response|Incumbents Response]] — This source is a lecture session (FRNT – Session 10 by Vishal K) examining how incumbent firms respond to disruptive com
+- [[stubs/stub-merchant-models|Merchant Models]] — This source is a lecture session (FRNT Session 9 by Vishal K) covering a framework for understanding retail, merchant, a
+- [[stubs/stub-outline-introduction|Outline & Introduction]] — This source is a lecture deck from "Frontier Tech – Session 8" by Vishal Karungulam, covering course outline, digital di
+- [[stubs/stub-platform-structures|Platform Structures]] — This source is a lecture presentation (FRNT – Session 6 by Vishal K) covering platform-mediated business networks as the
+- [[stubs/stub-the-digital-matrix-new-rules-for-business-transformation-1|The Digital Matrix: New Rules for Business Transformation Through Technology]] — Written by Venkat Venkatraman, *The Digital Matrix* provides a strategic framework and practical step-by-step guide for 
+- [[stubs/stub-web-30-metaverse|Web 3.0 Metaverse]] — This source is a lecture/presentation by Vishal K from a "Frontier Tech – Session 3" series, covering the evolution of t

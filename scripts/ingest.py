@@ -32,7 +32,7 @@ from chunker import (
 # ---------------------------------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).parent.parent
-VAULT = PROJECT_ROOT / "webapp" /"Vault"
+VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 RAW_DIR = VAULT / "raw"
 WIKI_DIR = VAULT / "wiki"
 LOG_FILE = WIKI_DIR / "log.md"

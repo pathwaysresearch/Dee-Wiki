@@ -19,7 +19,7 @@ import argparse
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
-VAULT        = PROJECT_ROOT / "webapp/Vault"
+VAULT        = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 WIKI_DIR     = VAULT / "wiki"
 DATA_DIR     = PROJECT_ROOT / "data"
 CHUNKS_FILE  = DATA_DIR / "chunks.json"

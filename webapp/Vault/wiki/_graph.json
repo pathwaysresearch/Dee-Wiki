@@ -3383,7 +3383,9 @@
       "type": "concept",
       "title": "Phase 1: Experimentation at the Edge",
       "aliases": [
-        "Phase 1: Experimentation at the Edge"
+        {
+          "Phase 1": "Experimentation at the Edge"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -3395,7 +3397,9 @@
       "type": "concept",
       "title": "Phase 2: Collision at the Core",
       "aliases": [
-        "Phase 2: Collision at the Core"
+        {
+          "Phase 2": "Collision at the Core"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -3407,7 +3411,9 @@
       "type": "concept",
       "title": "Phase 3: Reinvention at the Root",
       "aliases": [
-        "Phase 3: Reinvention at the Root"
+        {
+          "Phase 3": "Reinvention at the Root"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -5223,16 +5229,10 @@
       "path": "wiki\\entities\\arun-sundararajan.md"
     },
     "at-walmart-labs": {
-      "type": "entity",
+      "type": "unknown",
       "title": "@Walmart-Labs",
-      "aliases": [
-        "@Walmart-Labs"
-      ],
-      "tags": [
-        "corporate-unit",
-        "e-commerce",
-        "innovation"
-      ],
+      "aliases": [],
+      "tags": [],
       "path": "wiki\\entities\\at-walmart-labs.md"
     },
     "atrium-talks": {
@@ -5590,7 +5590,9 @@
       "type": "entity",
       "title": "Co-opetition: A Revolutionary Mindset that Combines Competition and Cooperation",
       "aliases": [
-        "Co-opetition: A Revolutionary Mindset that Combines Competition and Cooperation"
+        {
+          "Co-opetition": "A Revolutionary Mindset that Combines Competition and Cooperation"
+        }
       ],
       "tags": [
         "book",
@@ -7981,7 +7983,7 @@
       "title": "SEBI's Listing Obligations and Disclosure Regulations, 2015",
       "aliases": [
         "SEBI's Listing Obligations and Disclosure Regulations",
-        "2015"
+        2015
       ],
       "tags": [
         "regulation",
@@ -9801,6 +9803,60 @@
         "3d-creation-tool"
       ],
       "path": "wiki\\entities\\unreal-engine.md"
+    },
+    "stub-ai": {
+      "type": "stub",
+      "title": "Ai",
+      "aliases": [
+        "Ai",
+        "Frontier Tech Session 2",
+        "AI Session"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-ai.md"
+    },
+    "stub-building-tech-led-products": {
+      "type": "unknown",
+      "title": "Stub Building Tech Led Products",
+      "aliases": [],
+      "tags": [],
+      "path": "wiki\\stubs\\stub-building-tech-led-products.md"
+    },
+    "stub-outline-introduction": {
+      "type": "stub",
+      "title": "Outline & Introduction",
+      "aliases": [
+        "Outline & Introduction"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-outline-introduction.md"
+    },
+    "stub-platform-structures": {
+      "type": "stub",
+      "title": "Platform Structures",
+      "aliases": [
+        "Platform Structures"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-platform-structures.md"
+    },
+    "stub-web-30-metaverse": {
+      "type": "stub",
+      "title": "Web 3.0 Metaverse",
+      "aliases": [
+        "Web 3.0 Metaverse",
+        "Frontier Tech Session 3"
+      ],
+      "tags": [
+        "rag-stub"
+      ],
+      "path": "wiki\\stubs\\stub-web-30-metaverse.md"
     }
   },
   "edges": [
@@ -17218,6 +17274,66 @@
       "from": "unreal-engine",
       "to": "metaverse",
       "type": "enables"
+    },
+    {
+      "from": "at-walmart-labs",
+      "to": "evaluating-acquisition-advantage",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/3d-solution-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/4u-need-framework",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/average-revenue-per-user",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/building-tech-led-products-process",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/consensus",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/cross-side-network-effect",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/envelopment",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/ethical-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/file-sync-and-share",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generative-ai",
+      "type": "references"
+    },
+    {
+      "from": "index",
+      "to": "concepts/generative-questions",
+      "type": "references"
     }
   ]
 }

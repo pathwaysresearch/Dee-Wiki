@@ -17,7 +17,7 @@ from datetime import datetime, timezone, timedelta
 IST = timezone(timedelta(hours=5, minutes=30))
 
 PROJECT_ROOT = Path(__file__).parent.parent
-VAULT = PROJECT_ROOT / "Vault"
+VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 LOG_FILE = VAULT / "wiki" / "log.md"
 
 
