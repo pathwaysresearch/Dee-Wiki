@@ -26,6 +26,11 @@ import re
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
 VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 WIKI_DIR = VAULT / "wiki"
 CONCEPTS_DIR = WIKI_DIR / "concepts"

@@ -38,6 +38,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 from chunker import get_embeddings_batch
 
 PROJECT_ROOT = Path(__file__).parent.parent
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
 _vault_name = os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 VAULT = PROJECT_ROOT / _vault_name
 WIKI_DIR = VAULT / "wiki"
@@ -99,8 +104,6 @@ def load_existing_chunks(
 # ---------------------------------------------------------------------------
 
 def main():
-    from dotenv import load_dotenv
-    load_dotenv(PROJECT_ROOT / ".env")
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
 
     WEBAPP_DATA.mkdir(parents=True, exist_ok=True)

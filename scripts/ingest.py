@@ -32,6 +32,11 @@ from chunker import (
 # ---------------------------------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).parent.parent
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
 VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 RAW_DIR = VAULT / "raw"
 WIKI_DIR = VAULT / "wiki"

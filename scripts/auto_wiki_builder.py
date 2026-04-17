@@ -30,6 +30,11 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
 VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 WIKI_DIR = VAULT / "wiki"
 RAW_DIR = VAULT / "raw"

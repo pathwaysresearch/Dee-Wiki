@@ -27,6 +27,11 @@ except ImportError:
     yaml = None
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent  # webapp/api/ → webapp/ → project root
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(PROJECT_ROOT / ".env")
+except ImportError:
+    pass
 VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
 WIKI_DIR = VAULT / "wiki"
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
