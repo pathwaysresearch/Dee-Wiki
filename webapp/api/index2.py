@@ -1359,6 +1359,22 @@ app = Flask(__name__)
 # Static files are one level up from webapp/api/ → webapp/
 STATIC_DIR = str(Path(__file__).resolve().parent.parent)
 
+# CORS — allow the Vercel frontend (or any origin when ALLOWED_ORIGIN=*)
+ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "*")
+
+
+@app.after_request
+def _cors(response):
+    response.headers["Access-Control-Allow-Origin"] = ALLOWED_ORIGIN
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    return response
+
+
+@app.route("/api/<path:path>", methods=["OPTIONS"])
+def _options(path):
+    return "", 204
+
 # Module-level singletons — initialised once at process start
 _KB: KnowledgeBase = None
 _CLIENT: Anthropic = None
@@ -1543,17 +1559,21 @@ if __name__ == "__main__":
     _p = _argparse.ArgumentParser(add_help=False)
     _p.add_argument("--serve", action="store_true",
                     help="Run Flask dev server instead of REPL")
-    _p.add_argument("--port", type=int, default=5001)
+    _p.add_argument("--host", default="127.0.0.1",
+                    help="Bind host (use 0.0.0.0 for Cloud Run)")
+    _p.add_argument("--port", type=int,
+                    default=int(os.environ.get("PORT", 5001)),
+                    help="Bind port (Cloud Run sets $PORT=8080)")
     _known, _rest = _p.parse_known_args()
 
-    if _known.serve:
+    if _known.serve or _known.host != "127.0.0.1" or _known.port != 5001:
         try:
             from dotenv import load_dotenv as _load_dotenv
             _load_dotenv(PROJECT_ROOT / ".env")
         except ImportError:
             pass
-        print(f"[index2] Starting Flask dev server on http://localhost:{_known.port}")
-        app.run(debug=True, port=_known.port, use_reloader=False)
+        print(f"[index2] Starting Flask server on http://{_known.host}:{_known.port}")
+        app.run(host=_known.host, port=_known.port, debug=False, use_reloader=False)
     else:
         sys.argv = [sys.argv[0]] + _rest
         main()

@@ -273,7 +273,7 @@ async function streamResponse(userMessage) {
   let renderer = null;
 
   try {
-    const response = await fetch("/api/chat-v2", {
+    const response = await fetch(`${window.BACKEND_URL ?? ""}/api/chat-v2`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -365,7 +365,7 @@ function setStatus(text, thinking) {
 
 async function checkHealth() {
   try {
-    const resp = await fetch("/api/health");
+    const resp = await fetch(`${window.BACKEND_URL ?? ""}/api/health`);
     const data = await resp.json();
     if (data.wiki_pages === 0 && data.rag_chunks === 0) {
       setStatus("No data loaded", false);
