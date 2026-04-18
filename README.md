@@ -93,24 +93,24 @@ Browser
 
 After deploying the backend, set `window.BACKEND_URL` in `webapp/index.html` to your Cloud Run URL.
 
-### Backend — Google Cloud Run
+### Backend — Google Cloud Run (via GCP Console)
 
-```bash
-# From the webapp/ directory:
-gcloud builds submit --tag gcr.io/PROJECT_ID/dee-backend
+1. Go to **Cloud Run → Create Service**
+2. Choose **"Continuously deploy from a repository"** → connect `Dee-Wiki` GitHub repo
+3. Set **Build type** → `Dockerfile`, **Dockerfile location** → `/webapp/Dockerfile`
+4. Set **Region**, **Memory** → 2 GiB, enable **Allow unauthenticated invocations**
+5. Under **Environment variables**, add:
 
-gcloud run deploy dee-backend \
-  --image gcr.io/PROJECT_ID/dee-backend \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --memory 2Gi \
-  --set-env-vars \
-    ANTHROPIC_API_KEY=sk-ant-...,\
-    GEMINI_API_KEY=AIza...,\
-    GITHUB_TOKEN=ghp_...,\
-    GITHUB_REPO=owner/repo,\
-    ALLOWED_ORIGIN=https://your-app.vercel.app
-```
+   | Variable | Value |
+   |----------|-------|
+   | `ANTHROPIC_API_KEY` | your Claude API key |
+   | `GEMINI_API_KEY` | your Gemini API key |
+   | `GITHUB_TOKEN` | your GitHub PAT |
+   | `GITHUB_REPO` | `owner/repo` |
+   | `ALLOWED_ORIGIN` | `https://your-app.vercel.app` |
+
+6. Deploy — GCP builds the image from `webapp/Dockerfile` and gives you a service URL
+7. Every `git push` to main auto-rebuilds and redeploys
 
 **Environment Variables**
 
@@ -146,8 +146,8 @@ python scripts/export_for_web.py
 # 5. Push to GitHub
 git add . && git commit -m "ingest: new paper" && git push
 
-# 6. Redeploy Cloud Run to pick up the new data
-gcloud run deploy dee-backend --image gcr.io/PROJECT_ID/dee-backend ...
+# 6. Cloud Run auto-redeploys on push (if set up with continuous deployment)
+#    Otherwise trigger manually: GCP Console → Cloud Run → your service → Edit & Deploy New Revision
 ```
 
 Wiki pages synthesised at runtime are pushed to GitHub automatically. They are picked up in the next Cloud Run deploy.
