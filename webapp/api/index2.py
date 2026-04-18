@@ -589,7 +589,7 @@ Before declaring sufficient=true, ask: "Can I quote a specific sentence from the
 - YES → output JSON with sufficient=true and that exact quote in evidence.
 - NO → call read_page on the most promising relationship slug. The search results are a starting point, not the answer. Relationships connect to deeper, more specific pages — follow them.
 
-Use read_page whenever the current pages are topically related but don't directly answer. Stop only when you have a quotable answer or have exhausted promising leads.
+Only call read_page if a relationship is directly relevant to the query — not just topically adjacent. Stop as soon as you have a quotable answer or have exhausted genuinely relevant leads.
 
 ## Valid slugs for read_page
 
@@ -671,7 +671,7 @@ def run_wiki_llm(
     )}]
 
     accumulated_slugs = [p["slug"] for p in top_pages]
-    _MAX_HOPS = 5
+    _MAX_HOPS = 4
 
     print(f"\n{'─'*60}")
     print(f"[WikiLLM] PROMPT TO WIKI LLM:\n{messages[0]['content']}")
