@@ -1587,6 +1587,9 @@ if __name__ == "__main__":
         except ImportError:
             pass
         print(f"[index2] Starting Flask server on http://{_known.host}:{_known.port}")
+        print("[index2] Initializing knowledge base...")
+        _get_kb()  # eager init — load wiki + build FAISS before first request
+        print("[index2] Knowledge base ready.")
         app.run(host=_known.host, port=_known.port, debug=False, use_reloader=False)
     else:
         sys.argv = [sys.argv[0]] + _rest
