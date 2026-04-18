@@ -702,9 +702,6 @@ def run_wiki_llm(
     accumulated_slugs = [p["slug"] for p in top_pages]
     _MAX_HOPS = 4
 
-    print(f"\n{'─'*60}")
-    print(f"[WikiLLM] PROMPT TO WIKI LLM:\n{messages[0]['content']}")
-    print(f"{'─'*60}\n")
 
     for _ in range(_MAX_HOPS + 1):
         response = client.messages.create(
