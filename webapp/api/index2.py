@@ -81,6 +81,11 @@ _WIKI_FAISS_SLUGS = DATA_DIR / "wiki_search_slugs.json"
 INDEX_MD_PATH = WIKI_DIR / "index.md"
 LOG_MD_PATH   = WIKI_DIR / "log.md"
 
+# GitHub path prefix — the subdirectory inside the repo that contains the webapp.
+# On Cloud Run, __file__ is /app/api/index2.py so relative_to(PROJECT_ROOT) gives
+# wrong paths. Use this prefix explicitly instead.
+_GITHUB_BASE = os.environ.get("GITHUB_BASE_PATH", "webapp")
+
 
 # WIKI_LLM = Sonnet (cheap navigation), MAIN_LLM = Opus (heavy synthesis)
 # Override via env or --model1/--model2 flags
@@ -94,7 +99,6 @@ QUERY_PREFIX = "Represent this query for retrieval: "
 # ---------------------------------------------------------------------------
 # Data loading helpers
 # ---------------------------------------------------------------------------
-
 
 def _load_wiki_pages() -> list:
     """Load all wiki .md files from Vault/wiki/ into dicts."""
@@ -428,43 +432,66 @@ def tool_read_page(slug: str, page_by_slug: dict, graph: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 
-def _push_to_github(repo_relative_path: str, content: str, commit_msg: str):
+def _push_batch_to_github(files: dict, commit_msg: str):
     """
-    Push a single file to GitHub via the Contents API.
-    Requires GITHUB_TOKEN and GITHUB_REPO (owner/repo) env vars.
-    Silently skips if either is unset.
+    Push multiple files to GitHub in ONE commit using the Git Trees API.
+    files: {repo_relative_path: str_content_or_bytes}
+    Silently skips if GITHUB_TOKEN or GITHUB_REPO is unset.
     """
     token = os.environ.get("GITHUB_TOKEN", "")
-    repo = os.environ.get("GITHUB_REPO", "")
+    repo  = os.environ.get("GITHUB_REPO", "")
     if not token or not repo:
         return
 
-    url = f"https://api.github.com/repos/{repo}/contents/{repo_relative_path}"
+    api = f"https://api.github.com/repos/{repo}"
     headers = {
         "Authorization": f"token {token}",
         "Accept": "application/vnd.github.v3+json",
     }
 
-    # GET current SHA — required for updates, None for new files
     try:
-        r = requests.get(url, headers=headers, timeout=10)
-        sha = r.json().get("sha") if r.status_code == 200 else None
-    except Exception:
-        sha = None
+        # 1. HEAD commit SHA
+        r = requests.get(f"{api}/git/refs/heads/main", headers=headers, timeout=10)
+        r.raise_for_status()
+        head_sha = r.json()["object"]["sha"]
 
-    payload = {
-        "message": commit_msg,
-        "content": base64.b64encode(content.encode("utf-8")).decode("ascii"),
-    }
-    if sha:
-        payload["sha"] = sha
+        # 2. Current tree SHA
+        r = requests.get(f"{api}/git/commits/{head_sha}", headers=headers, timeout=10)
+        r.raise_for_status()
+        base_tree_sha = r.json()["tree"]["sha"]
 
-    try:
-        resp = requests.put(url, json=payload, headers=headers, timeout=15)
-        resp.raise_for_status()
-        print(f"[GitHub] Pushed {repo_relative_path}")
+        # 3. Create a blob for each file
+        tree_entries = []
+        for path, content in files.items():
+            if isinstance(content, bytes):
+                blob_payload = {"content": base64.b64encode(content).decode("ascii"), "encoding": "base64"}
+            else:
+                blob_payload = {"content": content, "encoding": "utf-8"}
+            r = requests.post(f"{api}/git/blobs", headers=headers, json=blob_payload, timeout=30)
+            r.raise_for_status()
+            tree_entries.append({"path": path, "mode": "100644", "type": "blob", "sha": r.json()["sha"]})
+
+        # 4. New tree
+        r = requests.post(f"{api}/git/trees", headers=headers,
+                          json={"base_tree": base_tree_sha, "tree": tree_entries}, timeout=30)
+        r.raise_for_status()
+        new_tree_sha = r.json()["sha"]
+
+        # 5. New commit
+        r = requests.post(f"{api}/git/commits", headers=headers,
+                          json={"message": commit_msg, "tree": new_tree_sha, "parents": [head_sha]},
+                          timeout=30)
+        r.raise_for_status()
+        new_commit_sha = r.json()["sha"]
+
+        # 6. Advance HEAD
+        r = requests.patch(f"{api}/git/refs/heads/main", headers=headers,
+                           json={"sha": new_commit_sha}, timeout=10)
+        r.raise_for_status()
+        print(f"[GitHub] Pushed {len(files)} files in 1 commit: {commit_msg[:70]}")
+
     except Exception as e:
-        print(f"[GitHub] Push failed for {repo_relative_path}: {e}")
+        print(f"[GitHub] Batch push failed: {e}")
 
 
 # ---------------------------------------------------------------------------
@@ -1210,26 +1237,33 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
     except OSError:
         pass
 
-    # Push wiki page + graph + index.md to GitHub
-    page_github_path  = str(out_path.relative_to(PROJECT_ROOT)).replace("\\", "/")
-    graph_github_path = str((DATA_DIR / "_graph.json").relative_to(PROJECT_ROOT)).replace("\\", "/")
-    _push_to_github(
-        repo_relative_path=page_github_path,
-        content=content,
+    # Push all changed files to GitHub in ONE commit using explicit repo-relative paths.
+    # Never use relative_to(PROJECT_ROOT) — on Cloud Run PROJECT_ROOT resolves to /
+    # which produces paths like "app/Vault/..." instead of "webapp/Vault/...".
+    b = _GITHUB_BASE  # e.g. "webapp"
+    files_to_push = {
+        f"{b}/Vault/wiki/synthesized/{slug}.md": content,
+        f"{b}/data/_graph.json": graph_json,
+    }
+    if new_index_content:
+        files_to_push[f"{b}/Vault/wiki/index.md"] = new_index_content
+
+    # Include updated FAISS cache files so next deploy skips re-encoding
+    if _WIKI_FAISS_CACHE.exists():
+        try:
+            files_to_push[f"{b}/data/wiki_search.faiss"] = _WIKI_FAISS_CACHE.read_bytes()
+        except Exception as e:
+            print(f"[GitHub] Skipping FAISS binary: {e}")
+    if _WIKI_FAISS_SLUGS.exists():
+        try:
+            files_to_push[f"{b}/data/wiki_search_slugs.json"] = _WIKI_FAISS_SLUGS.read_text(encoding="utf-8")
+        except Exception as e:
+            print(f"[GitHub] Skipping FAISS slugs: {e}")
+
+    _push_batch_to_github(
+        files=files_to_push,
         commit_msg=f"wiki: synthesize {slug} from query {today_str}",
     )
-    _push_to_github(
-        repo_relative_path=graph_github_path,
-        content=graph_json,
-        commit_msg=f"wiki: update _graph.json after synthesizing {slug}",
-    )
-    if new_index_content:
-        index_github_path = str(INDEX_MD_PATH.relative_to(PROJECT_ROOT)).replace("\\", "/")
-        _push_to_github(
-            repo_relative_path=index_github_path,
-            content=new_index_content,
-            commit_msg=f"wiki: update index.md after synthesizing {slug}",
-        )
 
 
 # ---------------------------------------------------------------------------
