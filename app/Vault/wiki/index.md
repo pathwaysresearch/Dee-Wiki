@@ -793,4 +793,4 @@ Master catalog — 774 pages · last rebuilt 2026-04-17
 
 - [[synthesized/warfare-c2-architecture-as-digital-transformation-problem|Warfare C2 Architecture as a Digital Transformation Problem]] — synthesized from query
 
-- [[synthesized/finance-resource-allocation-and-innovation-constraint|Finance as Resource Allocation Under Uncertainty: How Financial Markets Shape and Constrain Innovation]] — synthesized from query
+- [[synthesized/ai-metaverse-shared-infrastructure|AI and Metaverse Shared Infrastructure Dependency]] — synthesized from query
