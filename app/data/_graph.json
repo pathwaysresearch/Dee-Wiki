@@ -9895,6 +9895,24 @@
         "frontier-technology"
       ],
       "path": "wiki/synthesized/ai-metaverse-shared-infrastructure.md"
+    },
+    "metaverse-use-cases-and-infrastructure-constraints": {
+      "type": "synthesized",
+      "title": "Metaverse Use Cases and Infrastructure Constraints",
+      "aliases": [
+        "Metaverse Use Cases",
+        "Metaverse Applications"
+      ],
+      "tags": [
+        "metaverse",
+        "frontier-technology",
+        "blockchain",
+        "infrastructure",
+        "use-cases",
+        "virtual-reality",
+        "web3"
+      ],
+      "path": "wiki/synthesized/metaverse-use-cases-and-infrastructure-constraints.md"
     }
   },
   "edges": [
@@ -20202,6 +20220,31 @@
       "from": "ai-metaverse-shared-infrastructure",
       "to": "transitional-systems",
       "type": "extends"
+    },
+    {
+      "from": "metaverse-use-cases-and-infrastructure-constraints",
+      "to": "metaverse",
+      "type": "extends"
+    },
+    {
+      "from": "metaverse-use-cases-and-infrastructure-constraints",
+      "to": "stub-web-30-metaverse",
+      "type": "extends"
+    },
+    {
+      "from": "metaverse-use-cases-and-infrastructure-constraints",
+      "to": "ai-metaverse-shared-infrastructure",
+      "type": "extends"
+    },
+    {
+      "from": "metaverse-use-cases-and-infrastructure-constraints",
+      "to": "meta-horizon-worlds",
+      "type": "relates-to"
+    },
+    {
+      "from": "metaverse-use-cases-and-infrastructure-constraints",
+      "to": "meta",
+      "type": "relates-to"
     }
   ]
 }
