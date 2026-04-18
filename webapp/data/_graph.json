@@ -3648,7 +3648,9 @@
       "type": "concept",
       "title": "Phase 1: Experimentation at the Edge",
       "aliases": [
-        "Phase 1: Experimentation at the Edge"
+        {
+          "Phase 1": "Experimentation at the Edge"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -3660,7 +3662,9 @@
       "type": "concept",
       "title": "Phase 2: Collision at the Core",
       "aliases": [
-        "Phase 2: Collision at the Core"
+        {
+          "Phase 2": "Collision at the Core"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -3672,7 +3676,9 @@
       "type": "concept",
       "title": "Phase 3: Reinvention at the Root",
       "aliases": [
-        "Phase 3: Reinvention at the Root"
+        {
+          "Phase 3": "Reinvention at the Root"
+        }
       ],
       "tags": [
         "digital-transformation",
@@ -5732,16 +5738,10 @@
       "path": "wiki\\entities\\arun-sundararajan.md"
     },
     "at-walmart-labs": {
-      "type": "entity",
+      "type": "unknown",
       "title": "@Walmart-Labs",
-      "aliases": [
-        "@Walmart-Labs"
-      ],
-      "tags": [
-        "corporate-unit",
-        "e-commerce",
-        "innovation"
-      ],
+      "aliases": [],
+      "tags": [],
       "path": "wiki\\entities\\at-walmart-labs.md"
     },
     "atrium-talks": {
@@ -6123,7 +6123,9 @@
       "type": "entity",
       "title": "Co-opetition: A Revolutionary Mindset that Combines Competition and Cooperation",
       "aliases": [
-        "Co-opetition: A Revolutionary Mindset that Combines Competition and Cooperation"
+        {
+          "Co-opetition": "A Revolutionary Mindset that Combines Competition and Cooperation"
+        }
       ],
       "tags": [
         "book",
@@ -8665,7 +8667,7 @@
       "title": "SEBI's Listing Obligations and Disclosure Regulations, 2015",
       "aliases": [
         "SEBI's Listing Obligations and Disclosure Regulations",
-        "2015"
+        2015
       ],
       "tags": [
         "regulation",
@@ -9855,6 +9857,28 @@
         "digital-strategy"
       ],
       "path": "wiki\\synthesized\\web3-decentralization-paradox.md"
+    },
+    "warfare-c2-architecture-as-digital-transformation-problem": {
+      "type": "synthesized",
+      "title": "Warfare C2 Architecture as a Digital Transformation Problem",
+      "aliases": [
+        "warfare-digital-matrix",
+        "c2-transformation-architecture",
+        "autonomous-warfare-governance"
+      ],
+      "tags": [
+        "digital-transformation",
+        "command-and-control",
+        "autonomous-systems",
+        "ai-governance",
+        "escalation-risk",
+        "technology-organization-policy-nexus",
+        "decision-architecture",
+        "human-judgment",
+        "cyber-physical-systems",
+        "ecosystem-orchestration"
+      ],
+      "path": "wiki/synthesized/warfare-c2-architecture-as-digital-transformation-problem.md"
     }
   },
   "edges": [
@@ -13271,7 +13295,7 @@
     {
       "from": "at-walmart-labs",
       "to": "evaluating-acquisition-advantage",
-      "type": "is_example_of"
+      "type": "references"
     },
     {
       "from": "atrium-talks",
@@ -20106,6 +20130,41 @@
     {
       "from": "web3-decentralization-paradox",
       "to": "digital-disruption-as-political-disruption",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "rules-matrix",
+      "type": "extends"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "experimentation-at-the-edge",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "collision-at-the-core",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "reinvention-at-the-root",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "the-digital-matrix",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "three-winning-moves",
+      "type": "relates-to"
+    },
+    {
+      "from": "warfare-c2-architecture-as-digital-transformation-problem",
+      "to": "network-centric-digital-strategy",
       "type": "relates-to"
     }
   ]

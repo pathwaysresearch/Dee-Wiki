@@ -6,3 +6,5 @@ rank-bm25==0.2.2
 numpy>=1.26.0
 faiss-cpu
 flask
+fastembed
+

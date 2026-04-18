@@ -2,7 +2,8 @@
 webapp/api/index2.py — Dual-LLM agentic query pipeline (Flask deployment)
 
 Architecture (see CLAUDE.md):
-  WIKI_LLM / Sonnet (wiki agent): reads index.md, calls graph_traverse to fetch pages
+  WIKI_LLM / Sonnet (wiki agent): hybrid BM25+MiniLM search → top-5 pages as context,
+    iterative read_page tool to follow relationship chains until sufficient
   → MAIN_LLM / Opus (answer agent): synthesis, optional rag_search tool call
   → structured JSON response → answer string to frontend + async wiki update
 
@@ -54,13 +55,10 @@ sys.path.insert(0, str(_API_DIR))
 sys.path.insert(1, str(PROJECT_ROOT / "scripts"))
 
 from graph import (
-    load_graph,
     save_graph,
-    traverse,
     parse_frontmatter,
     strip_frontmatter,
     WIKI_DIR,
-    VAULT,
 )
 
 # Optional: load .env file if python-dotenv is available
@@ -76,6 +74,9 @@ except ImportError:
 
 # Deployed assets live in webapp/data/ (written by export_for_web.py)
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+MODELS_DIR = Path(__file__).resolve().parent.parent / "models"  # committed ONNX model cache
+_WIKI_FAISS_CACHE = DATA_DIR / "wiki_search.faiss"
+_WIKI_FAISS_SLUGS = DATA_DIR / "wiki_search_slugs.json"
 INDEX_MD_PATH = WIKI_DIR / "index.md"
 LOG_MD_PATH = WIKI_DIR / "log.md"
 
@@ -183,6 +184,158 @@ def _load_faiss_index():
 
 
 # ---------------------------------------------------------------------------
+# Wiki search index — BM25 + MiniLM hybrid for wiki page navigation
+# ---------------------------------------------------------------------------
+
+_WIKI_MINILM_MODEL = None  # lazy singleton — fastembed TextEmbedding (ONNX, no PyTorch)
+_WIKI_EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+
+
+def _get_wiki_embed_model():
+    global _WIKI_MINILM_MODEL
+    if _WIKI_MINILM_MODEL is None:
+        from fastembed import TextEmbedding
+        # cache_dir points to webapp/models/ (committed to repo — works on Vercel without download)
+        _WIKI_MINILM_MODEL = TextEmbedding(_WIKI_EMBED_MODEL_NAME, cache_dir=str(MODELS_DIR))
+    return _WIKI_MINILM_MODEL
+
+
+def _encode(model, texts: list, batch_size: int = 64, show_progress: bool = False) -> np.ndarray:
+    """Encode texts with fastembed. Returns normalized float32 array (n, 384)."""
+    return np.array(list(model.embed(texts, batch_size=batch_size)), dtype=np.float32)
+
+
+def _build_wiki_search_text(page: dict) -> str:
+    """Clean text for wiki search: title + aliases + tags + body (no frontmatter, no Relationships section)."""
+    body = strip_frontmatter(page["content"])
+    rel_idx = body.find("## Relationships")
+    if rel_idx > 0:
+        body = body[:rel_idx].strip()
+    aliases = " ".join(a for a in page.get("aliases", []) if isinstance(a, str))
+    tags = " ".join(t for t in page.get("tags", []) if isinstance(t, str))
+    return f"{page['title']} {aliases} {tags} {body}".strip()
+
+
+class WikiSearchIndex:
+    """Hybrid BM25 + MiniLM semantic index over wiki pages."""
+
+    def __init__(self):
+        self.bm25 = None
+        self.faiss_index = None
+        self.pages: list = []
+        self._embeddings: np.ndarray = None  # cached so add_or_update only encodes 1 page
+
+    def build(self, wiki_pages: list):
+        """Full rebuild — startup only. Loads from FAISS cache if slugs match."""
+        if not wiki_pages:
+            self.bm25 = None
+            self.faiss_index = None
+            self.pages = []
+            self._embeddings = None
+            return
+        from rank_bm25 import BM25Okapi
+        import faiss as _faiss
+
+        texts = [_build_wiki_search_text(p) for p in wiki_pages]
+        slugs = [p["slug"] for p in wiki_pages]
+        model_name = _WIKI_EMBED_MODEL_NAME
+
+        # Try loading FAISS index from cache — must match both model name and slug list
+        idx = None
+        embs = None
+        if _WIKI_FAISS_CACHE.exists() and _WIKI_FAISS_SLUGS.exists():
+            try:
+                meta = json.loads(_WIKI_FAISS_SLUGS.read_text(encoding="utf-8"))
+                if (
+                    isinstance(meta, dict)
+                    and meta.get("model") == model_name
+                    and meta.get("slugs") == slugs
+                ):
+                    idx = _faiss.read_index(str(_WIKI_FAISS_CACHE))
+                    embs = idx.reconstruct_n(0, idx.ntotal).astype(np.float32)
+                    print(f"[WikiSearch] Loaded FAISS cache ({len(slugs)} pages, {model_name})")
+                else:
+                    print("[WikiSearch] Cache model/slugs mismatch — re-encoding")
+            except Exception as e:
+                print(f"[WikiSearch] Cache load failed: {e} — re-encoding")
+
+        if embs is None:
+            print(f"[WikiSearch] Encoding {len(wiki_pages)} pages with {model_name} (first run)…")
+            model = _get_wiki_embed_model()
+            embs = _encode(model, texts, batch_size=64)
+            idx = _faiss.IndexFlatIP(embs.shape[1])
+            idx.add(embs)
+            try:
+                _faiss.write_index(idx, str(_WIKI_FAISS_CACHE))
+                _WIKI_FAISS_SLUGS.write_text(
+                    json.dumps({"model": model_name, "slugs": slugs}), encoding="utf-8"
+                )
+                print(f"[WikiSearch] Saved FAISS cache ({len(slugs)} pages)")
+            except OSError as e:
+                print(f"[WikiSearch] Cache save skipped (read-only fs): {e}")
+
+        self.bm25 = BM25Okapi([t.lower().split() for t in texts])
+        self.faiss_index = idx
+        self._embeddings = embs
+        self.pages = list(wiki_pages)
+        print(f"[WikiSearch] Index ready: {len(wiki_pages)} pages")
+
+    def add_or_update(self, page: dict):
+        """Incremental update after a wiki page is synthesized — encodes ONE page only."""
+        if not self.pages or self._embeddings is None:
+            self.build([page])
+            return
+        from rank_bm25 import BM25Okapi
+        import faiss as _faiss
+        model = _get_wiki_embed_model()
+        new_emb = _encode(model, [_build_wiki_search_text(page)])
+        existing = next((i for i, p in enumerate(self.pages) if p["slug"] == page["slug"]), None)
+        if existing is not None:
+            self.pages[existing] = page
+            self._embeddings[existing] = new_emb[0]
+            # IndexFlatIP has no update — rebuild FAISS from cached embeddings (no re-encoding)
+            idx = _faiss.IndexFlatIP(self._embeddings.shape[1])
+            idx.add(self._embeddings)
+            self.faiss_index = idx
+        else:
+            self.pages.append(page)
+            self._embeddings = np.vstack([self._embeddings, new_emb])
+            self.faiss_index.add(new_emb)
+        texts = [_build_wiki_search_text(p) for p in self.pages]
+        self.bm25 = BM25Okapi([t.lower().split() for t in texts])
+        # Persist updated FAISS index so next startup loads from cache
+        try:
+            _faiss.write_index(self.faiss_index, str(_WIKI_FAISS_CACHE))
+            _WIKI_FAISS_SLUGS.write_text(
+                json.dumps({
+                    "model": _WIKI_EMBED_MODEL_NAME,
+                    "slugs": [p["slug"] for p in self.pages],
+                }), encoding="utf-8"
+            )
+        except OSError:
+            pass
+        print(f"[WikiSearch] Incremental update: {len(self.pages)} pages (1 encoded)")
+
+    def search(self, query: str, top_k: int = 5) -> list:
+        if not self.pages or self.bm25 is None or self.faiss_index is None:
+            return []
+        n = len(self.pages)
+        bm25_scores = np.array(self.bm25.get_scores(query.lower().split()), dtype=np.float32)
+        bm25_max = bm25_scores.max() or 1.0
+        bm25_norm = bm25_scores / bm25_max
+        model = _get_wiki_embed_model()
+        q_emb = _encode(model, [query])
+        sem_scores, sem_idx = self.faiss_index.search(q_emb, n)
+        sem_norm = np.zeros(n, dtype=np.float32)
+        for i, s in zip(sem_idx[0], sem_scores[0]):
+            if 0 <= i < n:
+                sem_norm[i] = float(s)
+        hybrid = 0.3 * bm25_norm + 0.7 * sem_norm
+        top_idx = np.argsort(hybrid)[::-1][:top_k]
+        return [self.pages[i] for i in top_idx]
+
+
+# ---------------------------------------------------------------------------
 # RAG search — embedding similarity only
 # ---------------------------------------------------------------------------
 
@@ -231,108 +384,25 @@ def do_rag_search(
     ]
 
 
-# ---------------------------------------------------------------------------
-# Tool: graph_traverse (used by WIKI LLM during navigation)
-# ---------------------------------------------------------------------------
-
-
-def tool_graph_traverse(slug: str, hops: int = 1, max_nodes: int = 8, graph: dict = None) -> list:
+def tool_read_page(slug: str, page_by_slug: dict, graph: dict) -> dict:
     """
-    Return the seed page itself + BFS neighbor pages, each with full markdown content.
-    WIKI LLM calls this to fetch a page it identified from index.md, then reads the
-    content to decide relevance. It does NOT copy content into its output JSON.
-    If the slug is not found exactly, falls back to a partial-match on graph node keys.
+    Read one wiki page by slug. Returns its full content and outgoing relationship targets.
+    WIKI_LLM calls this when search results alone aren't sufficient — it picks one
+    relationship slug from the current page and reads it to follow the chain.
     """
-    if graph is None:
-        graph = _load_graph()
-
-    output = []
-
-    # Resolve slug — exact match first, then word-overlap fuzzy match as fallback
-    resolved_slug = slug
-    seed_data = graph["nodes"].get(slug, {})
-    if not seed_data:
-        slug_lower = slug.lower()
-        # Significant words: split on '-' or '_', keep words longer than 3 chars
-        sig_words = [w for w in re.split(r"[-_]", slug_lower) if len(w) > 3]
-
-        candidates = []
-        for k in graph["nodes"]:
-            k_lower = k.lower()
-            # Accept if: the slug is a long-enough direct substring of the key (or vice-versa),
-            # OR at least 2 significant words from the slug appear in the key.
-            if (len(slug_lower) > 5 and slug_lower in k_lower) or \
-               (len(k_lower) > 5 and k_lower in slug_lower):
-                candidates.append(k)
-            elif sig_words:
-                n_match = sum(1 for w in sig_words if w in k_lower)
-                if n_match >= min(2, len(sig_words)):
-                    candidates.append(k)
-
-        if candidates:
-            # Prefer shortest key (most specific match)
-            resolved_slug = min(candidates, key=len)
-            seed_data = graph["nodes"][resolved_slug]
-            print(f"[GraphTraverse] Slug '{slug}' not found → fuzzy match '{resolved_slug}' (from {len(candidates)} candidates)")
-        else:
-            print(f"[GraphTraverse] Slug '{slug}' not found in graph — no fuzzy match")
-            return [{"slug": slug, "title": slug, "type": "unknown", "edge": "seed",
-                     "content": f"[Page '{slug}' not found in wiki]"}]
-
-    def _read_node(node_data: dict, label: str) -> str:
-        """Read a wiki page from disk, normalising path separators for cross-platform use."""
-        rel_path = node_data.get("path", "").replace("\\", "/")
-        if not rel_path:
-            print(f"[GraphTraverse] Node '{label}' has no path in graph")
-            return ""
-        full_path = VAULT / rel_path
-        if not full_path.exists():
-            print(f"[GraphTraverse] File not found on disk: {full_path}")
-            return ""
-        try:
-            return full_path.read_text(encoding="utf-8")
-        except Exception as e:
-            print(f"[GraphTraverse] Read error for {full_path}: {e}")
-            return ""
-
-    # Always include the seed node's own content first
-    seed_content = _read_node(seed_data, resolved_slug)
-    print(f"[GraphTraverse] Seed '{resolved_slug}' — content {'found' if seed_content else 'EMPTY'}")
-    output.append({
-        "slug": resolved_slug,
-        "title": seed_data.get("title", resolved_slug),
-        "type": seed_data.get("type", "unknown"),
-        "edge": "seed",
-        "content": seed_content,
-    })
-
-    # BFS neighbors
-    results = traverse(graph, resolved_slug, hops=hops)[:max_nodes]
-    seen = {resolved_slug}
-    for r in results:
-        node = r["node"]
-        if node in seen:
-            continue
-        seen.add(node)
-        node_data = graph["nodes"].get(node, {})
-        content = _read_node(node_data, node)
-
-        edge_str = " → ".join(
-            f"{p['from']} --[{p['type']}]--> {p['to']}"
-            for p in r.get("path", [])
-        )
-
-        output.append({
-            "slug": node,
-            "title": r.get("title", node),
-            "type": r.get("type", "unknown"),
-            "edge": edge_str,
-            "content": content,
-        })
-
-    titles = [p["title"] for p in output]
-    print(f"[GraphTraverse] Returning {len(output)} pages: {titles}")
-    return output
+    page = page_by_slug.get(slug)
+    if not page:
+        return {"error": f"Page '{slug}' not found in wiki"}
+    related = [
+        {"slug": e["to"], "relationship": e["type"]}
+        for e in graph.get("edges", []) if e["from"] == slug
+    ]
+    return {
+        "slug": slug,
+        "title": page["title"],
+        "content": page["content"],
+        "related_pages": related,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -388,9 +458,9 @@ class KnowledgeBase:
     """
     Holds all in-memory state for the dual-LLM pipeline.
 
-    Thread safety: all mutation of shared state (wiki_pages, graph,
-    index_md) must hold _lock. query() takes a snapshot under the lock so
-    a concurrent wiki update cannot corrupt an in-flight query.
+    Thread safety: all mutation of shared state (wiki_pages, graph, wiki_search)
+    must hold _lock. query() takes a snapshot under the lock so a concurrent
+    wiki update cannot corrupt an in-flight query.
     """
 
     def __init__(self):
@@ -398,7 +468,7 @@ class KnowledgeBase:
         self.chunks: list = []
         self.faiss_index = None
         self.graph: dict = {}
-        self.index_md: str = ""
+        self.wiki_search: WikiSearchIndex = WikiSearchIndex()
         self._lock = threading.Lock()
         self.reload()
 
@@ -409,16 +479,14 @@ class KnowledgeBase:
         new_chunks = _load_chunks()
         new_faiss = _load_faiss_index()
         new_graph = _load_graph()
-        new_index = (
-            INDEX_MD_PATH.read_text(encoding="utf-8")
-            if INDEX_MD_PATH.exists() else ""
-        )
+        new_wiki_search = WikiSearchIndex()
+        new_wiki_search.build(new_pages)
         with self._lock:
             self.wiki_pages = new_pages
             self.chunks = new_chunks
             self.faiss_index = new_faiss
             self.graph = new_graph
-            self.index_md = new_index
+            self.wiki_search = new_wiki_search
         rag_backend = "FAISS" if new_faiss else "none (run export_for_web.py)"
         print(
             f"[KB] Ready — {len(self.wiki_pages)} wiki pages, "
@@ -433,17 +501,36 @@ class KnowledgeBase:
 
 
 def _extract_json(text: str) -> dict:
-    """
-    Extract the first JSON object from text, handling markdown code fences.
-    Returns {} on failure.
-    """
-    clean = re.sub(r"```[a-z]*\n?", "", text).replace("```", "").strip()
+    """Extract first JSON object from text. Tries multiple strategies before giving up."""
+    # Strip code fences
+    clean = re.sub(r"```[a-zA-Z]*\n?", "", text).replace("```", "").strip()
+
+    # Strategy 1: whole cleaned text is valid JSON
+    try:
+        return json.loads(clean)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 2: find outermost {...} (greedy — handles nested objects)
     match = re.search(r"\{[\s\S]*\}", clean)
     if match:
+        candidate = match.group()
         try:
-            return json.loads(match.group())
+            return json.loads(candidate)
         except json.JSONDecodeError:
             pass
+        # Strategy 3: last-resort — find innermost complete {...} working from the last }
+        for end in range(len(candidate) - 1, -1, -1):
+            if candidate[end] == "}":
+                for start in range(end):
+                    if candidate[start] == "{":
+                        try:
+                            result = json.loads(candidate[start:end + 1])
+                            if isinstance(result, dict):
+                                return result
+                        except json.JSONDecodeError:
+                            continue
+
     return {}
 
 
@@ -453,161 +540,91 @@ def _extract_json(text: str) -> dict:
 
 _WIKI_LLM_TOOLS = [
     {
-        "name": "graph_traverse",
+        "name": "read_page",
         "description": (
-            "Fetch a wiki page and its neighbors. "
-            "Call this on slugs you identify from index.md to read their full content. "
-            "Returns the seed page itself plus related neighbor pages with full markdown content."
+            "Read a single wiki page by slug. Returns its full content and a related_pages list "
+            "of slugs this page links to. "
+            "IMPORTANT: the slug you pass MUST come from the related_pages list of a previous "
+            "read_page result, or from a [[slug|Title]] wikilink visible in page content — "
+            "use the part before the | character. Never invent or guess slugs."
         ),
         "input_schema": {
             "type": "object",
             "properties": {
                 "slug": {
                     "type": "string",
-                    "description": "Wiki page slug to BFS from (kebab-case filename without .md).",
-                },
-                "hops": {
-                    "type": "integer",
-                    "description": "Number of BFS hops. Default 1.",
-                },
-                "max_nodes": {
-                    "type": "integer",
-                    "description": "Max neighbor nodes to return. Default 5.",
-                },
+                    "description": "Exact slug from related_pages or a [[slug|Title]] wikilink. Bare kebab-case, no path, no .md.",
+                }
             },
             "required": ["slug"],
         },
     }
 ]
-# Navigation prompt: WIKI LLM's job during a query
+
+# Navigation prompt: WIKI_LLM's job during a query
 _WIKI_LLM_NAVIGATION_SYSTEM = """\
 You are the wiki navigation agent. Output JSON only. Never speak to the user.
 
-You have the wiki catalog in <index_md> above, but **no page content yet**.
-You must call `graph_traverse` to fetch content before you can judge relevance.
+You have the top search results for the user query. Each page lists its typed relationship links to other pages.
 
----
+## Decision rule
 
-## STEP 1 — Identify candidates from index.md and fetch content
+Before declaring sufficient=true, ask: "Can I quote a specific sentence from these pages that directly answers the query?"
+- YES → output JSON with sufficient=true and that exact quote in evidence.
+- NO → call read_page on the most promising relationship slug. The search results are a starting point, not the answer. Relationships connect to deeper, more specific pages — follow them.
 
-Scan index.md for entries whose title or description relates to the query.
+Use read_page whenever the current pages are topically related but don't directly answer. Stop only when you have a quotable answer or have exhausted promising leads.
 
-**Extract the slug EXACTLY as it appears in index.md** — do NOT invent or guess slugs.
-index.md uses wikilink syntax: `[[path/to/slug|Title]]`
-The slug = the part after the last `/` and before `|` or `.md`.
-Example: `[[concepts/microequity|Microequity]]` → slug is `microequity`
+## Valid slugs for read_page
 
-Call `graph_traverse` on the slugs you found (parallel calls allowed).
-Each call returns that page + its neighbors with full content.
+Only call read_page with a slug that comes from one of these sources — never invent or guess:
+1. The `related_pages` list returned by a previous read_page call (each entry has a `slug` field).
+2. A [[slug|Title]] wikilink visible in page content — use the part before the | character.
 
-**If the query topic does not appear anywhere in index.md** → skip fetching,
-output `{"sufficient": false, "selected_slugs": [], "note": "Topic not in wiki"}`.
+If the slug you want to follow is not in either of these sources, do not call read_page.
 
----
+## Sufficiency test
 
-## STEP 2 — Judge the fetched content (STRICT — this is where you must not cheat)
+sufficient=true ONLY if you can quote or closely paraphrase a specific passage that answers the query.
+Not sufficient: keyword overlap, topical adjacency, partial answers, or "the page mentions this topic."
 
-Your job is **not** to decide whether the fetched pages are "about the right topic."
-Your job is to decide whether they **contain the answer** to the user's specific question.
+When uncertain → sufficient=false. MAIN_LLM has RAG fallback; a false positive (declaring sufficient when you're not) is worse than a false negative.
 
-### The sufficiency test
+## Output (JSON only)
 
-Before declaring `sufficient: true`, you must be able to do this:
-
-> Point to a specific passage (a sentence or paragraph) on one of the fetched pages
-> and say: "This passage directly answers the user's question because it states X."
-
-If you cannot identify that passage — if the best you can do is "this page discusses
-the general area" or "this page mentions the keyword" — then `sufficient: false`.
-
-### Not sufficient (common failure modes — watch for these)
-
-- **Keyword overlap only.** The page uses the same terms as the query but does not
-  answer what was asked. ("The query asks *why* X happens; the page defines X.")
-- **Topical adjacency.** The page is about a neighboring concept. ("Query asks about
-  Random Forests; the page covers Decision Trees and mentions ensembles in passing.")
-- **Tangential mention.** The topic appears in one sentence as an example, with no
-  substantive treatment.
-- **Wrong level of specificity.** Query asks for a concrete mechanism, number, or
-  example; page gives only high-level framing — or vice versa.
-- **Asserts without explaining.** Query asks *why* or *how*; page only states *that*.
-- **Partial answer.** Page addresses one part of a multi-part question; the rest is
-  absent.
-
-In all of these → `sufficient: false`, even though the pages are worth passing along.
-
-### When in doubt → false
-
-Default to `sufficient: false`. MAIN_LLM has a RAG fallback and can recover gracefully
-from a false negative. A false positive, on the other hand, makes MAIN_LLM answer from
-thin wiki context and skip the library — which is the failure you are trying to avoid.
-
-### Even when `sufficient: false`
-
-Include the closest slugs found in `selected_slugs` so MAIN_LLM has partial wiki
-context to work with alongside its RAG results.
-
----
-
-## Output (JSON only — no other text)
-
-```json
 {
-  "sufficient": <true|false>,
+  "sufficient": true | false,
   "selected_slugs": ["slug-one", "slug-two"],
-  "evidence": "<required when sufficient is true: the specific passage (≤2 sentences, quoted or closely paraphrased) from one of the fetched pages that directly answers the query, prefixed with the slug it came from — e.g. 'microequity: Microequity contracts are self-enforcing without costly state verification because...'>",
-  "note": "<required when sufficient is false: one sentence on what is missing — e.g. 'Pages cover decision trees generally but do not explain bagging or variance reduction.'>"
+  "evidence": "<if sufficient=true: quoted passage + slug, e.g. 'microequity: contracts are self-enforcing because...'>",
+  "note": "<if sufficient=false: one sentence on what is missing>"
 }
-```
 
-Rules:
-- If `sufficient: true`, `evidence` is mandatory and must quote or closely paraphrase
-  an actual passage from a fetched page. If you cannot fill this field honestly,
-  flip `sufficient` to false.
-- If `sufficient: false`, `note` is mandatory.
-- Include `selected_slugs` in both cases.
-
-## SLUG FORMAT — CRITICAL
-
-- Only use slugs you found in index.md. **Never invent a slug.**
-- Bare filename only — no path prefix, no extension.
-- ✅ `"thinking-patterns"`, `"microequity"`, `"prof-bhagwan-chowdhry"`
-- ❌ `"persona/thinking-patterns"`, `"random-forest"` (unless that exact string appears in index.md)
+- selected_slugs: every page you read, most relevant first. Include even when sufficient=false.
+- Slugs: bare kebab-case only — no path, no .md.
 """
 
 
 # Maintenance prompt: WIKI LLM's job when writing a new wiki page from synthesis
 _WIKI_LLM_MAINTENANCE_SYSTEM = """\
-You are the wiki maintenance agent.
+You are the wiki maintenance agent. Output raw JSON only — no markdown, no explanation.
 
-Write a new wiki page (or update an existing one) to permanently preserve the
-insight provided. The page should capture novel connections, resolved contradictions,
-or reusable framings that are not yet in the wiki.
+Related pages are in <related_pages>. If one already covers this insight, set "action":"update" and use its slug. Otherwise "action":"create" with a new kebab-case slug.
 
-You have the complete wiki catalog in <index_md> above. Check it before deciding
-whether to create a new page or update an existing slug.
+Output this exact structure:
+{"action":"create","slug":"kebab-case-slug","title":"Human Readable Title","type":"synthesized","tags":["tag1"],"aliases":[],"relationships":[{"target":"related-slug","type":"extends"}],"body":"Full markdown body. No frontmatter."}
 
-Respond with raw JSON (no markdown, no explanation outside the JSON):
-{
-  "action": "create",
-  "slug": "kebab-case-slug",
-  "title": "Human Readable Title",
-  "type": "synthesized",
-  "tags": ["tag1", "tag2"],
-  "aliases": [],
-  "relationships": [
-    {"target": "related-page-slug", "type": "extends"}
-  ],
-  "body": "Full markdown body. Write naturally — frontmatter will be added automatically."
-}
-
-If an existing page should be updated instead, set "action": "update" and use its slug.\
+Rules:
+- slug: lowercase kebab-case, no spaces, no .md
+- body: escape all quotes and newlines properly for JSON (\\n not literal newlines inside the string)
+- relationships: only slugs that exist in <related_pages>
+- Output nothing outside the JSON object\
 """
 
 
 def run_wiki_llm(
     user_query: str,
-    index_md: str,
+    wiki_search: WikiSearchIndex,
+    page_by_slug: dict,
     graph: dict,
     client: Anthropic,
 ) -> dict:
@@ -616,85 +633,72 @@ def run_wiki_llm(
     {
         "sufficient": bool,
         "selected_slugs": ["slug-a", "slug-b"],
-        "note": str
+        "note": str  (or "evidence": str when sufficient=True)
     }
 
-    WIKI_LLM reads index.md to identify candidate slugs, calls graph_traverse to
-    fetch their content, then judges relevance. No BM25 pre-filter.
-    Up to 2 API calls total (first call fetches pages via tool; second produces JSON).
+    Hybrid search surfaces top-5 starting pages. WIKI_LLM reads them and may
+    call read_page iteratively to follow relationship chains — the LLM decides
+    when it has enough. Budget ceiling: _MAX_HOPS iterations.
     """
-    # Full index.md — never truncated (200K context window)
-    system = f"<index_md>\n{index_md}\n</index_md>\n\n{_WIKI_LLM_NAVIGATION_SYSTEM}"
+    top_pages = wiki_search.search(user_query, top_k=5)
+    if not top_pages:
+        return {"sufficient": False, "selected_slugs": [], "note": "No wiki pages found"}
+    print(f"[WikiLLM] search → {[p['slug'] for p in top_pages]}")
 
-    messages = [{"role": "user", "content": f"User query: {user_query}"}]
+    context_text = ""
+    for p in top_pages:
+        context_text += f"\n{'='*50}\n[{p['slug']}] {p['title']}\n{'='*50}\n{p['content']}\n"
 
-    # First call — force at least one graph_traverse call so the LLM always
-    # fetches page content before judging relevance (tool_choice "any").
-    response = client.messages.create(
-        model=WIKI_LLM_MODEL,
-        max_tokens=1024,
-        system=system,
-        messages=messages,
-        tools=_WIKI_LLM_TOOLS,
-        tool_choice={"type": "any"},
-    )
+    messages = [{"role": "user", "content": (
+        f"User query: {user_query}\n\n"
+        f"Top search results:\n{context_text}"
+    )}]
 
-    # Execute all graph_traverse tool calls, then do one follow-up call
-    # Also collect every slug that came back so we can use them as a fallback.
-    traversed_slugs: list = []
-    if response.stop_reason == "tool_use":
-        tool_results = []
-        for block in response.content:
-            if block.type == "tool_use" and block.name == "graph_traverse":
-                print(f"[WikiLLM] graph_traverse({block.input.get('slug')})")
-                pages = tool_graph_traverse(
-                    slug=block.input.get("slug", ""),
-                    hops=block.input.get("hops", 1),
-                    max_nodes=block.input.get("max_nodes", 8),
-                    graph=graph,
-                )
-                        # Track all returned slugs — even content-empty ones are valid
-                # wiki pages that _pipeline_setup can look up from kb.wiki_pages.
-                for p in pages:
-                    if p["slug"] not in traversed_slugs:
-                        traversed_slugs.append(p["slug"])
-                tool_results.append({
-                    "type": "tool_result",
-                    "tool_use_id": block.id,
-                    "content": json.dumps(pages, ensure_ascii=False),
-                })
+    accumulated_slugs = [p["slug"] for p in top_pages]
+    _MAX_HOPS = 5
 
-        messages.append({"role": "assistant", "content": response.content})
-        messages.append({"role": "user", "content": tool_results})
+    print(f"\n{'─'*60}")
+    print(f"[WikiLLM] PROMPT TO WIKI LLM:\n{messages[0]['content']}")
+    print(f"{'─'*60}\n")
 
+    for _ in range(_MAX_HOPS + 1):
         response = client.messages.create(
             model=WIKI_LLM_MODEL,
-            max_tokens=1024,
-            system=system,
+            max_tokens=3500,
+            thinking={"type": "enabled", "budget_tokens": 2000},
+            system=_WIKI_LLM_NAVIGATION_SYSTEM,
             messages=messages,
             tools=_WIKI_LLM_TOOLS,
         )
+        if response.stop_reason != "tool_use":
+            break
 
-    # Extract final JSON from response
-    final_text = "".join(
-        block.text for block in response.content if hasattr(block, "text")
-    )
+        tool_results = []
+        for block in response.content:
+            if block.type == "tool_use" and block.name == "read_page":
+                slug = block.input.get("slug", "")
+                slug = slug.split("/")[-1].removesuffix(".md").split("|")[0].strip()
+                print(f"[WikiLLM] read_page({slug!r})")
+                result = tool_read_page(slug, page_by_slug, graph)
+                if "error" not in result and slug not in accumulated_slugs:
+                    accumulated_slugs.append(slug)
+                tool_results.append({
+                    "type": "tool_result",
+                    "tool_use_id": block.id,
+                    "content": json.dumps(result, ensure_ascii=False),
+                })
+        messages.append({"role": "assistant", "content": response.content})
+        messages.append({"role": "user", "content": tool_results})
 
+    final_text = "".join(b.text for b in response.content if hasattr(b, "text"))
     result = _extract_json(final_text)
-
-    # If LLM returned empty selected_slugs but we fetched pages with content,
-    # fall back to those slugs so MAIN_LLM isn't left without wiki context.
-    if result and result.get("selected_slugs") == [] and traversed_slugs:
-        print(f"[WikiLLM] selected_slugs was empty — using traversed slugs as fallback: {traversed_slugs}")
-        result["selected_slugs"] = traversed_slugs
 
     if not result or "selected_slugs" not in result:
         result = {
             "sufficient": False,
-            "selected_slugs": traversed_slugs,
-            "note": "Wiki LLM parse failed — using traversed slugs",
+            "selected_slugs": accumulated_slugs,
+            "note": "WikiLLM parse failed — using search results",
         }
-
     return result
 
 
@@ -1003,36 +1007,6 @@ def run_main_llm_streaming(
     yield ("metadata", metadata)
 
 
-def run_main_llm(
-    user_query: str,
-    wiki_context: list,
-    wiki_note: str,
-    sufficient: bool,
-    chunks: list,
-    faiss_index,
-    client: Anthropic,
-) -> dict:
-    """
-    Blocking wrapper around run_main_llm_streaming — used by the CLI REPL.
-    Collects all streamed text and returns a dict with an 'answer' key.
-    """
-    answer_parts = []
-    metadata = {}
-    for event_type, data in run_main_llm_streaming(
-        user_query, wiki_context, wiki_note, sufficient, chunks, faiss_index, client
-    ):
-        if event_type == "text":
-            answer_parts.append(data)
-        elif event_type == "metadata":
-            metadata = data
-    return {
-        "answer": "".join(answer_parts),
-        "sources": metadata.get("sources", {"wiki": [], "rag": []}),
-        "new_synthesis": metadata.get("new_synthesis", ""),
-        "should_wiki_update": metadata.get("should_wiki_update", False),
-    }
-
-
 # ---------------------------------------------------------------------------
 # Wiki update — async / fire-and-forget
 # ---------------------------------------------------------------------------
@@ -1069,14 +1043,20 @@ def _do_wiki_update(
     print("[WikiUpdate] Generating new wiki page...")
 
     with kb._lock:
-        index_md_snapshot = kb.index_md  # full index.md, never truncated
+        wiki_search = kb.wiki_search
 
-    # Use the maintenance system prompt (different from navigation prompt)
-    system = f"<index_md>\n{index_md_snapshot}\n</index_md>\n\n{_WIKI_LLM_MAINTENANCE_SYSTEM}"
+    # Search for top-10 most relevant pages — gives the maintenance LLM context
+    # to detect duplicates (create vs update) and pick relationship targets.
+    related = wiki_search.search(synthesis, top_k=10)
+    related_text = ""
+    for p in related:
+        related_text += f"\n{'='*50}\n[{p['slug']}] {p['title']}\n{'='*50}\n{p['content']}\n"
+
+    system = f"<related_pages>\n{related_text}\n</related_pages>\n\n{_WIKI_LLM_MAINTENANCE_SYSTEM}"
 
     response = client.messages.create(
         model=WIKI_LLM_MODEL,
-        max_tokens=2048,
+        max_tokens=4096,
         system=system,
         messages=[
             {
@@ -1095,7 +1075,8 @@ def _do_wiki_update(
     page_data = _extract_json(text)
 
     if not page_data or "slug" not in page_data:
-        print("[WikiUpdate] Could not parse page data from WIKI LLM maintenance response.")
+        print("[WikiUpdate] Could not parse page data. Raw response:")
+        print(text[:500])
         return
 
     _write_wiki_page(page_data, kb, original_query)
@@ -1136,16 +1117,15 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
     # On Vercel the filesystem is read-only — catch OSError so the GitHub push
     # and in-memory KB update still happen (Vercel redeploys after the push,
     # picking up the new .md on the next cold start).
+    today_str = date.today().isoformat()
     out_dir  = WIKI_DIR / "synthesized"
     out_path = out_dir / f"{slug}.md"
-    disk_ok  = False
     try:
         out_dir.mkdir(parents=True, exist_ok=True)
         tmp_path = out_path.with_suffix(".tmp")
         tmp_path.write_text(content, encoding="utf-8")
         tmp_path.replace(out_path)
         print(f"[WikiUpdate] Wrote {out_path.relative_to(PROJECT_ROOT)}")
-        disk_ok = True
     except OSError as e:
         print(f"[WikiUpdate] Disk write skipped (read-only fs — will push to GitHub): {e}")
 
@@ -1186,7 +1166,10 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
             kb.wiki_pages.append(new_page_entry)
         kb.graph = graph
 
-    # Append to index.md and refresh KB cache
+    # Incremental search index update — encodes only this one new/changed page
+    kb.wiki_search.add_or_update(new_page_entry)
+
+    # Append to index.md (human-readable log — not used for navigation)
     new_index_content = None
     try:
         if INDEX_MD_PATH.exists():
@@ -1194,15 +1177,12 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
             with open(INDEX_MD_PATH, "a", encoding="utf-8") as f:
                 f.write(entry)
             new_index_content = INDEX_MD_PATH.read_text(encoding="utf-8")
-            with kb._lock:
-                kb.index_md = new_index_content
     except OSError:
         pass
 
     # Append to log.md
-    today = date.today().isoformat()
     log_entry = (
-        f"\n## [{today}] synthesize | {slug}\n"
+        f"\n## [{today_str}] synthesize | {slug}\n"
         f"- Pages created: {out_path.name}\n"
         f"- From query: {original_query}\n"
     )
@@ -1213,7 +1193,6 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
         pass
 
     # Push wiki page + graph + index.md to GitHub
-    today_str = date.today().isoformat()
     page_github_path  = str(out_path.relative_to(PROJECT_ROOT)).replace("\\", "/")
     graph_github_path = str((DATA_DIR / "_graph.json").relative_to(PROJECT_ROOT)).replace("\\", "/")
     _push_to_github(
@@ -1243,7 +1222,7 @@ def _write_wiki_page(page_data: dict, kb: KnowledgeBase, original_query: str = "
 def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
     """
     Shared setup for both query() and query_streaming():
-    snapshot KB state, run WIKI_LLM (index.md + graph_traverse), return selected_pages + metadata.
+    snapshot KB state, run WIKI_LLM (hybrid search + read_page), return selected_pages + metadata.
     Returns (selected_pages, wiki_result, chunks, faiss_index).
     """
     print(f"\n{'─'*60}")
@@ -1255,38 +1234,29 @@ def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
         chunks      = list(kb.chunks)
         faiss_index = kb.faiss_index
         graph       = kb.graph
-        index_md    = kb.index_md
+        wiki_search = kb.wiki_search
 
     page_by_slug = {p["slug"]: p for p in wiki_pages}
 
     wiki_result = run_wiki_llm(
         user_query=user_query,
-        index_md=index_md,
+        wiki_search=wiki_search,
+        page_by_slug=page_by_slug,
         graph=graph,
         client=client,
     )
     print(f"[WikiLLM] selected slugs: {wiki_result.get('selected_slugs')} | sufficient={wiki_result.get('sufficient')}")
 
     selected_pages = []
-    for raw_slug in wiki_result.get("selected_slugs", []):
-        # Normalise: WIKI_LLM sometimes returns "persona/slug" or "wiki/slug.md"
-        # (copied from wikilink syntax in index.md). Strip any directory prefix
-        # and extension so we always look up the bare stem.
-        slug = raw_slug.split("/")[-1]          # drop "persona/", "concepts/", etc.
-        slug = slug.removesuffix(".md")          # drop ".md" if present
-        slug = slug.split("|")[0].strip()        # drop "|Title" if wikilink leaked
-
+    for slug in wiki_result.get("selected_slugs", []):
         page = page_by_slug.get(slug)
         if page:
-            if slug != raw_slug:
-                print(f"[Pipeline] Slug normalised: '{raw_slug}' → '{slug}'")
             selected_pages.append(page)
         else:
-            print(f"[Pipeline] Warning: slug '{raw_slug}' (normalised: '{slug}') not found — skipping")
+            print(f"[Pipeline] Warning: slug '{slug}' not found in KB — skipping")
 
     if not selected_pages:
         print("[Pipeline] No slugs resolved — no wiki context for MAIN_LLM")
-
 
     return selected_pages, wiki_result, chunks, faiss_index
 

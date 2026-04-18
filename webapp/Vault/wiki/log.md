@@ -99,3 +99,7 @@ Append-only chronological record of ingests, queries, and wiki updates.
 ## [2026-04-16] synthesize | web3-decentralization-paradox
 - Pages created: web3-decentralization-paradox.md
 - From query: what can you tell me about web 3?
+
+## [2026-04-18] synthesize | warfare-c2-architecture-as-digital-transformation-problem
+- Pages created: warfare-c2-architecture-as-digital-transformation-problem.md
+- From query: In digitally transformed warfare ecosystems—where AI-driven targeting, cyber-physical systems, and real-time data fusion compress the decision cycle—how can states design command-and-control architectures that preserve human strategic judgment while mitigating risks of adversarial manipulation, cascading system failures, and unintended escalation triggered by autonomous or semi-autonomous decision systems?
