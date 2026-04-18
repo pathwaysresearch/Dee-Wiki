@@ -22,6 +22,8 @@ CLI usage (from project root):
     python webapp/api/index2.py                        # interactive REPL
     python webapp/api/index2.py --query "..."          # single query
     python webapp/api/index2.py --rebuild-graph        # rebuild _graph.json
+    python webapp/api/index2.py --build-wiki-index     # build FAISS index → data/ (no API key needed)
+    python webapp/api/index2.py --serve                # run Flask dev server
     python webapp/api/index2.py --model1 claude-sonnet-4-6 --model2 claude-opus-4-6
 """
 
