@@ -794,3 +794,5 @@ Master catalog — 774 pages · last rebuilt 2026-04-17
 - [[synthesized/warfare-c2-architecture-as-digital-transformation-problem|Warfare C2 Architecture as a Digital Transformation Problem]] — synthesized from query
 
 - [[synthesized/incumbents-blind-spot-profit-lens-and-non-adjacent-threats|Incumbents' Blind Spot: Profit Lens and Non-Adjacent Threats]] — synthesized from query
+
+- [[synthesized/the-innovators-dilemma|The Innovator's Dilemma]] — synthesized from query
