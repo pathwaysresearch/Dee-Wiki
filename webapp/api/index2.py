@@ -79,10 +79,6 @@ _WIKI_FAISS_SLUGS = DATA_DIR / "wiki_search_slugs.json"
 INDEX_MD_PATH = WIKI_DIR / "index.md"
 LOG_MD_PATH   = WIKI_DIR / "log.md"
 
-# Startup path diagnostics — shows in Vercel logs to confirm correct resolution
-print(f"[Paths] WIKI_DIR   = {WIKI_DIR}  exists={WIKI_DIR.exists()}")
-print(f"[Paths] DATA_DIR   = {DATA_DIR}  exists={DATA_DIR.exists()}")
-print(f"[Paths] MODELS_DIR = {MODELS_DIR}  exists={MODELS_DIR.exists()}")
 
 # WIKI_LLM = Sonnet (cheap navigation), MAIN_LLM = Opus (heavy synthesis)
 # Override via env or --model1/--model2 flags
@@ -1255,6 +1251,11 @@ def _pipeline_setup(user_query: str, kb: KnowledgeBase, client: Anthropic):
         faiss_index = kb.faiss_index
         graph       = kb.graph
         wiki_search = kb.wiki_search
+
+    # Per-request diagnostics — always visible in Vercel logs
+    print(f"[Diag] WIKI_DIR={WIKI_DIR} exists={WIKI_DIR.exists()}")
+    print(f"[Diag] wiki_pages={len(wiki_pages)} rag_chunks={len(chunks)} graph_nodes={len(graph.get('nodes',{}))}")
+    print(f"[Diag] wiki_search.pages={len(wiki_search.pages)} bm25={'ok' if wiki_search.bm25 else 'NONE'} faiss={'ok' if wiki_search.faiss_index else 'NONE'}")
 
     page_by_slug = {p["slug"]: p for p in wiki_pages}
 
