@@ -9880,24 +9880,21 @@
       ],
       "path": "wiki/synthesized/warfare-c2-architecture-as-digital-transformation-problem.md"
     },
-    "incumbent-innovation-failure-locally-optimal-globally-blind": {
+    "incumbents-blind-spot-profit-lens-and-non-adjacent-threats": {
       "type": "synthesized",
-      "title": "Incumbent Innovation Failure: Locally Optimal, Globally Blind",
+      "title": "Incumbents' Blind Spot: Profit Lens and Non-Adjacent Threats",
       "aliases": [
-        "locally-optimal-globally-blind",
-        "incumbent-innovation-blindness",
-        "why-incumbents-fail-to-innovate"
+        "Incumbent Blind Spot",
+        "Profit-Driven Scanning",
+        "Non-Adjacent Blind Spot"
       ],
       "tags": [
         "disruption",
-        "incumbent-strategy",
-        "innovators-dilemma",
-        "decision-making",
-        "disruptive-innovation",
-        "cognitive-bias",
-        "performance-trajectory"
+        "competitive-strategy",
+        "incumbent-inertia",
+        "business-strategy"
       ],
-      "path": "wiki/synthesized/incumbent-innovation-failure-locally-optimal-globally-blind.md"
+      "path": "wiki/synthesized/incumbents-blind-spot-profit-lens-and-non-adjacent-threats.md"
     }
   },
   "edges": [
@@ -20187,29 +20184,29 @@
       "type": "relates-to"
     },
     {
-      "from": "incumbent-innovation-failure-locally-optimal-globally-blind",
+      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
       "to": "the-innovators-dilemma",
       "type": "extends"
     },
     {
-      "from": "incumbent-innovation-failure-locally-optimal-globally-blind",
-      "to": "disruptive-innovation-framework",
+      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
+      "to": "non-adjacent-competition",
       "type": "extends"
     },
     {
-      "from": "incumbent-innovation-failure-locally-optimal-globally-blind",
-      "to": "phase-2-collision-at-the-core",
-      "type": "relates-to"
+      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
+      "to": "incumbent-inertia",
+      "type": "relates_to"
     },
     {
-      "from": "incumbent-innovation-failure-locally-optimal-globally-blind",
-      "to": "weak-signals",
-      "type": "relates-to"
+      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
+      "to": "blurring-industry-boundaries",
+      "type": "relates_to"
     },
     {
-      "from": "incumbent-innovation-failure-locally-optimal-globally-blind",
-      "to": "financial-architecture-as-digital-transformation-barrier",
-      "type": "relates-to"
+      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
+      "to": "incumbents",
+      "type": "relates_to"
     }
   ]
 }
