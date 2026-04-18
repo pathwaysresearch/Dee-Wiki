@@ -26,15 +26,18 @@ try:
 except ImportError:
     yaml = None
 
-PROJECT_ROOT = Path(__file__).parent.parent.parent  # webapp/api/ → webapp/ → project root
+# webapp/api/graph.py — deployed to /var/task/api/ on Vercel, where webapp/ is the root.
+# parent.parent = webapp/ (both locally and on Vercel).
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 try:
     from dotenv import load_dotenv as _load_dotenv
     _load_dotenv(PROJECT_ROOT / ".env")
 except ImportError:
     pass
-VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "webapp/Vault")
+# Default "Vault" (relative to webapp/) — override via WIKI_VAULT_NAME env var if needed.
+VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "Vault")
 WIKI_DIR = VAULT / "wiki"
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+DATA_DIR = PROJECT_ROOT / "data"
 GRAPH_PATH = DATA_DIR / "_graph.json"
 
 # ---------------------------------------------------------------------------

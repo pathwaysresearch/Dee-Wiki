@@ -72,13 +72,17 @@ except ImportError:
 # Paths and constants
 # ---------------------------------------------------------------------------
 
-# Deployed assets live in webapp/data/ (written by export_for_web.py)
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-MODELS_DIR = Path(__file__).resolve().parent.parent / "models"  # committed ONNX model cache
+DATA_DIR   = Path(__file__).resolve().parent.parent / "data"
+MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
 _WIKI_FAISS_CACHE = DATA_DIR / "wiki_search.faiss"
 _WIKI_FAISS_SLUGS = DATA_DIR / "wiki_search_slugs.json"
 INDEX_MD_PATH = WIKI_DIR / "index.md"
-LOG_MD_PATH = WIKI_DIR / "log.md"
+LOG_MD_PATH   = WIKI_DIR / "log.md"
+
+# Startup path diagnostics — shows in Vercel logs to confirm correct resolution
+print(f"[Paths] WIKI_DIR   = {WIKI_DIR}  exists={WIKI_DIR.exists()}")
+print(f"[Paths] DATA_DIR   = {DATA_DIR}  exists={DATA_DIR.exists()}")
+print(f"[Paths] MODELS_DIR = {MODELS_DIR}  exists={MODELS_DIR.exists()}")
 
 # WIKI_LLM = Sonnet (cheap navigation), MAIN_LLM = Opus (heavy synthesis)
 # Override via env or --model1/--model2 flags
@@ -133,6 +137,8 @@ def _load_wiki_pages() -> list:
             })
         except Exception as e:
             print(f"[WikiLoad] Skipped {md_file.name}: {e}")
+
+    print(f"[WikiLoad] Loaded {len(pages)} pages from {WIKI_DIR}")
 
     return pages
 
