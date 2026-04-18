@@ -35,7 +35,12 @@ try:
 except ImportError:
     pass
 # Default "Vault" (relative to webapp/) — override via WIKI_VAULT_NAME env var if needed.
-VAULT = PROJECT_ROOT / os.environ.get("WIKI_VAULT_NAME", "Vault")
+# On Vercel, webapp/ is the deploy root so "webapp/Vault" → just "Vault".
+_vault_name = os.environ.get("WIKI_VAULT_NAME", "Vault")
+VAULT = PROJECT_ROOT / _vault_name
+if not VAULT.exists():
+    # Strip leading path components (e.g. "webapp/Vault" → "Vault")
+    VAULT = PROJECT_ROOT / Path(_vault_name).name
 WIKI_DIR = VAULT / "wiki"
 DATA_DIR = PROJECT_ROOT / "data"
 GRAPH_PATH = DATA_DIR / "_graph.json"
