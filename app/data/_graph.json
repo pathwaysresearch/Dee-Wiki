@@ -9880,23 +9880,21 @@
       ],
       "path": "wiki/synthesized/warfare-c2-architecture-as-digital-transformation-problem.md"
     },
-    "finance-resource-allocation-and-innovation-constraint": {
+    "ai-metaverse-shared-infrastructure": {
       "type": "synthesized",
-      "title": "Finance as Resource Allocation Under Uncertainty: How Financial Markets Shape and Constrain Innovation",
+      "title": "AI and Metaverse Shared Infrastructure Dependency",
       "aliases": [
-        "finance-and-innovation",
-        "capital-allocation-under-uncertainty"
+        "AI Metaverse Convergence",
+        "Shared Infrastructure AI Metaverse"
       ],
       "tags": [
-        "finance",
-        "resource-allocation",
-        "uncertainty",
-        "investor-constraints",
-        "digital-transformation",
-        "capital-markets",
-        "innovation"
+        "ai",
+        "metaverse",
+        "infrastructure",
+        "nvidia",
+        "frontier-technology"
       ],
-      "path": "wiki/synthesized/finance-resource-allocation-and-innovation-constraint.md"
+      "path": "wiki/synthesized/ai-metaverse-shared-infrastructure.md"
     }
   },
   "edges": [
@@ -20186,24 +20184,24 @@
       "type": "relates-to"
     },
     {
-      "from": "finance-resource-allocation-and-innovation-constraint",
-      "to": "digital-innovation-under-investor-constraints",
+      "from": "ai-metaverse-shared-infrastructure",
+      "to": "nvidia",
       "type": "extends"
     },
     {
-      "from": "finance-resource-allocation-and-innovation-constraint",
-      "to": "financial-architecture-as-digital-transformation-barrier",
+      "from": "ai-metaverse-shared-infrastructure",
+      "to": "metaverse",
       "type": "extends"
     },
     {
-      "from": "finance-resource-allocation-and-innovation-constraint",
-      "to": "investor-expectations-constraint-on-innovation",
-      "type": "relates-to"
+      "from": "ai-metaverse-shared-infrastructure",
+      "to": "generative-ai",
+      "type": "extends"
     },
     {
-      "from": "finance-resource-allocation-and-innovation-constraint",
-      "to": "trajectory-contingent-matching",
-      "type": "relates-to"
+      "from": "ai-metaverse-shared-infrastructure",
+      "to": "transitional-systems",
+      "type": "extends"
     }
   ]
 }
