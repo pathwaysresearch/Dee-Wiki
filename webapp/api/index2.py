@@ -907,7 +907,7 @@ def run_main_llm_streaming(
     """
     system = _build_main_llm_system(sufficient)
     messages = _build_wiki_messages(wiki_context, wiki_note, user_query)
-    _tools_available = {} if sufficient else {"tools": _MAIN_LLM_TOOLS}
+    _tools_available = {"tools": _MAIN_LLM_TOOLS}  # always available; instruction guides when to call
     _MAX_RAG_CALLS = 2
     _rag_calls_made = 0
 
@@ -1299,7 +1299,7 @@ def query_streaming(user_query: str, kb: KnowledgeBase, client: Anthropic):
     selected_pages, wiki_result, chunks, faiss_index = _pipeline_setup(
         user_query, kb, client
     )
-    sufficient = wiki_result.get("sufficient", True)
+    sufficient = wiki_result.get("sufficient", False)
     metadata = {}
 
     for event_type, data in run_main_llm_streaming(
