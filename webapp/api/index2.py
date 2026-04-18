@@ -260,25 +260,31 @@ class WikiSearchIndex:
                 print(f"[WikiSearch] Cache load failed: {e} — re-encoding")
 
         if embs is None:
-            print(f"[WikiSearch] Encoding {len(wiki_pages)} pages with {model_name} (first run)…")
-            model = _get_wiki_embed_model()
-            embs = _encode(model, texts, batch_size=64)
-            idx = _faiss.IndexFlatIP(embs.shape[1])
-            idx.add(embs)
+            print(f"[WikiSearch] Encoding {len(wiki_pages)} pages with {model_name}…")
             try:
-                _faiss.write_index(idx, str(_WIKI_FAISS_CACHE))
-                _WIKI_FAISS_SLUGS.write_text(
-                    json.dumps({"model": model_name, "slugs": slugs}), encoding="utf-8"
-                )
-                print(f"[WikiSearch] Saved FAISS cache ({len(slugs)} pages)")
-            except OSError as e:
-                print(f"[WikiSearch] Cache save skipped (read-only fs): {e}")
+                model = _get_wiki_embed_model()
+                embs = _encode(model, texts, batch_size=64)
+                idx = _faiss.IndexFlatIP(embs.shape[1])
+                idx.add(embs)
+                try:
+                    _faiss.write_index(idx, str(_WIKI_FAISS_CACHE))
+                    _WIKI_FAISS_SLUGS.write_text(
+                        json.dumps({"model": model_name, "slugs": slugs}), encoding="utf-8"
+                    )
+                    print(f"[WikiSearch] Saved FAISS cache ({len(slugs)} pages)")
+                except Exception as e:
+                    print(f"[WikiSearch] Cache save skipped (read-only fs): {e}")
+            except Exception as e:
+                print(f"[WikiSearch] MiniLM encoding failed: {e} — BM25-only mode")
+                idx = None
+                embs = None
 
         self.bm25 = BM25Okapi([t.lower().split() for t in texts])
         self.faiss_index = idx
         self._embeddings = embs
         self.pages = list(wiki_pages)
-        print(f"[WikiSearch] Index ready: {len(wiki_pages)} pages")
+        mode = "hybrid BM25+FAISS" if idx is not None else "BM25-only"
+        print(f"[WikiSearch] Index ready: {len(wiki_pages)} pages ({mode})")
 
     def add_or_update(self, page: dict):
         """Incremental update after a wiki page is synthesized — encodes ONE page only."""
@@ -304,33 +310,41 @@ class WikiSearchIndex:
         texts = [_build_wiki_search_text(p) for p in self.pages]
         self.bm25 = BM25Okapi([t.lower().split() for t in texts])
         # Persist updated FAISS index so next startup loads from cache
-        try:
-            _faiss.write_index(self.faiss_index, str(_WIKI_FAISS_CACHE))
-            _WIKI_FAISS_SLUGS.write_text(
-                json.dumps({
-                    "model": _WIKI_EMBED_MODEL_NAME,
-                    "slugs": [p["slug"] for p in self.pages],
-                }), encoding="utf-8"
-            )
-        except OSError:
-            pass
+        if self.faiss_index is not None:
+            try:
+                _faiss.write_index(self.faiss_index, str(_WIKI_FAISS_CACHE))
+                _WIKI_FAISS_SLUGS.write_text(
+                    json.dumps({
+                        "model": _WIKI_EMBED_MODEL_NAME,
+                        "slugs": [p["slug"] for p in self.pages],
+                    }), encoding="utf-8"
+                )
+            except Exception:  # faiss raises RuntimeError, not OSError, on read-only fs
+                pass
         print(f"[WikiSearch] Incremental update: {len(self.pages)} pages (1 encoded)")
 
     def search(self, query: str, top_k: int = 5) -> list:
-        if not self.pages or self.bm25 is None or self.faiss_index is None:
+        if not self.pages or self.bm25 is None:
             return []
         n = len(self.pages)
         bm25_scores = np.array(self.bm25.get_scores(query.lower().split()), dtype=np.float32)
         bm25_max = bm25_scores.max() or 1.0
         bm25_norm = bm25_scores / bm25_max
-        model = _get_wiki_embed_model()
-        q_emb = _encode(model, [query])
-        sem_scores, sem_idx = self.faiss_index.search(q_emb, n)
-        sem_norm = np.zeros(n, dtype=np.float32)
-        for i, s in zip(sem_idx[0], sem_scores[0]):
-            if 0 <= i < n:
-                sem_norm[i] = float(s)
-        hybrid = 0.3 * bm25_norm + 0.7 * sem_norm
+
+        hybrid = bm25_norm  # default: BM25-only
+        if self.faiss_index is not None:
+            try:
+                model = _get_wiki_embed_model()
+                q_emb = _encode(model, [query])
+                sem_scores, sem_idx = self.faiss_index.search(q_emb, n)
+                sem_norm = np.zeros(n, dtype=np.float32)
+                for i, s in zip(sem_idx[0], sem_scores[0]):
+                    if 0 <= i < n:
+                        sem_norm[i] = float(s)
+                hybrid = 0.3 * bm25_norm + 0.7 * sem_norm
+            except Exception as e:
+                print(f"[WikiSearch] Semantic search failed: {e} — BM25-only")
+
         top_idx = np.argsort(hybrid)[::-1][:top_k]
         return [self.pages[i] for i in top_idx]
 
