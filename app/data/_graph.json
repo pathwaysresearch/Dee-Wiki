@@ -4927,21 +4927,17 @@
       "path": "wiki\\entities\\the-digital-matrix.md"
     },
     "the-innovators-dilemma": {
-      "type": "synthesized",
+      "type": "concept",
       "title": "The Innovator's Dilemma",
       "aliases": [
-        "The Innovator's Dilemma",
-        "Success as Constraint",
-        "Good Management as Blind Spot"
+        "The Innovator's Dilemma"
       ],
       "tags": [
         "theory",
         "business-strategy",
-        "management",
-        "disruption",
-        "incumbent-inertia"
+        "management"
       ],
-      "path": "wiki/synthesized/the-innovators-dilemma.md"
+      "path": "wiki\\concepts\\the-innovators-dilemma.md"
     },
     "the-long-tail": {
       "type": "concept",
@@ -9884,21 +9880,23 @@
       ],
       "path": "wiki/synthesized/warfare-c2-architecture-as-digital-transformation-problem.md"
     },
-    "incumbents-blind-spot-profit-lens-and-non-adjacent-threats": {
+    "finance-resource-allocation-and-innovation-constraint": {
       "type": "synthesized",
-      "title": "Incumbents' Blind Spot: Profit Lens and Non-Adjacent Threats",
+      "title": "Finance as Resource Allocation Under Uncertainty: How Financial Markets Shape and Constrain Innovation",
       "aliases": [
-        "Incumbent Blind Spot",
-        "Profit-Driven Scanning",
-        "Non-Adjacent Blind Spot"
+        "finance-and-innovation",
+        "capital-allocation-under-uncertainty"
       ],
       "tags": [
-        "disruption",
-        "competitive-strategy",
-        "incumbent-inertia",
-        "business-strategy"
+        "finance",
+        "resource-allocation",
+        "uncertainty",
+        "investor-constraints",
+        "digital-transformation",
+        "capital-markets",
+        "innovation"
       ],
-      "path": "wiki/synthesized/incumbents-blind-spot-profit-lens-and-non-adjacent-threats.md"
+      "path": "wiki/synthesized/finance-resource-allocation-and-innovation-constraint.md"
     }
   },
   "edges": [
@@ -20188,54 +20186,24 @@
       "type": "relates-to"
     },
     {
-      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "to": "the-innovators-dilemma",
+      "from": "finance-resource-allocation-and-innovation-constraint",
+      "to": "digital-innovation-under-investor-constraints",
       "type": "extends"
     },
     {
-      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "to": "non-adjacent-competition",
+      "from": "finance-resource-allocation-and-innovation-constraint",
+      "to": "financial-architecture-as-digital-transformation-barrier",
       "type": "extends"
     },
     {
-      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "to": "incumbent-inertia",
-      "type": "relates_to"
+      "from": "finance-resource-allocation-and-innovation-constraint",
+      "to": "investor-expectations-constraint-on-innovation",
+      "type": "relates-to"
     },
     {
-      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "to": "blurring-industry-boundaries",
-      "type": "relates_to"
-    },
-    {
-      "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "to": "incumbents",
-      "type": "relates_to"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "disruptive-innovation-framework",
-      "type": "is_explained_by"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "incumbent-inertia",
-      "type": "relates_to"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
-      "type": "relates_to"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "success-traps",
-      "type": "relates_to"
-    },
-    {
-      "from": "the-innovators-dilemma",
-      "to": "performance-trajectory",
-      "type": "relates_to"
+      "from": "finance-resource-allocation-and-innovation-constraint",
+      "to": "trajectory-contingent-matching",
+      "type": "relates-to"
     }
   ]
 }
