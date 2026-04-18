@@ -9879,6 +9879,27 @@
         "ecosystem-orchestration"
       ],
       "path": "wiki/synthesized/warfare-c2-architecture-as-digital-transformation-problem.md"
+    },
+    "digital-transformation-roi-measurement-architecture": {
+      "type": "synthesized",
+      "title": "Digital Transformation ROI: A Four-Layer Measurement Architecture",
+      "aliases": [
+        "transformation-roi",
+        "intangible-value-measurement",
+        "digital-roi-framework"
+      ],
+      "tags": [
+        "digital-transformation",
+        "roi",
+        "measurement",
+        "ecosystem",
+        "investor-constraints",
+        "platform-strategy",
+        "value-creation",
+        "agility",
+        "network-effects"
+      ],
+      "path": "wiki/synthesized/digital-transformation-roi-measurement-architecture.md"
     }
   },
   "edges": [
@@ -20165,6 +20186,51 @@
     {
       "from": "warfare-c2-architecture-as-digital-transformation-problem",
       "to": "network-centric-digital-strategy",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "digital-transformation",
+      "type": "extends"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "trajectory-contingent-matching",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "digital-innovation-under-investor-constraints",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "financial-architecture-as-digital-transformation-barrier",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "ecosystem-orchestration",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "ecosystem-participation",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "digital-business-ecosystem",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "network-centric-digital-strategy",
+      "type": "relates-to"
+    },
+    {
+      "from": "digital-transformation-roi-measurement-architecture",
+      "to": "low-level-design-as-digital-transformation-substrate",
       "type": "relates-to"
     }
   ]
