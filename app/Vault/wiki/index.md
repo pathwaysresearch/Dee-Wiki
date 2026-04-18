@@ -794,3 +794,5 @@ Master catalog — 774 pages · last rebuilt 2026-04-17
 - [[synthesized/warfare-c2-architecture-as-digital-transformation-problem|Warfare C2 Architecture as a Digital Transformation Problem]] — synthesized from query
 
 - [[synthesized/ai-metaverse-shared-infrastructure|AI and Metaverse Shared Infrastructure Dependency]] — synthesized from query
+
+- [[synthesized/metaverse-use-cases-and-infrastructure-constraints|Metaverse Use Cases and Infrastructure Constraints]] — synthesized from query
