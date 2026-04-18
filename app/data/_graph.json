@@ -4927,17 +4927,21 @@
       "path": "wiki\\entities\\the-digital-matrix.md"
     },
     "the-innovators-dilemma": {
-      "type": "concept",
+      "type": "synthesized",
       "title": "The Innovator's Dilemma",
       "aliases": [
-        "The Innovator's Dilemma"
+        "The Innovator's Dilemma",
+        "Success as Constraint",
+        "Good Management as Blind Spot"
       ],
       "tags": [
         "theory",
         "business-strategy",
-        "management"
+        "management",
+        "disruption",
+        "incumbent-inertia"
       ],
-      "path": "wiki\\concepts\\the-innovators-dilemma.md"
+      "path": "wiki/synthesized/the-innovators-dilemma.md"
     },
     "the-long-tail": {
       "type": "concept",
@@ -20206,6 +20210,31 @@
     {
       "from": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
       "to": "incumbents",
+      "type": "relates_to"
+    },
+    {
+      "from": "the-innovators-dilemma",
+      "to": "disruptive-innovation-framework",
+      "type": "is_explained_by"
+    },
+    {
+      "from": "the-innovators-dilemma",
+      "to": "incumbent-inertia",
+      "type": "relates_to"
+    },
+    {
+      "from": "the-innovators-dilemma",
+      "to": "incumbents-blind-spot-profit-lens-and-non-adjacent-threats",
+      "type": "relates_to"
+    },
+    {
+      "from": "the-innovators-dilemma",
+      "to": "success-traps",
+      "type": "relates_to"
+    },
+    {
+      "from": "the-innovators-dilemma",
+      "to": "performance-trajectory",
       "type": "relates_to"
     }
   ]
